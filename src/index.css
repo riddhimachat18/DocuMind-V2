@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Crimson+Pro:wght@300;400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --background: 30 20% 7%;
+    --foreground: 30 15% 92%;
+
+    --card: 30 18% 10%;
+    --card-foreground: 30 15% 92%;
+
+    --popover: 30 18% 10%;
+    --popover-foreground: 30 15% 92%;
+
+    --primary: 35 85% 65%;
+    --primary-foreground: 30 20% 10%;
+
+    --secondary: 30 15% 15%;
+    --secondary-foreground: 30 15% 92%;
+
+    --muted: 30 15% 15%;
+    --muted-foreground: 30 10% 55%;
+
+    --accent: 35 85% 65%;
+    --accent-foreground: 30 20% 10%;
+
+    --destructive: 0 72% 58%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 30 15% 20%;
+    --input: 30 15% 15%;
+    --ring: 35 85% 65%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 30 20% 8%;
+    --sidebar-foreground: 30 10% 70%;
+    --sidebar-primary: 35 85% 65%;
+    --sidebar-primary-foreground: 30 20% 10%;
+    --sidebar-accent: 30 15% 15%;
+    --sidebar-accent-foreground: 30 15% 92%;
+    --sidebar-border: 30 15% 18%;
+    --sidebar-ring: 35 85% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+  }
+}
+
+/* Monospace table feel */
+.mono-table {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(30 20% 8%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(30 15% 25%);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(35 85% 65%);
+}
+
+/* Smooth transitions */
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .transition-elegant {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  
+  .glow-primary {
+    box-shadow: 0 4px 24px rgba(234, 179, 8, 0.12);
+  }
+  
+  .elegant-shadow {
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Elegant animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-shimmer {
+  animation: shimmer 3s infinite;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(234, 179, 8, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 1000px 100%;
+}
