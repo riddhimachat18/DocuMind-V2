@@ -13,6 +13,14 @@ export default {
       },
     },
     extend: {
+      fontSize: {
+        'xs':   ['0.8125rem',  { lineHeight: '1.125rem' }],  // was 0.75rem
+        'sm':   ['0.9375rem',  { lineHeight: '1.375rem' }],  // was 0.875rem
+        'base': ['1.0625rem',  { lineHeight: '1.625rem' }],  // was 1rem
+        'lg':   ['1.1875rem',  { lineHeight: '1.75rem'  }],  // was 1.125rem
+        'xl':   ['1.3125rem',  { lineHeight: '1.875rem' }],  // was 1.25rem
+        '2xl':  ['1.5625rem',  { lineHeight: '2.125rem' }],  // was 1.5rem
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
