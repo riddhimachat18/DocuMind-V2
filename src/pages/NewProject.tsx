@@ -1,33 +1,60 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useApp } from "../context/AppContext";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "../lib/firebase";
+import { toast } from "sonner";
 
 type Step = 1 | 2 | 3;
 
 const NewProject = () => {
-  const { addProject } = useApp();
+  const { user } = useApp();
   const navigate = useNavigate();
   const [step, setStep] = useState<Step>(1);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [sources, setSources] = useState<string[]>([]);
+  const [loading, setLoading] = useState(false);
 
   const toggleSource = (src: string) => {
     setSources(prev => prev.includes(src) ? prev.filter(s => s !== src) : [...prev, src]);
   };
 
-  const handleCreate = () => {
-    const newProject = {
-      id: `proj-${Date.now()}`,
-      name,
-      description,
-      lastUpdated: new Date().toISOString().split('T')[0],
-      qualityScore: 0,
-      sources,
-      members: [],
-    };
-    addProject(newProject);
-    navigate("/dashboard");
+  const handleCreate = async () => {
+    if (!name.trim()) return;
+    if (!user) {
+      toast.error("You must be logged in to create a project");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const docRef = await addDoc(collection(db, "projects"), {
+        name: name.trim(),
+        description: description.trim(),
+        createdBy: user.uid,
+        userId: user.uid,
+        createdAt: serverTimestamp(),
+        updatedAt: serverTimestamp(),
+        lastUpdated: serverTimestamp(),
+        currentBrdVersionId: null,
+        qualityScore: 0,
+        members: [],
+        connectedSources: {
+          gmail: sources.includes("gmail"),
+          slack: sources.includes("slack"),
+          meeting: sources.includes("meeting"),
+        },
+      });
+
+      toast.success("Project created successfully!");
+      navigate(`/projects/${docRef.id}/brd`);
+    } catch (error) {
+      console.error("Failed to create project:", error);
+      toast.error("Failed to create project");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const steps = [
@@ -188,9 +215,10 @@ const NewProject = () => {
               </button>
               <button
                 onClick={handleCreate}
-                className="bg-primary text-primary-foreground px-6 py-2.5 text-sm font-medium hover:bg-primary/90 transition-colors"
+                disabled={loading}
+                className="bg-primary text-primary-foreground px-6 py-2.5 text-sm font-medium hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Create project →
+                {loading ? "Creating..." : "Create project →"}
               </button>
             </div>
           </div>

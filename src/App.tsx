@@ -24,7 +24,13 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
 };
 
 const AppRoutes = () => {
-  const { isAuthenticated } = useApp();
+  const { isAuthenticated, loading } = useApp();
+
+  // Don't redirect while still checking auth state
+  if (loading) {
+    return null;
+  }
+
   return (
     <Routes>
       <Route path="/" element={isAuthenticated ? <Navigate to="/dashboard" replace /> : <Landing />} />
@@ -48,7 +54,12 @@ const App = () => (
       <AppProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+          }}
+        >
           <AppRoutes />
         </BrowserRouter>
       </AppProvider>

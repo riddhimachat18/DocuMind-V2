@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useApp } from "../context/AppContext";
+import { toast } from "sonner";
 
 const QualityBadge = ({ score }: { score: number }) => {
   const color =
@@ -25,6 +26,17 @@ const Dashboard = () => {
   const { user, projects, logout } = useApp();
   const navigate = useNavigate();
 
+  const handleLogout = async () => {
+    try {
+      await logout();
+      toast.success("Signed out successfully!");
+      navigate("/login", { replace: true });
+    } catch (error) {
+      console.error("Logout error:", error);
+      toast.error("Failed to sign out. Please try again.");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Topbar */}
@@ -36,7 +48,7 @@ const Dashboard = () => {
         <div className="flex items-center gap-4">
           <span className="text-xs text-muted-foreground">{user?.name}</span>
           <button
-            onClick={logout}
+            onClick={handleLogout}
             className="text-xs text-muted-foreground hover:text-foreground transition-colors"
           >
             Sign out

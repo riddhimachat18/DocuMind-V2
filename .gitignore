@@ -12,6 +12,24 @@ dist
 dist-ssr
 *.local
 
+<<<<<<< HEAD
+# Environment variables
+.env
+.env.*
+!.env.example
+*.env
+functions/.env
+functions/.env.*
+!functions/.env.example
+
+=======
+>>>>>>> b36c35bb902f83b490443bfea6399e1fa60ef439
+# Firebase service account keys
+*firebase-adminsdk*.json
+
+# Large data files
+data/emails.csv
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

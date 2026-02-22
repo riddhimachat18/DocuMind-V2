@@ -1,52 +1,148 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { useApp } from "../context/AppContext";
-import { mockBRDSections, mockEvidence, mockAIMessages, type BRDSentence, type Evidence } from "../data/brdData";
+import { saveBRDVersion } from "../services/brdVersionService";
+import { exportBRDToPDF } from "../services/pdfExportService";
+import { toast } from "sonner";
+import { onChatMessageFn } from "../lib/functions";
+import { db } from "../lib/firebase";
+import { collection, query, where, orderBy as firestoreOrderBy, onSnapshot, addDoc, Timestamp, getDoc, doc } from "firebase/firestore";
 
+type BRDSentence = { 
+  id: string; 
+  text: string; 
+  sectionId?: string;
+  hasConflict?: boolean; 
+  evidence?: any[] 
+};
+
+type Evidence = {
+  id: string;
+  author: string;
+  avatarInitials: string;
+  timestamp: string;
+  platform: string;
+  content: string;
+};
 const platformIcon = (platform: string) => {
   if (platform === "slack") return <span className="text-xs font-mono border border-border px-1.5 py-0.5 text-muted-foreground">#</span>;
   if (platform === "email") return <span className="text-xs font-mono border border-border px-1.5 py-0.5 text-muted-foreground">✉</span>;
   return <span className="text-xs font-mono border border-border px-1.5 py-0.5 text-muted-foreground">◎</span>;
 };
 
-const QualityRing = ({ score }: { score: number }) => {
-  const color = score >= 80 ? "#4ade80" : score >= 60 ? "#facc15" : "#f87171";
-  const r = 28;
+// Calculate quality score from sections
+const calculateQualityScore = (sections: any) => {
+  const sectionChecks = [
+    (sections.executiveSummary?.length ?? 0) > 50,
+    (sections.stakeholderRegister?.length ?? 0) > 0,
+    (sections.functionalReqs?.length ?? 0) > 0,
+    (sections.nfrReqs?.length ?? 0) > 0,
+    (sections.assumptions?.length ?? 0) > 0,
+    (sections.successMetrics?.length ?? 0) > 0,
+  ];
+  
+  const completeness = Math.round((sectionChecks.filter(Boolean).length / 6) * 40);
+  
+  // Count requirements
+  const frs = sections.functionalReqs
+    ? sections.functionalReqs.split("\n").filter((l: string) => l.includes("FR-") || l.includes("NFR-"))
+    : [];
+  
+  const avgWords = frs.length > 0
+    ? frs.reduce((s: number, l: string) => s + l.split(" ").length, 0) / frs.length
+    : 0;
+  
+  const clarity = avgWords === 0 ? 10
+    : avgWords < 10 ? 18
+    : avgWords < 15 ? 20
+    : avgWords <= 25 ? 18 : 12;
+  
+  const consistency = 40; // Default, will be updated by conflict detection
+  
+  const total = completeness + consistency + clarity;
+  
+  return { completeness, consistency, clarity, total };
+};
+
+const QualityRing = ({ score, completeness, consistency, clarity }: { 
+  score: number; 
+  completeness?: number; 
+  consistency?: number; 
+  clarity?: number; 
+}) => {
+  // Ensure we have valid numbers
+  const safeScore = Math.max(0, Math.min(100, score || 0));
+  const safeCompleteness = Math.max(0, Math.min(40, completeness || 0));
+  const safeClarity = Math.max(0, Math.min(20, clarity || 0));
+  const safeConsistency = Math.max(0, Math.min(40, consistency || 0));
+  
+  const color = safeScore >= 80 ? "#4ade80" : safeScore >= 60 ? "#facc15" : safeScore >= 40 ? "#fb923c" : "#f87171";
+  const r = 32;
   const circ = 2 * Math.PI * r;
-  const offset = circ - (score / 100) * circ;
+  const offset = circ - (safeScore / 100) * circ;
 
   return (
-    <div className="flex items-center gap-3">
-      <svg width="72" height="72" viewBox="0 0 72 72">
-        <circle cx="36" cy="36" r={r} fill="none" stroke="hsl(0 0% 18%)" strokeWidth="4" />
-        <circle
-          cx="36" cy="36" r={r} fill="none" stroke={color} strokeWidth="4"
-          strokeDasharray={circ} strokeDashoffset={offset}
-          strokeLinecap="butt" transform="rotate(-90 36 36)"
-        />
-        <text x="36" y="40" textAnchor="middle" fill="white" fontSize="13" fontWeight="600" fontFamily="monospace">
-          {score}
-        </text>
-      </svg>
-      <div className="flex flex-col gap-1">
-        <div className="flex justify-between text-xs text-muted-foreground">
-          <span>Completeness</span><span className="font-mono ml-8">88</span>
+    <div className="flex flex-col gap-4">
+      <div className="flex items-center justify-center">
+        <svg width="80" height="80" viewBox="0 0 80 80" className="drop-shadow-lg">
+          {/* Background circle */}
+          <circle cx="40" cy="40" r={r} fill="none" stroke="hsl(0 0% 15%)" strokeWidth="6" />
+          {/* Progress circle */}
+          <circle
+            cx="40" cy="40" r={r} fill="none" stroke={color} strokeWidth="6"
+            strokeDasharray={circ} strokeDashoffset={offset}
+            strokeLinecap="round" transform="rotate(-90 40 40)"
+            style={{ transition: 'stroke-dashoffset 0.5s ease' }}
+          />
+          {/* Score text */}
+          <text x="40" y="45" textAnchor="middle" fill={color} fontSize="18" fontWeight="700" fontFamily="monospace">
+            {safeScore}
+          </text>
+        </svg>
+      </div>
+      <div className="flex flex-col gap-2">
+        <div>
+          <div className="flex justify-between text-xs text-muted-foreground mb-1">
+            <span>Completeness</span>
+            <span className="font-mono text-foreground">{safeCompleteness}/40</span>
+          </div>
+          <div className="w-full h-2 bg-border rounded-full overflow-hidden">
+            <div 
+              className="h-full bg-green-400 transition-all duration-500" 
+              style={{ width: `${(safeCompleteness / 40) * 100}%` }} 
+            />
+          </div>
         </div>
-        <div className="w-32 h-1 bg-border"><div className="h-full bg-green-400" style={{ width: "88%" }} /></div>
-        <div className="flex justify-between text-xs text-muted-foreground">
-          <span>Clarity</span><span className="font-mono ml-8">79</span>
+        <div>
+          <div className="flex justify-between text-xs text-muted-foreground mb-1">
+            <span>Clarity</span>
+            <span className="font-mono text-foreground">{safeClarity}/20</span>
+          </div>
+          <div className="w-full h-2 bg-border rounded-full overflow-hidden">
+            <div 
+              className="h-full bg-yellow-400 transition-all duration-500" 
+              style={{ width: `${(safeClarity / 20) * 100}%` }} 
+            />
+          </div>
         </div>
-        <div className="w-32 h-1 bg-border"><div className="h-full bg-yellow-400" style={{ width: "79%" }} /></div>
-        <div className="flex justify-between text-xs text-muted-foreground">
-          <span>Consistency</span><span className="font-mono ml-8">85</span>
+        <div>
+          <div className="flex justify-between text-xs text-muted-foreground mb-1">
+            <span>Consistency</span>
+            <span className="font-mono text-foreground">{safeConsistency}/40</span>
+          </div>
+          <div className="w-full h-2 bg-border rounded-full overflow-hidden">
+            <div 
+              className="h-full bg-blue-400 transition-all duration-500" 
+              style={{ width: `${(safeConsistency / 40) * 100}%` }} 
+            />
+          </div>
         </div>
-        <div className="w-32 h-1 bg-border"><div className="h-full bg-green-400" style={{ width: "85%" }} /></div>
       </div>
     </div>
   );
 };
 
-type ChatMessage = { id: string; type: 'ai' | 'user'; text: string; timestamp: string };
+type ChatMessage = { id: string; type: 'ai' | 'user'; text: string; timestamp: string; role?: 'user' | 'assistant' };
 
 const BRDEdit = () => {
   const { id } = useParams();
@@ -56,42 +152,530 @@ const BRDEdit = () => {
 
   const [selectedSentence, setSelectedSentence] = useState<BRDSentence | null>(null);
   const [selectedEvidence, setSelectedEvidence] = useState<Evidence[]>([]);
-  const [chatMessages, setChatMessages] = useState<ChatMessage[]>(mockAIMessages);
+  const [allSentenceEvidence, setAllSentenceEvidence] = useState<Record<string, any>>({});
+  const [citations, setCitations] = useState<Record<string, any>>({});
+  const [evidenceLoading, setEvidenceLoading] = useState(false);
+  const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
   const [chatInput, setChatInput] = useState("");
-  const [sections, setSections] = useState(mockBRDSections);
+  const [sections, setSections] = useState<any[]>([]);
+  const [brdLoading, setBrdLoading] = useState(true);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editText, setEditText] = useState("");
+  const [isSaving, setIsSaving] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
+  const [brdVersionId, setBrdVersionId] = useState<string | null>(null);
+  const [qualityScore, setQualityScore] = useState<any>(null);
+  const [isExporting, setIsExporting] = useState(false);
+  const [currentVersion, setCurrentVersion] = useState<string>("v1.0");
+  const [flashSection, setFlashSection] = useState<string | null>(null);
+  const [activeSection, setActiveSection] = useState<string>("");
   const chatEndRef = useRef<HTMLDivElement>(null);
+  const hasInitializedChat = useRef(false);
+
+  // Load BRD version ID from project
+  useEffect(() => {
+    if (!id) return;
+    
+    const loadBrdVersionId = async () => {
+      try {
+        const projectDoc = await getDoc(doc(db, "projects", id));
+        if (projectDoc.exists()) {
+          const data = projectDoc.data();
+          setBrdVersionId(data.currentBrdVersionId || null);
+        }
+      } catch (error) {
+        console.error("Error loading BRD version ID:", error);
+      }
+    };
+    
+    loadBrdVersionId();
+  }, [id]);
+
+  // Reload BRD sections (used after AI updates)
+  const reloadBrdSections = async () => {
+    if (!brdVersionId) return;
+    
+    try {
+      const brdDoc = await getDoc(doc(db, "brdVersions", brdVersionId));
+      if (!brdDoc.exists()) return;
+
+      const data = brdDoc.data();
+      const rawSections = data.sections ?? {};
+      const sentenceEvidenceData = data.sentenceEvidence ?? {};
+      const rawCitations = data.citations ?? {};
+      
+      setAllSentenceEvidence(sentenceEvidenceData);
+      setCitations(rawCitations);
+      
+      if (data.version) setCurrentVersion(data.version);
+      
+      const score = data.qualityScore;
+      if (score && typeof score === 'object' && score.total > 0) {
+        setQualityScore(score);
+      }
+
+      // Check for last updated section and flash it
+      const lastUpdated = data.lastUpdatedSection ?? null;
+      if (lastUpdated) {
+        setFlashSection(lastUpdated);
+        setTimeout(() => setFlashSection(null), 3000);
+      }
+
+      const SECTION_ORDER = [
+        { id: "executiveSummary",    title: "Executive Summary" },
+        { id: "stakeholderRegister", title: "Stakeholder Register" },
+        { id: "functionalReqs",      title: "Functional Requirements" },
+        { id: "nfrReqs",             title: "Non-Functional Requirements" },
+        { id: "assumptions",         title: "Assumptions & Constraints" },
+        { id: "successMetrics",      title: "Success Metrics" },
+      ];
+
+      const mapped = SECTION_ORDER
+        .filter(s => rawSections[s.id])
+        .map(s => {
+          const sectionEvidence = sentenceEvidenceData[s.id] || {};
+          return {
+            id: s.id,
+            title: s.title,
+            sentences: rawSections[s.id]
+              .split("\n")
+              .map((line: string) => line.trim())
+              .filter((line: string) => 
+                line.length > 10 &&
+                !line.match(/^\[/) &&
+                !line.match(/^\]/) &&
+                !line.match(/^,+$/) &&
+                !line.match(/^\d+$/) &&
+                !line.match(/^[,.\]\[;:\s]+$/) &&
+                !line.match(/\[SOURCE\s*$/)
+              )
+              .map((line: string, i: number) => {
+                const evidence = sectionEvidence[line] || [];
+                return {
+                  id: `${s.id}-${i}`,
+                  text: line,
+                  sectionId: s.id,
+                  hasConflict: false,
+                  evidence: evidence
+                };
+              })
+          };
+        });
+
+      setSections(mapped);
+    } catch (err) {
+      console.error("Error reloading BRD sections:", err);
+    }
+  };
+
+  // Load BRD sections from Firestore
+  useEffect(() => {
+    if (!brdVersionId) return;
+
+    const loadBrdSections = async () => {
+      setBrdLoading(true);
+      try {
+        const brdDoc = await getDoc(doc(db, "brdVersions", brdVersionId));
+        if (!brdDoc.exists()) return;
+
+        const data = brdDoc.data();
+        const rawSections = data.sections ?? {};
+        const sentenceEvidenceData = data.sentenceEvidence ?? {};
+        const rawCitations = data.citations ?? {};
+        
+        // Store sentence evidence for lookup
+        setAllSentenceEvidence(sentenceEvidenceData);
+        setCitations(rawCitations);
+        
+        // Set version number
+        if (data.version) setCurrentVersion(data.version);
+        
+        // Set quality score with fallback
+        const score = data.qualityScore;
+        console.log("Quality score from Firestore:", score);
+        
+        if (score && typeof score === 'object' && score.total > 0) {
+          setQualityScore(score);
+        } else {
+          // Calculate quality score from sections if not present
+          console.log("Calculating quality score from sections");
+          const calculatedScore = calculateQualityScore(rawSections);
+          setQualityScore(calculatedScore);
+          
+          // Update Firestore with calculated score
+          if (brdVersionId) {
+            const { doc, updateDoc } = await import("firebase/firestore");
+            await updateDoc(doc(db, "brdVersions", brdVersionId), {
+              qualityScore: calculatedScore
+            }).catch(err => console.warn("Failed to update quality score:", err));
+          }
+        }
+
+        // Map Firestore sections object into the array format the UI expects
+        const SECTION_ORDER = [
+          { id: "executiveSummary",    title: "Executive Summary" },
+          { id: "stakeholderRegister", title: "Stakeholder Register" },
+          { id: "functionalReqs",      title: "Functional Requirements" },
+          { id: "nfrReqs",             title: "Non-Functional Requirements" },
+          { id: "assumptions",         title: "Assumptions & Constraints" },
+          { id: "successMetrics",      title: "Success Metrics" },
+        ];
+
+        const mapped = SECTION_ORDER
+          .filter(s => rawSections[s.id])
+          .map(s => {
+            const sectionEvidence = sentenceEvidenceData[s.id] || {};
+            return {
+              id: s.id,
+              title: s.title,
+              sentences: rawSections[s.id]
+                .split("\n")
+                .map((line: string) => line.trim())
+                .filter((line: string) => 
+                  line.length > 10 &&
+                  !line.match(/^\[/) &&
+                  !line.match(/^\]/) &&
+                  !line.match(/^,+$/) &&
+                  !line.match(/^\d+$/) &&
+                  !line.match(/^[,.\]\[;:\s]+$/) &&
+                  !line.match(/\[SOURCE\s*$/)
+                )
+                .map((line: string, i: number) => {
+                  const evidence = sectionEvidence[line] || [];
+                  return {
+                    id: `${s.id}-${i}`,
+                    text: line,
+                    sectionId: s.id,
+                    hasConflict: false,
+                    evidence: evidence
+                  };
+                })
+            };
+          });
+
+        setSections(mapped);
+      } catch (err) {
+        console.error("Error loading BRD sections:", err);
+        toast.error("Failed to load BRD content");
+      } finally {
+        setBrdLoading(false);
+      }
+    };
+
+    loadBrdSections();
+    
+    // Set up real-time listener for BRD updates
+    const unsubscribe = onSnapshot(
+      doc(db, "brdVersions", brdVersionId),
+      (snapshot) => {
+        if (!snapshot.exists()) return;
+        
+        const data = snapshot.data();
+        
+        // Update quality score
+        if (data.qualityScore) {
+          setQualityScore(data.qualityScore);
+        }
+        
+        // Reload sections whenever Firestore document changes
+        const rawSections = data.sections ?? {};
+        const rawCitations = data.citations ?? {};
+        
+        const SECTION_ORDER = [
+          { id: "executiveSummary",    title: "Executive Summary" },
+          { id: "stakeholderRegister", title: "Stakeholder Register" },
+          { id: "functionalReqs",      title: "Functional Requirements" },
+          { id: "nfrReqs",             title: "Non-Functional Requirements" },
+          { id: "assumptions",         title: "Assumptions & Constraints" },
+          { id: "successMetrics",      title: "Success Metrics" },
+        ];
+        
+        const mapped = SECTION_ORDER
+          .filter(s => rawSections[s.id])
+          .map(s => ({
+            id: s.id,
+            title: s.title,
+            sentences: rawSections[s.id]
+              .split("\n")
+              .map((line: string) => line.trim())
+              .filter((line: string) => 
+                line.length > 10 &&
+                !line.match(/^\[/) &&
+                !line.match(/^\]/) &&
+                !line.match(/^,+$/) &&
+                !line.match(/^\d+$/) &&
+                !line.match(/^[,.\]\[;:\s]+$/) &&
+                !line.match(/\[SOURCE\s*$/)
+              )
+              .map((line: string, i: number) => ({
+                id: `${s.id}-${i}`,
+                text: line,
+                sectionId: s.id,
+                hasConflict: false,
+                evidence: []
+              }))
+          }));
+        
+        if (mapped.length > 0) {
+          setSections(mapped);
+          setCitations(rawCitations);
+        }
+        
+        // Flash the last updated section if present
+        const lastUpdated = data.lastUpdatedSection ?? null;
+        if (lastUpdated) {
+          setFlashSection(lastUpdated);
+          setTimeout(() => setFlashSection(null), 3000);
+        }
+      },
+      (error) => {
+        console.error("Error listening to BRD updates:", error);
+      }
+    );
+    
+    return () => unsubscribe();
+  }, [brdVersionId]);
+
+  // Load chat history from Firestore
+  useEffect(() => {
+    if (!brdVersionId) return;
+
+    const q = query(
+      collection(db, "chatMessages"),
+      where("brdVersionId", "==", brdVersionId),
+      firestoreOrderBy("timestamp", "asc")
+    );
+
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      const messages = snapshot.docs.map(doc => {
+        const data = doc.data();
+        return {
+          id: doc.id,
+          type: data.role === "user" ? "user" : "ai",
+          text: data.content || data.message || "",
+          timestamp: data.timestamp?.toDate?.()?.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) || "",
+          role: data.role,
+        } as ChatMessage;
+      });
+      
+      setChatMessages(messages);
+      
+      // Auto-start chat if no messages exist
+      if (messages.length === 0 && !hasInitializedChat.current) {
+        hasInitializedChat.current = true;
+        handleInitialChatMessage();
+      }
+    });
+
+    return () => unsubscribe();
+  }, [brdVersionId]);
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [chatMessages]);
 
-  const handleSentenceClick = (sentence: BRDSentence) => {
-    setSelectedSentence(sentence);
-    setSelectedEvidence(sentence.evidence || []);
+  // Track active section on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const sectionEls = sections.map(s => ({
+        id: s.id,
+        el: document.getElementById(`section-${s.id}`)
+      })).filter(s => s.el);
+      
+      const centerPane = document.getElementById("brd-center-pane");
+      const scrollTop = centerPane?.scrollTop ?? 0;
+      
+      for (let i = sectionEls.length - 1; i >= 0; i--) {
+        const el = sectionEls[i].el!;
+        if (el.offsetTop <= scrollTop + 100) {
+          setActiveSection(sectionEls[i].id);
+          break;
+        }
+      }
+    };
+
+    const centerPane = document.getElementById("brd-center-pane");
+    centerPane?.addEventListener("scroll", handleScroll);
+    return () => centerPane?.removeEventListener("scroll", handleScroll);
+  }, [sections]);
+
+  const handleInitialChatMessage = async () => {
+    if (!id || !brdVersionId) return;
+    
+    setIsTyping(true);
+    
+    try {
+      // Save initial user message
+      await addDoc(collection(db, "chatMessages"), {
+        brdVersionId,
+        role: "user",
+        content: "Review this BRD and identify the most critical gaps or issues.",
+        timestamp: Timestamp.now()
+      });
+      
+      const result = await onChatMessageFn({
+        projectId: id,
+        brdVersionId,
+        userMessage: "Review this BRD and identify the most critical gaps or issues.",
+        chatHistory: []
+      });
+      
+      const { message, brdUpdated } = result.data as any;
+      
+      if (brdUpdated) {
+        toast.success("BRD updated based on AI analysis");
+        // Trigger reload of BRD sections
+        const brdDoc = await getDoc(doc(db, "brdVersions", brdVersionId));
+        if (brdDoc.exists()) {
+          // The real-time listener will handle the update
+        }
+      }
+    } catch (error: any) {
+      console.error("Error initializing chat:", error);
+      // Don't show error toast for initial message - it's automatic
+    } finally {
+      setIsTyping(false);
+    }
   };
 
-  const handleChatSend = () => {
-    if (!chatInput.trim()) return;
-    const userMsg: ChatMessage = {
-      id: `msg-${Date.now()}`,
-      type: 'user',
-      text: chatInput,
-      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-    };
-    setChatMessages(prev => [...prev, userMsg]);
-    setChatInput("");
+  const handleSentenceClick = async (sentence: BRDSentence, sectionId: string) => {
+    setSelectedSentence(sentence);
+    setSelectedEvidence([]);
+    setEvidenceLoading(true);
 
-    setTimeout(() => {
-      const aiReply: ChatMessage = {
-        id: `msg-${Date.now() + 1}`,
-        type: 'ai',
-        text: "✅ Understood. I've noted that context. Would you like me to suggest updated wording for this requirement based on your input?",
-        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      };
-      setChatMessages(prev => [...prev, aiReply]);
-    }, 1200);
+    // Find citation keys that match this sentence
+    const sectionCitations = citations[sectionId] ?? {};
+    
+    // Match sentence text against citation keys
+    // Citations keys are cleaned sentence text — do a partial match
+    const matchedSnippetIds: string[] = [];
+    for (const [citationKey, snippetIds] of Object.entries(sectionCitations)) {
+      const normalize = (s: string) => s.toLowerCase().replace(/\s+/g, " ").trim();
+      const sentenceNorm = normalize(sentence.text);
+      const keyNorm = normalize(citationKey as string);
+      
+      // Match if either contains the other (handles truncation)
+      if (sentenceNorm.includes(keyNorm.slice(0, 40)) || 
+          keyNorm.includes(sentenceNorm.slice(0, 40))) {
+        matchedSnippetIds.push(...(snippetIds as string[]));
+      }
+    }
+
+    if (matchedSnippetIds.length === 0) {
+      setSelectedEvidence([]);
+      setEvidenceLoading(false);
+      return;
+    }
+
+    // Fetch each snippet from Firestore
+    try {
+      const snippetDocs = await Promise.all(
+        matchedSnippetIds.slice(0, 5).map(sid => getDoc(doc(db, "snippets", sid)))
+      );
+      
+      const evidence: Evidence[] = snippetDocs
+        .filter(d => d.exists())
+        .map(d => {
+          const data = d.data()!;
+          const author = data.author ?? "Unknown";
+          const initials = author.split("@")[0].slice(0, 2).toUpperCase();
+          
+          // Format timestamp
+          let timestamp = "";
+          if (data.timestamp) {
+            try {
+              timestamp = new Date(data.timestamp).toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric"
+              });
+            } catch { 
+              timestamp = data.timestamp; 
+            }
+          }
+          
+          // Map source to platform
+          const platformMap: Record<string, string> = {
+            gmail: "email",
+            meeting: "meeting",
+            upload: "meeting",
+            slack: "slack"
+          };
+          
+          // Truncate at sentence boundary
+          const raw = data.rawText ?? "";
+          const truncated = raw.length <= 500 ? raw : (() => {
+            const cut = raw.slice(0, 500);
+            const lastPeriod = Math.max(
+              cut.lastIndexOf(". "),
+              cut.lastIndexOf(".\n"),
+              cut.lastIndexOf("? "),
+              cut.lastIndexOf("! ")
+            );
+            return lastPeriod > 100 ? cut.slice(0, lastPeriod + 1) : cut;
+          })();
+          
+          return {
+            id: d.id,
+            author,
+            avatarInitials: initials,
+            timestamp,
+            platform: platformMap[data.source] ?? "email",
+            content: truncated
+          };
+        });
+      
+      setSelectedEvidence(evidence);
+    } catch (err) {
+      console.error("Error fetching evidence:", err);
+      setSelectedEvidence([]);
+    } finally {
+      setEvidenceLoading(false);
+    }
+  };
+
+  const handleChatSend = async () => {
+    if (!chatInput.trim() || !id || !brdVersionId) return;
+    
+    const userMessage = chatInput.trim();
+    setChatInput("");
+    
+    // Save user message to Firestore
+    try {
+      await addDoc(collection(db, "chatMessages"), {
+        brdVersionId,
+        role: "user",
+        content: userMessage,
+        timestamp: Timestamp.now()
+      });
+      
+      setIsTyping(true);
+      
+      // Build chat history
+      const chatHistory = chatMessages.map(msg => ({
+        role: msg.role || (msg.type === "user" ? "user" : "assistant"),
+        content: msg.text
+      }));
+      
+      // Call AI - the Cloud Function will save the assistant message
+      const result = await onChatMessageFn({
+        projectId: id,
+        brdVersionId,
+        userMessage,
+        chatHistory
+      });
+      
+      const { brdUpdated } = result.data as any;
+      
+      if (brdUpdated) {
+        toast.success("BRD updated by AI auditor");
+      }
+    } catch (error: any) {
+      console.error("Error sending chat message:", error);
+      toast.error(error.message || "Failed to send message");
+    } finally {
+      setIsTyping(false);
+    }
   };
 
   const handleEditSave = (sectionId: string, sentenceId: string) => {
@@ -103,6 +687,49 @@ const BRDEdit = () => {
       };
     }));
     setEditingId(null);
+  };
+
+  const handleExportPDF = async () => {
+    if (!project || !id) {
+      toast.error("Unable to export BRD");
+      return;
+    }
+
+    setIsExporting(true);
+    
+    // Open new tab immediately to avoid popup blocker
+    const newTab = window.open('about:blank', '_blank');
+    
+    try {
+      // Structure BRD content for PDF export
+      const brdContent = {
+        projectName: project.name,
+        sections: sections,
+        qualityScore: qualityScore
+      };
+
+      const brdExport = await exportBRDToPDF(id, brdContent);
+
+      toast.success(`BRD ${brdExport.version} exported successfully!`);
+      
+      // Update the new tab with PDF URL
+      if (newTab) {
+        newTab.location.href = brdExport.downloadURL;
+      } else {
+        // Fallback if popup was blocked
+        window.open(brdExport.downloadURL, '_blank');
+      }
+      
+    } catch (error: any) {
+      console.error("Error exporting BRD:", error);
+      toast.error(`Failed to export BRD: ${error.message}`);
+      // Close the blank tab if export failed
+      if (newTab) {
+        newTab.close();
+      }
+    } finally {
+      setIsExporting(false);
+    }
   };
 
   if (!project) return (
@@ -122,11 +749,15 @@ const BRDEdit = () => {
             {project.name}
           </button>
           <span className="text-xs text-muted-foreground">→</span>
-          <span className="text-xs text-foreground">Draft Edit — v4.0</span>
+          <span className="text-xs text-foreground">Draft Edit — {currentVersion}</span>
         </div>
         <div className="flex items-center gap-3">
-          <button className="text-xs bg-primary text-primary-foreground px-4 py-2 hover:bg-primary/90 transition-colors font-medium">
-            Save BRD Version
+          <button 
+            onClick={handleExportPDF}
+            disabled={isExporting}
+            className="text-xs bg-primary text-primary-foreground px-4 py-2 hover:bg-primary/90 transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {isExporting ? 'Exporting...' : 'Export Draft (PDF)'}
           </button>
           <button
             onClick={() => navigate(`/projects/${id}/brd/history`)}
@@ -141,12 +772,9 @@ const BRDEdit = () => {
       <div className="flex flex-1 overflow-hidden">
 
         {/* Left pane: Evidence */}
-        <div className="w-72 border-r border-border flex flex-col overflow-hidden flex-shrink-0">
+        <div className="w-72 border-r border-border flex flex-col overflow-hidden flex-shrink-0 bg-card">
           <div className="px-4 py-3 border-b border-border flex-shrink-0">
             <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Evidence View</p>
-            {selectedSentence && (
-              <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{selectedSentence.text.slice(0, 60)}…</p>
-            )}
           </div>
           <div className="flex-1 overflow-y-auto">
             {!selectedSentence && (
@@ -154,39 +782,101 @@ const BRDEdit = () => {
                 Click any sentence in the BRD to see its source evidence here.
               </div>
             )}
-            {selectedEvidence.length > 0 ? selectedEvidence.map((ev) => (
-              <div key={ev.id} className="border-b border-border px-4 py-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-6 h-6 bg-secondary border border-border flex items-center justify-center text-xs font-mono text-muted-foreground">
-                    {ev.avatarInitials}
-                  </div>
-                  <div>
-                    <div className="text-xs font-medium">{ev.author}</div>
-                    <div className="text-xs text-muted-foreground">{ev.timestamp}</div>
-                  </div>
-                  <div className="ml-auto">{platformIcon(ev.platform)}</div>
-                </div>
-                <p className="text-xs text-muted-foreground leading-relaxed border-l border-border pl-3">
-                  "{ev.content}"
-                </p>
+            {selectedSentence && (
+              <div className="px-4 py-3 border-b border-border bg-secondary/30">
+                <p className="text-xs text-muted-foreground mb-1">Selected:</p>
+                <p className="text-xs text-foreground leading-relaxed">{selectedSentence.text}</p>
               </div>
-            )) : selectedSentence && (
-              <div className="px-4 py-4 text-xs text-muted-foreground">No evidence linked to this sentence.</div>
+            )}
+            {evidenceLoading && (
+              <div className="px-4 py-6 text-xs text-muted-foreground">
+                Loading sources...
+              </div>
+            )}
+            {!evidenceLoading && selectedEvidence.length > 0 ? (
+              <div className="divide-y divide-border">
+                {selectedEvidence.map((ev, idx) => (
+                  <div key={ev.id} className="px-4 py-4 hover:bg-secondary/30 transition-colors">
+                    <div className="flex items-start gap-2 mb-2">
+                      <div className="w-6 h-6 bg-primary/10 border border-primary/30 flex items-center justify-center text-xs font-mono text-primary flex-shrink-0">
+                        {ev.avatarInitials}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-xs font-medium text-foreground mb-1">
+                          {ev.author}
+                        </div>
+                        <div className="text-xs text-muted-foreground flex items-center gap-2">
+                          {platformIcon(ev.platform)}
+                          {ev.timestamp && <span>• {ev.timestamp}</span>}
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-xs text-muted-foreground leading-relaxed border-l-2 border-primary/30 pl-3 bg-secondary/20 py-2">
+                      {ev.content}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            ) : !evidenceLoading && selectedSentence && (
+              <div className="px-4 py-4 text-xs text-muted-foreground">
+                No evidence linked to this sentence.
+              </div>
             )}
           </div>
         </div>
 
         {/* Center pane: Editable BRD */}
-        <div className="flex-1 overflow-y-auto px-8 py-8 pl-16">
-          <div className="max-w-2xl">
-            <h1 className="text-xl font-semibold tracking-tight mb-1">{project.name}</h1>
-            <p className="text-xs text-muted-foreground mb-8 font-mono">Draft v4.0 — Inline editing enabled</p>
+        <div className="flex-1 flex flex-row overflow-hidden">
+          {/* Section navigation rail */}
+          <div className="w-40 flex-shrink-0 border-r border-border overflow-y-auto py-6 px-2 flex flex-col gap-1">
+            <p className="text-xs font-mono uppercase tracking-wider text-muted-foreground px-2 mb-3">Sections</p>
+            {sections.map(section => (
+              <button
+                key={section.id}
+                onClick={() => {
+                  document.getElementById(`section-${section.id}`)?.scrollIntoView({ 
+                    behavior: "smooth", 
+                    block: "start" 
+                  });
+                }}
+                className={`text-left text-xs px-2 py-2 rounded transition-colors leading-tight ${
+                  activeSection === section.id
+                    ? "text-primary border-l-2 border-primary pl-1.5"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {section.title}
+              </button>
+            ))}
+          </div>
 
-            {sections.map((section) => (
-              <section key={section.id} className="mb-8">
-                <h2 className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-3 border-b border-border pb-2">
-                  {section.title}
-                </h2>
+          {/* Scrollable content area */}
+          <div id="brd-center-pane" className="flex-1 overflow-y-auto px-8 py-8">
+            <div className="max-w-2xl bg-background">
+              <h1 className="text-xl font-semibold tracking-tight mb-1">{project.name}</h1>
+              <p className="text-xs text-muted-foreground mb-8 font-mono">Draft {currentVersion} — Inline editing enabled</p>
+
+              {brdLoading ? (
+                <div className="text-sm text-muted-foreground py-10 text-center">
+                  Loading BRD content...
+                </div>
+              ) : sections.length === 0 ? (
+                <div className="text-sm text-muted-foreground py-10 text-center">
+                  No BRD content found. Generate a BRD first.
+                </div>
+              ) : (
+                <>
+                  {sections.map((section) => (
+                  <section 
+                    key={section.id}
+                    id={`section-${section.id}`}
+                    className={`mb-8 transition-all duration-500 ${
+                      flashSection === section.id ? "ring-2 ring-primary bg-primary/5 p-4 rounded" : ""
+                    }`}
+                  >
+                    <h2 className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-3 border-b border-border pb-2">
+                      {section.title}
+                    </h2>
                 <div className="flex flex-col gap-2">
                   {section.sentences.map((sentence) => (
                     <div key={sentence.id}>
@@ -215,7 +905,7 @@ const BRDEdit = () => {
                         </div>
                       ) : (
                         <div
-                          onClick={() => handleSentenceClick(sentence)}
+                          onClick={() => handleSentenceClick(sentence, section.id)}
                           onDoubleClick={() => { setEditingId(sentence.id); setEditText(sentence.text); }}
                           className={`text-sm leading-relaxed cursor-pointer px-3 py-2 transition-all group relative ${
                             selectedSentence?.id === sentence.id
@@ -238,9 +928,15 @@ const BRDEdit = () => {
                           {sentence.text}
                           
                           {/* Source count badge */}
-                          {sentence.evidence && sentence.evidence.length > 0 && (
+                          {(() => {
+                            const sectionCits = citations[section.id] ?? {};
+                            const hasEvidence = Object.keys(sectionCits).some(key => 
+                              sentence.text.toLowerCase().includes(key.toLowerCase().slice(0, 30))
+                            );
+                            return hasEvidence;
+                          })() && (
                             <span className="ml-2 text-xs text-primary/60 group-hover:text-primary transition-colors font-mono">
-                              {sentence.evidence.length} source{sentence.evidence.length > 1 ? 's' : ''}
+                              sources
                             </span>
                           )}
                           
@@ -260,6 +956,9 @@ const BRDEdit = () => {
                 </div>
               </section>
             ))}
+                </>
+              )}
+            </div>
           </div>
         </div>
 
@@ -268,7 +967,12 @@ const BRDEdit = () => {
           {/* Quality score */}
           <div className="px-4 py-4 border-b border-border flex-shrink-0">
             <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-4">Quality Auditor</p>
-            <QualityRing score={84} />
+            <QualityRing 
+              score={qualityScore?.total ?? 0}
+              completeness={qualityScore?.completeness ?? 0}
+              consistency={qualityScore?.consistency ?? 0}
+              clarity={qualityScore?.clarity ?? 0}
+            />
           </div>
 
           {/* Chat messages */}
@@ -293,6 +997,18 @@ const BRDEdit = () => {
                 )}
               </div>
             ))}
+            {isTyping && (
+              <div className="text-xs leading-relaxed">
+                <div className="text-xs text-muted-foreground mb-1 font-mono">AI Auditor · typing...</div>
+                <div className="inline-block bg-secondary border border-border text-foreground px-3 py-2">
+                  <div className="flex gap-1">
+                    <span className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></span>
+                    <span className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></span>
+                    <span className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></span>
+                  </div>
+                </div>
+              </div>
+            )}
             <div ref={chatEndRef} />
           </div>
 
@@ -302,13 +1018,15 @@ const BRDEdit = () => {
               <input
                 value={chatInput}
                 onChange={e => setChatInput(e.target.value)}
-                onKeyDown={e => e.key === 'Enter' && !e.shiftKey && handleChatSend()}
-                placeholder="Reply to AI auditor…"
-                className="flex-1 bg-card border border-border text-xs text-foreground px-3 py-2 focus:outline-none focus:border-primary transition-colors placeholder:text-muted-foreground"
+                onKeyDown={e => e.key === 'Enter' && !e.shiftKey && !isTyping && handleChatSend()}
+                placeholder={isTyping ? "AI is typing..." : "Reply to AI auditor…"}
+                disabled={isTyping}
+                className="flex-1 bg-card border border-border text-xs text-foreground px-3 py-2 focus:outline-none focus:border-primary transition-colors placeholder:text-muted-foreground disabled:opacity-50 disabled:cursor-not-allowed"
               />
               <button
                 onClick={handleChatSend}
-                className="bg-primary text-primary-foreground px-3 py-2 text-xs hover:bg-primary/90 transition-colors"
+                disabled={isTyping || !chatInput.trim()}
+                className="bg-primary text-primary-foreground px-3 py-2 text-xs hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 →
               </button>

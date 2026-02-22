@@ -22,6 +22,51 @@
 
   <body>
     <div id="root"></div>
+    
+    <!-- Suppress harmless Google Auth COOP warnings -->
+    <script>
+      // Comprehensive console filter for Firebase Auth warnings
+      (function() {
+        const originalWarn = console.warn;
+        const originalError = console.error;
+        const originalLog = console.log;
+        
+        const suppressPatterns = [
+          'Cross-Origin-Opener-Policy',
+          'window.closed',
+          'window.close',
+          'Unchecked runtime.lastError',
+          'message port closed',
+          'Content Security Policy',
+          'violates the following',
+        ];
+        
+        function shouldSuppress(message) {
+          return suppressPatterns.some(pattern => 
+            String(message).includes(pattern)
+          );
+        }
+        
+        console.warn = function(...args) {
+          if (!shouldSuppress(args.join(' '))) {
+            originalWarn.apply(console, args);
+          }
+        };
+        
+        console.error = function(...args) {
+          if (!shouldSuppress(args.join(' '))) {
+            originalError.apply(console, args);
+          }
+        };
+        
+        console.log = function(...args) {
+          if (!shouldSuppress(args.join(' '))) {
+            originalLog.apply(console, args);
+          }
+        };
+      })();
+    </script>
+    
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

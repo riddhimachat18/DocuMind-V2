@@ -1,0 +1,14 @@
+FROM node:24-slim
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci --only=production
+
+COPY lib/classifySnippet.js ./lib/
+COPY lib/embedSnippet.js ./lib/
+
+ENV PORT=8080
+EXPOSE 8080
+
+CMD ["node", "lib/classifySnippet.js"]
