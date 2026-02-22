@@ -45,6 +45,10 @@
     --sidebar-border: 30 15% 18%;
     --sidebar-ring: 35 85% 65%;
   }
+  
+  html {
+    font-size: 17px;  /* Increased from 16px default — scales all rem units by 1px */
+  }
 }
 
 @layer base {
