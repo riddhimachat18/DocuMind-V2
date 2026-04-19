@@ -1,0 +1,1902 @@
+[
+  {
+    "sentence": "The tool should be robust and ease of use.  (Takes little time to manage the tool).",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Generate document (process guide) from process diagrams in a customizable format.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Both images and data\nStandard process role names should be populated in a drop down menu to maintain name consistency across processes.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "So when a role name changes in one process, it will change the name if it appears in other processes.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The tool should provide import/export/integration capabilities to common Microsoft tools (i.e. Excel, Word, SharePoint, etc.)",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The solution shall provide the capability to develop interactive process maps (flows) that link to task descriptions, enablers and best practice examples of deliverables",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The tool should show multiple options for modelling and should conform to multiple modelling standards that can be customized to fit our need",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Maintain consistency of relationships while drilling up or down depending on what level you are at, without having to rebuild any of the pieces.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The tool should have drill down capabilities",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The software needs to be configurable to meet our needs.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The solution shall provide both guided and comprehensive free text search capabilities",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "There should be a feature to send warnings for missing integration links between defined processes \"(i.e. as we tie models together and there is a missing link, it  would provide a warning)",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The tool should identify/keep track of relationships between processes so that consistency in process integration touch points can be maintained.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The tool should provide Spell check",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The tool should provide a means of generating RACI charts.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The tool should provide a means of linking to documents outside of tool (i. e. SharePoint, etc.)",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The tool should allow for identifying/managing standardized KPI's",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The solution shall provide a single source for access for all IT practioners to all sanctioned IT Services methods, covering guidance on processes, the roles that undertake those processes, process interactions, and enablers",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The tool should have the ability to create a centralized repository",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The tool should be able to create libraries for Org, KPI, Activities, tools, roles, information, dat",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The tool should be able to interface out to artefacts and embed artefacts",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The tools should have the ability to elicit requirements The tool should have the ability to generate process reports",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The tool should have the ability to create simulation processes and reports.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The solutions will provide a robust, sandpit area for Process analyst to work i",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The tool should have the ability to create workspace areas e.g. – WIP,Quality Review, Go Live, Live",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The solution should allow the Process Analyst to be able to model at different levels \nThe tools should have the ability to view the models for different studies.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The tool should have the ability to integrate models",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The solution will allow the Process Analyst process integration abilities.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The tool should have the ability to present complex models in different layouts for different stakeholders",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The tool should have the ability to send users a link that will take them to specific documents within the repository: Ability to have one enabler used multiple times across different processes, Ability to track changes/version control, Integration with Active Directory, Single Sign On, Role based access, Data analytics capabilities.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The solution shall provide the capability to migrate current processes content (process maps, documents, enablers, etc.) from the current, interim solution.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The tool should provide sufficient character space for titles or names",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The tool needs to support any naming or numbering formats",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Personalised navigation – ability to View 'Processes I own’ along with favourites to help you personalise your use.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Considering the challenges facing the ACME Group through the increasing competitive pressure, with increasing customer and regulatory requirements, we need to continuously increase our efficiency in the Product Development Process in order to stay competitive",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Looking at our current engineering practices, that are very much hardware component driven, we want to be more pro-active (up-front system design).",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Furthermore, the ever increasing complexity of our products makes it necessary to always improve our current engineering practices where needed, for instance to have better control of our Product Families.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Since we have a commitment to efficiently develop and offer superior products exceeding our customers’ expectations, upfront development and Systems Engineering is a key mechanism, see Figure 1.",
+    "original_label": "0",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "In this RFI, the following fields of Systems Engineering expertise will be in focus: Stakeholder Requirements Management, Requirements Management, Systems Architecture and Design (MBSE), Requirements driven Verification and Validation.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "However, surrounding fields of expertise, e.g. Systems Analysis and general support processes (e.g. report & measurements, Configuration Management), is also of interest.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The next step for ACME is to start practicing Model Based Systems Engineering, MBSE.",
+    "original_label": "0",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Systems Engineering within ACME is today very requirements driven but now it is time to start looking at MBSE with support of standard general-purpose modeling language (e.g. SysML, UML and IDEF).",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "When describing our capabilities we have used a definition “work item”.",
+    "original_label": "0",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "A work item is a single unit or object in the tool that all can build up structures or contain structures.",
+    "original_label": "0",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The different types of work items can be e.g. requirements, system elements, system structures, test cases, documents, etc.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The ACME Group has initiated a project to evaluate Systems Engineering tool sets in order to make a proposal to replace the current scattered tool environment used within the ACME Group.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The new tool set shall be used, in long term, as a global solution for the ACME Group.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The ACME Group hereby invites your company to give a proposal on a Systems Engineering tool environment according to this RFI.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Thank you for your time and diligence.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "In order to propose your System Engineering tool set and to participate in our evaluation, please respond to this RFI by January 15th - 2011 at 6 pm CET.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "You will then be informed whether or not you are invited to participate in following detailed evaluations.",
+    "original_label": "0",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Only responses that are 100% complete will be considered",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "IT Purchasing is responsible for the commercial relations towards Suppliers.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "As such ACME Group Global IT Purchasing holds the Purchasing power and mandates for authorization to reach Commercial Agreements.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "IT Purchasing function is serving all ACME Group Business Areas / Units.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "A working group, with members from all Business Areas/Business Units involved, has been set up to investigate available solutions on the market and recommend a tool set for SE.",
+    "original_label": "0",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Hence we are now starting this evaluation process by issuing this RFI.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "IT Purchasing’s commission is to execute a Master/ Frame Agreement with one or more vendors and applications from their portfolios possible to use for The ACME Group.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Supplier’s proposal will be of vital importance for working out a common platform strategy",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "In this RFI document you will find necessary data and information.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "You are welcome to post any questions via e-mail or telephone, to the contact persons stated in this RFI, we will respond to the entire Supplier group.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "All information in this RFI is confidential as well as all documentation received by ACME Global IT Purchasing.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "This RFI will be distributed to a selection of potential suppliers.",
+    "original_label": "0",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "All RFI responses, received up to and including the Closing Date, will be considered valid.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "ACME reserves the right to exclude, from the evaluation process, any RFI response received after the stated Closing Date as set in the table below",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "ACME reserves the right to discontinue the RFI process at any time without liability.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "In addition, ACME makes no commitments, expressed, implied or otherwise, that this RFI process will result in a business continuance with one or more suppliers",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "All RFI responses, once received, will become the property of ACME.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The response shall be submitted in English, original to be sent by mail and a copy by e-mail.",
+    "original_label": "0",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Supplier submitting the RFI response must clearly and with no ambiguity, identify the legally registered company name and address of the said company as well as signed and dated",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "According to the RFI responses, questions can be raised by ACME.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Therefore the suppliers are requested to submit a list of references for this purpose and to be available to liaise for relevant interviews",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Receivers of this RFI are asked to confirm the receipt of this RFI by written acknowledgement no later than the date specified in Time Table.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "In order to discuss answers and clarify ambiguities ACME will contact supplier and invite to a telephone conference.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "ACME shall not be held liable for any costs whatsoever incurred by the Supplier in order to prepare information relevant to the participation in this RFI.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "No documents or CD / DVDs will be returned",
+    "original_label": "0",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "This RFI requires that all products and/or functionality expressed in the responses to this RFI, are generally available from the Supplier (or his subcontractors) for a period of at least six months.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "If the Supplier wishes to set forth a product and/or function that does not match this description (product under development, for example) this has to be clearly expressed in the responses, including an explanation why it is considered to have a better potential for ACME.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The following general categories within the RFI process will be examined and evaluated: Strategic capabilities, for example:\nThe Supplier’s financial situation, The Supplier’s company structure, The Market presence and reputation, The Service and quality of service, The Supplier’s acceptance of ACME’s Terms and Conditions, The Supplier’s flexibility to react to urgent needs and requirements, Strategic Partnerships.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Suppliers ability to support needed Systems Engineering capabilities, for example: Stakeholder Requirements Management, Requirements Management, System Architecture and Design (MBSE), Develop alternatives / robust concept selection, Requirements Verification and Validation, Configuration / Change Management of work items, Support for project management & metrics, Support for Product Family engineering, Global operation, Compliance to IS/IT Solution Architectural criteria. for exmple: System Requirement, Client/web access, Database solutions, Functional capabilities of tool environments, for example: The Supplier’s ability to deliver according to our requirements, The Technological and functional capacity to implement and fulfill any given requirements,No specific adaptions, out of the box solution, Total Cost of ownership, for example: Investment and Running Cost",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "During the evaluation process, the above categories may be further subdivided and individually weighted",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Suppliers selected, after screening RFI responses, will have the possibility to make one presentation of their proposal/system, including demo.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The Supplier will provide all material used to produce the presentation.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Each supplier’s presentation will be held separately and attended by Supplier and ACME’s project team.",
+    "original_label": "0",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Once the presentation is done, all backup material shall become ACME ´s property.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Submitted information that is found to be inaccurate, miss-guiding or delivered later than the date specified in Time Table, will lead to a disqualification in the evaluation process.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "This project will not only look for a single vendor/tool solution.",
+    "original_label": "0",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The preferred solution can include several integrated tools and even vendors.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "To facilitate and expedite a fair evaluation process, all correspondence and queries pertaining to this RFI and any associated response shall be submitted in English, directly and only to the contact persons as specified below.",
+    "original_label": "0",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The executive summary, in Appendix A, shall serve ACME Information Technology with the key elements and unique features of the proposal and shall contain the following.",
+    "original_label": "0",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "For the evaluation process we request you to supply us with relevant information about your company or the relevant business area of your company and if applicable your partners",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The questionnaire, in Appendix B, contains sub sections to provide information about vendor company contacts, give a brief presentation of the company and the marketplace and to inform about available products and services.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Text entries within << >> signs are examples that should be replaced with vendor specific information",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The high level requirements, in Appendix C, contain requirements needed to support Systems Engineering within AB ACME.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Please make sure to minimize the amount of attached documents and presentations and only provide material relevant for assessing requested information",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "These recommendations are intended to enable the supplier to provide a deployable solution in ACME infrastructure.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "These recommendations include a questionnaire to which the supplier must answer.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Particular attention will be given to the study of the responses providers by solution vendors.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Any non-complete response shall be deemed not answered.",
+    "original_label": "0",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If the provider has already implemented even partially components for ACME, response to RFI should not only reference documents related to this implementation.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The supplier must fully detail his answer in the deliverables.",
+    "original_label": "0",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Supported hardware Server components must run on hardware supported by the ACME platform.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Recommended platforms are Linux RedHat 6.5, Windows 2012 R2.",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Alternatives but not recommended are HP Itanium, Solaris 10 or Windows 7.",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The supplier shall detail the supported hardware platform per component.",
+    "original_label": "0",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If the solution does not have a proprietary database it shall support one the following databases, Oracle, MySQL, Postgres (preferred) possibly SQL Server.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "ACME versions are: MySQL 5.5.",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Detail whether alternative versions are required.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "MySQL runs on RedHat Linux 5.6.",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Recommended ACME versions are: Oracle Standard Edition 11gr2 or 10.2.0.4.",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Detail whether alternative versions are required.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Oracle runs on RedHat Linux 6.x.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Supported SQL Server databases Recommended ACME versions are: SQL Server 2012, R2 Edition standard or Enterprise.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Detail whether alternative versions are required.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "If the provider uses its own database technology, hardware requirements must be specified.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "It will run on the hardware platform supported at ACME.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "ACME runs VMWare 5.1U1 (today) or 5.1U3.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "For its emulation CITRIX, ACME uses XenApp 6 or 7.6 server running Windows 2008 R2 or Windows 2012 R2 to emulate Windows 7.",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The solution must ensure that it is possible to have multiple concurrent client instances with different users connected on the same Windows server.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The provider must specify whether its fat clients are Citrix solution and the number of simultaneous sessions per core as possible, Citrix Citrix server supports.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Specify the CPU core power sized.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "If the server components are running on an application server, detail the technology and components.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The application platform is JBoss ACME running RedHat Linux 5.6, JBoss 6.2 or 6.3 running Linux 6.4",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "If an alternative technology is used, the provider must describe in detail.",
+    "original_label": "0",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "At best, the solution provider must be fully compatible with an authorized ACME combination of J2EE application server, database and the associated operating system. Ex: Server J2EE JBoss5.1 under REDHAT 5.6 with MSQL data base in REDHAT 5.1 5.6",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "At least the solution provider must be installed on one proposed by ACME operating systems.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "These operating systems have been optimized to meet the security requirements for access DMZ.",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "If compatibility is limited to that of the operating system, the solution provider will be considered \"black box\" Maintaining J2EE components of the solution should be provided by the supplier.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The supplier shall specify if it offers this level of support.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "ACME recommends a Windows 7 64-bit platform.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The version number may change when the project is deployed.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The supplier must detail the recommended configuration (RAM, hard drive size, processor speed).",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The solution will run on ACME extensions called ACE 1 and ACE 3D with Windows Seven.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "These positions are based on 64-bit Windows 7 and Office 2010 pack",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "In case of asynchronous messaging with ACME application, the solution should be able to send or receive messages MQ Series.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Supported by the ACME version is 7.0.",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The solution should be able to call one described by a WSDL file supplied by ACME Web service.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Summon a secure Web Service",
+    "original_label": "0",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The solution should be able to call a Web service protected by a certificate of authentication client or basic authentication.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The certificate used to authenticate the client call can be provided by a public key infrastructure managed by ACME.",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "If the solution offers web services, it needs to describe them.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If the integrity solution RESTful services. These services should be described.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Format for Describing Web Services provided The Solution Provider shall indicate whether the web service provided a description file in WSDL format.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Securing Web services provided The Solution Provider shall indicate whether the Web services provided can be authenticated signed, encrypted.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "For authentication to the web service, the provider must indicate the authentication mechanisms available (basic authentication, user of a server certificate, joint use of a server certificate and a client certificate etc).",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If encryption or signature web service messages, the provider must specify the encryption mechanism available especially if the WS-Security standard is supported.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Solution Provider must support the Axway CFT solution.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "We ask vendors to summarize in no more than 5 sentences the recovery process for each of the following scenarios though of course these scenarios correspond to when using the product: Server database, Application server, Error Full Text Indexing, Web Server, Interruption of the application server, Fault on the file server, Error in contents of the database, Error in full Text Indexing file",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The response time access to data streams (3D content, 2D) must be uniform throughout the world.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If, to achieve this objective, the solution should include mechanisms for replication streams on multiple sites (ACME like Romania or Brazil) the solution should be detailed.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Element solution to specify: When replication is initiated (on demand or anticipated), Can it be filtered according to the location of the site, content criteria or by access-related profile, If content criteria, the nature of the content criteria: attributes, location inside the organization database.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The Solution Provider must ensure its compatibility with the technologies of data transfer (CFT and MQ) and detail a technical solution for the integration of two technologies The publisher must detail its solution elements in the answer.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Solution Provider must ensure that there is no degradation of response time caused by internal batch processing to the solution (full text indexing) or external (data transfer with other ACME IT systems).",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The supplier must detail whether data integrity check and repair tools are available and what are the features offered by these tools",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The Supplier shall indicate whether command-line tools are available to start and stop each server application component.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The provider must specify the data to be stored (databases, full text indexing, RSS replicated if more data to be stored), the order of safeguards to ensure a consistent backup, possible additional backup steps to ensure the entire backup.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The provider must specify whether the backup can be performed while the application is stopped.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The provider must specify the data to be restored (database, full-text index, RSS replicated if other data should be saved), the order of restoration ensuring consistency of food, possible additional steps to safeguard guarantee the complete restoration",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "In case of a major outage, an event should be traced.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "At least logs must be written in an easily identifiable location.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "When using Windows Server technology, whether the Windows event system will be used",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The log should be stored in an easily identifiable and parseable format .Optionally, the format should be configurable.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Log management should be consistent between the different components.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "In the best case, the supplier uses SNMP to send an alert and provide access to indicators on the activity of the components.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "At a minimum, key alerts on the availability of the solution are written to a log file in a readily parsable format.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The format of the log should contain: Critical Level Message, Message ID, Message text.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The provider must specify indicators reassembled by its monitoring tools.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Does the application has a management console and / or administration?",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Level of functionality offered: Ability to check if the software components are available (\"ping application\"), Monitoring of system activities and components Access indicators of system activity (number of active sessions, memory usage, etc....)",
+    "original_label": "0",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Does the application uses a license server for these server components?",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Does the software uses a standard technology (eg FlexLM) or a proprietary technology??",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Does the batch processing are managed with an internal scheduler or can it use an external scheduler like Autosys.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Are the password and user ID encrypted into exploitation tools?",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Supplier must indicate if tools are available to import / export content or configuration between environments (eg change the configuration to test production environments).",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "For each tool, the supplier must specify what data is imported or exported, the filtering level (all data, filtered data), format (XML-based file-based, multi file or single file) and the procedure associated.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Server component should run on ACME hardware supported platform.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "ACME recommended platform are RedHat Linux 6.5 (preferably) or Windows 2012 R2.",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Alternative but not recommended hardware are Solaris 10 or HP Itanium or Windows 7.",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Supplier must detail supported hardware platform per component.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Server graphical card requirements.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "ACME is using blade installation in its datacenter, thus Windows 2008 or 7 server with no graphic card, Open GL being supported by Software emulation.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Thus, if supplier is requiring for some server component (3D converter for instance) a specific graphic card with a hardware OpenGL support, the required graphic card must be detailed.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "ACME strongly encourage vendor to get rid of this hardware requirement.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Client hardware support for ACME Intranet Access.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Clients component should run on ACME hardware supported platform.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "ACME recommended platform are Windows 7 64 bits version.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Current supported version is XX.",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Version number may evolve when project will be deployed.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Supplier should detail recommended configuration (RAM, hard disk size, CPU frequency).",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Please detail recommended Client desktop RAM memory size.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Please detail recommended Client desktop hard disk size.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Please detail recommended Client desktop recommended CPU (frequency).",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "In case of ACME Intranet Web access, ACME Intranet user will run on Internet Explorer 11.0.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Please indicate minimum version for supported web navigator (Internet Explorer, Firefox etc...).",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "List of additional software to be installed on the client workstation.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "For each additional software, detail version number.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "For instance, Java Runtime environment, MSXML.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "dotNet may be included in such additional software.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Is solution is requiring no proprietary database, it should support Oracle, PostGres (preferably), possibly but not recommended SQL Server.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Recommended version at ACME are: Oracle 11.1.0.7.0 or 10.2.0.4.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Supplier should detail supported database technology.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Recommended version at ACME are: MySQL 5.5.",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Please detail if alternative versions are required.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "MySQL will run on RedHatLinux 6.x.",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Recommended version at ACME are: Oracle standard edition 11.1.0.7.0 or 10.2.0.4.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Please detail if alternative versions are required.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "MySQL will run on RedHat Linux 6.x.",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Recommended version at ACME are: SQL Server 2012 standard Edition R2.",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Please detail if alternative versions are required.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "If supplier is using its own database technology, detail hardware requirements.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "It should run on supported ACME Hardware platform.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If server components can be virtualized, please detail.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "ACME is currently virtualizing using VMWare ESX 5.1U1 (today or 5.1U3 (one year target).",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Thick clients’ component may be installed on Citrix infrastructure for ACME partner access.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "For Citrix emulation, ACME is using XenApp 6 or XenApp 7.5 emulating Windows 2008 R2 or Windows 2012 R2 server or Windows 7 desktop.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The supplier must ensure if it is possible to have multiple simultaneous client instances with different users running on the same Windows servers.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If server component is running on an applicative server, detail technology and component.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "ACME applicative supported platform are Jboss 5.1 running under RedHat Linux 5.6.",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "If alternative technology is used, supplier should detail.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "At best, supplier solution should fully be compatible with a complete component combination (compatibility of J2EE applicative and database version with associated compatible operating system).",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "At least, supplier solution should be installable on one of ACME proposed Operating Systems.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "These operating system have been optimized in order to fulfill security requirements for DMZ access.",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "In case of operating system only compatibility, supplier solution will be considered as “black box”; the maintenance of underlying “standard component” as J2EE server should be granted by supplier.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Solution vendor must detail if he offers such support.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Please detail if solution vendor tool should be accessible from ACME Intranet.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Please detail if Vendor solution could be accessible from ENX network",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Intranet user authentication from solution deployed inside ACME.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Supplier should detail if solution vendor should use LDAP Intranet Directory.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Please detail if ENX authorized protocols are supported between client desktop and ACME ENX DMZ - HTTP/ HTTPS - SOAP with or without WS-Security - CFT (transactional file transfer protocol, concurrent technology with FTP) - MQ Series - ICA over HTTPS (Citrix emulation) - SQL Net Oracle (not recommended)",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "By default, no other protocols are allowed.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Thus license protocols like FlexLM, NAS protocols like (CIFS or NFS) are not allowed.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "ENX Web URL rewriting is supported In case of web access, the reverse proxy at ENX DMZ is rewriting application URL.",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "If URL access inside ACME Intranet is: http://myApplication.intran.ACME.com/MyRootFolder/MyPage.jsp",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The client Web access is using URL http://myENXDNS.ACME.enxo.org/MyENXPrefix/MyRootFolder/MyPage.jsp",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Please detail filtered ENX Citrix Access rules",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Rich client deployed on ENX Citrix farms have limited filtered access to ACME Intranet (only on fixed ports which must be known).",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Vendor should supply list of required ports to access to server components (HTTP, license port etc..., network file access protocols).",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "In case of dynamic or not fixed range port, vendor must specify.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "By default, Citrix farm have no access to NFS or CIFS file storage.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Detail if ciphering transport network protocol is supported.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Solution vendor should support ciphering of network protocol exchange between client and server component.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Security mechanisms provided by solution must handle strong encryption using client certificate installed on client desktop.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Detail ciphering transport network protocol support for HTTP protocol case.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Supplier should detail if solution vendor should support HTTPS/SSL with server and optional client X509 client certificate.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Solution vendor should supply sizing requirements for the solutions based on business sizing data supplied by ACME.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "If further business data are required, solution vendor should request.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "ACME business sizing data includes number of users, number of elementary information unit per business user documentation, actual size of information unit and documentation, location of user like Intranet France, decentralized engineering centers (Rumania, Korea etc...)",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Supplier should explain sizing rules based on business sizing data supplied by ACME (with further details if required by vendor).",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Supplier should detail architecture physical and logical diagram explaining for each machine type, installed components, network protocol flow (protocol, port number) between machines.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "In case of alternative solutions, software vendor should detail sizing for every solution.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "For instance, if Oracle or MySQL are candidate database server.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Sizing for each database serve should be supplied.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Architecture diagrams must detail dataflow with connected ACME IT systems including Technology used",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Please detail if solution is able to send or receive MQ Series Message.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "ACME supported version is 7.0.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Please detail if solution can call Web Service being described by a WSDL file delivered by ACME.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Please detail if solution can call Web Service using Client Certificate Authentication or basic authentication used separately or mixed.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Client certificate may be supplied by ACME owned public Key infrastructure.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Please detail if solution can use WS-Security protocol to cipher and sign Web service message.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "If solution is providing web service access, available Web services must be described.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If solution is proving REST access, available REST services must be described.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Solution vendor must indicate if supplied Web service have WSDL description.",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Solution vendor must indicate if supplier Web services can be authenticated, signed, ciphered.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "In case of authenticated web services, solution vendor must indicate available authentication mechanism (basic authentication, server certificate, server and client certificate etc...).",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "In case of ciphered or signed web service messages, solution vendor must indicate available ciphering mechanism, notably WS-Security support.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "File transfer with ACME Intranet applications.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Please detail if solution vendor support CFT axway solution.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "See http://www.axway.fr/produits- solutions/mft/a2a-mft/transfer-cft for further detail.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Batch processing in environment deployed inside ACME Intranet.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "CFT file transfer server is located in Intranet server and file exchanged with ACME intranet application can be accessed though nas type protocol (NFS or CIFS).",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "If batch processing must be executed from applicative J2EE server, solution vendor must identify a solution to have access",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Failover scenarios: solution vendor should summarize in up to 5 sentences proposed restore procedure for following crash scenarios for solution vendor",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Server crash: Database server crash, Applicative server crash,Full Text indexer crash, Web server crash \r\nComponent server crash, database instance crash, applicative server process interruption",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Filer crash: database content, full text index file, Stream replication.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Response time to access to stream data (video, 3D content) must be granted worldwide.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If, to achieve this, solution may include stream replication mechanisms on several sites (ACME authoring sites like Roumania or India), the solution must be detailed.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Solution element to specify: - when replication happened (on demand or pushed) - can it be filtered according to site location, content criteria or accessing user profile - in case of content criteria, nature of content criteria: attributes, location inside solution database organization, ACME applicability usage (ability to replicate only X95 documentation of diesel engine for instance).",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Data pushed or pulled asynchronously from ACME IT systems will be exchanged by CFT transfer or MQ messages.",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Solution vendor must grant compatibility with these technologies (CFT and MQ) and detail technical solution for both technology integration.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "No impact on real access response time of batch processing.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Solution vendor must grant no response time downgrade caused by batch processing either internal (on the fly full text indexing) or external (exchange with other ACME IT systems).",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Solution vendor must indicate recommended environments used in typical deployment (testing, development, production etc).",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "For each environment, solution vendor must indicate recommended architecture compared to production environment, simplification brought by dedicated usage of environment.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Environment management must enable reduce or ideally hidden lengthy migration process (for instance migration processed in background in database separated from production activity with last minute database change)",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Solution vendor must indicate whether tools are available to import / export content or configuration between environments (for instance move configuration from testing to production environment).",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "For each tool, solution vendor must specify, which data are imported or exported, level of filtering (all data, filtered data), format (XML based, file based, multi or single file), associated procedure.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Solution vendor must detail whether integrity and repair utility tools are available and offered functionalities.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Please detail if solution vendor provides command line to start and stop individual components.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Please detail: data type to store (database, full text index, replicated stream if any, possible other data to store),  the order of backup granting a coherent backup, possible additional backup steps to grant integrity of backup.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Please detail is backup procedure can be performed while vendor solution is stopped.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Solution vendor must specify data to restore (database, full text index, replicated stream if any, possible other data to store), the order of restore granting a coherent recovery, possible additional backup steps to grant integrity of restore.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Please detail if restore procedure can be performed while vendor solution is stopped.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "In case of any event causing major threats for availability of solution, please detail if an event is emitted.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Please detail if at least, a log is written in easily identifiable location.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "In case of use of windows server technology, please detail if Windows event used.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Please detail if Log file are stored in easily identifiable location and use parsable and possibly configurable format.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Please detail if log management is uniformed between different components.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "In case of use of windows server technology, are log written to windows event system?",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "At best, solution provider use SNMP protocol to send alert and give access to indicators about activity of solution components.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "At minimum, every major threats for solution availability is generating log message with easily parse able format.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The log format must contain: level of critical of message, identifier of message, text of message",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Please detail ITO level integration (SNMP, log with associated format, any other mechanism)",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Does the software have a management console and / or an administration console.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Supervision console integration with market tool.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Can the software package interface with market administration or supervision tools (HP / ITO, Nagios).",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Ability to check if software components are available (“applicative ping”).",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Please detail if vendor solution supplies monitoring activity indicators (number of active sessions, memory usage, etc...)",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Is software using license server for client component License server component.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Is software using license server for server component License server technology.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Is software using standard technology (ex FlexLM) or proprietary technology?",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Is batch processing managed with a internal scheduler or can it use an external scheduler like Autosys scheduler.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Solution Windows background processes.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Are server component deployed on Windows server technology using window services?",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "System password protection.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Are technical user identifier and password cyphered in exploitability tools?",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "What is possible programming language(s) for customization Is single language used or language is depending on customized component.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Please detail development tool usable by the client company (Identify parts running on a server and those running on a client)",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Deployment of customization on server component.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Describe mechanism to deploy new configuration / extension on server side.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Is customization must be manually deployed on each client desktop or is there some automatization in order to automatically deploy new configuration on client side?",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Is it possible for user to customize GUI and menus of the software package?",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Is it possible for administrator to customize GUI and menus of the software package?",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Is it possible for developer to customize GUI and menus of the software package by configuration not programming.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Can solution vendor commit to an end-to-end response time or availability?",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Is it global SLA or can it be refined at business workflow level.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Does software vendor offer tools to monitor Service Level agreement like web robot accessing solution vendor in different worldwide location with dedicated business processes?",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Does software vendor offer indicators and associated reports allowing ACME to check quality of services.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "If yes, solution vendor must detail provided indicators and available reporting tools.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Can solution vendor describe backup policy compatible with down time requirements.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "1 h down time per business day (Monday to Friday), 2 hours downtime during week-end day (Saturday and Sunday).",
+    "original_label": "1",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Backup policy description must include: Backup frequency, Backup type, full or delta, Backup retention.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Is ASP architecture dedicated to ACME or mutualized with other customers.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "In case of mutualization, how ASP provider grant no security hole between ACME and other customers.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Environment management critical data management Is testing or development environment containing critical data (data which loss or thief is causing major financial drawback to ACME)?",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "If yes, at best, critical content must be cyphered in testing like in production environment.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "At least, it must be tampered.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Is testing or development environment contains critical data, at best it must be cyphered when moved from one environment to another.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "At least, it must be tampered when moved.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "In case of failure, describe procedure to alert ACME.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Procedure must be detail according to level of critical of failure.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "ASP provider must detail escalation process (actors, tasks) and interaction with ACME during escalation process.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "In case of unexpected workload, what is delay to obtain additional servers Reversibility.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "In case ACME decide to stop ASP mode. Describe procedure in order ACME to get back data held by ACME.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Software vendor must provide architecture diagrams to show how to provide high availability and scalability Location of support.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "ASP provider must detail location of people involved in maintenance and support task at ASP provider site.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Please detail network latency between ASP site and ACME site.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Network latency must be minimal (< 30 ms per network packet).",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Please detail bandwidth requirements between ASP site and ACME site.",
+    "original_label": "1",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Bandwidth must be large enough in order to handle file transfers and real time access at peak work load without any bottleneck.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The purpose of the present Request For Information (RFI) is to obtain preliminary proposals from all those suppliers who may be interested in providing a Communications and Information Systems architectures development tool to support the Spanish Ministry of Defense, in accordance with the criteria provided in this document.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "It should be noted that the purpose of this RFI is not to obtain final proposals.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "These final proposals will be the subject of a subsequent bidding process.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "This RFI is not part of a contract nor does it represent a commitment to be contracted by the Spanish Ministry of Defense.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The technical information collected in this document is provided on guidance, and interested parties may include variations in such proposals information.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "All information or documentation sent to the Spanish Ministry of Defense given this consultation will be confidential and will not be communicated or publicated.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The Order DEF/2639/2015, of December 3rd, which establishes the Spanish Ministry of Defense Communications and Information Systems Policy (CIS Policy), includes in its article 7 the general guidelines by which the planning and the CIS resourcing, its control, organization, operation and maintenance, for the establishment and provision of the associated services, should be governed.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Among such guidelines it is included the technical standarization of these resources, through a hierachical model of architectures similar to that used by NATO, as an instrument of coherence and technical integrity.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "In the article 7.3.a), the CIS Architectures to be developed are established and organized in the following hierachical way: 1st.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Spanish Ministry of Defense Communications and Informations Systems Overarching Architecture (AG CIS/TIC);",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "These architectures will act as a guide and support for the structured and rigorous development of the CIS Capabilities of the Department ensuring the necessary coherence and technical integrity, the feasibility and necessary budget allocation, and the agility in the deadlines and compliance with the operational requirements through the full systems life cycle.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The Instruction 58/2016, of October 28th, of the Secretary of State for Defense, by which the Spanish Ministry of Defense Communications and Information Systems Overarching Architecture (AG CIS/TIC) is aproved, establishes the principles to develop the CIS Architecture.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "This includes: Standarized models for hierachical architectures, Standarized process for architectures development, Reuse and traceability of the architectures content, Service-oriented approach, Shared architectures information.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "To that end, collaborative work systems will be used to facilitate the understanding of the relationships between capabilities, systems and CIS components in every level and between different architecture levels.",
+    "original_label": "0",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "A general common repository will be created where the Spanish Ministry of Defense CIS Architectures will be stored once they are aproved, including the metadata which facilitates its location, record, classification, access, maintenance and provision.",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "This department level repository will facilitate the reuse and traceability of the content of all Architectures.",
+    "original_label": "1",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "On the other hand, the aforementioned AG CIS/TIC includes, among its derived actions, the following steps for its development as follows.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Enable the incremental and sequential development of the Reference and Target CIS Architectures of the Spanish Ministry of Defense, in accordance with what it is established in the AG CIS/TIC and with the operative priorities of the Armed Forces (FAS), guaranteeing full ingration of the CIS Capabilities of the Department in the interoperability policy framework that ensures the end-to-end service provision.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Harmonize the process between the CIS Architecture development and the CIS resources and finance planning in the Defense Planning framework, ensuring the alignment of the CIS Capabilities with the Armed Forces (FAS) and the Department needs regarding the available financial resources.",
+    "original_label": "1",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "This RFI focuses on the technical and functional characteristics of the architecture development tool and its support through the full life cycle.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The request for management information is detailed in the following table.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "This information must be broken down according to the detail that is considered necessary to be able to interpret it correctly.",
+    "original_label": "0",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "SIEM-1 Information about the Company, experience, relevant projects related to this application and certifications.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Volume of business in the sector during the last three years.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "SIEM-2 Marketing model of the tool offered for use from the Spanish Ministry of Defense.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "SIEM-3 Does the Company have made similar supplies to other customers?",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Provide a description of the client, as well as the implementation works.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Companies that are interested in participating in this RFI process, described in this document, may answer the questions and criteria established in the previous sections.",
+    "original_label": "0",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Each Company can respond according to the format established below: \nIn any case, no Company will be excluded from future processes of hiring due to non- compliance with one or more of the requirements established in this document.",
+    "original_label": "0",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The receipt of responses to the request in this document will have a deadline on April 6th, 2018.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Given the information that will be processed by the companies that are selected, as progress in this process, it will be necessary to abide by the established regulatory framework in the Rules of the National Authority for the Protection of Classified Information.",
+    "original_label": "0",
+    "four_class_label": "CONSTRAINT"
+  }
+]

@@ -1,0 +1,1797 @@
+[
+  {
+    "sentence": "System Initialization performs those functions necessary to transform the hardware consisting of the FCP processors, network elements, and on-board I/O devices into a real time system executing tasks with fault tolerant message exchanges.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Whenever a power-on reset occurs, System Initialization shall [SRS194] perform the following functions.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "As part of System Initialization , the Boot ROM shall [SRS234] be configured to, after completing IBIT, call the manufacturer-supplied VxWorks Board Support Package (BSP) initialization software followed by a call to the FTSS System Initialization software.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "System Initialization shall [SRS014] initiate the watchdog timer.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "System Initialization shall [SRS292] enable and reset the processor’s watchdog timer such that, in the absence of a fault, the watchdog timer does not expire and reset the processor..",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "System Initialization shall [SRS008] synchronize the FCP virtual group in the presence of a power on skew of 2.5 seconds.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "System Initialization shall [SRS010] configure the FCP virtual group to use all available synchronized processors, if at least 3 of the 5 FCRs are active.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If any of the FCP processors are not synchronized, System Initialization in the surviving triplex shall [SRS177] attempt to sync with the failed FCP.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If the failed FCP processor has not synced in 2.5 seconds after the surviving triplex has detected the loss of the FCP, then the surviving triplex shall [SRS178], within 1 second, send a single voted VMEbus reset through the NE to the failed FCP.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "System Initialization shall [SRS011] align processor state and congruent aligned memory locations. Processor state includes all registers. It also includes those timers used by FTSS.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The FCP shall [SRS296] configure ICP simplex virtual groups for each channel in the FCP virtual group.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The FCP shall [SRS297] wait up to 15 seconds, after configuring the ICP virtual groups, for communication to start from the ICP.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The application can use this time on the ICP to initialize I/O boards.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "System Initialization shall [SRS215] call an application initialization function to allow the application to (at least) create tasks, create communication sockets, initialize the vehicle mode, and initialize memory alignment allowance.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The FCP shall [SRS221], after application initialization is complete, send an FCP Ready Sync message to the ICP.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The FCP shall [SRS189] wait up to 2.5 seconds (from the sending of the FCP Ready Sync) for the ICP Ready signal.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Note that FTSS will not fail the FCR if this signal is not received within this time.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "FTSS will wait until the normal ICP presence test fails.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The FCP shall [SRS243], if the NEFU ICP fails to send its ICP Ready signal, mask out that ICP, but continue to use the NE.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "System Initialization shall [SRS199], when all other activities are completed, start the 50 Hz timer and enable the timer interrupt.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "This will allow the interrupt handler to initiate normal activities.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "System Initialization, from hardware reset to starting of the 50 Hz timer, shall [SRS015] take no longer than 1.5 minutes.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Whenever the 50 Hz timer interrupt occurs, the interrupt handler invokes the scheduler (there are various ways to implement this invocation, such as using a procedure call or by setting an event; no specific implementation is to be inferred).",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler allows the application to create lists of tasks that run during a given segment of time, at various rates.",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The application can create \"vehicle modes\" to designate a unique segment.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The application can also set up \"rate groups\".",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Each rate group has some number of tasks associated with it, and it also has a rate for those tasks.",
+    "original_label": "Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "These contain the tasks that will run at that rate in different vehicle modes. Some number of rate groups can be associated with a given vehicle mode.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "When an API call is made to change the vehicle mode, the scheduler will disable the tasks associated with all the rate groups in the old vehicle mode, and enable the tasks associated with all the rate groups in the new vehicle mode.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The enabled tasks are then unblocked at the rate given in its associated rate group. An API call is available for the task to call to block itself when it is finished with its cyclic processing.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS017] provide an API call to install a task into a rate group. The API call is invoked during system initialization.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS196] support up to 20 tasks per rate group.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS018] provide an API call to install a rate group into a vehicle mode at system initialization.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS197] support up to 3 rate groups per vehicle mode.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS195] support up to 5 vehicle modes.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The FTSS software shall [SRS002] provide the identical services in all vehicle modes.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS019] provide an API call for an FCP application task to alert the scheduler of a vehicle mode change.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS020] complete the change from one vehicle mode to the next within 1.02 seconds.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "There is up to a full major frame from notification of an impending mode change to acting on it in minor frame 0 of the next major frame plus the time it takes during the next minor frame 0 to switch tasking.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS021] process vehicle mode changes during minor frame 49.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS022] execute cyclic tasks, providing an API call to allow the application to block until its next iteration.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS024] execute as the highest priority FTSS or application task in the system.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS025] keep a minor frame count from 0 to 49.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS027] give tasks priority values according to their rate - the higher the rate, the higher the priority.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS028] detect 50 Hz, 10 Hz and 1 Hz rate group over-runs.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS029] report rate group over-runs to the application via an API service for incorporation in the telemetry data stream.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS216] provide an API call to specify which task was running within the rate group which over-ran.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS030] provide a mechanism to inform a task when it did not complete during the previous frame and restart it at the beginning of the task.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS181] set the 50 Hz interval timer to a count down value so as to cause the next minor frame interrupt at 20 msec from the previous interrupt congruently in all operational FCPs.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS032] issue a 50 Hz interrupt to the ICPs by means of a VMEbus IRQ5 interrupt.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS191] issue the 50 Hz interrupt to all the ICPs with a skew no greater than 330 microseconds.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS033] send the minor frame number, vehicle mode, mission elapsed time (MET), and separation elapsed time (SEP) to the ICP prior to the 50 Hz interrupt. Note: The NE unique identifier (NE ID) is available to the ICPs via the ftss_my_icp() API call.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS034] take no longer than 1 millisecond to execute scheduler and Time Services FTSS overhead tasks in each rate group.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "This means that the time from the 50 Hz timer interrupt to the start of the first task in the 50 Hz rate group will be less than or equal to 1 millisecond, assuming 27 packets of data need to be delivered.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The FTSS software shall [SRS278] provide an API call that provides the application program the minor frame number.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The behavior of synchronous tasks executed by the scheduler must be deterministic.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS035] provide rate groups that execute at 50 Hz, 10 Hz and 1 Hz., with a drift rate no greater than 50 microseconds per second, and with a jitter no greater than 330 microseconds.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS037] provide a method to schedule tasks at a set rate and in a set order within the rate group.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS198] execute all the tasks in each of the rate groups that have been installed in the current mode.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS039] rely on the order used in adding tasks to a rate group to determine the task priorities.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS042] provide a method for a task to be scheduled as a 50 Hz \"helper\" task for source congruency input exchanges and voted output exchanges that starts in a particular minor frame but runs only during every 5th or 50th minor frame, effectively running at a lower, sub-rate, 10 Hz or 1 Hz, respectively.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS270] provide a task deadline capability that allows the application to specify which minor frame a task should start in and finish in.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "All tasks in rate groups and their corresponding schedules for all vehicle modes will be setup at system initialization.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Tasks in a rate group must suspend on a scheduler API call at the top of their execution loop.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "For purposes of handling exceptions, exceptions are defined as either software or hardware exceptions.",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Software exceptions are defined as those mapped into VxWorks signals. All other exceptions are classified as hardware exceptions.",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Upon the occurrence of an exception of either kind (hardware or software), the FCP shall [SRS172] make the error type available to the application, via an API service, for incorporation in the telemetry stream and include all context data relevant to the exception, namely the contents of the Machine State Register (MSR), and the machine status Save/Restore Registers (SRR0 & SRR1).",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The scheduler shall [SRS031] provide a mechanism for a task optionally to define a user written software-exception-handling routine that runs in the context of the task.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "For hardware exceptions and reserved exceptions, the FTSS shall [SRS276] make the error type and its context data available to the application, then return from the exception handler to the task that was running when the exception occurred.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "For software exceptions occurring within the FTSS, the FTSS shall [SRS277] make the error type and its context data available to the application, then restart the offending task at its beginning.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "For other software exceptions, regardless of whether or not a user written exception handling routine is invoked, if an exception occurs, the scheduler shall [SRS173], after making available the error type and context data to the application, resume processing (after the exception-handling routine runs, if provided) at the initialization point of the offending task.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "For software exceptions occurring during Startup, FTSS shall [SRS301] issue a VME reset to the FCR in which the exception occurred.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "There are two types of memory violations that might occur: 1) as a result of a hardware fault or SEU and 2) as a result of a common mode (usually, software) error.",
+    "original_label": "Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Memory violations that result from random hardware faults will be detected in the same way as any other hardware fault is detected in the FTPP and don't require memory protection for them to be detected and dealt with.",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "In the second case, NASA has determined that however the memory protection function is implemented, the policy will be to restart the task that is executing when a memory violation (exception) is detected.",
+    "original_label": "Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "It will be important to take real-life requirements from IIPC member institutions into account.",
+    "original_label": "Not_Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Additionally, the migration application would provide checks and balances throughout the migration process to ensure it is verifiable and working properly.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The operational NEs shall (3.2.2.4.3) enter a \"working group\" TNR routine when the FCPs request to send a TNR packet.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The remote Center Control GUI shall be designed to execute on a public network (e.g., Internet) and transmit equipment requests to the C-2-C software system.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Section 3.8 presents security and privacy requirements.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The TxDOT C2c project initially connected the DFW TxDOT Traffic Management Centers (TMCs).",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "To validate that the migration succeeded, arc_warc_verify will use the METADATA included in the newly generated WARC files to match records with their corresponding ARC files (see FR4, and FR5).",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Keeps an audit trail of all actions.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The FTSS API shall [SRS046] define a methodology for segregating and managing congruent aligned, congruent initialized, and non-congruent memory such that congruent aligned memory is aligned and congruent initialized memory is initialized during channel recovery.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The NE shall (3.2.2.3.1) be configured to automatically enter ISYNC microcode following power on.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Use is governed by the contract requirements as defined in the U. S. Department of Transportation Federal Highway Administration Contract No.",
+    "original_label": "Not_Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The FCP-ICP communications shall (3.4.1.1.1) provide the following capabilities (these are written from the viewpoint of the FCP): 1. Signal the start of the 50 Hz rate group in the ICP. 2. Synchronize frames across the four ICPs. 3. Receive congruent sensor data from ICPs. 4. Send voted actuator and other output device commands to ICPs. 5. Receive health and status of the ICPs and all the FCC hardware for which the ICPs are responsible. 6. Provide the ICPs with current minor frame number, X-38 flight phase/segment number, vehicle mode number, MET, and SEP. 7. Provide the ICPs with notification of FCP memory alignment two minor frames prior to the start of the alignment.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Each approach focuses on all types of materials in the Library’s collections including but not limited to printed monographs and journals, manuscripts and archives, prints and photographs, and audiovisuals.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "This restriction does NOT apply to the ICPs since they are running as simplex VGs.",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Provides access to all versions of digital objects in the repository.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Permanent Failure – A failure is declared permanent when all attempts to reconfigure the channel and remove the failure by means of either a FTSS Response/Recovery Mechanism or a Application Failure Response/Recovery Mechanism have failed.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "At a minimum, the original normalized object, the most recent migrated version and the next-to-the-last migrated version will be kept.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "End-users will be able to search metadata and full text within documents (when available), and view materials in formats readily available to a wide audience such as PDF, JPEG, and XML.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "For a transient NE failure, FDIR shall (3.3.5.24) mask the failed NE.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The map user shall be able to pan the map in each of the following directions: North, South, East or West.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "AIPS and Descriptive Information will be put back together when objects are accessed.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The device status requestor and Center shall support the following information for command timeframe request: Network identifier, Device Type, Days Commands Accepted, Times Commands Accepted.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Lost soul sync – The process by which a lost (i.e., not in sync with the other members of its virtual group) processor is brought into synchronization with the other members of a redundant virtual group.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The group considered functionality of software and systems used to handle existing digital collections (e.g., PubMed Central, the Bookshelf, Images of the History of Medicine and other HMD digital collections) in scope.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Unsynchronized processors shall (3.3.2.20) be excluded from the FCP configuration.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The DH System will backup all system data (configuration, default parameter settings, planning, and usage data) on a daily basis, with the backup time set by the DH Technician at system set up.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "UK (BL) — will contribute both at the requirement specification and testing stages of the project, possibly using their selective archive as test data.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Preserving digital material presents a different set of technological challenges from those of preserving analog material.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Connector P2 shall (3.2.3.1.2.6) have all pins in row z connected to ground;Row d pins 1 through 31 connected to ground and row d pin 32 connected to +5 VDC.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Smart House components consist of household devices (e.g., a heating and air conditioning unit, a security system, and small appliances and lighting units, etc.), sensors and controllers for the devices, communication links between the components, and a computer system, which will manage the components.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Conforms to NLM security policies and requirements to ensure the appropriate level of protection for the AIPs.",
+    "original_label": "Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "To support DMS control in other centers, the Center shall be able to support the following device control command for a DMS: network identifier, DMS identifier, username, password, beacons (on/off), immediate message (MULTI string).",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If a failure in an FCR other than the NEFU is diagnosed when the FCP is configured as a degraded triplex, no action shall [SRS254] be taken. Note that a failed FCR could be diagnosed using any method, including (but not limited to) Continuous BIT, ICP presence test, or NE syndrome analysis.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "environmental data - In the Clarus context, includes all data defined in NTCIP 1204 (Ref. 8)..",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Redundancy Management shall [SRS204] issue a voted reset to the failed channel, if alignment is permitted. (Note that NEFU recovery does not depend on whether alignment is permitted.)",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Scheduler shall (3.3.4.3) set the timer to a count down value so as to cause the next minor frame interrupt at 20 msec (+/- 330 usecs) from the previous interrupt congruently in all operational FCPs.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The presence test shall [SRS184] also ascertain that all processors are executing the same 50 Hz, 10 Hz and 1 Hz frames.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "To support Ramp Meter control in other centers, the Center shall be able to support the following device control command for a ramp meter: network identifier (owner of ramp meter), ramp meter identifier, username, password, plan, duration.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If an FCR is diagnosed as faulty during Startup, Redundancy Management shall [SRS102] exclude the FCP in the faulty channel from the initial FCP virtual group configuration.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "For the first permanent FCP failure, FDIR shall (3.3.5.30) degrade the redundancy level of the FCP from 4 to 3.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "This initial version of DigitalHome will be a limited prototype version, which will be used by HomeOwner management to make business decisions about the future commercial development of DigitalHomeOwner products and services.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The timestamps shall (3.2.2.7.2) be congruent across all members of the destination FCP.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "To support CCTV switching in other centers, the Center shall be able to support the following CCTV switching command: network identifier (owner of CCTV), username, password, video channel input identifier, video channel output identifier.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Norway (NL) — will contribute through testing and collaborating, based on their own plans to convert their web-archive to WARC (approximately 2,000,000,000 URLs).",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The FTSS software provides Scheduling Services, Communication Services, Time Services, Memory Management Services, Fault Detection and Isolation, Redundancy Management, System Support Services, and a Mission Management template.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Associated with the message are descriptor fields describing the sender, receiver, the type of message, and how the message is to be exchanged.",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "See section 3.4 for additional detail.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "All current incidents shall be displayed in tabular format with the following information contained in the table: Location, Type of incident (e.g., accident, lane closure), Severity of incident, Incident status, Travel direction, Effected lanes.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Allows NLM staff to display and perform manual/visual quality control assurance on staged SIPs via a user-friendly GUI interface.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "A console to report on progress of active migration processes (such as the Heritrix console), manage the process, view logs, etc.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Sockets are the end points of FTSS communication, which provide a transparent interface to the BRVC communications layer and a useful interface to the application layer.",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Section 3.3 describes the CSCI external interface requirements.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The C2C infrastructure is being created using a series of building blocks.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The skew between NEs, measured at delivery of messages to dual-port RAM accessible by the processors via the VME bus, shall (3.2.3.2.6) be no more than 100 nsecs.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Scheduler in the FTPP shall (3.3.4.16) keep all redundant copies of a process, which are executing in different computers, in synchronization.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The prototype NE shall (3.2.3.1.1.2) dissipate no more than 35 Watts.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "A version of the Immediate Message Services shall (3.3.6.12) be provided to the ICPs that allows Class 2 writes to NEs and Class 1 reads from NEs.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Digital preservation is a combination of storing objects in formats that can be migrated, recording appropriate metadata to be able to manage the objects, ongoing monitoring for bit and media degradation and technology obsolescence, and migrating the files to newer hardware and software environments as needed to ensure their continued availability.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Maintains a record of event-driven events and compares it to the contents of the repository.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Memory shall (3.3.9.1) be categorized into congruent (identical data) and non-congruent (data that is not identical) memory.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The waveform and amplitude of the shock pulses shall (3.2.3.1.3.4.2) be sawtooth shock pulse 20g peak, 11 milliseconds nominal duration.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The data definitions and associated lists of valid codes are incorporated in the UK XML/XSD definitions.",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Non-congruent memory is not modified during realignment.",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Fault Tolerant System Services (FTSS) software shall (3.3.1.1) use VxWorks Version 5.4 as the Operating System.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Migration tool to migrate content from a collection of ARC files to WARC files.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The system shall be able to change the state of a power switch (OFF to ON, or ON to OFF), in turn changing the state of an appliance connected to the power switch.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "For acceptance testing, the flight NE shall (3.2.3.1.3.12.1.3) meet the following temperature requirement while operating, 32 F to 132 F (0 C to 55.6 C) at the card edge.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If there is insufficient space to enqueue a message for transmission, Communication services shall [SRS059] return an error to the corresponding task.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The inter-NE communications shall (3.2.3.1.2.9) be through fiber.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Transient Failure –Faults, such as those caused by SEUs, that can be recovered either by the FTSS Response/Recovery Mechanism or by the Application Failure Response/Recovery Mechanism.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Some metadata checks and data conversion may be necessary to allow initial materials to be reviewed",
+    "original_label": "Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "For qualification testing, the sweep time per axis shall (3.2.3.1.3.2.1.2) be 3 minutes, 14.1 g-rms overall.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Section 3.9 discusses environment requirements.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The DigitalHome shall be equipped with various environmental controllers and sensors (temperature controller-sensors: thermostats, humidity controller-sensors: humidistats, contact sensors, security sound and light alarms, and power switches).",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The prototype NE shall (3.2.3.1.1.1) reside on a single commercial grade 6U VME board.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Systems will interface to the “cloud” using a project defined protocol.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Summarizes reports and provides repository performance information and repository holdings inventory reports to Preservation Planning.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Test points shall (3.2.3.1.2.10) be made available at the P2 connector for examining the operational status of the NE.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Center shall support the following status information about each HOV: network identifier (owner of HOV), HOV identifier, HOV name, Link Identifier, status, failure state, plan, state, status source, occupants, next rransition time.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Moves and adds AIPs to storage within the repository",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Checks and records required metadata appropriately in the database. Note: Metadata requirements may vary dependent on the information package type (SIP or AIP).",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The DigitalHome System shall provide users with online documentation about the DigitalHome system installed in their home.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "For example, if Redundancy Management is at 1 minute in its 1.5 minute wait for a channel after the first power cycle request, and alignment is not allowed, when alignment is subsequently allowed Redundancy Management will wait another half minute and then try the next power cycle request.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The CT shall (3.2.2.2.2) also contain time-outs and vote masks.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Continuous BIT shall [SRS094] reset the processor’s built-in watchdog timer at 50 Hz. A failure to reset the watchdog timer within the allotted time (nominally 1.6 seconds) will generate a processor reset.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The flight NE shall (3.2.3.1.3.5.1) be designed to comply with all of the performance requirements specified herein while withstanding the effects of up to 90% relative humidity, non condensing while operating.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The presence or absence of an NEFU ICP shall [SRS220] not impact the FTSS software (i.e. the FTSS ICP load will not be different).",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Keeps an audit trail of all actions.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "A single thermostat shall be placed in an enclosed space (e.g., a room in the house) for which the air temperature is to be controlled.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Significantly modified the structure of the SRS .",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The utility timer shall (3.3.10.24) be available via an FTSS API call(s).",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Redundancy Management shall [SRS281], during memory alignment, configure the NE to mask out the processor being re-synchronized.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Allows searching by outside search engines such as FirstGov, Google and Yahoo, according to current NLM protocols and security policies.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The timestamps shall (3.2.2.7.3) also be congruent across all active processors in the case of a broadcast.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The needs of the Repository may require a new schema or additional schemas, more congruent with the existing NLMCommon DTD and the NLMCatalogRecord DTD. (Available at http://www.nlm.nih.gov/bsd/licensee.html)",
+    "original_label": "Not_Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Each flight NE shall (3.2.3.1.2.11) dissipate no more than 35 Watts.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "ITE - Institute of Transportation Engineers.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Receives reports from Monitor Designated Communities.",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The Electronic Logbook data may be populated from other, existing, onboard electronic systems, e.g. a GPS for inserting the date, time and location of transmission, or for inserting the same items at the time of capture, onboard weighing systems, existing onboard database(s) to avoid duplication of data entry.",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Duplicate detection shall find and report WARC records with the same checksums.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The requirements are documented at a high level, and the rationale for any addition or modification to the detailed OAIS functions has been noted.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "NLM follows the HHS/NIH security standards.",
+    "original_label": "Not_Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The ELSS must provide data capture screens for the entry of the logbook, transhipment and landing declaration data that is required to be transmitted to the UK fisheries administrations’ ERS system.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Receives repository approved standards and migration goals from Administration.",
+    "original_label": "Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The Repository System keeps an audit trail of all actions.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Upon completion of logging a Power-up test or Initial BIT test failure, the FTSS system shall (3.3.2.44) consider the ICP failed and attempt recovery actions as stated in requirement 3.3.5.29.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The ISYNC procedure shall (3.2.2.3.4) terminate when all 5 NEs are synchronized, four NEs are synchronized (when only four NEs are powered), or after the time-out period.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "This Functional Requirements Specifications (FRS) is a base-line statement of functional requirements for the project as a whole, including high-level estimates of effort and schedule, based on the above approach and assumptions and best-practice estimation.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The CBIT shall (3.3.5.5) be executed at a 50 Hz rate, after all 50 Hz flight critical operations are complete.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Ingest Preparation which is listed in this chart is not a component of the OAIS model but has been included as a necessary function for the NLM Digital Repository.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "It is intended primarily as a working document for NLM staff and defines the range of subjects to be acquired and the extent of the Library's collecting effort within these subjects.x",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Backplane connector form factors shall (3.2.3.1.2.5) be in accordance with the VME64 with extensions (5 row P1 and P2) draft standard.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Memory Management software shall (3.3.8.14) include (but not be limited to) memory scrubbing and memory realignment.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Together, these projects provide a compelling implementation of the WARC standard, and provide a robust engineering foundation for further development of tools and applications centred around WARC files and their usage.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Product MAY provide automated features for populating O the Electronic Logbook information (e.g. interfacing with a GPS feature for inserting the location, date, time etc).",
+    "original_label": "Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Editorial changes to TEI recommendations in Policies Section 6.2.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Correction operation to capture and deliver a formatted correction request for transmission by a vessel’s communications system(s) to the UK fisheries administrations’ ERS system to correct previously send data (COR).",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Responds with advice to handle new requirements.",
+    "original_label": "Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Accepts content from physical media (DVDs, external drives, etc.) or via electronic transfer (FTP) from producers.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The NE shall (3.2.2.5.3) provide the capability to perform a voted VME bus reset.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Load modules of the four FCPs shall (3.3.11.1) be identical.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The FCPs, operating as a single, quad-redundant set, function as the main application processor.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The tools shall provide logging facilities, for example, to follow command progression, i.e. process duration, output levels, etc.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "HomeOwner has designated object-oriented development, using UML 2.0, as the preferred method for development of software for HomeOwner products. Exceptions to this rule must be approved by the CIO.",
+    "original_label": "Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Support Services shall [SRS151] provide an API call to specify the address and length of a telemetry buffer.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "When a single processor forms a virtual group, this is called a simplex virtual group. In the X-38 architecture, each ICP is a simplex virtual group.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The design, manufacturing, and radiation environment composite failure rate/Mean Time Between Failures (MTBFs) of the flight NE shall (3.2.3.1.3.10.1.1) be predicted using techniques in MIL-HDBK 217 or other commonly accepted procedures.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If an alternative is proposed, this should be advised to the Validation Authority and if feasible and practicable the UK Fisheries Administrations will endeavour to extend their ERS system to accommodate alternative methods.",
+    "original_label": "Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The system shall be able to provide information about the state of a power switch (OFF or ON), indicating the whether an appliance connected to the power switch is OFF or ON.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The month report shall provide a section that indicates the periods of time when the DH System was not in operation..",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Preserving the Past to Protect the Future: The Strategic Plan of the National Archives and Records Administration 2006-2016 (2006)",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "“Pavement data” in this context includes surface and subsurface data specified in NTCIP 1204 (Ref. 8).",
+    "original_label": "Not_Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Allows query requests against all metadata used to manage the repository.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The DigitalHome programmable thermostat shall allow a user to monitor and control a home’s temperature from any location, using a web ready computer, cell phone, or PDA.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Has capability to generate reports in an ad-hoc manner, automatically, or to be triggered by a reporting calendar or by a specific system event.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Each flight NE shall (3.2.3.1.2.1) reside on a single ruggedized, wedge-locked, conduction-cooled 6U VME board.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Communication services shall [SRS047] provide \"synchronous\" message passing services in the form of \"message queues\".",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "For a given month and year, in the past two years, DigitalHome shall be able to provide a report on the management and control of the home.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If the failed FCP has not synced in 2.5 seconds, after the surviving triplex has detected the loss of the FCP, then the surviving triplex shall (3.3.2.6) send a voted VMEbus reset through the NE to the failed FCP.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "General public, including both United States users and international users.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Product Feature Description – This section allows a ELSS product supplier to provide a commercial description of their ELSS Approved product which will appear on the Approved Product Register",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Once ingested, metadata should be stored in a single common format. This format should be one that ensures against data loss, and allows a variety of access/distribution options, such as all the schemes mentioned above.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "One username/password must be provided for the owner of each vessel",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Scheduler shall (3.3.4.1) support three rate groups: 50 Hz (minor frame), 10 Hz (medium frame), and 1 Hz (major frame).",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The FCP shall (3.4.1.2.5) signal the start of each minor frame in all ICPs by means of a VMEbus IRQ5 interrupt.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "It also addresses selection issues presented by a range of formats and literature types.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Submission schedules may be set on a periodic or ad-hoc basis.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "A primary goal of the conversion of content for the repository is the preservation of the content.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Both onsite access and Internet supported off-site access is needed for end-user access to the repository.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "NLM expects to use separate software for web harvesting.",
+    "original_label": "Not_Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "For example, a Master User shall be able to add a user account or change the default parameter settings. He/she will have the same right as the DH Technician, described in section 3.2.2.4.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The FDIR shall (3.3.5.4) execute CBIT during all operational phases.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The month report shall contain daily average, maximum (with time) and minimum (with time) values of temperature and humidity for each thermostat and humidistat, respectively.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The FTPP system shall (3.3.2.28) configure the Radstone processor to continue processing if any of the Power-up tests or Initial BIT tests mentioned in Table 3.3.2.1, FCP IBIT Table, fail.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "quality control - The operational activities and techniques required to ensure that quality requirements have been fulfilled.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The Center shall support the following status information about each Traffic Signal: network identifier (owner of traffic signal), traffic signal identifier, traffic signal name, location (latitude/longitude), status, status source, state, failure state, plan, plan expiration, signal preemption.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Up to eight thermostats shall be placed in rooms throughout the home.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "It shall be possible to operate the tools in modes that restrict their effects to selected collection subsets. For example, select by name (see NFR1), random sampling, etc.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Repository System keeps an audit trail of all actions.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "End-users will need to access and use the materials residing in the NLM Repository.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Section 3.2 specifies the CSCI software requirements for each capability as follows:",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Receives updates from other NLM Digital Repository functions (for example, Ingest and Administration).",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Communication services shall [SRS049] provide the capability to \"broadcast\" messages to all virtual groups.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Continuous BIT, in conjunction with Redundancy Management and Scheduler operations running in the 50 Hz rategroup after the application tasks, shall [SRS091] take less than 2 milliseconds under nominal no-fault conditions.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Activities occurring during this time include but are not limited to IBIT, ISYNC, TNR, processors synchronization, task create and initialization, definition and initialization of Communications Services sockets, etc.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "To start more clients in parallel, this code would be called multiple times from either the local machine or any machine on the local network, causing more clients to begin processing the server data concurrently.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "It shall (3.3.5.22) be possible to perform voted VMEbus resets via the NEs.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Appliance Manager shall be able to manage up to one hundred 115 volt, 10 amp power switches.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "A tool will be created to migrate content from a collection of ARC files to a collection of WARC files.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The flight NE shall (3.2.3.1.3.4.1) be designed to be capable of complying with all the performance requirements specified herein after being subjected to a total of six impact shocks, consisting of six shocks (one in each opposite direction) along each of three orthogonal axes.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "NE watchdog timer reset – A reset of the network element that arises as a result of the NE's on-board watchdog timer not being pulsed in a timely, periodic manner.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "TMDD - Traffic Management Data Dictionary.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The FTSS FDIR shall (3.3.5.28) exchange the status information of detected faults in the FCP, ICP, NE, and MPCC/CTC hardware with the NASA provided software.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Lack of standards for file types (e.g., e-books).",
+    "original_label": "Not_Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "OMB - Office of Management and Budget.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Alternate search interfaces should be available for searching via alternate mechanisms such as handhelds and PDAs.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "In the event of conflict between that document and the contents of this specification, Draper will propose resolution of the conflict to NASA for approval.",
+    "original_label": "Not_Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "A DH Technician is responsible for setting up and maintaining the configuration of a DH system.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Generates orders on a periodic basis (e.g., to update a database).",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Support Services shall [SRS299] switch to the redundant MPCC device to continue telemetry and/or remote commanding operations. Note that there are only two CTCs. CTC1 is connected to FCC1 and FCC3. CTC2 is connected to FCC2 and FCC4.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Product MUST provide data capture screens for the entry C of the logbook, transhipment and landing declaration data that is required to be transmitted to the UK fisheries administrations’ ERS system.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "It shall be possible to export summaries in various formats (e.g., XML, CSV).",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Produces profiles of those standards that are sent to Administration as proposals on their potential usage.",
+    "original_label": "Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The data being deposited into the C2C infrastructure will be converted to a standard format (based on the ITS standards).",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The purpose of this document is to specify the Functional Requirements Specification for UK Fishing vessel’s Electronic Logbook and enable a supplier to identify the parts of the UK Fishing Vessel’s Electronic Logbook Functional Requirements Specification supported by their product so that these features are validated within the ELSS Approval Programme.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "A DH Technician is specially trained by DigitalHomeOwner to be familiar with the functionality, architecture, and operation of the DH system product.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "This recovery requirement includes the time from which the FTSS software initiates the recovery to the time the recovery is complete.",
+    "original_label": "Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Section 3.7 presents safety requirements.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The NLM Collection Development Policy defines the scope of the NLM Digital Repository.",
+    "original_label": "Not_Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Keeps an audit trail of all actions.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The development team will use the development process specified by the Digital HomeOwner Inc.",
+    "original_label": "Not_Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "FDIR shall (3.3.5.3) report the total FCC status to the Vehicle/Mission Manager when requested to do so by the Vehicle/Mission Manager.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The FDIR shall (3.3.5.12) not take more than 3 msec per minor frame while processing faults.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The migration and validation tools are described below.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "A packet size is assumed to be 60 bytes.",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "This document describes the requirements for the Dallas/Ft.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "As an alternative it can use an external ARC reader (for example arcreader from Heritrix) or even a wrapper on a non-ARC based extractor.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The RSS Number will require to be padded with trailing X’s to ensure that it is always 6 characters in length.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Provides AIPs to Access to generate Dissemination Information Packages (DIPs).",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Includes a storage request which provides a storage confirmation for the AIP.",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "This level may be sub-divided into location level access when materials are only available via specific work stations or areas, such as the NLM Reading Room due to subscription or purchase requirements and licenses.",
+    "original_label": "Not_Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "FTSS shall (3.3.11.8) provide an API call which allows the application to specify which MPCC channels in a C&T FCR should be used for telemetry and/or command reception.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Repackaging will allow pre and post record, file and job operations",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "A “Smart House” is a home management system that allows home residents to easily manage their daily lives by providing for a lifestyle that brings together security, environmental and energy management (temperature, humidity and lighting), entertainment, and communications.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "A DigitalHome system shall be able to manage up to fifty door and window contact sensors.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "System should have built-in checks on the incoming metadata. Records not containing the minimally defined set of fields should be flagged as problems, either to be returned to the submitter, or sent locally for metadata enhancement.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "NIST - National Institute of Standards and Technology.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The FCP watchdog timer shall (3.3.5.38) remain active during memory re-alignment.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The C2C infrastructure must interconnect several dissimilar traffic management systems.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "To provide a Microsoft Windows application that will allow agencies without a formal Traffic Management Center (TMC) to participate in the C2C infrastructure and information sharing.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Once every medium frame, the FTSS software shall (3.4.2.3) accept a pointer from the telemetry program to the buffer space containing the telemetry data.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The GBRRN attribute is defined uniquely as the vessels’ RSS Number appended to the current date (in YYYYMMDD format) and a 6 digit sequence number, e.g. RSSNumber+YYYYMMDD+999999. An example of the contents of an email subject could be ERS – A1234520090623000001.",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "It should be noted that libwarc and WARC Tools in general have been implemented to deal with very large scale operations by ensuring all functionality is performed with minimal memory usage and performed atomically by simple tools in the style of UNIX.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The software shall (3.3.1.2) be written in the C programming language, with the exception of the system loader software which may be written in scripts, and operate on a PowerPC 604R.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The FTSS communication services provide message-passing capabilities that are layered on top of the packet based network element communication hardware.",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The DH system will be tested in a simulated environment.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "In order to fulfill this mandate, it is essential that the Library develop the robust infrastructure needed to manage and preserve a large amount of material in a variety of digital formats.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "It shall be possible to repackage WARC files by filtering records based on URL (regular expressions)",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The library and tools are scriptable (command lines in shell scripts, dynamic language bindings to the library), and programmable (dynamic language bindings, Java packages, and the C library itself).",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "To evaluate the conformance of a particular Electronic Logbook Software System (ELSS) product to the UK Fishing Vessel’s Electronic Logbook Functional Requirements Specification, it is necessary to have a statement of which capabilities and options have been implemented.",
+    "original_label": "Not_Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "STWSP - Surface Transportation Weather Service Provider.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Even though memory scrubbing is performed locally and the errors would not be congruent, the recording of errors shall (3.3.8.10) be congruent.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Repository System keeps an audit trail of all actions.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The telemetry capability shall [SRS149] transfer the telemetry block from the FCP to the FCC-MPCC connected to the CTC.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Objects in the repository shall have sufficient technical metadata to assure functionality (e.g. viewing and display) in the present and enable forward migration for future accessibility and use. Technical metadata requirements for objects created by NLM will be developed on a format-specific basis.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The National Library of Medicine acknowledges that this document uses material from the Volere Requirements Specification Template, copyright © 1995 - 2004 the Atlantic Systems Guild Limited.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "For this purpose, we will implement checksum-based deduplication.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "There should be multiple levels of access for viewing and editing of data based on varying operator and metadata classes.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "To provide a software system that is extensible all local or regional partners. This would allow a “local” common repository to be created by “linking” individual partners, a “regional” common repository to be created by “linking” local common repositories and a “statewide” common repository to be created by “linking” regional common repositories.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The NE shall (3.2.2.7.1) place a timestamp in the input information block of each packet successfully delivered to an FCP or ICP.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "FTSS shall [SRS225] provide an API call to allow applications to send a status message to FDIR running on the FCP.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "This is provided mainly for rapid verification of large collections, advisable when confidence in the process is high.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Synchronous message passing sockets shall [SRS055] queue outgoing messages until they are transmitted at frame boundaries. The \"create\" and \"open\" API calls for synchronous sockets allow the application to specify the maximum message size and how many incoming messages the socket may buffer.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Although there are no specific safety requirements, high system reliability is important to insure there are no system failures in carrying out user requests.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The following standards are mentioned in this document:",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Non-functional requirements concerning scale of migration will need to be developed alongside the functional requirements.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The MET shall (3.3.10.6) measure real-time from this event with an accuracy of at most 50 Parts Per Million (PPM).",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Memory alignment shall [SRS294] reset the watchdog timer such that, in the absence of a fault, the timer never expires and resets the processor.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Data Collector shall be designed to support the storage of TMDD data elements and message set information.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Configuration Table shall (3.2.2.4.7) be exchanged and voted into the newly recovered NE.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Integrate the full-text search (search-tools project) module with the WARC browser to provide users with WARC indexing/searching capabilities.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Keeps an audit trail of all actions.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "\"Pipe\" sockets are used for \"immediate\" communication. They may be created with a broadcast capability.",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The Center shall support the following status information about each Vehicle Priority: Vehicle Identifier, Network identifier (owner of signal), Link Identifier, Intersection Identifier, Priority Request Status, Departure Time, Desired Arrival Time, Priority, Vehicle Classification, Service Strategy.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "mimetypes - a mimetype report, with options to show a breakdown by host, domain , crawl, etc.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The ELSS data must be transmitted at the required times set out below in Section 2.5.1.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The migration framework shall provide tools to build reports from WARC files.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The NE shall (3.2.3.2.2) support at least two physical processors per FCR.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The group recommends the use of the TEI DTD in addition to the NLM Book and NLM Historical Book DTDs for encoding certain text materials. A more detailed justification is included in the report accompanying these requirements.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Sends confirmation notification when transfer to archival storage is completed.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Mission Manager Template shall (3.3.3.1) provide a mechanism for (but not limited to) creating and controlling task execution, creating message queues and other interprocessor communication mechanisms, and provide on/off capability for processor resynchronization.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Data operation to capture and deliver formatted ELSS data for transmission by a vessel’s communications system(s) to the UK fisheries administrations’ ERS system (DAT).",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Other intermediary versions may be discarded, and in some cases all versions may need to be retained.",
+    "original_label": "Not_Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The NLM Board of Regents policy statement that “the National Library of Medicine has the responsibility for acquiring the biomedical literature in any format deemed appropriate to the fulfillment of its mission” provides the underpinning for following the CDM policies for selection of materials for the NLM Digital Repository (http://www.nlm.nih.gov/tsd/acquisitions/cdm/).",
+    "original_label": "Not_Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "WIST - Weather Information for Surface Transportation.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Communication services shall (3.3.6.14) provide the capability for a “helper” task to be created to run in the 50 Hz rate group, but running in specific minor cycles (every 5th or every 50th) to provide data from the ICP to the lower rate tasks.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The X-38 NE shall (3.2.2.1.1) provide four types of data exchange primitives as described below, in accordance with the Byzantine-resilient replicated determinism requirements described in [1]. (Class 0, 1, 2, Broadcast)",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The FTSS shall [SRS233] provide an API call to retrieve the current SEP value sent from the FCP over the VME interface. Note that the NEFU ICP will not have this information since it does not have an FCP processor.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Image searching should be provided, including: Figure/description search, Actual image search (like chemical structure search/ draw sample image and find something similar).",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Organizational requirements deal with policies regarding external parties involved with the system, personnel roles, training, and security needs.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Asymmetric I/O calls shall (3.3.11.3) not be allowed to induce a large enough skew to force the FCPs to desynchronize.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "To support HOV Lane control in other centers, the Center shall be able to support the following device control command for a HOV Lane: network identifier (owner of HOV), HOV lane identifier, username, password, Lane Plan, duration.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "No year designation used in any requirement",
+    "original_label": "Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "To this end the UK administrations will provide the Owner with the means for his agent(s) to logon to the ERS website to view the vessel trip record to date and the logbook numbers used, to aid their completion of the reports they wish to submit from their offices.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Babbler – A processor or NE that continually unexpectedly sends messages over the fiber network, thus overloading the fiber network with unnecessary traffic.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The 2 major end-user groups that have been identified are:",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Each copy of the ELSS installed must be provided with a unique (internal?) number that is automatically entered into each transmission to identify the instance of the ELSS from which the report has been transmitted.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "NOAA - National Oceanic and Atmospheric Administration.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Provides metadata searching.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Design constraints apply existing rules or external conditions to the system.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Determines security policies including the application of error control techniques.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Start Up shall (3.3.2.19) test to ensure that all four FCPs are synchronized.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Support Services shall [SRS286] provide an API call which allows the application to specify which MPCC channels in a C&T FCR should be used for telemetry and/or command reception.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The message queue \"create\" API requires the application to specify the sending and receiving virtual group identifiers.",
+    "original_label": "Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Draper shall (3.5.6) deliver FTSS engineering release version 5/6, and any subsequent versions of the FTSS software, only after the release has been proven to work under Tornado 2 for the NT environment.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If some fields are missing, errors will be generated that require operator intervention.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The FTSS software shall (3.4.2.4) move this buffer to the MPCC/CTC over the VMEbus.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Users of the NLM Digital Repository.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Redundancy Management shall [SRS208], within 60 milliseconds after 1.5 minutes has elapsed since the voted reset was sent to the failed channel, if the voted reset fails to recover the failed channel and alignment is still allowed, request from the application a power cycle of the channel. (Note that NEFU recovery does not depend on whether alignment is permitted.)",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The FTPP shall (3.1.14) take no more than 1 second per Megabyte of data to be realigned.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Using wireless communication, sensor values can be read and saved in the home database.",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The user shall be able to click on an incident icon to obtain further information about the incident.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Purpose and Scope of this Document.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Communication services shall [SRS068] provide an API for \"pipe\" communication.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  }
+]

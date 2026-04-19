@@ -1,0 +1,46 @@
+========================================================================
+EXPERIMENT 4 — Classification Accuracy Results
+Test set: 359 sentences (PURE_test, Gemini pseudo-labels)
+========================================================================
+
+── Summary Table ──────────────────────────────────────────────────────
+Classifier                       Macro-F1   Micro-F1    Req-F1 (binary)
+------------------------------------------------------------------------
+Option C: Few-shot Gemini          0.8238     0.9053             0.9605
+Option A: Zero-shot Gemini         0.6346     0.8273             0.9255
+Option B: DistilBERT (fine-tuned)     0.4036     0.6323             0.7837
+
+  Baseline (ReqExp BERT, binary, PURE) : F1 = 0.86  [Ivanov et al., 2022]
+  Note: Binary F1 collapses DECISION+CONSTRAINT+NOISE → non-REQUIREMENT.
+
+── Per-Class Detail ───────────────────────────────────────────────────
+
+  Option C: Few-shot Gemini
+  Class           Precision     Recall         F1    Support
+  ----------------------------------------------
+  REQUIREMENT         0.963      0.959      0.960        241
+  DECISION            0.733      0.786      0.759         42
+  CONSTRAINT          0.824      0.667      0.737         21
+  NOISE               0.825      0.855      0.839         55
+
+  Option A: Zero-shot Gemini
+  Class           Precision     Recall         F1    Support
+  ----------------------------------------------
+  REQUIREMENT         0.877      0.979      0.925        241
+  DECISION            0.500      0.262      0.344         42
+  CONSTRAINT          0.526      0.476      0.500         21
+  NOISE               0.816      0.727      0.769         55
+
+  Option B: DistilBERT (fine-tuned)
+  Class           Precision     Recall         F1    Support
+  ----------------------------------------------
+  REQUIREMENT         0.810      0.759      0.784        241
+  DECISION            0.307      0.548      0.393         42
+  CONSTRAINT          0.000      0.000      0.000         21
+  NOISE               0.512      0.382      0.438         55
+
+── Label Distribution in Test Set ────────────────────────────────────
+  True labels: {'REQUIREMENT': 241, 'DECISION': 42, 'NOISE': 55, 'CONSTRAINT': 21}
+  distilbert: {'DECISION': 75, 'REQUIREMENT': 226, 'NOISE': 41, 'CONSTRAINT': 17}
+  zero_shot_gemini: {'REQUIREMENT': 269, 'CONSTRAINT': 19, 'DECISION': 22, 'NOISE': 49}
+  few_shot_gemini: {'NOISE': 57, 'REQUIREMENT': 240, 'DECISION': 45, 'CONSTRAINT': 17}
