@@ -2,7 +2,7 @@ import { onCall } from "firebase-functions/v2/https";
 import { defineSecret } from "firebase-functions/params";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import * as admin from "firebase-admin";
-import { retrieveForSection } from "./retrieval";
+import { retrieveForSection, CHROMA_URL } from "./retrieval";
 
 const GEMINI_API_KEY = defineSecret("GEMINI_API_KEY");
 
@@ -55,8 +55,8 @@ function cleanSection(text: string): string {
 }
 
 export const generateBrd = onCall(
-  { 
-    secrets: [GEMINI_API_KEY],
+  {
+    secrets: [GEMINI_API_KEY, CHROMA_URL],
     timeoutSeconds: 540,
     memory: "1GiB",
     cors: true
