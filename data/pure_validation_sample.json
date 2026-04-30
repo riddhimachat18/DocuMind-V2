@@ -1,0 +1,302 @@
+[
+  {
+    "sentence": "NOTE: The value of five (5) business days is selected because of the first port notifier, and this would affect SPs operationally if this value is set to less than five business days. (Previously N-150)",
+    "original_label": "req",
+    "four_class_label": "DECISION",
+    "human_label": "DECISION"
+  },
+  {
+    "sentence": "The System user interface must be suitable for users with special needs; that is, compatible with specialist software that may be used and with appropriate interface guidelines",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall be easy to learn.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The System must provide End User and Administrator functions which are easy to use and intuitive throughout.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Taking account of the users’ tasks and information needs: When providing different access paths or navigation structures for different user groups, the tasks and information needs of these user groups should be taken into consideration.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Training requirements shall be determined by the developers of the system in which the XS module is embedded.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "DECISION"
+  },
+  {
+    "sentence": "Using appropriate formats, units of measurement or currency: when designing user interfaces for use by diverse groups, input and output of information elements such as currency, units of measurement, temperatures, date and time, phone numbers, address or postal codes should be designed so that they are usable.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The XS software shall be delivered in accordance with DII COE guidelines.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Because of multimedia capabilities operating system selection is virtually limited to the MS Windows based platform.",
+    "original_label": "req",
+    "four_class_label": "CONSTRAINT",
+    "human_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Readability of text: text presented on the pages should be readable taking into account the expected display characteristics and spatial arrangement, ISO 9241-303 shall be consulted for screen text legibility requirements.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The UI Editor should not only allow the management of the UI of the Vetronics application, but should also support definition of the behavior of the Vetronics system through the connection of real actions to UI elements.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Updated cluster information and scheduling decision – CPU load, node status, queue length, quanta allocated to pending jobs, revised expected finishing deadline of pending jobs. These outputs are facilitated by the functionality of the AUTHOR \\* MERGEFORMAT Sun Grid Engine cluster management system, and are not independently produced by the Libra scheduler.",
+    "original_label": "req",
+    "four_class_label": "CONSTRAINT",
+    "human_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The system should support multilingual interface",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "All error messages produced by the System must be meaningful, so that they can be appropriately acted upon by the users who are likely to see them.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Personnel requirements shall be determined by the developers of the system in which the XS module is embedded.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "DECISION"
+  },
+  {
+    "sentence": "The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "This is the function that is responsible for determining the possibility of satisfying the user, given his budget and deadline. Hence, the most important inputs are budget, deadline, and execution time, to determine whether the job can be accepted or not.",
+    "original_label": "req",
+    "four_class_label": "DECISION",
+    "human_label": "NOISE"
+  },
+  {
+    "sentence": "The system should be able to run under debug mode.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Customers will be presented with an unambiguous interface to assist in browsing the categories and products.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall be able to add product to shopping cart in less than 2ms.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should be designed in manner that operational data is not lost in case of any failure of equipment or communication network.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Placing title information consistently: Page titles should be placed in a consistent location on the different pages.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Showing users where they are: Each presentation segment (page or window) should provide the user with a clear and sufficient indication of where he or she is in the navigation structure and of the current segment position with respect to the overall structure.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Customers will be able to register, log in, and log out of their accounts.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The System must allow persistent defaults for data entry where desirable. These defaults should include: user-definable values; values same as previous item; values derived from context, e.g. date, file reference, user identifier;",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should provide for role-based control for the functionality within the system.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall be able to retrieve 200 products per second.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "This decision is different from the Accept/Reject Job feature described later on, which deals with the situation when the cluster is open for job submissions, but will decide on whether to accept or reject a job based on job parameters such as budget provided and deadline specified.",
+    "original_label": "req",
+    "four_class_label": "DECISION",
+    "human_label": "NOISE"
+  },
+  {
+    "sentence": "Text quality: the quality of textual content with respect to spelling and grammar should be sufficient so as not to impede readability.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "It then selects the appropriate queue based on whether the job is sequential or embarrassingly parallel, budget, etc…",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "DECISION"
+  },
+  {
+    "sentence": "The interfaces must be made customizable or user-configurable to the extent possible. (e.g., the displayed columns in the table, move, resize, modify the appearance).",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall be able to search for a specified product in less than 1 second.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The interface will be compatible with all major web browsers such as Internet Explorer, Mozilla Navigator, Mozilla Firefox, Opera, and Safari.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Offering alternative access paths: Alternative access paths for navigating to a specific unit of content should be offered to support different navigation strategies.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If a user performs a quick or advanced search, the System must never include in the search result list any record which the user does not have the right to access.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The MultiMahjongServer will allow players on MultiMahjongClient programs to modify their own names and icons during gameplay (as opposed to only at the beginning).",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "DECISION"
+  },
+  {
+    "sentence": "The MultiMahjongClient must only allow players to make moves according to the Chinese rules of Mahjong as described in the rulebook, \"How to Play Mah Jong\".",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Making user interfaces robust: User interfaces should be designed to be as robust as possible in the face of changing technology, this encompasses being able to present content containing newer technologies by older user agents as well as designing content to be usable with future technologies.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The System must provide adequate response times for commonly performed functions under both standard and peak conditions.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "From our hardware development and customer requirements we had learned that all have very specific needs concerning not only on User Interface but also real Hardware Interfacing to several peripherals.",
+    "original_label": "req",
+    "four_class_label": "NOISE",
+    "human_label": "NOISE"
+  },
+  {
+    "sentence": "The following table depicts the mapping of the requirements in Section 3 to their corresponding precedence and criticality code and to other related requirements within the XS SRS.",
+    "original_label": "req",
+    "four_class_label": "NOISE",
+    "human_label": "NOISE"
+  },
+  {
+    "sentence": "If a user requests access to, or searches for, a case which he does not have the right to access, the System must provide one of the following responses (selectable at configuration time): display title and metadata; display the existence of a case but not its title or other metadata; do not display any case information or indicate its existence in any way, these options are presented in order of increasing security, note that the requirement in the third option (i.e. the most stringent) implies that the System must not include such cases in any count of search results; this level of security is normally appropriate for cases dealing with matters such as national security.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Data can be transferred according to one of the following principles: A. Periodic data transfer (all data or only data that has changed since last transfer), B. Data transfer on demand, C. Event driven (spontaneuos) data transfer, D. Command transfer, E. Set point transfer.",
+    "original_label": "req",
+    "four_class_label": "NOISE",
+    "human_label": "DECISION"
+  },
+  {
+    "sentence": "This requirement is intended to allow for cases where cases used infrequently are stored on slower media than more active records.",
+    "original_label": "req",
+    "four_class_label": "NOISE",
+    "human_label": "NOISE"
+  },
+  {
+    "sentence": "The System must allow only admin-users to set up user profiles and allocate users to groups.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Clicking add item takes you directly to the inventory matrix so that the item category can be selected, then to the item details screen.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "DECISION"
+  },
+  {
+    "sentence": "The system shall display the detailed information about the selected order.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "NPAC SMS shall use the value in the \"Scheduled Date/Time for Block Activation\" field as the date and time, in Central Time, that the Block Creation scheduled event will occur, when the NPAC Origination has been selected by NPAC Personnel while creating NPA-NXX-X Holder information, or when re-scheduling a Block Create Event. (Previously N-73)",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should work even in an offline mode with the critical functionality",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The user interfaces should be designed to make them user-intuitive.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT",
+    "human_label": "REQUIREMENT"
+  }
+]

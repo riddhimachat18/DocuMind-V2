@@ -1,21 +1,27 @@
 import { onCall } from "firebase-functions/v2/https";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import * as admin from "firebase-admin";
-import { storeSnippet } from "./storeInChroma";
-import { defineString } from "firebase-functions/params";
+import { ChromaClient } from "chromadb";
 import { defineSecret } from "firebase-functions/params";
+import { FEW_SHOT_PROMPT } from "./classifyText";
+
 const GEMINI_API_KEY = defineSecret("GEMINI_API_KEY");
 
 if (!admin.apps.length) admin.initializeApp();
 const db = admin.firestore();
 
-const chromaUrl = defineString("CHROMA_URL", { default: "" });
+async function embedQuery(text: string, key: string): Promise<number[]> {
+  const genAI = new GoogleGenerativeAI(key);
+  const model = genAI.getGenerativeModel({ model: "gemini-embedding-001" });
+  const result = await model.embedContent(text);
+  return result.embedding.values;
+}
 
 export const onFileUploaded = onCall(
-  { 
+  {
     secrets: [GEMINI_API_KEY],
-    cors: true,  // Enable CORS for all origins (development + production)
-    timeoutSeconds: 540,  // 9 minutes (max for gen2)
+    cors: true,
+    timeoutSeconds: 540,
     memory: "512MiB"
   },
   async ({ data, auth }) => {
@@ -54,6 +60,8 @@ export const onFileUploaded = onCall(
     const genAI = new GoogleGenerativeAI(key);
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
+    const VALID = ["REQUIREMENT", "DECISION", "CONSTRAINT", "NOISE"];
+
     // Split content into chunks at sentence boundaries
     function splitIntoChunks(text: string, maxLen = 800): string[] {
       const sentences = text.match(/[^.!?]+[.!?]+/g) ?? [text];
@@ -85,6 +93,7 @@ export const onFileUploaded = onCall(
     const batch = db.batch();
     const snippetIds: string[] = [];
     const snippetTexts: string[] = [];
+    const snippetClasses: string[] = [];
 
     // Process chunks in parallel batches of 10 to avoid timeout
     const BATCH_SIZE = 10;
@@ -95,15 +104,12 @@ export const onFileUploaded = onCall(
       
       const results = await Promise.allSettled(
         batchChunks.map(async (chunk) => {
-          const prompt = `Classify this text as REQUIREMENT, DECISION, CONSTRAINT, or NOISE.
-Return JSON only: {"label": "...", "confidence": 0.0-1.0}
-
-Text: "${chunk.slice(0, 300)}"`;
-
+          const prompt = FEW_SHOT_PROMPT.replace("{sentence}", chunk.slice(0, 500).replace(/"/g, "'"));
           const result = await model.generateContent(prompt);
-          const raw = result.response.text().replace(/```json|```/g, "").trim();
-          const parsed = JSON.parse(raw);
-          
+          const raw = result.response.text().trim().toUpperCase().split(/\s/)[0];
+          const label = VALID.find(c => raw.startsWith(c.slice(0, 4))) ?? "NOISE";
+          const parsed = { label, confidence: 0.9 };
+
           return { chunk, parsed };
         })
       );
@@ -129,6 +135,7 @@ Text: "${chunk.slice(0, 300)}"`;
 
             snippetIds.push(ref.id);
             snippetTexts.push(chunk);
+            snippetClasses.push(parsed.label);
             breakdown[parsed.label as keyof typeof breakdown]++;
             snippetCount++;
           }
@@ -141,26 +148,43 @@ Text: "${chunk.slice(0, 300)}"`;
     // Commit all snippets to Firestore
     await batch.commit();
 
-    // Store snippets in ChromaDB in parallel (optional - continues if fails)
-    const chromaUrlValue = chromaUrl.value();
+    // Store classified snippets in ChromaDB with embeddings
+    const chromaUrlValue = process.env.CHROMA_URL ?? "";
     if (chromaUrlValue && snippetIds.length > 0) {
-      await Promise.allSettled(
-        snippetIds.map((id, i) => {
-          const chunk = snippetTexts[i];
-          if (!chunk) return Promise.resolve();
-          
-          return storeSnippet(
-            {
-              id,
-              text: chunk,
-              metadata: { projectId, source: "meeting", filename },
-            },
-            key
-          ).catch(e => {
-            console.warn(`ChromaDB store failed for snippet ${id}:`, e);
-          });
-        })
-      );
+      try {
+        const chroma = new ChromaClient({
+          ssl: true,
+          host: new URL(chromaUrlValue).hostname,
+          port: 443
+        });
+        const collection = await chroma.getOrCreateCollection({
+          name: "documind-snippets",
+          embeddingFunction: { generate: async () => [] }
+        });
+
+        for (let i = 0; i < snippetIds.length; i++) {
+          const text = snippetTexts[i];
+          if (!text) continue;
+          try {
+            const embedding = await embedQuery(text, key);
+            await collection.upsert({
+              ids: [snippetIds[i]],
+              embeddings: [embedding],
+              documents: [text],
+              metadatas: [{
+                projectId,
+                source: "upload",
+                filename,
+                classification: snippetClasses[i]
+              }]
+            });
+          } catch (e: any) {
+            console.warn("ChromaDB upsert failed for snippet:", e.message);
+          }
+        }
+      } catch (e) {
+        console.warn("ChromaDB batch store failed, snippets saved to Firestore only:", e);
+      }
     } else if (!chromaUrlValue) {
       console.warn("CHROMA_URL not configured, skipping ChromaDB storage");
     }

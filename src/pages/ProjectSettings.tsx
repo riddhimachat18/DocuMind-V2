@@ -3,6 +3,7 @@ import { useApp } from "../context/AppContext";
 import { useState, useEffect } from "react";
 import { deleteProject, getProjectDeletionSummary } from "../services/projectService";
 import { toast } from "sonner";
+import IngestModal from "../components/IngestModal";
 
 const ProjectSettings = () => {
   const { id } = useParams();
@@ -11,6 +12,7 @@ const ProjectSettings = () => {
   const project = projects.find(p => p.id === id);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [ingestModal, setIngestModal] = useState<"gmail" | "slack" | null>(null);
   const [deletionSummary, setDeletionSummary] = useState<{
     brdVersions: number;
     uploadedFiles: number;
@@ -120,12 +122,13 @@ const ProjectSettings = () => {
         <section className="mb-10">
           <h2 className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-4">Connected Sources</h2>
           <div className="border border-border bg-card divide-y divide-border">
-            {[
+          {[
               { id: "gmail", label: "Gmail", icon: "✉" },
               { id: "slack", label: "Slack", icon: "#" },
               { id: "meeting", label: "Meetings", icon: "◎" },
             ].map((src) => {
               const connected = project.sources.includes(src.id);
+              const canIngest = src.id === "gmail" || src.id === "slack";
               return (
                 <div key={src.id} className="px-4 py-3 flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -138,13 +141,22 @@ const ProjectSettings = () => {
                     ) : (
                       <span className="text-xs text-muted-foreground font-mono">Not connected</span>
                     )}
-                    <button className={`text-xs border px-3 py-1 transition-colors ${
-                      connected
-                        ? "border-border text-muted-foreground hover:border-red-400/50 hover:text-red-400"
-                        : "border-primary text-primary hover:bg-primary/10"
-                    }`}>
-                      {connected ? "Disconnect" : "Connect"}
-                    </button>
+                    {canIngest ? (
+                      <button
+                        onClick={() => setIngestModal(src.id as "gmail" | "slack")}
+                        className="text-xs border border-primary text-primary px-3 py-1 hover:bg-primary/10 transition-colors"
+                      >
+                        Ingest
+                      </button>
+                    ) : (
+                      <button className={`text-xs border px-3 py-1 transition-colors ${
+                        connected
+                          ? "border-border text-muted-foreground hover:border-red-400/50 hover:text-red-400"
+                          : "border-primary text-primary hover:bg-primary/10"
+                      }`}>
+                        {connected ? "Disconnect" : "Connect"}
+                      </button>
+                    )}
                   </div>
                 </div>
               );
@@ -190,6 +202,16 @@ const ProjectSettings = () => {
           </div>
         </section>
       </main>
+
+      {/* Ingest Modal */}
+      {ingestModal && id && (
+        <IngestModal
+          projectId={id}
+          source={ingestModal}
+          onClose={() => setIngestModal(null)}
+          onSuccess={(count) => toast.success(`${count} snippets added to project`)}
+        />
+      )}
 
       {/* Delete Confirmation Modal */}
       {showDeleteConfirm && (

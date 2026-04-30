@@ -1,0 +1,1437 @@
+[
+  {
+    "sentence": "Selecting appropriate page lengths The length of a page should be selected so as to support the primary purpose and use of the page.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should be implemented using Service Oriented Architecture (SOA) and have a modular design",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should be developed to be deployed in a 3-tier datacenter architecture",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should be designed to have a n-tier architecture with the presentation logic separated from the business logic that is again separated from the data-access logic",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The data management services shall support managing various types of data, database architectures and platforms that includes hardware and software at the specified sites.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The MultiMahjongServer will support an architecture whereby all Computer Opponents (CO) required will reside on it instead of on the MultiMahjongClient programs.",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Although the first prototype complies with the specified functionality we have decided to re-implement it from scratch and carefully design all application interfaces for process communications.",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "To ensure extensibility of the software system, an open architecture has been chosen.",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The software architecture of the firmware should allow the extension with additional functionality.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Local procedures for recovery may incorporate redundancy of selected functions and backup of data.",
+    "original_label": "req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Selected analogue values shall be stored in FIFO-buffers.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Additionally it shall be possible to start a scanning of selected analogue values at a sampling rate up to 25 Hz and a selectable duration. The entire mentioned high rate scanning must be stored in the plant controller.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Additionally it shall be possible to start a scanning of selected binary values at a selectable duration.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Show the user the available options about the submitted job, and information about the progress of job execution. Process selected options if choices are provided to the user to view different aspects of job information.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "This is the feature of Libra that decides how the job will be scheduled based on its budget and deadline. It uses the Stride Scheduling Algorithm to enforce resource allocations (CPU cycles) proportional to a user’s budget and deadline. It is performed by Libra once it has decided that a job can be accommodated.",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "This feature takes the job and inserts it into the queue on the execution host that the scheduler had previously decided it is to be placed in. This is a separate feature since the job may be able to wait for a while before it is given CPU time, allowing other jobs to complete or be scheduled earlier if their deadlines are more urgent. Thus, the dispatcher decides when to actually send the job for execution.",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Libra will utilize the communications architecture of Sun Grid Engine itself, and will not have any unique communications interfaces above of SGE.",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "NOTE: If a single LNP Type is selected, then only that LNP Type will be used, otherwise, if no LNP Type is selected, then no restriction is imposed on the LNP Type as a selection criteria.",
+    "original_label": "req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "NPAC SMS shall allow NPAC personnel to specify a mass update action to be applied against all Subscription Versions selected (except for Subscription Versions with a status of old, partial failure, sending, disconnect pending or canceled) for LRN, DPC values, SSN values, Billing ID, End User Location Type or End User Location Value.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "NPAC SMS shall use the value in the \"Scheduled Date/Time for Block Activation\" field as the date and time, in Central Time, that the Block Creation scheduled event will occur, when the NPAC Origination has been selected by NPAC Personnel while creating NPA-NXX-X Holder information, or when re-scheduling a Block Create Event. (Previously N-73)",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "NPAC SMS shall require NPAC Personnel to enter applicable Block routing data, via the NPAC Administrative Interface, when the NPAC Origination has been selected by NPAC Personnel while creating NPA-NXX-X Holder information, or when re-scheduling a Block Create Event. (Previously N-74)",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "NOTE: The value of five (5) business days is selected because of the first port notifier, and this would affect SPs operationally if this value is set to less than five business days. (Previously N-150)",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "NPAC SMS shall allow NPAC Personnel to select either Active and Partial Failure Blocks Only or Latest View of Block Activity, and shall use the selected choice, for Block data. (Previously B-652.1)",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "NPAC SMS shall verify whether the user requesting the report has the proper viewing privileges for the selected data.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should also provide an e-Blast preview screen that displays all items selected for that week‟s e-Blast, and also all items that have been flagged but not selected.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The cell in the top left corner of the matrix always represents a generic item in the selected department (e.g. a generic appliance when viewing the categories in the appliance department) and is automatically generated by the system.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The cell to the right of the top left corner of the matrix always represents under $5 items in the selected department and is automatically generated by the system.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The screen should display all items for the selected department or category that match the selected filter criteria including attributes, features and/or detail fields",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The available options in the Material, Finish, Color and Features selectors should be the ones defined for the selected department (see Manage Attributes and Details).",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The fields and available options under the Details section should be the ones defined for the selected category (see Manage Attributes and Details).",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If a new target category is selected, User must enter Name, Unique Tag, Location of new category.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "When the option to merge the contents of the selected Categories is selected, the Item Details assigned to the selected Categories are combined and assigned to the target Department or Category.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Clicking the Add Item button takes the user through the inventory matrix so that a category can be selected for the new item.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Clicking add item takes you directly to the inventory matrix so that the item category can be selected, then to the item details screen.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Depending on assigned privileges, staff can view all patron and item fields; patrons can access only selected fields.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Administrators can create dashboards and give access to selected users and groups.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "MARC bibliographic and authority records can be imported and exported, singly and in batch, all fields or selected fields, to and from vendors including OCLC.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Finally, no data remains from data that have been selected to be securely deleted should be left in the storing area of the computer system after the end of the procedure of secure deletion (described in previous chapter), in case of selection of this feature.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Then the selected drive’s partitions are presented in both graphical and detailed mode.",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The system shall display detailed information of the selected products.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall display the detailed information about the selected order.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall display the reviews and ratings of each product, when it is selected.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The SCM system will use TCP/IP as the main communication protocol trough internet/network.",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Our System will be web based system which we will use a web developing language.",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "We will use ASP.NET and C# languages. The system has to be designed on .NET Framework 3.5 using Visual Studio family.",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The system will use MS SQL for our database.",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Utility includes ability to query for candidate materials; ability to save queries for repeated use; ability to manually select titles from query results; and ability to change records of all or selected items to move to new location.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system can generate a report of transactions (holds placed, holds filled, and check-outs) per patron, per library, per selected group o libraries, per system, per county.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "These options are presented in order of increasing security. Note that the requirement in the third option (i.e. the most stringent) implies that the System must not include such cases in any count of search results; this level of security is normally appropriate for cases dealing with matters such as national security.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The System must allow only admin-users to set up user profiles and allocate users to groups.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The System must allow changes to security attributes for groups or users (such as access rights, security level, privileges, password allocation and management) to be made only by super-user.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If a user requests access to, or searches for, a case which he does not have the right to access, the System must provide one of the following responses (selectable at configuration time): display title and metadata; display the existence of a case but not its title or other metadata; do not display any case information or indicate its existence in any way, these options are presented in order of increasing security, note that the requirement in the third option (i.e. the most stringent) implies that the System must not include such cases in any count of search results; this level of security is normally appropriate for cases dealing with matters such as national security.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Where the System employs a graphical user interface, it must allow users to customise it. Customisation should include, but need not be limited to the following changes: menu contents; layout of screens; use of function keys;on-screen colours, fonts and font sizes;",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The user interfaces of the system should comply with Standard ISO 9241.",
+    "original_label": "req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Avoiding opening unnecessary windows: additional windows such as new browser windows or pop-up windows should only be opened if this supports the user’s task, opening new windows can distract, confuse or impede users for a variety of reasons, they can superimpose the primary window, hiding relevant information, they could make it cognitively more difficult to understand the navigation structure with negative effects on both usability and accessibility, they also require additional user actions for closing unwanted windows.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Using descriptive link labels: the target or purpose of a link should be directly indicated by its label, avoiding generic labels such as “go” or “click here” except where the purpose of the link is clear from its context on the page or the labels have commonly understood semantics in the particular application domain. Using appropriate terminology specific to the user’s tasks and information needs is important for making the content easy to understand.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Use of “white space”: “White space” on a page i.e. space filled only with the background color should be used in such a way that it does not impair the visual skimming of the page, while white space is an important means of visually organizing the different content elements on a page, if the distance between the blocks of information displayed becomes too large, rapid skimming of the page can be impeded.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Using colour: colour should be used with care, taking into account human capabilities and restrictions in perceiving colour, and not as the only means of conveying information, color should never be the only means of coding. Some users may have difficulties in perceiving certain colors or color combinations.",
+    "original_label": "req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Providing alternative text-only pages: When style sheets and/or frames are turned off it should be possible for the user to read and understand the page; alternatively, the user should be provided with an equivalent alternative text-only page.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The System must provide adequate response times for commonly performed functions under both standard and peak conditions.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The System be scaleable and must not have any features which would preclude use in small or large police stations, with varying numbers of cases handled.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should ensure high standards of security and access control through: a) Prevent cross-site scripting, b) Validate the incoming data / user request, c) Encode the incoming data / user request, d) Prevent SQL Injection, e) Utilize parameterized queries, f) Sanitizetheuser-inputs, g) Validate the data both at the client and server, h) Do not allow hard delete and perform only soft tagging the row for deletion.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Aggressive page loading to be considered based on the screen and estimate usage pattern, c) Leverage Asynchronous HTTP socket capabilities of web server for scalability and performance, d) Host all the static content (documents, images) on the web server, e) The search results should be fetched from the database in batches of 10 or 20 maximum as configured within the application, f) Display ofrecords on the screen in batches/pagedmanner, g) The search should fetch only the fields that need to be displayed to the user. Only when the user clicks on a particular record to view its further details should a query be fired to fetch the additional details for this particular record only, h) A hierarchical cache should be configured and used for caching of results of most frequently used searches, i) Database Indexes should be applied on the key columns used for searching",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Only IT team member can access and maintain data base servers locally.",
+    "original_label": "req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The MultiMahjongServer will allow players on MultiMahjongClient programs to modify their own names and icons during gameplay (as opposed to only at the beginning).",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The processing for any Computer Opponents (CO) will be done by the MultiMahjongClient program. In a single player game, the MultiMahjongClient will need to process for 3 COs. In a multi player game with 2 human players, each MultiMahjongClient will support 1 CO. In a multi player game with 3 human players, only 1 of the 3 MultiMahjongClients will support a CO. Obviously, in a multi player game with 4 human players, no CO is required.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The MultiMahjongClient must only allow players to make moves according to the Chinese rules of Mahjong as described in the rulebook, \"How to Play Mah Jong\".",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The only option to the user is to quit the game. All processes will be cleaned up (if possible) and the program execution will terminate.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The minimum system requirements for the product to operate under are: 100 MHz processor.  32 Mb of RAM. 10 MB of uncompressed hard disk. 16-bit video card with minimum resolution of 800 x 600.  28.8 Kbps modem and a TCP/IP connection to the Internet, or a TCP/IP LAN connection. For multi player game only.",
+    "original_label": "req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "A switch between modalities must not affect the system operations, consequently there should be no need to re-initiate the dialog status.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The following adaptivity specifications are limited to single user sessions.",
+    "original_label": "req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Mode switches which are not initiated by the system are only possible through input channels.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Because of multimedia capabilities operating system selection is virtually limited to the MS Windows based platform.",
+    "original_label": "req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The UI Editor should not only allow the management of the UI of the Vetronics application, but should also support definition of the behavior of the Vetronics system through the connection of real actions to UI elements.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "From our hardware development and customer requirements we had learned that all have very specific needs concerning not only on User Interface but also real Hardware Interfacing to several peripherals.",
+    "original_label": "req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Data can be transferred according to one of the following principles: A. Periodic data transfer (all data or only data that has changed since last transfer), B. Data transfer on demand, C. Event driven (spontaneuos) data transfer, D. Command transfer, E. Set point transfer.",
+    "original_label": "req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The APAF system web server shall be password protected where appropriate to allow only pertinent ASPERA-3 team members access.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "This decision is different from the Accept/Reject Job feature described later on, which deals with the situation when the cluster is open for job submissions, but will decide on whether to accept or reject a job based on job parameters such as budget provided and deadline specified.",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "User Id and Password – to ensure that only the appropriate user is able to see the job status",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Parameters such as deadline and cost are crucial to the job scheduling and would not normally be changeable. However, if the user wishes to specify a different output directory or a delayed deadline, this may be permitted.",
+    "original_label": "req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "User Id and Password – to ensure that only the appropriate user is able to delete/change the job.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Updated cluster information and scheduling decision – CPU load, node status, queue length, quanta allocated to pending jobs, revised expected finishing deadline of pending jobs. These outputs are facilitated by the functionality of the AUTHOR \\* MERGEFORMAT Sun Grid Engine cluster management system, and are not independently produced by the Libra scheduler.",
+    "original_label": "req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The output comprises the set variables that represent job information submitted with a job. Hence, the exact job details are output: Job details – Job Id, Job type, Standalone Execution time, Location of executable and input data sets, System Type, Budget, Deadline.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "This is the function that is responsible for determining the possibility of satisfying the user, given his budget and deadline. Hence, the most important inputs are budget, deadline, and execution time, to determine whether the job can be accepted or not.",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Job details – Job Id, Job type, Standalone Execution time, Location of executable and input data sets, System Type, Budget, Deadline.",
+    "original_label": "req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Based on the job parameters, the scheduler figures out a priority of the job that reflects the share of CPU time that it deserves and needs according to the specified criteria. The scheduler determines whether the job can be finished by the requisite deadline, given the execution time of the job and the execution status of other pending jobs on various nodes.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "A suggested deadline or cost is given to the user, as a precondition for the job to be accepted.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Allocate tickets to a job based on its budget and deadline and the budget and deadlines of all other jobs on the execution host under debate. Calculate the stride and the pass of the job, where the stride is simply the global stride constant divided by the tickets and the pass is initially just the stride.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "This feature decides on which node and on which queue the job will be placed for execution. It is done on the basis of the job’s budget, execution time and deadline.",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "It then selects the appropriate queue based on whether the job is sequential or embarrassingly parallel, budget, etc…",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The solution should provide detailed context-sensitive help material for all the possible actions and scenarios on all user interfaces in the application.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The help should be accessible to the users both in the offline and online mode.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The solution should provide an interface for the user to log any defects or enhancement requests on the application and track thereafter.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The solution should send alerts (e.g., email, SMS) to the user if the user chooses to whenever any action has been taken on the alert",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The solution should enable the user to track the submitted defect or enhancement request.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The solution should enable the help-desk user to view the reports on the submitted defects or enhancement requests category-wise, status-wise, and age- wise.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The support solution should be accessible to the users both from within the application and also outside the application through a browser interface.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Once the audit trail functionality has been activated, the System must track events without manual intervention, and store in the audit trail information about them.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The System must maintain the audit trail for as long as required, which will be at least for the life of the case to which it refers.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The System must ensure that audit trail data is available for inspection on request, so that a specific event can be identified and all related data made accessible, and that this can be achieved by authorised external personnel who have little or no familiarity with the system.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The System must be able to export audit trails for specified cases (without affecting the audit trail stored by the System).",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The System must be able to capture and store violations (i.e. A user’s attempts to access a case to which he is denied access), and (where violations can validly be attempted) attempted violations, of access control mechanisms.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The System should be able to provide reports for actions on cases organised by workstation and (where technically appropriate) by network address.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The System must allow the user to limit access to cases to specified users or user groups.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should provide for role-based control for the functionality within the system.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The System must allow a user to be a member of more than one group.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The System should allow a user to stipulate which other users or groups can access cases.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If a user performs a quick or advanced search, the System must never include in the search result list any record which the user does not have the right to access.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If the System allows users to make unauthorised attempts to access cases, it must log these in the audit trail.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Any access to cases, and all other activities involving the cases and related documents or data should also need to be stored in the audit trail to ensure legal admissibility and to assist in data recovery.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "All error messages produced by the System must be meaningful, so that they can be appropriately acted upon by the users who are likely to see them.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The System must employ a single set of user interface rules, or a small number of sets to provide a familiar and common look and feel for the application.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The System must be able to display several entities (cases, suspects) simultaneously.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The interfaces must be made customizable or user-configurable to the extent possible. (e.g., the displayed columns in the table, move, resize, modify the appearance).",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The System user interface must be suitable for users with special needs; that is, compatible with specialist software that may be used and with appropriate interface guidelines",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The System must provide End User and Administrator functions which are easy to use and intuitive throughout.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The System must allow persistent defaults for data entry where desirable. These defaults should include: user-definable values; values same as previous item; values derived from context, e.g. date, file reference, user identifier;",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Frequently-executed System transactions must be designed so that they can be completed with a small number of interactions (e.g. mouse clicks).",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The user interfaces should be designed to make them user-intuitive.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Software accessibility ISO 9241-171 shall be the standard for guidance on software accessibility. User interfaces should meet its requirements and recommendations. Content accessibility WCAG 1.0 shall be the standard used for guidance on content accessibility.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "User interfaces should meet its requirements and recommendations. Content accessibility WCAG 1.0 shall be the standard used for guidance on content accessibility.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Content accessibility WCAG 1.0 shall be the standard used for guidance on content accessibility.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The application logo to be available on all pages as a link to the home page.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Providing text equivalents for non-text media objects: All non-text media objects, such as graphical images or video, should be provided with alternative equivalent textual descriptions and/or with equivalent text-based functionality.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Making navigation self-descriptive: Navigation should be designed to help users understand where they are, where they have been and where they can go next.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "General guidance on achieving self-descriptiveness is given in ISO 9241-110.",
+    "original_label": "req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Showing users where they are: Each presentation segment (page or window) should provide the user with a clear and sufficient indication of where he or she is in the navigation structure and of the current segment position with respect to the overall structure.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Offering alternative access paths: Alternative access paths for navigating to a specific unit of content should be offered to support different navigation strategies.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Minimizing navigation effort: The number of navigation steps needed to reach a certain piece of content should be minimized as long as different mental models, navigation strategies and tasks of the user are taken into account.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Splash screens should be avoided unless they provide useful content or feedback about the application state to the user.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If a splash screen is used, a navigation option to skip it should be offered.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Vertical scrolling should be minimized.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Horizontal scrolling should be avoided wherever possible.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Designing for input device independence: user interfaces should be designed to allow activation of controls by a variety of input devices, the ability to choose between different input devices for activating controls such as links, fields and buttons is important both for users who prefer a certain input mode, mobile users and users with disabilities.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "In general, device independence can be achieved if the functionality is operable via a keyboard.",
+    "original_label": "req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Making user interfaces robust: User interfaces should be designed to be as robust as possible in the face of changing technology, this encompasses being able to present content containing newer technologies by older user agents as well as designing content to be usable with future technologies.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Acceptable opening / download times: application pages should be designed and implemented so that there are acceptable opening times and download times for the expected range of technical contexts of use (e.g. bandwidth between the application and the user), this is particularly important for frequently accessed pages or pages that are important for user navigation and exploration, such as the home page.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Minimizing user error: potential user errors as well as the effort needed to recover from errors should be minimized.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Providing clear error messages: the content of error messages shown on the pages or special error pages should clearly state the reason why the error occurred and, if possible, actions the user can take to resolve the error, Users expect error messages to be in the same language as the user interface.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Using appropriate formats, units of measurement or currency: when designing user interfaces for use by diverse groups, input and output of information elements such as currency, units of measurement, temperatures, date and time, phone numbers, address or postal codes should be designed so that they are usable.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Making text resizable by the user: text should be able to be resized by the user, using functions provided by the user agent or other appropriate means i.e. see ISO 9241-171.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Text quality: the quality of textual content with respect to spelling and grammar should be sufficient so as not to impede readability.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Writing style: The reading and understanding of the textual content on the screen should be supported by suitable means, including the use of short sentences, the division of the text into shorter chunks or the presentation of content items in the form of bullet points.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Supporting text skimming: fast skimming of text should be supported by the provision of clear links, bulleted lists, highlighted keywords, logical headings, and short phrases and sentences.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Readability of text: text presented on the pages should be readable taking into account the expected display characteristics and spatial arrangement, ISO 9241-303 shall be consulted for screen text legibility requirements.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Distinguishable within-page links: within-page links should be clearly distinguishable from other links that lead to a different page. ex, within-page links are shown with dashed rather than solid underlines",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Avoiding link overload: Text pages containing large proportions of links should be formatted so that the presence of links does not impede the readability of the text.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Using familiar terminology for navigation links: navigation links — particularly links representing the main navigation structure — should be labelled with terms that are familiar to the user, based on his/her general knowledge, prior experience in the application domain or experience of using other systems.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Marking links opening new windows: links that open new browser windows or pop-up windows should be clearly marked.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Distinguishing navigation links from controls: navigation links should be clearly distinguishable from controls activating some action, typical action types in user interfaces include manipulating application data, performing searches, communication actions, such as opening a new e-mail window or starting a chat function, and Hpresentation-related actions, such as sorting a list of search results.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Providing printable document versions: if a document is either too long, dispersed over several pages or in a specific layout that is not suitable for online reading, a printer-friendly version of the document should be provided that prints the content in a form acceptable to the user (e.g. in the expected layout, paper format, or orientation).",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Short pages are generally more appropriate for homepages, navigation pages, or overview pages that need to be read quickly.",
+    "original_label": "req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Using frames with care: if frames are used, care should be taken to avoid possible problems, for example, those involving the use of the back button, bookmarking of pages, or scrolling of information, when frames are used, it is important to title each frame, and to describe its purpose and how frames relate to one another other.",
+    "original_label": "req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Providing alternatives to frame-based presentation: if frames are used, an alternative way of presenting relevant information without frames should be provided.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Consistent page layout: pages should be designed using consistent layout schemes, supporting the user in finding similar information at the same position on different pages, overall layout schemes apply to all pages and are preferable when all pages have a similar structure, frequently, however, different pages have different purposes and types of content. In such cases, pages can usually be grouped in different categories, using one layout scheme for each category consistently.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Placing title information consistently: Page titles should be placed in a consistent location on the different pages.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Observing principles of human perception when designing application pages, the general principles of human perception should be taken into account.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The International Standards mentioned below shall be consulted for guidance. Practical guidelines for presenting information to the user are to be found in ISO 9241-12.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Guidance on selecting and using different forms of interaction techniques is to be found in ISO 9241-14 to ISO 9241-17.",
+    "original_label": "req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "ISO 9241-14 gives guidance about menus, ISO 9241-15 about command dialogues, ISO 9241-16 about direct manipulation and ISO 9241-17 about forms.",
+    "original_label": "req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Appropriate content presentation also plays a key role in accessibility.",
+    "original_label": "req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Linking back to the home page or landmark pages: each page should contain a link leading to the home page of the application or to a landmark page that is easy to recognize for the user.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Providing a site map: a separate navigation overview such as a site map should be provided for application showing the structure of the site in an overview form.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Consistency between navigation components and content: If navigation components (or overviews) are shown in conjunction with associated content, consistency between the navigation component and the content shown should be maintained by indicating in the navigation component (e.g. highlighting) the topic currently visible in the content area.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Placing navigation components consistently: navigation components should be placed consistently on the pages or in the framesets in the pages of the application.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Individualization and user adaptation : adapting the content and the navigation of a user interface to individual users or user groups can be a useful mechanism for providing information that is of interest to the users and for making access to relevant information more efficient, user adaptation can also be important for making the user interface more accessible, different approaches can be used for achieving these goals, like providing users with means for customizing the user interface to their personal needs i.e. individualization designing content and navigation differently for varying user groups or roles i.e. such as employees of different levels, citizens etc, monitoring the user’s behaviour and adapting to the user’s goals that are inferred from the behaviour observed, recommending information that is potentially more relevant or interesting to the specific user, based on the behaviour of all users or a user group.",
+    "original_label": "req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Taking account of the users’ tasks and information needs: When providing different access paths or navigation structures for different user groups, the tasks and information needs of these user groups should be taken into consideration.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Making individualization and adaptation evident: it should be made evident to the user when individualization and/or adaptation are used.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Making user profiles evident: if predefined user profiles or user-specified profiles are used for individualizing or adapting content, the profile currently used should be made evident, if profiles are used, it is important to provide users with information about this concept and its implications.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Allowing users to see and change profiles: if user-specified profiles are used, users should be able to see, modify and delete that profile on demand.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The System must be able to perform a simple search within 5-8 seconds and a advanced search (multiple search criteria) within 10-15 seconds regardless of the storage capacity or number of cases in the system.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "In this context, performing a search means returning a result list. It does not include retrieving the records themselves.",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The System must be able to retrieve and display within 5-8 seconds the case which has been accessed within the previous 2 months, regardless of storage capacity or number of cases in the system.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The System must be able to retrieve and display within 20 seconds the case which has not been accessed within the previous 2 months, regardless of storage capacity or number of cases in the system.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "This requirement is intended to allow for cases where cases used infrequently are stored on slower media than more active records.",
+    "original_label": "req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Within the same department: data base can be updated directly without any request.",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The system should support multilingual interface",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should be designed in manner that operational data is not lost in case of any failure of equipment or communication network.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should work even in an offline mode with the critical functionality",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should be designed to have satisfactory performance even in Police Stations connected on low-bandwidth",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should be developed on Open Standards",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should be built on a common User Access and Authentication Service to ensure Single-Sign on for the end-user",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should be developed for a centralized deployment and maintenance",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should be extensible to provide access to the interfaces through PDA’s and mobile data terminals",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should adopt standardized formats and common metadata elements",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should be designed for access through browser-based systems and must impose minimal requirements on the client device",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system must support multiple types of communication services for remote access",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should have capability to support public access to a subset of data and functionality",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should support multi-tier authentication where required",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should support SSL encrypted connections",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should support secure virtual private network connections",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should use HTTPS as the communication protocol, i.e., HTTP over an encrypted secure socket layer (SSL)",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should run on multiple browsers",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should support selective encryption of the stored data",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should ensure secure transmission of data over the network and utilize SSL and 2-way digital signatures",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should ensure high scalability and performance through: a) Use of cache for storing frequent data, b) Use of AJAX based technology to improve user experience.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Environmental Mode: This is the real-time operations that must react to varying degrees of readiness to full scale wartime operations such as crisis planning with the use of heterogeneous data types and sources, transfer capabilities, data management services.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "XML Services shall be segmented.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "COE sponsors shall adhere to compliance level requirements described in the I&RTS.",
+    "original_label": "req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "In the fixed (static) mode of operation (base or data processing megacenter), the data management services shall have the capability of being tuned by on-site personnel to adjust for varying workloads and sizes of associated databases.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "These workloads and databases are expected to change more frequently and to a greater extent than for processing associated with deployed units",
+    "original_label": "req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "In a changing (dynamic) environment, such as with deployed units, the workload and database sizes may be more predetermined (given a more precise mission) and require access to fewer data management administrative capabilities than needed in a fixed environment.",
+    "original_label": "req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The XS shall have the ability to redefine or reset names of connect descriptors to database server instances. C",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "onnect descriptors are fully qualified object names and include address (protocol/host/port) and instance name.",
+    "original_label": "req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "In a degraded communications environment, there is a need, for example, to be able to reset session time-out values if the data management services are being accessed by users affected by the communications degradation.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "At a minimum, the session time-out values shall be user definable and be able to be reset prior to initialization of a user session.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The goal is to provide the option of dynamically changing session time values based on current communications performance identified by capabilities of the network management or DBMS.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "End User Mode: Portion of XS services shall be used by various classes of users: data consumers, data and database managers, network information infrastructure resource managers.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Some of these uses of the data management services will entail unique requirements that shall be fulfilled within the capability of XS services.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Maintenance Mode: This mode includes modification and/or addition of application data segments, user permission, privileges, and restructuring storage and memory areas.",
+    "original_label": "req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "In addition, maintenance also shall pertain to shutdown, open not-mounted and online/off-line implementations, modifications, upgrade, or other related actions.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Training Mode. In support of training activities, the data management services shall provide for the same processing as would be encountered in a production environment.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "However, access to the database may be via a training application access to the DBMS rather than from the production mission application.",
+    "original_label": "req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The XS shall deliver inter-related components as shown in figure 3.2-1.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Registry shall provide standard APIs as specified in Appendix B.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The XS function shall provide standard APIs as specified in Appendix C.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The XS shall internally interface (transparent to the operator) with the existing data elements of the DBIF, DAC, and COTS RDBMS products.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Registry software shall be portable and required to execute on COE-compliant platforms.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Personnel requirements shall be determined by the developers of the system in which the XS module is embedded.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Training requirements shall be determined by the developers of the system in which the XS module is embedded.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The XS developer is responsible for software maintenance, software support, and software updates. The DISA Configuration Manager (CM) is responsible for distribution of the XS product to system developers.",
+    "original_label": "req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The XS software shall be delivered in accordance with DII COE guidelines.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The following table depicts the mapping of the requirements in Section 3 to their corresponding precedence and criticality code and to other related requirements within the XS SRS.",
+    "original_label": "req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The precedence and criticality codes are the following: 1 for Essential (E), 2 for Desirable (D), 3 for Optional (O).",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Customers will be able to create accounts to store their customer profiles, configure contact information, view their purchase history, and confirm orders.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Customers will be able to register, log in, and log out of their accounts.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Furthermore, Customer profiles will also include payment information, such as the ability to store credit card information, and address information.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Products will be stored in multi-tiered categories; a category can contain sub categories or products.",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The inventory management will allow for administrators to update the categories, the products placed in categories, and the specific product details.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Customers will also be able to add products into the shopping cart.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The shopping cart will clearly display the number of items in the cart, along with the total cost.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The customer will also be able to add to or remove products from the shopping cart prior to checkout and order confirmation.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Customers will be able to confirm the order after checkout.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If the order is incorrect, the customer will be able to revise and update their order.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The customer will then receive a confirmation email with the specific order details.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Customers will be presented with an unambiguous interface to assist in browsing the categories and products.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Customers will be able to search for products matching their search criteria.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The interface will be compatible with all major web browsers such as Internet Explorer, Mozilla Navigator, Mozilla Firefox, Opera, and Safari.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system will implement an Application Interface to allow for various plug-ins to interact with the system.",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The plug-in API will be well documented and specifications will be provided to plug-in developers.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The order database of WebOrder will communicate with the account system through a programmatic interface for the billing operations.",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Through programmatic interface, WebOrder will transmit information of items ordered by customers to the Inventory management system.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The WebOrder system shall send an e-mail confirmation to the customer that the items they ordered will be delivered to the shipping address along with tracking number.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The WebOrder system shall send an e-mail to System Administrator regarding any technical queries from customers or sales people.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Upon the USB being plugged in the system shall be able to be deployed and operational in less than 1 minute.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall be able to handle 1000 customers logged in concurrently at the same time.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall be able to retrieve 200 products per second.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall be able to add product to shopping cart in less than 2ms.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall be able to search for a specified product in less than 1 second.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall be able to email customer and vendor in less than 1 second.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall be able to validate credit card in less than 2 seconds.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall be able to acquire shipping charges in less than 2 seconds.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall be able to restore 1000 records per second.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system will do periodic backups through a live internet connection.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall validate credit cards against fraud.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall encrypt all sensitive information via https.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall encrypt all customer data in database.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall auto detect IP DOS attacks and block IP automatically.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall detect consecutive failed login attempts.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall be protected by open source firewall called Firestarter. http://www.fs-security.com/",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall have an availability of 99.99%.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall perform searches via Dijkstra's shortest path algorithm.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "For returning customers, the system shall validate 'existing' credit card in system after each log in.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall automatically compress image files that are too large in size.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system will employ on demand asynchronous loading for faster execution of pages.",
+    "original_label": "req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The system shall validate email address existence.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall be easy to use.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall be easy to learn.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall utilize help bubbles to assist managers, customers, and administrators",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall employ easy to locate buttons",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall prompt customer with friend easy to read error messages.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall utilize consistent symbols and colors for clear notifications.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall utilize interchangeable plugins.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall be easily updatable for fixes and patches.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall create logs of all changes, updates, or fixes that are done to the site.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall be easy to upgrade.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall be extremely portable via the usb drive.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall be easy to migrate or backed up via another usb drive.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should be able to run under debug mode.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should be able to run test credit card transactions.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should be able to run test shipping orders.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system should be able to create test environment of weborder system.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system hardware shall be fixed and patched via an internet connection.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Yoggie shall coordinate on future enhancement and features with our organization.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system shall adhere to the following hardware requirements: 4GB Flash ram chip, 128MB SDRAM, Intel XScale PXA270 520-MHz chipset, OS: Apache web server, Database: MySQL.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Inter departments: request must be approved by a DA group member and faculty group member unless it came from a higher level group.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Inter faculties transfer: request can be made by any authorised user and approved by faculty group or higher level.",
+    "original_label": "req",
+    "four_class_label": "REQUIREMENT"
+  }
+]

@@ -1,0 +1,26 @@
+Cohen's Kappa Report
+====================================================
+Samples evaluated : 50
+Observed agreement: 80.0%
+Expected agreement: 57.7%
+Cohen's kappa     : 0.5270
+Interpretation    : Moderate
+
+Confusion matrix (rows=human, cols=Gemini):
+              REQUIREMENT   DECISION      CONSTRAINT    NOISE         
+REQUIREMENT   34            0             0             0             
+DECISION      5             1             0             1             
+CONSTRAINT    2             0             2             0             
+NOISE         0             2             0             3             
+
+Per-class metrics:
+              precision    recall  f1-score   support
+
+ REQUIREMENT       0.83      1.00      0.91        34
+    DECISION       0.33      0.14      0.20         7
+  CONSTRAINT       1.00      0.50      0.67         4
+       NOISE       0.75      0.60      0.67         5
+
+    accuracy                           0.80        50
+   macro avg       0.73      0.56      0.61        50
+weighted avg       0.77      0.80      0.76        50
