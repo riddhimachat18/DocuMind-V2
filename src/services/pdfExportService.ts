@@ -49,6 +49,13 @@ export interface BRDContent {
 
 export interface BRDExport {
   id: string;
+import { storage, auth, db } from "../lib/firebase";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { collection, addDoc, serverTimestamp, query, where, orderBy, limit, getDocs } from "firebase/firestore";
+import { jsPDF } from "jspdf";
+
+export interface BRDExport {
+  id?: string;
   projectId: string;
   version: string;
   versionNumber: number;
@@ -65,14 +72,52 @@ async function getNextVersionNumber(projectId: string): Promise<number> {
   try {
     const q = query(
       collection(db, "brdExports"),
+export interface BRDSection {
+  id: string;
+  title: string;
+  sentences: Array<{
+    id: string;
+    text: string;
+    hasConflict?: boolean;
+  }>;
+}
+
+export interface BRDContent {
+  projectName: string;
+  sections: BRDSection[];
+  qualityScore?: {
+    total: number;
+    completeness: number;
+    consistency: number;
+    clarity: number;
+  };
+}
+
+/**
+ * Get the next version number for a project
+ */
+async function getNextVersionNumber(projectId: string): Promise<number> {
+  try {
+    const exportsRef = collection(db, "brdExports");
+    const q = query(
+      exportsRef,
       where("projectId", "==", projectId),
       orderBy("versionNumber", "desc"),
       limit(1)
     );
-    const snap = await getDocs(q);
-    if (snap.empty) return 1.0;
-    return Math.floor(snap.docs[0].data().versionNumber || 1.0) + 1.0;
-  } catch {
+    
+    const snapshot = await getDocs(q);
+    
+    if (snapshot.empty) {
+      return 1.0;
+    }
+    
+    const latestExport = snapshot.docs[0].data();
+    const currentVersion = latestExport.versionNumber || 1.0;
+    
+    return Math.floor(currentVersion) + 1.0;
+  } catch (error: any) {
+    console.log("Could not query existing versions, starting with v1.0:", error.message);
     return 1.0;
   }
 }

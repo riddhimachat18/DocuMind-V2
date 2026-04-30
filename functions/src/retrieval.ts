@@ -3,6 +3,10 @@ import * as crypto from "crypto";
 import { BM25Scorer } from './bm25Scorer';
 import { RRFMerger, RetrievalSnippet } from './rrfMerger';
 import { CrossEncoderReranker } from './crossEncoderReranker';
+import { ChromaClient } from "chromadb";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import * as admin from "firebase-admin";
+import { defineSecret } from "firebase-functions/params";
 
 if (!admin.apps.length) admin.initializeApp();
 const db = admin.firestore();

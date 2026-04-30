@@ -1,0 +1,752 @@
+[
+  {
+    "sentence": "No application is currently selected at the end of this operation.",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "No file shall be currently selected at the end of this operation.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Rectangle drawn around a sub-tree in a navigation window indicating the sub-tree displayed in the SDT display window relative to the entire SDT.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If no application is currently open, the HATS-GUI will prompt the user to select and open an application, then prompt the user to select a file.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "When a user selects the Application/Save menu item, the HATS-GUI shall save all application configuration information to nonvolatile storage.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "When a user selects the File/Edit menu item, the HATS-GUI shall request that the operating system start a process and load that process with the editor specified by the application configuration.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "No additional white space shall be inserted, and a fixed width font shall be used to display the text.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "A1-4A: System cancels the operation and the application is not saved.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "This file shall be written in ML and have the file extension .lib.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If the user agrees, the configuration shall be saved.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "ParseTLP Generates a parsed transformation language program file from a translation language program parser (parser-program) and a transformation language program (program).",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "When the end of the text is encountered, search will continue from the start of the text until arriving back at the starting location.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The keyboard cursor shall be movable by the arrow keys.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Configure/Node Display menu item shall provide an interface for configuring the display of nodes.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Application/Save menu item shall provide an interface for saving application configuration information.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If changes have been made to the configuration but have not been saved, the user shall be prompted to save the configuration. If the user agrees, the configuration shall be saved.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "A displayed window containing an abstract representation of an entire SDT.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "When a user selects the Application/Save As menu item, the HATS-GUI shall prompt the user for a new application name.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "When a match is found, the HATS-GUI shall highlight the matching text and center the display on the left-most element of the matching text.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The HATS-GUI is a system that will provide a user with an intuitive interface to HATS-SML.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Thus, when a displayed node is selected in the SDT display, the corresponding text in the pretty- print window is highlighted. When the user scrolls to the end of the pretty-printed text display, the display of the SDT should also scroll to the corresponding displayed nodes.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "A list of file names in the currently selected application is presented.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The GUI shall run on Windows 2000, Sun Solaris 8, and Linux operating systems without modification of the Java code.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Table 7 below lists the programs, their arguments, and a description of each program.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "A set of characters in a file name including and following the right-most period of the file name.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "This document shall serve as a reference guide to the developer for software design, implementation, and maintenance.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The step numbers in the alternative indicate what steps in the main scenario are being replaced.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "To generate an SDT from a non-SDT (i.e. string) input file such as a transformation language program or a target.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "These time stamps must be reported with a precision of one second or less.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The HATS-GUI shall change the display by removing the selected nodes from the display and changing the parent and descendant nodes of the removed nodes to nodes with hidden descendants and parents, respectively.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "When deleting an application directory, if the application directory contains a subdirectory, the system shall confirm the deletion of the subdirectory with the user before continuing.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "All files associated with a given application shall be stored in one directory.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The HATS-GUI shall allow the user to continue working while transformations are taking place.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "When searching for text patterns, search begins at the current keyboard cursor location and continues left-to-right, top-to-bottom until the end of the text is encountered.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Searching, selecting, and cursor location motion should be mirrored in the two windows.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "A1-3B: The user selects a configured editor.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Run/Generate Parser menu item shall provide an interface for generating a parser program.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Specifically, when text is selected in the text window, the displayed nodes corresponding nodes in the SDT are highlighted.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "When a user selects the Application/Delete menu item, the HATS-GUI shall prompt the user to confirm the deletion operation.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The HATS-GUI shall begin with the first command and execute the commands sequentially until either an error occurs or all commands in the script file have been executed.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Preconditions: Transformation of a target file was successful and transformation output has been stored and associated with the application.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The file list shall include SDTs in the application. The viewing of outputs is detailed in Section 3.2.3.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The following methods shall be used to select displayed nodes.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If the displayed graph of the entire SDT is too large for the window, a separate, small window with a compressed view of the SDT shall be displayed.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The HATS-GUI shall change the graph display by adding the descendant nodes to the displayed graph (thus changing the expandable nodes to internal nodes).",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Display windows opened by the system shall have buttons for closing the windows.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The system determines the node in the displayed graph closest to the mouse cursor and redraws the displayed graph with this node in the center of the main display.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "System displays text of leaf nodes in currently displayed graph in a text window.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The HATS-GUI shall display 1,000,000 node SDTs in the same amount of time, plus or minus two seconds, as it takes to display a 10,000 node SDT.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "A4-4A: The HATS-GUI creates a parsed program file (Refer to Use Case 1). A4-4B: Use case continues with step 5.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The Configure/Editors menu item shall provide an interface for the user to enter editor configuration information.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Precondition: The system is displaying an SDT generated by a transformation program. The transformation program is executed while the SDT is being displayed. The SDT file is overwritten by the ApplyTransformation program.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "When a user selects the Application/Close menu item, the HATS-GUI shall close the currently selected application.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The HATS-GUI shall provide the function to fully expand a sub-tree regardless of the node expansion level in the application configuration.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "A small box named the locator box will be displayed showing the part of the SDT currently displayed in the main SDT display window.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The HATS-GUI shall use the shape and color of displayed node types stored in the application configuration to display nodes.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The File menu shall contain menu items related to manipulating individual files and for closing the HATS-GUI application.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "For displayed graph windows, the keyboard cursor location shall move according the following rules: A left arrow key moves the cursor to the next unhidden node to the left; The node to the left does not need to be a sibling of the current node, but it does need to be at the same level as the current node; If there are no nodes to the left, the cursor does not move, A right arrow key moves the cursor to the next unhidden node to the right. The node to the right does not need to be a sibling of the current node, but it does need to be at the same level as the current node; If there are no nodes to the right, the cursor does not move. An up arrow key moves the cursor to the closest ancestor that is not hidden. If there is no such node, the cursor does not move. An down arrow key moves the cursor to the leftmost, nearest descendant that is not hidden; If there is no such node, the cursor does not move.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "[SRSreq 36] The View/Standard Error menu item shall provide an interface for viewing error strings collected from HATS-SML.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If no default editor has been selected, then the HATS-GUI shall present a list of the configured editors and allow the user to select an editor.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The root name of a file name is a file name without a path name and without a file extension.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "At a minimum, the system shall provide eight colors (red, yellow, white, black, green, blue, orange, and violet) for displayed nodes.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "When a user selects the Run/Generate Parser menu option, the HATS-GUI shall generate the parser using the MakeParser HATS-SML program as described in Appendix D.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The user shall be able to select an arbitrary set of displayed nodes in a displayed graph.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Configure menu shall contain items related to modifying the configuration of the application.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "When a displayed node is expanded, the number of levels of children added to the displayed graph shall be determined by the application configuration.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "At a minimum, the system shall provide two shapes, rectangles and ellipses, for displayed nodes.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "A search pattern is a string w such that w is a sub-string of a string α and α is a string derived from some non- terminal β in the target grammar.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The HATS-GUI shall allow a user to create an application minimally consisting of a lexical specification file, a grammar file, a user-defined functions file, and application configuration information. The user shall be able to name this application.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Run/Pretty-print menu item shall provide an interface for selecting SDTs and pretty-print style files and formatting the SDT according to the style.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "A text string that represents the sequence of directory names and a file name that uniquely specifies the location of a file in a file system.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "When the end of the SDT is encountered, search will continue from the root of the SDT until arriving back at the starting location.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The HATS-GUI will make a list of these files available to the user and allow the user to select files for display.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "These users are expected to be computer savvy, possessing experience with the operation of editors and software tools, hierarchical file systems, and menu navigation.",
+    "original_label": "Not_Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The complexity of the text search algorithm shall not exceed O(n2) for n nodes.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The HATS-GUI shall be able to communicate with Sun Solaris, Linux, and Windows 2000.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "ALT 1: No applications exist in current directory.",
+    "original_label": "Not_Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "Each active display window shall have a mouse cursor, which indicates the location of the pointing device in the window.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The user shall be able to issue an unhide instruction that reverses the hide instruction for all displayed nodes.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The HATS-GUI shall allow the user to specify the number of levels of nodes to expand during SDT viewing.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "7. The HATS-SML ApplyTransformation program writes output SDTs to files named in the transformation language program. (The transformation language program contains all references to input and output files. The HATS-GUI does not handle file input and file output for ApplyTransformaion.)",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "A small box will be displayed showing the part of the SDT currently displayed in the main tree display window.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The Application/Save-as menu item shall provide an interface for saving an application and its associated files under a different name.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The user shall be able to display more than one SDT at a time. Each SDT shall be displayed in a separate window.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Selecting, and cursor location motion should be mirrored in the two windows.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "When the end of the text is encountered, search will continue from the start of the text until arriving back at the starting location.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The inputs are a user defined functions file (functions) and a program SDT (generated by ParseTLP).",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The text displayed in the text display area shall correspond to the concatenation of the node labels (separated by spaces) of the leaf nodes of the displayed graph (in-order traversal, left to right).",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The user shall be able to collapse displayed nodes.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "A set of nodes shall be selected by holding the shift key while selecting nodes using the methods specified previously in this section.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If the user does not agree, the configuration shall not be saved.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "A2-4B: User chooses to save application (ALT 3).",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "When saving or copying files, the HATS-GUI shall use the following sequence of actions: The HATS-GUI shall prompt the user for a file name for the file to be saved, The HATS-GUI shall examine the contents of the application directory. If a file with the given name already exists, the HATS-GUI shall prompt the user to overwrite the existing file, if the user agrees to overwrite the file, the HATS-GUI shall: attempt to write the new file using a temporary name, o delete the previously existing, then rename the new file. If the user does not agree to overwrite the existing file or if system errors occur while writing or renaming the new file or deleting the previous file, the new file shall not be written and the previous file shall be left unchanged. In the case of an error, the HATS-GUI shall notify the user of the error. For example, the user shall be able to save an SDT generated during transformation program execution. If the user specifies the name of an existing file, the existing file is only overwritten after the user confirms that it is permissible to do so.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Scenario 1: User selects the option to pretty-print a target from the currently selected application.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The HATS-GUI will associate saved files with the application.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "After issuing the unhide instruction, a user shall be able to issue a rehide instruction that reverses the unhide instruction.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Items in the first row of Table 5 are top-level menu items. Items in following rows are second-level menu items.",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The HATS-GUI shall provide the user the capability to search the text display for text sub-strings. The search criteria are described in Appendix F.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Transformations are a well-known formal method for developing software.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The user selects the option to refresh the display of the SDT.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The keyboard cursor is set to this node. If no matches are found, the HATS-GUI shall display a message stating “No Match Found.”",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The File/Select menu item shall provide an interface for selecting files within the currently open application.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The HATS-GUI shall suggest the same file name for files copied to a different directory.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Importing a file consists of copying the file into the application directory.",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The program that results from applying a transformation language program to a target file.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The user shall be able to turn the navigation window on and off.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "ALT 2: A file is already selected. A2-2A: Step 2 is skipped.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Given a node N, the well-formed SDT strings of N are defined recursively by the following.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Text in this window shall be cleared prior to executing individual HATS- SML programs, unless the programs are contained in a program script.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "If no target program is selected, the HATS-GUI shall first prompt the user to select a target program.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Examples of information available from an operating system include indications that a specified file does ot exist, that a file cannot be opened due to file protection violations, or that errors occurred during I/O operations.",
+    "original_label": "Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "It is the expectation of the client that by making the interface portable, the number of users of HATS will increase, and that the reliability of HATS-SML will increase due to the increased exercising of its capabilities resulting in error detection and correction.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The user shall be able to control the display by choosing the color and shapes of displayed nodes based on node type.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "A1-2A: The user selects a target file to parse (Refer to Use Case 4) (ALT 2).",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The File/Edit menu item shall provide an interface for starting an editor as an external process.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "These functions are evaluated semantically, not just syntactically.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "SDTs shall be displayed as directed acyclic graphs with nodes and edges. Nodes in the displayed graph correspond to nodes in the SDT.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The HATS-GUI redirects the standard error and standard output streams of the ApplyTransformation process and collects data written to these streams for later display.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "This information shall be used when editors are started as processes.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Command sequences for initiating processes are part of the application configuration.",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "The user shall be prompted to enter a text string describing a string pattern.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "All displayed children of a single node shall appear at the same height.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "When a user selects the Run/Parse Program menu option, the HATS-GUI shall parse the selected transformation language program by using the ParseTlp HATS-SML programs as described in Appendix D.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Each display window shall have a keyboard cursor to track the current location in the display.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "To initiate an SDT search, the user shall be able to use the following sequence of actions: The user selects a set of nodes using the mouse cursor, The user presses the Ctrl-Insert key combination, The user selects the tree search option, The HATS-GUI presents a prompt for entering the search pattern, The user presses the Ctrl-Shift-Insert key combination, The HATS-GUI fills the search pattern entry box with text concatenated from the nodes highlighted at the time of the Ctrl-Insert key press, The user selects initiation of search.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Time stamps indicate the date and time of the most recent update to a file.",
+    "original_label": "Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "HATS was developed to explore transformation-based software development.",
+    "original_label": "Not_Req",
+    "four_class_label": "DECISION"
+  },
+  {
+    "sentence": "Text can be selected by clicking and dragging the mouse across an area of text.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The File/Delete menu item shall provide an interface for deleting a selected file.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "When a displayed node is collapsed, all descendants of the node are removed from the displayed graph.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "User selects option to save configuration.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "To hide the descendants of a displayed node.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The File/Save-as menu item shall provide an interface for saving a previously selected file under a different name.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "There may be any number of transformation language program files in an application.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Output pretty-printed text files and SDTs shall only be displayed when the user requests.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "To perform a transformation in an application, the HATS-GUI shall execute the following sequence of actions: The HATS-GUI shall confirm that the transformation language program exists. (It is an error if the program does not exist.), The HATS-GUI shall check that the parser file is younger than the grammar and lexical specification files and that the parser file was generated from the grammar and lexical specification files; If this is not the case, the HATS-GUI shall generate a new parser file, The HATS-GUI shall check that a parsed version of the transformation language program exists and is younger than the parser file and the transformation language program file; If it is not, the HATS-GUI shall generate a new parsed version of the transformation language program, The HATS-GUI shall start the FindTarget program using the transformation language program as input, The HATS-GUI shall take the list of target program files generated by FindTarget, and for each file in the list it shall check that a parsed version of the target program exists and is younger than the target parser file and the target program file; If it is not, the HATS-GUI shall generate a new parsed version of the target program. The HATS-GUI shall start the ApplyTransformation program in HATS-SML and pass the parsed transformation language program file name, the user defined library file name, and the output file name to the ApplyTransformation program. The HATS-GUI shall redirect the standard output and standard error streams and capture any text written to those streams.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "System removes all descendants of the selected node from the displayed graph.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "ALT 5: User does not confirm.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "The Application/Select menu item shall provide an interface for selecting and opening an application.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "ALT 2: Application already exists.",
+    "original_label": "Not_Req",
+    "four_class_label": "CONSTRAINT"
+  },
+  {
+    "sentence": "The center of the displayed graph will be the displayed node closest to the mouse cursor when the mouse is clicked.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The HATS-GUI shall create a new directory at the same level as the currently selected application.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The cursor associated with the keyboard.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "Manipulation of a graphical representation of an SDT includes selecting and unselecting displayed nodes, navigation through the display using a navigation window and scrolling, expanding and collapsing displayed nodes, hiding displayed nodes, searching for SDT sub-trees, and finding smallest well-formed trees.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The display shall list all error received from HATS-SML in the order received.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The directory in which application files are stored shall be named with the application name.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The flow of data between these functions is illustrated in the Data Flow Diagrams (DFD) given in Appendix B.",
+    "original_label": "Not_Req",
+    "four_class_label": "NOISE"
+  },
+  {
+    "sentence": "When viewing an SDT, a single left mouse click on an expandable displayed node shall expand the node by displaying the node’s children or collapse the node by hiding the node’s children.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "The user shall be able to clear the error window without restarting the HATS-GUI.",
+    "original_label": "Req",
+    "four_class_label": "REQUIREMENT"
+  },
+  {
+    "sentence": "Number entered is a natural number.",
+    "original_label": "Not_Req",
+    "four_class_label": "REQUIREMENT"
+  }
+]

@@ -707,27 +707,33 @@ function cleanSection(text: string): string {
   return text
     .split("\n")
     .map(line => line
+      // Remove incomplete SOURCE tags and stray brackets
       .replace(/\[SOURCE:\d+\]/g, "")
       .replace(/\[SOURCE:\d*/g, "")
       .replace(/\[SOURCE$/g, "")
       .replace(/\s*\[$/g, "")
       .replace(/\]$/g, "")
       .replace(/^\]/g, "")
+      // Remove stray commas
       .replace(/,{2,}/g, "")
       .replace(/\s,\s/g, " ")
       .replace(/,\s*$/g, "")
+      // Remove stray numbers on their own
       .replace(/^\d+\s*$/, "")
+      // Remove lines that are just punctuation or symbols
       .replace(/^[,.\]\[;:\s]+$/, "")
+      // Remove markdown artifacts
       .replace(/\*\*(.*?)\*\*/g, "$1")
       .replace(/\*(.*?)\*/g, "$1")
+      // Remove trailing whitespace
       .trim()
     )
-    .filter(line =>
+    // Remove empty or too-short lines after cleaning
+    .filter(line => 
       line.length > 10 &&
       !line.match(/^[\]\[,.\s]+$/) &&
       !line.match(/^\d+$/) &&
-      !line.match(/^,+$/) &&
-      !line.match(/^===SECTION:/)
+      !line.match(/^,+$/)
     )
     .join("\n")
     .trim();
@@ -1173,6 +1179,16 @@ YOU MUST FIX THESE ISSUES IN THIS REGENERATION.`;
       },
     };
 
+    
+    const versionNumber = versionsSnapshot.empty 
+      ? 1.0 
+      : Math.floor((versionsSnapshot.docs[0].data().versionNumber || 1.0)) + 1.0;
+    
+    const version = `v${versionNumber.toFixed(1)}`;
+
+    // Calculate initial quality score IMMEDIATELY
+    const qualityScore = computeQualityScore(sections, 0);
+    
     const versionRef = await db.collection("brdVersions").add({
       projectId,
       version,

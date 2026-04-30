@@ -5,6 +5,7 @@ import { deleteProject, getProjectDeletionSummary } from "../services/projectSer
 import { toast } from "sonner";
 import { db } from "../lib/firebase";
 import { doc, updateDoc } from "firebase/firestore";
+import IngestModal from "../components/IngestModal";
 
 const ProjectSettings = () => {
   const { id } = useParams();
@@ -13,6 +14,7 @@ const ProjectSettings = () => {
   const project = projects.find(p => p.id === id);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [ingestModal, setIngestModal] = useState<"gmail" | "slack" | null>(null);
   const [deletionSummary, setDeletionSummary] = useState<{
     brdVersions: number;
     uploadedFiles: number;
@@ -162,6 +164,7 @@ const ProjectSettings = () => {
     <div className="min-h-screen bg-background">
       <header className="border-b border-border px-6 py-4 flex items-center gap-3">
         <Link to="/" className="text-sm font-semibold tracking-tight">DocuMind</Link>
+        <Link to="/dashboard" className="text-sm font-semibold tracking-tight">DocuMind</Link>
         <span className="text-xs text-muted-foreground">→</span>
         <button onClick={() => navigate(`/projects/${id}/brd`)} className="text-xs text-muted-foreground hover:text-foreground transition-colors">
           {project.name}
@@ -214,6 +217,7 @@ const ProjectSettings = () => {
               { id: "meeting", label: "Meeting Transcripts", icon: "◎", description: "Upload transcript PDFs or audio/video recordings — DocuMind will extract requirements" },
             ].map((src) => {
               const connected = sources[src.id];
+              const canIngest = src.id === "gmail" || src.id === "slack";
               return (
                 <div key={src.id} className="px-4 py-3 flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -239,6 +243,22 @@ const ProjectSettings = () => {
                     >
                       {connected ? "Disconnect" : "Connect"}
                     </button>
+                    {canIngest ? (
+                      <button
+                        onClick={() => setIngestModal(src.id as "gmail" | "slack")}
+                        className="text-xs border border-primary text-primary px-3 py-1 hover:bg-primary/10 transition-colors"
+                      >
+                        Ingest
+                      </button>
+                    ) : (
+                      <button className={`text-xs border px-3 py-1 transition-colors ${
+                        connected
+                          ? "border-border text-muted-foreground hover:border-red-400/50 hover:text-red-400"
+                          : "border-primary text-primary hover:bg-primary/10"
+                      }`}>
+                        {connected ? "Disconnect" : "Connect"}
+                      </button>
+                    )}
                   </div>
                 </div>
               );
@@ -284,6 +304,16 @@ const ProjectSettings = () => {
           </div>
         </section>
       </main>
+
+      {/* Ingest Modal */}
+      {ingestModal && id && (
+        <IngestModal
+          projectId={id}
+          source={ingestModal}
+          onClose={() => setIngestModal(null)}
+          onSuccess={(count) => toast.success(`${count} snippets added to project`)}
+        />
+      )}
 
       {/* Delete Confirmation Modal */}
       {showDeleteConfirm && (

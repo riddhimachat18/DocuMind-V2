@@ -86,6 +86,7 @@ const BRDHistory = () => {
       <header className="border-b border-border px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Link to="/" className="text-sm font-semibold tracking-tight">DocuMind</Link>
+          <Link to="/dashboard" className="text-sm font-semibold tracking-tight">DocuMind</Link>
           <span className="text-xs text-muted-foreground">→</span>
           <button onClick={() => navigate(`/projects/${id}/brd`)} className="text-xs text-muted-foreground hover:text-foreground transition-colors">
             {project.name}

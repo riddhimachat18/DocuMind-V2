@@ -1,4 +1,5 @@
 # Logs
+# ── Logs ──────────────────────────────────────────────────────────────────────
 logs
 *.log
 npm-debug.log*
@@ -6,14 +7,20 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+firebase-debug.log*
 
+# ── Dependencies ───────────────────────────────────────────────────────────────
 node_modules
 dist
 dist-ssr
 *.local
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Environment variables
+=======
+# ── Environment variables / secrets ───────────────────────────────────────────
+>>>>>>> 3730945c3775717532ec00c21dc06d96b506ecbf
 .env
 .env.*
 !.env.example
@@ -22,6 +29,7 @@ functions/.env
 functions/.env.*
 !functions/.env.example
 
+<<<<<<< HEAD
 =======
 >>>>>>> b36c35bb902f83b490443bfea6399e1fa60ef439
 # Firebase service account keys
@@ -31,6 +39,35 @@ functions/.env.*
 data/emails.csv
 
 # Editor directories and files
+=======
+# ── Firebase service account keys ─────────────────────────────────────────────
+*firebase-adminsdk*.json
+*service-account*.json
+*serviceAccount*.json
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+.venv/
+venv/
+env/
+
+# ── ML model artifacts (large binary files) ───────────────────────────────────
+data/distilbert_model/
+data/results/distilbert_model/
+
+# ── ChromaDB local data ────────────────────────────────────────────────────────
+chroma/
+
+# ── Large / raw data files ────────────────────────────────────────────────────
+data/emails.csv
+data_initial/
+
+# ── Editor directories ─────────────────────────────────────────────────────────
+>>>>>>> 3730945c3775717532ec00c21dc06d96b506ecbf
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -40,3 +77,9 @@ data/emails.csv
 *.njsproj
 *.sln
 *.sw?
+<<<<<<< HEAD
+=======
+
+# ── Build artifacts ────────────────────────────────────────────────────────────
+functions/lib/
+>>>>>>> 3730945c3775717532ec00c21dc06d96b506ecbf

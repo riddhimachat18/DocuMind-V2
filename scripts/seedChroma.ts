@@ -26,7 +26,11 @@ const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
 const chroma = new ChromaClient({ path: CHROMA_URL });
 
 async function embedText(text: string): Promise<number[]> {
+<<<<<<< HEAD
   const model = genAI.getGenerativeModel({ model: "text-embedding-004" });
+=======
+  const model = genAI.getGenerativeModel({ model: "gemini-embedding-001" });
+>>>>>>> 3730945c3775717532ec00c21dc06d96b506ecbf
   const result = await model.embedContent(text);
   return result.embedding.values;
 }
