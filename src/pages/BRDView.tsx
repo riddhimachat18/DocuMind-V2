@@ -3,9 +3,10 @@ import { useApp } from "../context/AppContext";
 import { useState } from "react";
 import { TranscriptUploadModal } from "../components/TranscriptUploadModal";
 import { Snippet } from "../services/transcriptService";
-import { exportBRDToPDF } from "../services/pdfExportService";
+import { exportBRDToPDF, exportBrdPdf } from "../services/pdfExportService";
 import { toast } from "sonner";
 import { useBRDData } from "../hooks/useBRDData";
+import { UseCaseDiagram } from "../components/UseCaseDiagram";
 
 type TabType = 'sources' | 'versions' | 'conflicts' | null;
 
@@ -28,7 +29,9 @@ const BRDView = () => {
     uploadedFiles, 
     versions, 
     conflicts, 
-    loading 
+    loading,
+    useCaseDiagramMermaid,
+    diagramCoverage
   } = useBRDData(id);
 
   const handleNewVersion = () => {
@@ -55,53 +58,45 @@ const BRDView = () => {
 
     setIsExporting(true);
     
-    // Open new tab immediately to avoid popup blocker
-    const newTab = window.open('about:blank', '_blank');
-    
     try {
-      // Structure BRD content for PDF export
+      // Wait for Mermaid to finish rendering if it hasn't already
+      const container = document.getElementById("uc-diagram-container");
+      let svg = container?.querySelector("svg");
+      
+      if (!svg && useCaseDiagramMermaid) {
+        // Mermaid hasn't rendered yet — wait up to 3 seconds
+        console.log("[PDF Export] Waiting for Mermaid diagram to render...");
+        await new Promise<void>((resolve) => {
+          let attempts = 0;
+          const check = setInterval(() => {
+            const ready = document.getElementById("uc-diagram-container")?.querySelector("svg");
+            if (ready || attempts >= 15) {
+              clearInterval(check);
+              svg = ready || null;
+              resolve();
+            }
+            attempts++;
+          }, 200);
+        });
+      }
+
+      // Structure BRD content for PDF export (diagram will be captured inside exportBrdPdf)
       const brdContent = {
         projectName: project.name,
-        sections: mockBRDSections
+        sections: brdSections.map(section => ({
+          id: section.id,
+          title: section.title,
+          sentences: section.sentences
+        }))
       };
 
-      const brdExport = await exportBRDToPDF(id, brdContent);
-
-      toast.success(`BRD ${brdExport.version} exported successfully!`);
+      await exportBrdPdf(brdContent, project.name, null, undefined, diagramCoverage);
       
-      // Update the new tab with PDF URL
-      if (newTab) {
-        newTab.location.href = brdExport.downloadURL;
-      } else {
-        // Fallback if popup was blocked
-        window.open(brdExport.downloadURL, '_blank');
-      }
-      
-      // Extract BRD sections from real data
-      const sections: any = {};
-      
-      brdSections.forEach(section => {
-        const content = section.sentences.map(s => s.text).join('\n\n');
-        sections[section.id] = content;
-      });
-
-      // Save BRD version
-      const brdVersion = await saveBRDVersion(
-        id,
-        sections,
-        "Manual save from BRD view",
-        "draft"
-      );
-
-      toast.success(`BRD ${brdVersion.version} saved successfully!`);
+      toast.success(`BRD exported successfully!`);
       
     } catch (error: any) {
       console.error("Error exporting BRD:", error);
       toast.error(`Failed to export BRD: ${error.message}`);
-      // Close the blank tab if export failed
-      if (newTab) {
-        newTab.close();
-      }
     } finally {
       setIsExporting(false);
     }
@@ -135,7 +130,7 @@ const BRDView = () => {
     <div className="min-h-screen bg-background flex flex-col">
       <header className="border-b border-border px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <Link to="/dashboard" className="text-sm font-semibold tracking-tight">DocuMind</Link>
+          <Link to="/" className="text-sm font-semibold tracking-tight">DocuMind</Link>
           <span className="text-xs text-muted-foreground">→</span>
           <span className="text-xs text-muted-foreground">{project?.name || 'Project'}</span>
           <span className="text-xs text-muted-foreground">→</span>
@@ -158,7 +153,6 @@ const BRDView = () => {
             Version history
           </button>
           <button
-            onClick={handleNewVersion}
             onClick={() => navigate(`/projects/${id}/brd/new`)}
             className="text-xs bg-primary text-primary-foreground px-3 py-1.5 hover:bg-primary/90 transition-colors"
           >
@@ -464,33 +458,60 @@ const BRDView = () => {
               <p className="text-sm text-muted-foreground">No BRD sections found. Generate a BRD to get started.</p>
             </div>
           ) : (
-            brdSections.map((section) => (
-            <section key={section.id} className="mb-10">
-              <h2 className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-4 border-b border-border pb-2">
-                {section.title}
-              </h2>
-              {section.id === 'stakeholders' ? (
-                <div className="border border-border divide-y divide-border">
-                  {section.sentences.map(s => (
-                    <div key={s.id} className="px-4 py-3 text-sm text-foreground">{s.text}</div>
-                  ))}
-                </div>
-              ) : section.id === 'traceability' ? (
-                <div className="border border-border px-4 py-3">
-                  <p className="text-sm font-mono text-foreground">{section.sentences[0]?.text}</p>
-                </div>
-              ) : (
-                <div className="flex flex-col gap-3">
-                  {section.sentences.map(s => (
-                    <p key={s.id} className={`text-sm leading-relaxed text-foreground ${s.hasConflict ? 'border-l-2 border-red-400 pl-3' : ''}`}>
-                      {s.hasConflict && <span className="text-red-400 mr-1">⚠</span>}
-                      {s.text}
-                    </p>
-                  ))}
-                </div>
-              )}
-            </section>
-          ))
+            <>
+              {brdSections.map((section) => (
+                <section key={section.id} className="mb-10">
+                  <h2 className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-4 border-b border-border pb-2">
+                    {section.title}
+                  </h2>
+                  {section.id === 'stakeholders' ? (
+                    <div className="border border-border divide-y divide-border">
+                      {section.sentences.map(s => (
+                        <div key={s.id} className="px-4 py-3 text-sm text-foreground">{s.text}</div>
+                      ))}
+                    </div>
+                  ) : section.id === 'traceability' ? (
+                    <div className="border border-border px-4 py-3">
+                      <p className="text-sm font-mono text-foreground">{section.sentences[0]?.text}</p>
+                    </div>
+                  ) : section.id === 'useCases' && useCaseDiagramMermaid ? (
+                    <>
+                      <div className="mb-6">
+                        <h3 className="text-xs font-mono uppercase tracking-wider text-muted-foreground mb-3">
+                          8.1 System Use Case Diagram
+                        </h3>
+                        <UseCaseDiagram 
+                          mermaidSyntax={useCaseDiagramMermaid}
+                          coverageScore={diagramCoverage}
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-xs font-mono uppercase tracking-wider text-muted-foreground mb-3">
+                          8.2 Use Case Descriptions
+                        </h3>
+                        <div className="flex flex-col gap-3">
+                          {section.sentences.map(s => (
+                            <p key={s.id} className={`text-sm leading-relaxed text-foreground ${s.hasConflict ? 'border-l-2 border-red-400 pl-3' : ''}`}>
+                              {s.hasConflict && <span className="text-red-400 mr-1">⚠</span>}
+                              {s.text}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <div className="flex flex-col gap-3">
+                      {section.sentences.map(s => (
+                        <p key={s.id} className={`text-sm leading-relaxed text-foreground ${s.hasConflict ? 'border-l-2 border-red-400 pl-3' : ''}`}>
+                          {s.hasConflict && <span className="text-red-400 mr-1">⚠</span>}
+                          {s.text}
+                        </p>
+                      ))}
+                    </div>
+                  )}
+                </section>
+              ))}
+            </>
           )}
         </main>
       </div>

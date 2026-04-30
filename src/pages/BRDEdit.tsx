@@ -2,11 +2,14 @@ import { useState, useRef, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { useApp } from "../context/AppContext";
 import { saveBRDVersion } from "../services/brdVersionService";
-import { exportBRDToPDF } from "../services/pdfExportService";
+import { exportBrdPdf } from "../services/pdfExportService";
 import { toast } from "sonner";
 import { onChatMessageFn } from "../lib/functions";
 import { db } from "../lib/firebase";
 import { collection, query, where, orderBy as firestoreOrderBy, onSnapshot, addDoc, Timestamp, getDoc, doc } from "firebase/firestore";
+import QualityScorePanel from "../components/QualityScorePanel";
+import { runDeterministicGapCheck, markGapResolved, Gap } from "../lib/gapChecker";
+import { UseCaseDiagram } from "../components/UseCaseDiagram";
 
 type BRDSentence = { 
   id: string; 
@@ -39,9 +42,12 @@ const calculateQualityScore = (sections: any) => {
     (sections.nfrReqs?.length ?? 0) > 0,
     (sections.assumptions?.length ?? 0) > 0,
     (sections.successMetrics?.length ?? 0) > 0,
+    (sections.externalInterfaces?.length ?? 0) > 0,
+    (sections.useCases?.length ?? 0) > 0,
+    (sections.glossary?.length ?? 0) > 0,
   ];
   
-  const completeness = Math.round((sectionChecks.filter(Boolean).length / 6) * 40);
+  const completeness = Math.round((sectionChecks.filter(Boolean).length / 9) * 40);
   
   // Count requirements
   const frs = sections.functionalReqs
@@ -64,11 +70,12 @@ const calculateQualityScore = (sections: any) => {
   return { completeness, consistency, clarity, total };
 };
 
-const QualityRing = ({ score, completeness, consistency, clarity }: { 
+const QualityRing = ({ score, completeness, consistency, clarity, diagramCoverage }: { 
   score: number; 
   completeness?: number; 
   consistency?: number; 
-  clarity?: number; 
+  clarity?: number;
+  diagramCoverage?: number;
 }) => {
   // Ensure we have valid numbers
   const safeScore = Math.max(0, Math.min(100, score || 0));
@@ -137,7 +144,57 @@ const QualityRing = ({ score, completeness, consistency, clarity }: {
             />
           </div>
         </div>
+        {diagramCoverage !== undefined && diagramCoverage !== null && (
+          <div>
+            <div className="flex justify-between text-xs text-muted-foreground mb-1">
+              <span>Diagram Coverage</span>
+              <span className="font-mono text-foreground">{diagramCoverage}%</span>
+            </div>
+            <div className="w-full h-2 bg-border rounded-full overflow-hidden">
+              <div
+                className={`h-full transition-all duration-500 ${diagramCoverage >= 80 ? "bg-green-400" : diagramCoverage >= 60 ? "bg-yellow-400" : "bg-red-400"}`}
+                style={{ width: `${diagramCoverage}%` }}
+              />
+            </div>
+          </div>
+        )}
       </div>
+    </div>
+  );
+};
+
+// ── Actor legend extracted from PlantUML SVG ─────────────────────────────────
+const ActorLegend = ({ svgString }: { svgString: string }) => {
+  // Extract actor names from SVG title/text elements
+  const actors: string[] = [];
+  const matches = svgString.matchAll(/<text[^>]*>([^<]{2,40})<\/text>/g);
+  const seen = new Set<string>();
+  for (const m of matches) {
+    const t = m[1].trim();
+    if (t && !t.startsWith("UC") && !t.startsWith("<<") && !seen.has(t) && t.length > 1) {
+      seen.add(t);
+      actors.push(t);
+    }
+  }
+  if (actors.length === 0) return null;
+  return (
+    <div className="mt-4 border border-border">
+      <table className="w-full text-xs">
+        <thead>
+          <tr className="border-b border-border bg-secondary/30">
+            <th className="text-left px-3 py-2 font-mono text-muted-foreground">Actor</th>
+            <th className="text-left px-3 py-2 font-mono text-muted-foreground">Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          {actors.slice(0, 8).map((actor, i) => (
+            <tr key={i} className="border-b border-border last:border-0">
+              <td className="px-3 py-2 text-foreground font-mono">{actor}</td>
+              <td className="px-3 py-2 text-muted-foreground">Identified from requirements</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
@@ -169,6 +226,13 @@ const BRDEdit = () => {
   const [currentVersion, setCurrentVersion] = useState<string>("v1.0");
   const [flashSection, setFlashSection] = useState<string | null>(null);
   const [activeSection, setActiveSection] = useState<string>("");
+  const [conflictStatus, setConflictStatus] = useState<"pending" | "done">("done");
+  const [useCaseDiagramMermaid, setUseCaseDiagramMermaid] = useState<string>("");
+  const [diagramCoverage, setDiagramCoverage] = useState<number | null>(null);
+  const [detectedGaps, setDetectedGaps] = useState<Gap[]>([]);
+  const [auditRound, setAuditRound] = useState(0);
+  const [auditComplete, setAuditComplete] = useState(false);
+  const [conflictSummary, setConflictSummary] = useState<any>(null);
   const chatEndRef = useRef<HTMLDivElement>(null);
   const hasInitializedChat = useRef(false);
 
@@ -228,6 +292,9 @@ const BRDEdit = () => {
         { id: "nfrReqs",             title: "Non-Functional Requirements" },
         { id: "assumptions",         title: "Assumptions & Constraints" },
         { id: "successMetrics",      title: "Success Metrics" },
+        { id: "externalInterfaces",  title: "External Interfaces" },
+        { id: "useCases",            title: "Use Cases" },
+        { id: "glossary",            title: "Glossary" },
       ];
 
       const mapped = SECTION_ORDER
@@ -293,6 +360,16 @@ const BRDEdit = () => {
         // Set quality score with fallback
         const score = data.qualityScore;
         console.log("Quality score from Firestore:", score);
+
+        // Set conflict status
+        setConflictStatus(data.conflictStatus === "pending" ? "pending" : "done");
+        
+        // Load use case diagram
+        if (data.useCaseDiagramMermaid) setUseCaseDiagramMermaid(data.useCaseDiagramMermaid);
+        if (typeof data.diagramCoverage === "number") setDiagramCoverage(data.diagramCoverage);
+
+        // Load conflict summary
+        if (data.conflictSummary) setConflictSummary(data.conflictSummary);
         
         if (score && typeof score === 'object' && score.total > 0) {
           setQualityScore(score);
@@ -319,6 +396,9 @@ const BRDEdit = () => {
           { id: "nfrReqs",             title: "Non-Functional Requirements" },
           { id: "assumptions",         title: "Assumptions & Constraints" },
           { id: "successMetrics",      title: "Success Metrics" },
+          { id: "externalInterfaces",  title: "External Interfaces" },
+          { id: "useCases",            title: "Use Cases" },
+          { id: "glossary",            title: "Glossary" },
         ];
 
         const mapped = SECTION_ORDER
@@ -354,6 +434,12 @@ const BRDEdit = () => {
           });
 
         setSections(mapped);
+
+        // Run deterministic gap check on loaded sections
+        const rawSectionsForGap: Record<string, string | undefined> = {};
+        for (const key of Object.keys(rawSections)) rawSectionsForGap[key] = rawSections[key];
+        const gaps = data.detectedGaps ?? runDeterministicGapCheck(rawSectionsForGap);
+        setDetectedGaps(gaps);
       } catch (err) {
         console.error("Error loading BRD sections:", err);
         toast.error("Failed to load BRD content");
@@ -376,6 +462,21 @@ const BRDEdit = () => {
         if (data.qualityScore) {
           setQualityScore(data.qualityScore);
         }
+
+        // Update conflict status
+        if (data.conflictStatus) {
+          setConflictStatus(data.conflictStatus === "pending" ? "pending" : "done");
+        }
+
+        // Update diagram if available
+        if (data.useCaseDiagramMermaid) setUseCaseDiagramMermaid(data.useCaseDiagramMermaid);
+        if (typeof data.diagramCoverage === "number") setDiagramCoverage(data.diagramCoverage);
+
+        // Update detected gaps from Firestore (persisted by backend)
+        if (data.detectedGaps) setDetectedGaps(data.detectedGaps);
+
+        // Update conflict summary
+        if (data.conflictSummary) setConflictSummary(data.conflictSummary);
         
         // Reload sections whenever Firestore document changes
         const rawSections = data.sections ?? {};
@@ -388,6 +489,9 @@ const BRDEdit = () => {
           { id: "nfrReqs",             title: "Non-Functional Requirements" },
           { id: "assumptions",         title: "Assumptions & Constraints" },
           { id: "successMetrics",      title: "Success Metrics" },
+          { id: "externalInterfaces",  title: "External Interfaces" },
+          { id: "useCases",            title: "Use Cases" },
+          { id: "glossary",            title: "Glossary" },
         ];
         
         const mapped = SECTION_ORDER
@@ -640,7 +744,6 @@ const BRDEdit = () => {
     const userMessage = chatInput.trim();
     setChatInput("");
     
-    // Save user message to Firestore
     try {
       await addDoc(collection(db, "chatMessages"), {
         brdVersionId,
@@ -650,14 +753,14 @@ const BRDEdit = () => {
       });
       
       setIsTyping(true);
+      const nextRound = auditRound + 1;
+      setAuditRound(nextRound);
       
-      // Build chat history
       const chatHistory = chatMessages.map(msg => ({
         role: msg.role || (msg.type === "user" ? "user" : "assistant"),
         content: msg.text
       }));
       
-      // Call AI - the Cloud Function will save the assistant message
       const result = await onChatMessageFn({
         projectId: id,
         brdVersionId,
@@ -665,10 +768,22 @@ const BRDEdit = () => {
         chatHistory
       });
       
-      const { brdUpdated } = result.data as any;
+      const { brdUpdated, detectedGaps: updatedGaps } = result.data as any;
       
       if (brdUpdated) {
         toast.success("BRD updated by AI auditor");
+      }
+
+      // Update gap state from backend response
+      if (updatedGaps) {
+        setDetectedGaps(updatedGaps);
+      }
+
+      // Check for AUDIT_COMPLETE in the response message
+      const msg = (result.data as any).message ?? "";
+      if (msg.includes("AUDIT_COMPLETE")) {
+        setAuditComplete(true);
+        toast.success("Audit complete — document validated");
       }
     } catch (error: any) {
       console.error("Error sending chat message:", error);
@@ -696,37 +811,41 @@ const BRDEdit = () => {
     }
 
     setIsExporting(true);
-    
-    // Open new tab immediately to avoid popup blocker
-    const newTab = window.open('about:blank', '_blank');
-    
+
     try {
-      // Structure BRD content for PDF export
+      // Wait for Mermaid to finish rendering if it hasn't already
+      const container = document.getElementById("uc-diagram-container");
+      let svg = container?.querySelector("svg");
+      
+      if (!svg && useCaseDiagramMermaid) {
+        // Mermaid hasn't rendered yet — wait up to 3 seconds
+        console.log("[PDF Export] Waiting for Mermaid diagram to render...");
+        await new Promise<void>((resolve) => {
+          let attempts = 0;
+          const check = setInterval(() => {
+            const ready = document.getElementById("uc-diagram-container")?.querySelector("svg");
+            if (ready || attempts >= 15) {
+              clearInterval(check);
+              svg = ready || null;
+              resolve();
+            }
+            attempts++;
+          }, 200);
+        });
+      }
+
+      // Capture the rendered Mermaid SVG from the DOM (will be captured inside exportBrdPdf)
       const brdContent = {
         projectName: project.name,
         sections: sections,
         qualityScore: qualityScore
       };
 
-      const brdExport = await exportBRDToPDF(id, brdContent);
-
-      toast.success(`BRD ${brdExport.version} exported successfully!`);
-      
-      // Update the new tab with PDF URL
-      if (newTab) {
-        newTab.location.href = brdExport.downloadURL;
-      } else {
-        // Fallback if popup was blocked
-        window.open(brdExport.downloadURL, '_blank');
-      }
-      
+      await exportBrdPdf(brdContent, project.name, null, undefined, diagramCoverage);
+      toast.success("PDF exported successfully");
     } catch (error: any) {
       console.error("Error exporting BRD:", error);
-      toast.error(`Failed to export BRD: ${error.message}`);
-      // Close the blank tab if export failed
-      if (newTab) {
-        newTab.close();
-      }
+      alert(`PDF export failed: ${error.message}`);
     } finally {
       setIsExporting(false);
     }
@@ -743,7 +862,7 @@ const BRDEdit = () => {
       {/* Header */}
       <header className="border-b border-border px-4 py-3 flex items-center justify-between flex-shrink-0">
         <div className="flex items-center gap-3">
-          <Link to="/dashboard" className="text-sm font-semibold tracking-tight">DocuMind</Link>
+          <Link to="/" className="text-sm font-semibold tracking-tight">DocuMind</Link>
           <span className="text-xs text-muted-foreground">→</span>
           <button onClick={() => navigate(`/projects/${id}/brd`)} className="text-xs text-muted-foreground hover:text-foreground transition-colors">
             {project.name}
@@ -757,7 +876,7 @@ const BRDEdit = () => {
             disabled={isExporting}
             className="text-xs bg-primary text-primary-foreground px-4 py-2 hover:bg-primary/90 transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {isExporting ? 'Exporting...' : 'Export Draft (PDF)'}
+            {isExporting ? '⏳ Building PDF…' : 'Export PDF  ↓'}
           </button>
           <button
             onClick={() => navigate(`/projects/${id}/brd/history`)}
@@ -848,6 +967,19 @@ const BRDEdit = () => {
                 {section.title}
               </button>
             ))}
+            {conflictSummary && (
+              <button
+                onClick={() => document.getElementById("section-conflictAnalysis")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+                className={`text-left text-xs px-2 py-2 rounded transition-colors leading-tight ${
+                  conflictSummary.confirmedConflicts > 0 ? "text-red-400" : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                Conflict Analysis
+                {conflictSummary.confirmedConflicts > 0 && (
+                  <span className="ml-1 font-mono">({conflictSummary.confirmedConflicts})</span>
+                )}
+              </button>
+            )}
           </div>
 
           {/* Scrollable content area */}
@@ -877,6 +1009,19 @@ const BRDEdit = () => {
                     <h2 className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-3 border-b border-border pb-2">
                       {section.title}
                     </h2>
+
+                    {/* Use Case Diagram — rendered client-side with Mermaid.js */}
+                    {section.id === "useCases" && useCaseDiagramMermaid && (
+                      <div className="mb-6">
+                        <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-3">
+                          8.1 System Use Case Diagram
+                        </p>
+                        <UseCaseDiagram 
+                          mermaidSyntax={useCaseDiagramMermaid}
+                          coverageScore={diagramCoverage || undefined}
+                        />
+                      </div>
+                    )}
                 <div className="flex flex-col gap-2">
                   {section.sentences.map((sentence) => (
                     <div key={sentence.id}>
@@ -956,6 +1101,78 @@ const BRDEdit = () => {
                 </div>
               </section>
             ))}
+
+                  {/* Conflict Analysis subsection */}
+                  {conflictSummary && (
+                    <section id="section-conflictAnalysis" className="mb-8">
+                      <h2 className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-3 border-b border-border pb-2">
+                        Conflict Analysis
+                      </h2>
+                      <div className="flex gap-4 mb-4 text-xs">
+                        <div className="border border-border bg-card px-3 py-2">
+                          <div className="text-muted-foreground">Requirements</div>
+                          <div className="font-mono text-foreground text-lg">{conflictSummary.totalRequirements}</div>
+                        </div>
+                        <div className="border border-border bg-card px-3 py-2">
+                          <div className="text-muted-foreground">Phase 1 Candidates</div>
+                          <div className="font-mono text-foreground text-lg">{conflictSummary.candidatePairs}</div>
+                        </div>
+                        <div className={`border bg-card px-3 py-2 ${conflictSummary.confirmedConflicts > 0 ? "border-red-400/40" : "border-border"}`}>
+                          <div className="text-muted-foreground">Confirmed Conflicts</div>
+                          <div className={`font-mono text-lg ${conflictSummary.confirmedConflicts > 0 ? "text-red-400" : "text-green-400"}`}>
+                            {conflictSummary.confirmedConflicts}
+                          </div>
+                        </div>
+                      </div>
+
+                      {conflictSummary.conflicts?.length > 0 && (
+                        <div className="flex flex-col gap-3">
+                          {(["high", "medium", "low"] as const).map(sev => {
+                            const sevConflicts = conflictSummary.conflicts.filter((c: any) => c.severity === sev);
+                            if (sevConflicts.length === 0) return null;
+                            return (
+                              <div key={sev}>
+                                <div className={`text-xs font-mono uppercase tracking-widest mb-2 ${
+                                  sev === "high" ? "text-red-400" : sev === "medium" ? "text-amber-400" : "text-yellow-400"
+                                }`}>
+                                  {sev} severity {sev === "high" && "— blocks export"}
+                                </div>
+                                {sevConflicts.map((c: any, i: number) => (
+                                  <div key={i} className={`border p-3 mb-2 text-xs ${
+                                    sev === "high" ? "border-red-400/30 bg-red-400/5" :
+                                    sev === "medium" ? "border-amber-400/30 bg-amber-400/5" :
+                                    "border-yellow-400/20 bg-yellow-400/5"
+                                  }`}>
+                                    <div className="flex items-center gap-2 mb-2">
+                                      <span className="font-mono text-muted-foreground">{c.reqAId}</span>
+                                      <span className="text-muted-foreground">↔</span>
+                                      <span className="font-mono text-muted-foreground">{c.reqBId}</span>
+                                      <span className={`ml-auto border px-1.5 py-0.5 font-mono text-[10px] ${
+                                        sev === "high" ? "border-red-400/40 text-red-400" :
+                                        sev === "medium" ? "border-amber-400/40 text-amber-400" :
+                                        "border-yellow-400/40 text-yellow-400"
+                                      }`}>{c.conflictType?.replace("_", " ")}</span>
+                                    </div>
+                                    <p className="text-muted-foreground mb-1">{c.reason}</p>
+                                    {c.suggestedResolution && (
+                                      <p className="text-primary/70 text-[10px] font-mono">→ {c.suggestedResolution}</p>
+                                    )}
+                                    <p className="text-muted-foreground/50 text-[10px] mt-1 font-mono">
+                                      similarity: {c.similarityScore}
+                                    </p>
+                                  </div>
+                                ))}
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+
+                      {conflictSummary.confirmedConflicts === 0 && (
+                        <p className="text-xs text-green-400 font-mono">✓ No conflicts detected — document cleared for export</p>
+                      )}
+                    </section>
+                  )}
                 </>
               )}
             </div>
@@ -966,14 +1183,62 @@ const BRDEdit = () => {
         <div className="w-80 border-l border-border flex flex-col overflow-hidden flex-shrink-0">
           {/* Quality score */}
           <div className="px-4 py-4 border-b border-border flex-shrink-0">
-            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-4">Quality Auditor</p>
-            <QualityRing 
-              score={qualityScore?.total ?? 0}
-              completeness={qualityScore?.completeness ?? 0}
-              consistency={qualityScore?.consistency ?? 0}
-              clarity={qualityScore?.clarity ?? 0}
+            <div className="flex items-center justify-between mb-4">
+              <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Quality Auditor</p>
+              {conflictStatus === "pending" && (
+                <span className="text-xs font-mono text-amber-400 border border-amber-400/30 px-2 py-0.5 animate-pulse">
+                  Checking conflicts…
+                </span>
+              )}
+            </div>
+            <QualityScorePanel
+              qualityScore={qualityScore}
+              diagramCoverage={diagramCoverage ?? qualityScore?.diagramCoverage}
             />
           </div>
+
+          {/* Gap resolution tracker */}
+          {detectedGaps.length > 0 && (
+            <div className="px-4 py-3 border-b border-border flex-shrink-0">
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Gap Tracker</p>
+                {auditComplete && (
+                  <span className="text-xs font-mono text-green-400 border border-green-400/30 px-2 py-0.5">
+                    ✓ Audit Complete
+                  </span>
+                )}
+              </div>
+              <div className="flex gap-3 text-xs mb-2">
+                <span className="text-muted-foreground">
+                  Total: <span className="font-mono text-foreground">{detectedGaps.length}</span>
+                </span>
+                <span className="text-green-400">
+                  Resolved: <span className="font-mono">{detectedGaps.filter(g => g.resolved).length}</span>
+                </span>
+                <span className="text-amber-400">
+                  Remaining: <span className="font-mono">{detectedGaps.filter(g => !g.resolved).length}</span>
+                </span>
+              </div>
+              <div className="flex flex-col gap-1">
+                {detectedGaps.map((gap, i) => (
+                  <div key={i} className={`flex items-start gap-2 text-xs px-2 py-1.5 border ${
+                    gap.resolved
+                      ? "border-green-400/20 bg-green-400/5 text-muted-foreground"
+                      : gap.severity === "critical"
+                      ? "border-red-400/30 bg-red-400/5"
+                      : "border-amber-400/30 bg-amber-400/5"
+                  }`}>
+                    <span className="flex-shrink-0 font-mono">
+                      {gap.resolved ? "✓" : gap.severity === "critical" ? "✗" : "⚠"}
+                    </span>
+                    <span className={gap.resolved ? "line-through" : ""}>
+                      {gap.message}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Chat messages */}
           <div className="flex-1 overflow-y-auto px-4 py-3 flex flex-col gap-3">

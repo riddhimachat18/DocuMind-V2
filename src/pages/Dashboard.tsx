@@ -3,6 +3,14 @@ import { useApp } from "../context/AppContext";
 import { toast } from "sonner";
 
 const QualityBadge = ({ score }: { score: number }) => {
+  if (score === 0) {
+    return (
+      <span className="text-xs font-mono border border-border px-2 py-0.5 text-muted-foreground">
+        -
+      </span>
+    );
+  }
+  
   const color =
     score >= 80
       ? "text-green-400 border-green-400/30 bg-green-400/10"

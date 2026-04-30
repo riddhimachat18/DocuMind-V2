@@ -15,27 +15,39 @@ import CreateBRDVersion from "./pages/CreateBRDVersion";
 import BRDEdit from "./pages/BRDEdit";
 import BRDHistory from "./pages/BRDHistory";
 import NotFound from "./pages/NotFound";
+import AdminValidation from "./pages/AdminValidation";
 
 const queryClient = new QueryClient();
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-  const { isAuthenticated } = useApp();
+  const { isAuthenticated, loading } = useApp();
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="w-5 h-5 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+      </div>
+    );
+  }
   return isAuthenticated ? <>{children}</> : <Navigate to="/login" replace />;
 };
 
 const AppRoutes = () => {
   const { isAuthenticated, loading } = useApp();
 
-  // Don't redirect while still checking auth state
-  if (loading) {
-    return null;
-  }
-
   return (
     <Routes>
-      <Route path="/" element={isAuthenticated ? <Navigate to="/dashboard" replace /> : <Landing />} />
-      <Route path="/login" element={isAuthenticated ? <Navigate to="/dashboard" replace /> : <Login />} />
-      <Route path="/signup" element={isAuthenticated ? <Navigate to="/dashboard" replace /> : <Signup />} />
+      {/* Public routes — Landing page always shows first, even during auth check */}
+      <Route path="/" element={
+        loading ? <Landing /> : (isAuthenticated ? <Navigate to="/dashboard" replace /> : <Landing />)
+      } />
+      <Route path="/login" element={
+        isAuthenticated ? <Navigate to="/dashboard" replace /> : <Login />
+      } />
+      <Route path="/signup" element={
+        isAuthenticated ? <Navigate to="/dashboard" replace /> : <Signup />
+      } />
+
+      {/* Protected routes */}
       <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
       <Route path="/projects/new" element={<ProtectedRoute><NewProject /></ProtectedRoute>} />
       <Route path="/projects/:id/settings" element={<ProtectedRoute><ProjectSettings /></ProtectedRoute>} />
@@ -43,6 +55,7 @@ const AppRoutes = () => {
       <Route path="/projects/:id/brd/new" element={<ProtectedRoute><CreateBRDVersion /></ProtectedRoute>} />
       <Route path="/projects/:id/brd/edit" element={<ProtectedRoute><BRDEdit /></ProtectedRoute>} />
       <Route path="/projects/:id/brd/history" element={<ProtectedRoute><BRDHistory /></ProtectedRoute>} />
+      <Route path="/admin/validation" element={<AdminValidation />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

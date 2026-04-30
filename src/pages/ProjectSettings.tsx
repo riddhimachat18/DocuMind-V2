@@ -3,6 +3,8 @@ import { useApp } from "../context/AppContext";
 import { useState, useEffect } from "react";
 import { deleteProject, getProjectDeletionSummary } from "../services/projectService";
 import { toast } from "sonner";
+import { db } from "../lib/firebase";
+import { doc, updateDoc } from "firebase/firestore";
 import IngestModal from "../components/IngestModal";
 
 const ProjectSettings = () => {
@@ -21,6 +23,16 @@ const ProjectSettings = () => {
     conflicts: number;
   } | null>(null);
   const [confirmText, setConfirmText] = useState("");
+  
+  // Controlled state for editable fields
+  const [projectName, setProjectName] = useState(project?.name ?? "");
+  const [projectDescription, setProjectDescription] = useState(project?.description ?? "");
+  const [isSaving, setIsSaving] = useState(false);
+  const [sources, setSources] = useState<Record<string, boolean>>({
+    gmail: project?.sources?.includes("gmail") ?? false,
+    slack: project?.sources?.includes("slack") ?? false,
+    meeting: project?.sources?.includes("meeting") ?? false,
+  });
 
   // Load deletion summary when dialog opens
   useEffect(() => {
@@ -28,6 +40,19 @@ const ProjectSettings = () => {
       loadDeletionSummary();
     }
   }, [showDeleteConfirm, id]);
+
+  // Update state when project loads
+  useEffect(() => {
+    if (project) {
+      setProjectName(project.name);
+      setProjectDescription(project.description ?? "");
+      setSources({
+        gmail: project.sources?.includes("gmail") ?? false,
+        slack: project.sources?.includes("slack") ?? false,
+        meeting: project.sources?.includes("meeting") ?? false,
+      });
+    }
+  }, [project?.id]);
 
   const loadDeletionSummary = async () => {
     if (!id) return;
@@ -42,6 +67,63 @@ const ProjectSettings = () => {
 
   const handleDeleteClick = () => {
     setShowDeleteConfirm(true);
+  };
+
+  const handleSaveChanges = async () => {
+    if (!id || !project) return;
+    
+    if (!projectName.trim()) {
+      toast.error("Project name cannot be empty");
+      return;
+    }
+
+    setIsSaving(true);
+    try {
+      await updateDoc(doc(db, "projects", id), {
+        name: projectName.trim(),
+        description: projectDescription.trim(),
+        updatedAt: new Date().toISOString()
+      });
+      toast.success("Project details saved");
+    } catch (error: any) {
+      console.error("Error saving project:", error);
+      toast.error(`Failed to save: ${error.message}`);
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const handleToggleSource = async (sourceId: string) => {
+    if (!id) return;
+
+    const newValue = !sources[sourceId];
+    const newSources = { ...sources, [sourceId]: newValue };
+    setSources(newSources);
+
+    // Build connectedSources object for Firestore
+    const connectedSources = {
+      gmail: newSources.gmail,
+      slack: newSources.slack,
+      meeting: newSources.meeting
+    };
+
+    // Build sources array for backwards compatibility
+    const sourcesArray = Object.entries(newSources)
+      .filter(([_, v]) => v)
+      .map(([k]) => k);
+
+    try {
+      await updateDoc(doc(db, "projects", id), {
+        connectedSources,
+        sources: sourcesArray,
+        updatedAt: new Date().toISOString()
+      });
+      toast.success(newValue ? `${sourceId} connected` : `${sourceId} disconnected`);
+    } catch (error: any) {
+      // Revert on failure
+      setSources(sources);
+      toast.error(`Failed to update source: ${error.message}`);
+    }
   };
 
   const handleDeleteConfirm = async () => {
@@ -81,6 +163,7 @@ const ProjectSettings = () => {
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b border-border px-6 py-4 flex items-center gap-3">
+        <Link to="/" className="text-sm font-semibold tracking-tight">DocuMind</Link>
         <Link to="/dashboard" className="text-sm font-semibold tracking-tight">DocuMind</Link>
         <span className="text-xs text-muted-foreground">→</span>
         <button onClick={() => navigate(`/projects/${id}/brd`)} className="text-xs text-muted-foreground hover:text-foreground transition-colors">
@@ -100,21 +183,27 @@ const ProjectSettings = () => {
             <div className="px-4 py-3">
               <label className="text-xs text-muted-foreground block mb-1.5">Project name</label>
               <input
-                defaultValue={project.name}
+                value={projectName}
+                onChange={e => setProjectName(e.target.value)}
                 className="w-full bg-transparent text-sm focus:outline-none text-foreground"
               />
             </div>
             <div className="px-4 py-3">
               <label className="text-xs text-muted-foreground block mb-1.5">Description</label>
               <textarea
-                defaultValue={project.description}
+                value={projectDescription}
+                onChange={e => setProjectDescription(e.target.value)}
                 rows={3}
                 className="w-full bg-transparent text-sm focus:outline-none text-foreground resize-none"
               />
             </div>
           </div>
-          <button className="mt-3 text-sm bg-primary text-primary-foreground px-4 py-2 hover:bg-primary/90 transition-colors">
-            Save changes
+          <button 
+            onClick={handleSaveChanges}
+            disabled={isSaving}
+            className="mt-3 text-sm bg-primary text-primary-foreground px-4 py-2 hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {isSaving ? "Saving..." : "Save changes"}
           </button>
         </section>
 
@@ -122,18 +211,21 @@ const ProjectSettings = () => {
         <section className="mb-10">
           <h2 className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-4">Connected Sources</h2>
           <div className="border border-border bg-card divide-y divide-border">
-          {[
-              { id: "gmail", label: "Gmail", icon: "✉" },
-              { id: "slack", label: "Slack", icon: "#" },
-              { id: "meeting", label: "Meetings", icon: "◎" },
+            {[
+              { id: "gmail", label: "Gmail", icon: "✉", description: "Connect your Gmail to pull stakeholder emails and threads" },
+              { id: "slack", label: "Slack", icon: "#", description: "Connect Slack to ingest channel discussions and DMs" },
+              { id: "meeting", label: "Meeting Transcripts", icon: "◎", description: "Upload transcript PDFs or audio/video recordings — DocuMind will extract requirements" },
             ].map((src) => {
-              const connected = project.sources.includes(src.id);
+              const connected = sources[src.id];
               const canIngest = src.id === "gmail" || src.id === "slack";
               return (
                 <div key={src.id} className="px-4 py-3 flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <span className="text-sm font-mono text-muted-foreground">{src.icon}</span>
-                    <span className="text-sm">{src.label}</span>
+                    <div>
+                      <div className="text-sm">{src.label}</div>
+                      <div className="text-xs text-muted-foreground mt-0.5">{src.description}</div>
+                    </div>
                   </div>
                   <div className="flex items-center gap-3">
                     {connected ? (
@@ -141,6 +233,16 @@ const ProjectSettings = () => {
                     ) : (
                       <span className="text-xs text-muted-foreground font-mono">Not connected</span>
                     )}
+                    <button 
+                      onClick={() => handleToggleSource(src.id)}
+                      className={`text-xs border px-3 py-1 transition-colors ${
+                        connected
+                          ? "border-border text-muted-foreground hover:border-red-400/50 hover:text-red-400"
+                          : "border-primary text-primary hover:bg-primary/10"
+                      }`}
+                    >
+                      {connected ? "Disconnect" : "Connect"}
+                    </button>
                     {canIngest ? (
                       <button
                         onClick={() => setIngestModal(src.id as "gmail" | "slack")}

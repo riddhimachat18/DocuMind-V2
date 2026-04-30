@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { onAuthStateChanged, User } from 'firebase/auth';
 import { auth, db } from '../lib/firebase';
-import { collection, query, where, orderBy, onSnapshot } from 'firebase/firestore';
+import { collection, query, where, orderBy, onSnapshot, doc, getDoc } from 'firebase/firestore';
 
 export interface Project {
   id: string;
@@ -53,8 +53,23 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       return;
     }
 
-    const mapDoc = (d: any) => {
+    const mapDoc = async (d: any) => {
       const data = d.data();
+      let qualityScore = 0;
+      
+      // Fetch quality score from current BRD version
+      if (data.currentBrdVersionId) {
+        try {
+          const brdDoc = await getDoc(doc(db, "brdVersions", data.currentBrdVersionId));
+          if (brdDoc.exists()) {
+            const brdData = brdDoc.data();
+            qualityScore = brdData.qualityScore?.total ?? 0;
+          }
+        } catch (e) {
+          console.warn("Could not fetch quality score for", d.id);
+        }
+      }
+      
       return {
         id: d.id,
         name: data.name || '',
@@ -62,7 +77,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         lastUpdated: data.lastUpdated?.toDate?.()?.toISOString().split('T')[0] || 
                      data.updatedAt?.toDate?.()?.toISOString().split('T')[0] || 
                      new Date().toISOString().split('T')[0],
-        qualityScore: data.qualityScore || 0,
+        qualityScore,
         members: data.members || [],
         userId: data.userId || data.createdBy,
         createdAt: data.createdAt?.toDate?.()?.toISOString() || data.createdAt,
@@ -83,8 +98,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
     const unsubscribe = onSnapshot(
       q,
-      (snapshot) => {
-        const projectsData = snapshot.docs.map(mapDoc);
+      async (snapshot) => {
+        const projectsData = await Promise.all(snapshot.docs.map(mapDoc));
         setProjects(projectsData);
       },
       (error) => {
@@ -114,15 +129,6 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     // Projects are now added via Firestore, this is for backward compat
     setProjects(prev => [project, ...prev]);
   };
-
-  // Show loading state while checking auth
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="text-muted-foreground text-sm">Loading...</div>
-      </div>
-    );
-  }
 
   return (
     <AppContext.Provider value={{ isAuthenticated, user, projects, loading, login, logout, addProject }}>

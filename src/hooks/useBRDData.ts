@@ -56,6 +56,8 @@ export const useBRDData = (projectId: string | undefined) => {
   const [conflicts, setConflicts] = useState<Conflict[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [useCaseDiagramMermaid, setUseCaseDiagramMermaid] = useState<string>('');
+  const [diagramCoverage, setDiagramCoverage] = useState<number | undefined>(undefined);
 
   // Build dataSources from connectedSources - ALWAYS returns 3 sources
   const dataSources: DataSource[] = [
@@ -238,6 +240,13 @@ export const useBRDData = (projectId: string | undefined) => {
             const brdData = brdVersionDoc.data();
             const sections = brdData.sections || {};
             
+            // Extract Mermaid diagram and coverage
+            const diagramSyntax = brdData.useCaseDiagramMermaid || '';
+            console.log('[useBRDData] Fetched diagram from Firestore. Length:', diagramSyntax.length);
+            console.log('[useBRDData] Diagram first 200 chars:', diagramSyntax.substring(0, 200));
+            setUseCaseDiagramMermaid(diagramSyntax);
+            setDiagramCoverage(brdData.diagramCoverage);
+            
             // Convert sections object to array format
             const sectionArray: BRDSection[] = [];
             const sectionTitles: Record<string, string> = {
@@ -340,5 +349,7 @@ export const useBRDData = (projectId: string | undefined) => {
     conflicts,
     loading,
     error,
+    useCaseDiagramMermaid,
+    diagramCoverage,
   };
 };

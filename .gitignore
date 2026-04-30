@@ -1,3 +1,4 @@
+# Logs
 # ── Logs ──────────────────────────────────────────────────────────────────────
 logs
 *.log
@@ -14,7 +15,12 @@ dist
 dist-ssr
 *.local
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+# Environment variables
+=======
 # ── Environment variables / secrets ───────────────────────────────────────────
+>>>>>>> 3730945c3775717532ec00c21dc06d96b506ecbf
 .env
 .env.*
 !.env.example
@@ -23,6 +29,17 @@ functions/.env
 functions/.env.*
 !functions/.env.example
 
+<<<<<<< HEAD
+=======
+>>>>>>> b36c35bb902f83b490443bfea6399e1fa60ef439
+# Firebase service account keys
+*firebase-adminsdk*.json
+
+# Large data files
+data/emails.csv
+
+# Editor directories and files
+=======
 # ── Firebase service account keys ─────────────────────────────────────────────
 *firebase-adminsdk*.json
 *service-account*.json
@@ -50,6 +67,7 @@ data/emails.csv
 data_initial/
 
 # ── Editor directories ─────────────────────────────────────────────────────────
+>>>>>>> 3730945c3775717532ec00c21dc06d96b506ecbf
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -59,6 +77,9 @@ data_initial/
 *.njsproj
 *.sln
 *.sw?
+<<<<<<< HEAD
+=======
 
 # ── Build artifacts ────────────────────────────────────────────────────────────
 functions/lib/
+>>>>>>> 3730945c3775717532ec00c21dc06d96b506ecbf

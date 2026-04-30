@@ -57,6 +57,7 @@
     "jspdf": "^2.5.2",
     "lucide-react": "^0.462.0",
     "mailparser": "^3.9.3",
+    "mermaid": "^11.14.0",
     "next-themes": "^0.3.0",
     "react": "^18.3.1",
     "react-day-picker": "^8.10.1",

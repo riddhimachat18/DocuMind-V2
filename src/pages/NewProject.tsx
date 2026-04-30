@@ -66,7 +66,7 @@ const NewProject = () => {
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b border-border px-6 py-4 flex items-center gap-6">
-        <Link to="/dashboard" className="text-sm font-semibold tracking-tight">DocuMind</Link>
+        <Link to="/" className="text-sm font-semibold tracking-tight">DocuMind</Link>
         <span className="text-xs text-muted-foreground">→</span>
         <span className="text-xs text-muted-foreground">New Project</span>
       </header>
@@ -142,7 +142,7 @@ const NewProject = () => {
             {[
               { id: "gmail", label: "Gmail", desc: "Connect your Gmail to pull stakeholder emails and threads.", icon: "✉" },
               { id: "slack", label: "Slack", desc: "Connect Slack to ingest channel discussions and DMs.", icon: "#" },
-              { id: "meeting", label: "Meeting Recording", desc: "Upload audio/video recordings — DocuMind will transcribe and extract requirements.", icon: "◎" },
+              { id: "meeting", label: "Meeting Transcripts", desc: "Upload transcript PDFs or audio/video recordings — DocuMind will extract requirements.", icon: "◎" },
             ].map((src) => (
               <button
                 key={src.id}

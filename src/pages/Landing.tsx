@@ -11,7 +11,7 @@ const Landing = () => {
         </svg>
       ),
       title: "Multi-Source Ingestion",
-      desc: "Pull context from Slack threads, emails, and meeting recordings into a unified pipeline.",
+      desc: "Pull context from Slack threads, emails, and meeting transcripts into a unified pipeline.",
     },
     {
       icon: (
@@ -92,7 +92,7 @@ const Landing = () => {
             </h1>
 
             <p className="text-xl text-muted-foreground leading-relaxed max-w-xl font-light">
-              DocuMind ingests your team's scattered conversations—Slack threads, emails, meeting recordings—and generates a 
+              DocuMind ingests your team's scattered conversations—Slack threads, emails, meeting transcripts—and generates a 
               <span className="text-foreground font-medium"> structured, evidence-traced Business Requirements Document </span>
               in minutes.
             </p>
