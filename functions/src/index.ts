@@ -4,6 +4,8 @@ export { detectConflicts } from "./detectConflicts";
 export { onChatMessage } from "./onChatMessage";
 export { classifySnippet } from "./classifySnippet";
 export { onFileUploaded } from "./onFileUploaded";
+export { ingestGmail } from "./ingestGmail";
+export { ingestSlack } from "./ingestSlack";
 
 // Export Firestore triggers
 export { onConflictResolved } from "./scoreQuality";

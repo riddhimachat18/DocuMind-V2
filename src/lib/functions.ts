@@ -18,3 +18,5 @@ export const generateBrdFn = httpsCallable(functions, "generateBrd", { timeout: 
 export const detectConflictsFn = httpsCallable(functions, "detectConflicts", { timeout: 300000 }); // 5 minutes
 export const onChatMessageFn = httpsCallable(functions, "onChatMessage", defaultOptions);
 export const onFileUploadedFn = httpsCallable(functions, "onFileUploaded", fileProcessingOptions);
+export const ingestGmailFn = httpsCallable(functions, "ingestGmail", fileProcessingOptions);
+export const ingestSlackFn = httpsCallable(functions, "ingestSlack", fileProcessingOptions);

@@ -3,7 +3,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import * as admin from "firebase-admin";
 import { ChromaClient } from "chromadb";
 import { defineSecret } from "firebase-functions/params";
-import { CHROMA_URL } from "./retrieval";
+import { FEW_SHOT_PROMPT } from "./classifyText";
 
 const GEMINI_API_KEY = defineSecret("GEMINI_API_KEY");
 
@@ -19,7 +19,7 @@ async function embedQuery(text: string, key: string): Promise<number[]> {
 
 export const onFileUploaded = onCall(
   {
-    secrets: [GEMINI_API_KEY, CHROMA_URL],
+    secrets: [GEMINI_API_KEY],
     cors: true,
     timeoutSeconds: 540,
     memory: "512MiB"
@@ -59,6 +59,8 @@ export const onFileUploaded = onCall(
 
     const genAI = new GoogleGenerativeAI(key);
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+
+    const VALID = ["REQUIREMENT", "DECISION", "CONSTRAINT", "NOISE"];
 
     // Split content into chunks at sentence boundaries
     function splitIntoChunks(text: string, maxLen = 800): string[] {
@@ -102,15 +104,12 @@ export const onFileUploaded = onCall(
       
       const results = await Promise.allSettled(
         batchChunks.map(async (chunk) => {
-          const prompt = `Classify this text as REQUIREMENT, DECISION, CONSTRAINT, or NOISE.
-Return JSON only: {"label": "...", "confidence": 0.0-1.0}
-
-Text: "${chunk.slice(0, 300)}"`;
-
+          const prompt = FEW_SHOT_PROMPT.replace("{sentence}", chunk.slice(0, 500).replace(/"/g, "'"));
           const result = await model.generateContent(prompt);
-          const raw = result.response.text().replace(/```json|```/g, "").trim();
-          const parsed = JSON.parse(raw);
-          
+          const raw = result.response.text().trim().toUpperCase().split(/\s/)[0];
+          const label = VALID.find(c => raw.startsWith(c.slice(0, 4))) ?? "NOISE";
+          const parsed = { label, confidence: 0.9 };
+
           return { chunk, parsed };
         })
       );
@@ -150,7 +149,7 @@ Text: "${chunk.slice(0, 300)}"`;
     await batch.commit();
 
     // Store classified snippets in ChromaDB with embeddings
-    const chromaUrlValue = CHROMA_URL.value();
+    const chromaUrlValue = process.env.CHROMA_URL ?? "";
     if (chromaUrlValue && snippetIds.length > 0) {
       try {
         const chroma = new ChromaClient({

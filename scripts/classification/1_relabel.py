@@ -54,58 +54,49 @@ genai.configure(api_key=GEMINI_API_KEY)
 gemini = genai.GenerativeModel(GEMINI_MODEL)
 
 # ── Four-class few-shot prompt ────────────────────────────────────────────────
-PROMPT_TEMPLATE = """Classify the following sentence from a software requirements document into exactly one of four classes:
+# Canonical prompt from 4_evaluate.py — the one that produced 0.824 macro-F1.
+PROMPT_TEMPLATE = """Classify the following sentence into exactly one of these four classes:
 REQUIREMENT, DECISION, CONSTRAINT, NOISE.
-
+Definitions and examples:
 REQUIREMENT — A functional or non-functional capability the system must provide.
-Uses modal verbs: shall, must, will, should, needs to.
-Describes what the system does, provides, supports, or allows.
+Usually contains modal verbs: shall, must, will, should, needs to.
 Examples:
-  "The system shall allow users to reset their password via email."
-  "The application must support offline mode for mobile users."
-  "Response time shall not exceed 200ms under normal load."
-  "The system should provide search functionality across all records."
-  "Users shall be able to export reports in PDF and CSV formats."
-
-DECISION — An architectural or design choice already made by the team.
-Past tense, passive voice, or definitive present-tense statements about
-technology, tools, frameworks, or approaches that have been chosen/agreed.
+  - "The system shall allow users to reset their password via email."
+  - "The application must support offline mode for mobile users."
+  - "Response time shall not exceed 200ms under normal load."
+DECISION — A design or architectural choice already made. Past tense or
+definitive statements about technology, approach, or design selected.
 Examples:
-  "OAuth 2.0 has been selected for authentication."
-  "The system will use a three-tier architecture."
-  "The team decided to use PostgreSQL as the primary database."
-  "React has been chosen for the frontend framework."
-  "The architecture follows a microservices pattern."
-
-CONSTRAINT — An external limitation imposed on the system from outside.
-Budget, regulatory, legal, time, platform, or organisational boundaries
-that the development team cannot change or control.
+  - "The team decided to use PostgreSQL as the primary database."
+  - "OAuth 2.0 has been selected for authentication."
+  - "The architecture will follow a microservices pattern."
+  - "Access to the database will be via the training application rather than the production application."
+  - "The system will use a three-tier architecture."
+  - "It was agreed that React will be used for the frontend."
+CONSTRAINT — A limitation, boundary, or restriction imposed from outside
+the system — budget, regulatory, time, platform, or organisational.
 Examples:
-  "The system must comply with GDPR data protection regulations."
-  "The project budget is capped at $200,000."
-  "Development must be completed by Q3 2024."
-  "Only approved third-party libraries may be used."
-  "The solution must operate within the existing network infrastructure."
-  "Access to the database is restricted to authorised personnel only."
-
-NOISE — Everything else. Document metadata, section headers, introductory
-prose, background context, definitions, or any sentence that does not
-directly specify a system behavior, design decision, or external constraint.
+  - "The system must comply with GDPR data protection regulations."
+  - "The project budget is capped at $200,000."
+  - "The solution must be deployable on Google Cloud Platform only."
+  - "Development must be completed by Q3 2024."
+  - "Access to the DBMS may only be via the training application, not the production system."
+  - "The system is limited to operating within the existing network infrastructure."
+  - "Only approved third-party libraries may be used."
+NOISE — Everything else: greetings, meeting logistics, filler text,
+section headers, metadata, opinions without requirement content.
 Examples:
-  "This document was last updated on March 2023."
-  "The following section describes the system overview."
-  "1.1 Purpose"
-  "The purpose of this document is to describe..."
-  "Table 1 summarises the requirements listed above."
-  "This section is intentionally left blank."
-
+  - "Please find the agenda attached."
+  - "This document was last updated on March 2023."
+  - "The following section describes the system overview."
+  - "Thank you for your participation."
 Rules:
-- If a sentence could be REQUIREMENT or DECISION, ask: is it describing
-  what the system SHALL DO (REQUIREMENT) or what was ALREADY CHOSEN (DECISION)?
-- External limits the team cannot change → CONSTRAINT, not REQUIREMENT.
-- Background, context, or administrative text → NOISE.
-- When genuinely uncertain between two classes → prefer REQUIREMENT.
-- Return ONLY the label word. No explanation. No punctuation. No quotes.
+- If a sentence has both requirement and constraint content, choose REQUIREMENT.
+- If uncertain between DECISION and REQUIREMENT, look for past tense or "will be/has been selected/decided/agreed" → DECISION.
+- If the sentence describes an external limitation or boundary NOT under the system's control → CONSTRAINT.
+- If the sentence uses "shall/must/should" for a system capability → REQUIREMENT.
+- Non-requirements from the original dataset can be CONSTRAINT, DECISION, or NOISE.
+- Return ONLY the label word. No explanation. No punctuation.
 
 Sentence: "{sentence}"
 
