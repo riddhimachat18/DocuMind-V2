@@ -1,0 +1,45 @@
+======================================================================
+EXPERIMENT 4 — CONFLICT DETECTION EVALUATION
+======================================================================
+
+DATASET
+-------
+Documents evaluated:        409
+Total requirement pairs:    409
+Annotated pairs:            409
+True conflicts (gold):      45
+
+PHASE FILTERING PERFORMANCE
+----------------------------
+Phase 1 candidates:         409 (100.00% of all pairs)
+Phase 2 confirmed:          83 (20.3% of phase1)
+Phase 1→2 reduction:        79.7% filtered out by LLM
+
+CONFLICT DETECTION METRICS
+---------------------------
+Precision:                  0.494
+Recall:                     0.911
+F1 Score:                   0.641
+
+Confusion Matrix:
+  True Negatives (TN):      322
+  False Positives (FP):     42
+  False Negatives (FN):     4
+  True Positives (TP):      41
+
+BASELINE COMPARISON
+-------------------
+DocuMind (Two-Phase):       F1 = 0.641
+S3CDA (Baseline):           F1 = 0.896
+GPT-4o (Baseline):          F1 = 0.594
+
+ANALYSIS
+--------
+✓ DocuMind outperforms GPT-4o but below S3CDA
+  Gap to S3CDA: 25.5 F1 points
+
+Phase 1 (semantic similarity) filters out 0.0% of pairs
+Phase 2 (LLM verification) filters out 79.7% of phase1 candidates
+Overall: Only 20.293% of all pairs flagged as conflicts
+
+======================================================================

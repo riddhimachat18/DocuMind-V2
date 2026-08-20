@@ -1,0 +1,85 @@
+======================================================================
+EXPERIMENT 3 — CITATION VERIFICATION IAA REPORT
+======================================================================
+
+DATASET
+-------
+Total citations annotated:  20
+Agreements:                 16 (80.0%)
+Disagreements:              4 (20.0%)
+
+COHEN'S KAPPA
+-------------
+κ = 0.667
+
+Interpretation:
+  κ < 0.00   : No agreement
+  0.00-0.20  : Slight agreement
+  0.21-0.40  : Fair agreement
+  0.41-0.60  : Moderate agreement
+  0.61-0.80  : Substantial agreement
+  0.81-1.00  : Almost perfect agreement
+
+✓ Substantial agreement - citation accuracy claim is reliable
+
+======================================================================
+CONFUSION MATRIX
+======================================================================
+
+Rows = Annotator 1, Columns = Annotator 2
+
+                                    SUPPORTS             PARTIALLY      DOES_NOT_SUPPORT
+----------------------------------------------------------------------------------------
+SUPPORTS                                  10                     0                     2
+PARTIALLY                                  0                     2                     2
+DOES_NOT_SUPPORT                           0                     0                     4
+
+======================================================================
+LABEL DISTRIBUTION
+======================================================================
+
+Label                Annotator1    Annotator2
+---------------------------------------------
+SUPPORTS             12            10
+PARTIALLY            4             2
+DOES_NOT_SUPPORT     4             8
+
+======================================================================
+DISAGREEMENTS (4 citations)
+======================================================================
+
+  A1=PARTIALLY vs A2=DOES_NOT_SUPPORT: 2
+  A1=SUPPORTS vs A2=DOES_NOT_SUPPORT: 2
+
+Example Disagreements:
+
+BRD ID: uWizg6dPOrKJoQD7i1iA
+  Sentence: FR-008: The system shall include DVD functionality....
+  Annotator1: PARTIALLY
+  Annotator2: DOES_NOT_SUPPORT
+
+BRD ID: 7pr9rpwHRmu27bdWS1VE
+  Sentence: FR-008: The system shall provide the base salaries for specified individuals....
+  Annotator1: SUPPORTS
+  Annotator2: DOES_NOT_SUPPORT
+
+BRD ID: cwdFaJr0bdYhEGiOTbqk
+  Sentence: FR-017: The system shall track a target value of 1283 for the end of October....
+  Annotator1: SUPPORTS
+  Annotator2: DOES_NOT_SUPPORT
+
+BRD ID: RS34yfaDYFDtainKP4jw
+  Sentence: FR-013: The system shall record participant presence for specific calls, such as the Wireless call....
+  Annotator1: PARTIALLY
+  Annotator2: DOES_NOT_SUPPORT
+
+======================================================================
+RECOMMENDATION FOR PAPER
+======================================================================
+
+Report Cohen's κ = 0.667 as validation of citation verification.
+Sample: 20 citations stratified across verdict types.
+Agreement rate: 80.0%
+
+Interpretation: Substantial agreement - citation accuracy claim is reliable
+======================================================================

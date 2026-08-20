@@ -83,3 +83,6 @@ data_initial/
 # ── Build artifacts ────────────────────────────────────────────────────────────
 functions/lib/
 >>>>>>> 3730945c3775717532ec00c21dc06d96b506ecbf
+
+scripts/experiment3/enron_mail_20150507/
+scripts/experiment3/ami_public_manual_1.6.2

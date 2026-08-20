@@ -1,0 +1,72 @@
+======================================================================
+ENSEMBLE CONFLICT DETECTION ANALYSIS
+======================================================================
+
+MOTIVATION
+----------
+Reviewer suggestion: Combine DocuMind with S3CDA baseline for improved
+performance through ensemble methods.
+
+METHODOLOGY
+-----------
+Dataset: 409 requirement pairs, 45 true conflicts
+
+Ensemble Strategies:
+  1. UNION: Flag if EITHER DocuMind OR S3CDA detects conflict
+     → Maximizes recall (catches more conflicts)
+  
+  2. INTERSECTION: Flag if BOTH DocuMind AND S3CDA detect conflict
+     → Maximizes precision (reduces false positives)
+
+NOTE: S3CDA results are SIMULATED based on reported F1=0.896
+Replace with real S3CDA predictions for final paper.
+
+RESULTS
+-------
+
+System              Precision  Recall     F1      TP   FP   TN   FN
+DocuMind (Two-Phase)    0.494      0.911    0.641    41   42  322    4
+S3CDA (Baseline)        0.909      0.889    0.899    40    4  360    5
+Ensemble: Union         0.494      0.978    0.657    44   45  319    1
+Ensemble: Intersection  0.974      0.822    0.892    37    1  363    8
+
+ANALYSIS
+--------
+⚠ DocuMind F1 is 25.8 points below S3CDA
+
+Union Ensemble:
+  Recall: 0.978 (gain: +6.7 points)
+  F1: 0.657
+  ✓ Recovers 3 additional conflicts
+
+Intersection Ensemble:
+  Precision: 0.974 (gain: +6.5 points)
+  F1: 0.892
+  ✓ Reduces false positives by 41
+
+COMPLEMENTARITY ANALYSIS
+------------------------
+DocuMind-only conflicts:  45
+S3CDA-only conflicts:     6
+Both systems agree:       38
+
+Agreement rate: 42.7%
+
+======================================================================
+RECOMMENDATION FOR PAPER
+======================================================================
+
+1. Obtain actual S3CDA predictions on your 409 pairs:
+   - Contact Malik et al. for their tool/predictions
+   - Or run S3CDA (open source) on your corpus
+   
+2. Re-run this script with real S3CDA predictions
+
+3. Report ensemble results in Table VII:
+   - Show DocuMind, S3CDA, Union, and Intersection
+   - Highlight that Union improves recall
+   - Highlight that Intersection improves precision
+   
+4. Even if ensemble doesn't beat S3CDA alone, showing the
+   complementarity and trade-offs is valuable.
+======================================================================

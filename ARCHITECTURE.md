@@ -37,6 +37,8 @@ DocuMind is a three-tier architecture:
 │  │  - detectConflicts                               │     │
 │  │  - onChatMessage                                 │     │
 │  │  - classifySnippet                               │     │
+│  │  - ingestGmail (NEW)                             │     │
+│  │  - ingestSlack (NEW)                             │     │
 │  └──────────────────────────────────────────────────┘     │
 └────────────────┬────────────────────────────────────────────┘
                  │
@@ -79,6 +81,61 @@ Store in Firestore + ChromaDB
     ↓
 Update file status → "processed"
 ```
+
+### 1.5. Gmail & Slack Ingestion (NEW)
+
+**Gmail Ingestion Flow:**
+```
+User authorizes Gmail access
+    ↓
+Frontend calls ingestGmail()
+    ↓
+Fetch emails via Gmail API (OAuth2)
+    ↓
+Extract: subject, from, date, body
+    ↓
+Few-shot classification with Gemini
+    ├→ REQUIREMENT
+    ├→ DECISION
+    ├→ CONSTRAINT
+    └→ NOISE (filtered out)
+    ↓
+Parallel embedding generation (batches of 30)
+    ↓
+Store in Firestore with source="gmail"
+    ↓
+Update project.connectedSources.gmail = true
+```
+
+**Slack Ingestion Flow:**
+```
+User provides Slack token + channel ID
+    ↓
+Frontend calls ingestSlack()
+    ↓
+Fetch messages via Slack Web API
+    ↓
+Extract: text, author, timestamp, thread
+    ↓
+Few-shot classification with Gemini
+    ├→ REQUIREMENT
+    ├→ DECISION
+    ├→ CONSTRAINT
+    └→ NOISE (filtered out)
+    ↓
+Parallel embedding generation (batches of 30)
+    ↓
+Store in Firestore with source="slack"
+    ↓
+Update project.connectedSources.slack = true
+```
+
+**Few-Shot Classification:**
+Both Gmail and Slack ingestion use few-shot prompting with Gemini to improve classification accuracy:
+- 6 example classifications provided in prompt
+- Examples cover all 4 categories (REQUIREMENT, DECISION, CONSTRAINT, NOISE)
+- Each example includes reasoning to guide the model
+- Model outputs JSON: `{"classification": "LABEL", "reason": "explanation"}`
 
 ### 2. BRD Generation
 

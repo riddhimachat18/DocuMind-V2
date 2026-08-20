@@ -6,6 +6,3 @@ export { classifySnippet } from "./classifySnippet";
 export { onFileUploaded } from "./onFileUploaded";
 export { ingestGmail } from "./ingestGmail";
 export { ingestSlack } from "./ingestSlack";
-
-// Export Firestore triggers
-export { onConflictResolved } from "./scoreQuality";

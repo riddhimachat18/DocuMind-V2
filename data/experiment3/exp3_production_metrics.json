@@ -1,0 +1,15 @@
+{
+  "documind_production": {
+    "traceability_coverage_pct": 44.66019417475729,
+    "uncited_rate_pct": 55.33980582524271,
+    "cited_sentences": 230,
+    "total_sentences": 515,
+    "fr_citation_rate_pct": 88.95348837209302,
+    "nfr_citation_rate_pct": 96.25
+  },
+  "datasets": {
+    "enron_projects": 7,
+    "ami_projects": 4,
+    "total_brds": 11
+  }
+}
