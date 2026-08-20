@@ -1,0 +1,67 @@
+[
+  {
+    "projectId": "exp3-email-lokay-m_systems",
+    "brdId": "f6QerxfeOUtmrqanfbUg",
+    "source_type": "email",
+    "source_label": "lokay-m_systems",
+    "subject": "SAP ERP Implementation"
+  },
+  {
+    "projectId": "exp3-email-beck-s_sap",
+    "brdId": "migINRc0FZrlbIta1QQ9",
+    "source_type": "email",
+    "source_label": "beck-s_sap",
+    "subject": "SAP System Rollout"
+  },
+  {
+    "projectId": "exp3-email-scott-s_msap_info",
+    "brdId": "sqRx9RkfySlMlfYixWUW",
+    "source_type": "email",
+    "source_label": "scott-s_msap_info",
+    "subject": "MSAP Trading System"
+  },
+  {
+    "projectId": "exp3-email-hayslett-r_projects",
+    "brdId": "WTlK8oZueIr7dJzUAYQC",
+    "source_type": "email",
+    "source_label": "hayslett-r_projects",
+    "subject": "Infrastructure Projects"
+  },
+  {
+    "projectId": "exp3-email-richey-c_infrastructure",
+    "brdId": "cfuA5qlKaPXwGelpn3F3",
+    "source_type": "email",
+    "source_label": "richey-c_infrastructure",
+    "subject": "Infrastructure Planning"
+  },
+  {
+    "projectId": "exp3-transcript-ES2002b",
+    "brdId": "XsltA1aoKFMDvQXBSFxa",
+    "source_type": "transcript",
+    "source_label": "ES2002b"
+  },
+  {
+    "projectId": "exp3-transcript-ES2003a",
+    "brdId": "lDCnWQwFdcbp5xsURA4A",
+    "source_type": "transcript",
+    "source_label": "ES2003a"
+  },
+  {
+    "projectId": "exp3-transcript-ES2004a",
+    "brdId": "cdVD9ukAsg7iSFtqpupl",
+    "source_type": "transcript",
+    "source_label": "ES2004a"
+  },
+  {
+    "projectId": "exp3-transcript-ES2006a",
+    "brdId": "ltjm9ipbINt57ec2xqqT",
+    "source_type": "transcript",
+    "source_label": "ES2006a"
+  },
+  {
+    "projectId": "exp3-transcript-IS1000a",
+    "brdId": "vWsJUhMbOBV6ZerjNWVr",
+    "source_type": "transcript",
+    "source_label": "IS1000a"
+  }
+]

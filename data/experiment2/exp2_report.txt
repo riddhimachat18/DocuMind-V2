@@ -1,0 +1,61 @@
+======================================================================
+EXPERIMENT 2 — BRD Generation Quality
+Threads evaluated:        15
+======================================================================
+
+── Track A: Algorithmic Score vs Human Rating ─────────────────────────
+n (BRDs rated):           15
+Pearson r:                0.249
+p-value:                  0.3714
+Significant (p < 0.05):   NO
+Target (r > 0.60):        FAILED
+
+  Algorithmic score range: 53 – 73  (LLM evaluator overall, 0-100)
+  Human score range:       40 – 84  (holistic 1-5)
+
+  Per-BRD scores:
+  Thread   Subject                                    Algo  Human
+  --------------------------------------------------------------
+  T01      Infrastructure Projects                      55     68
+  T02      Enron Online Access Management               61     40
+  T03      SAP ERP System Rollout                       70     76
+  T04      McKinsey Consulting Project                  64     52
+  T05      Project Stanley                              66     61
+  T06      MSAP Trading Platform                        60     53
+  T07      California Energy Project                    53     53
+  T08      SAP Technical Architecture                   56     84
+  T09      TW Transactional Requirements                66     81
+  T10      Sundevil Pipeline Project                    59     63
+  T11      weekend outage report for 5-18-01 thro       60     59
+  T12      credit applicatiions in grms                 55     70
+  T13      caithness big sandy llc                      66     78
+  T14      summary of commission meeting                54     71
+  T15      fea announces the release of @energy 2       73     78
+
+── Track B: Requirement Recall ────────────────────────────────────────
+n (threads):              14  (T08 excluded — annotation contamination)
+Total gold sentences:     874
+Total recalled:           506 (57.9%)
+Mean recall:              0.554
+Std dev:                  0.240
+Similarity threshold:     0.85 (cosine, gemini-embedding-001)
+
+  Per-thread recall:
+  Thread     Gold   Recalled   Recall
+  ------------------------------------
+  T01          61         29    0.475
+  T02           1          1    1.000
+  T03          63         18    0.286
+  T04          94         38    0.404
+  T05          29         10    0.345
+  T06          41         23    0.561
+  T07          21          5    0.238
+  T09         102         84    0.824
+  T10          27          9    0.333
+  T11         112         74    0.661
+  T12          78         45    0.577
+  T13          83         52    0.626
+  T14          75         35    0.467
+  T15          87         83    0.954
+
+======================================================================

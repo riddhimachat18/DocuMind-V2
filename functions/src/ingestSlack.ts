@@ -5,14 +5,13 @@ import { WebClient } from "@slack/web-api";
 import { classifyText } from "./classifyText";
 
 const GEMINI_API_KEY = defineSecret("GEMINI_API_KEY");
-const SLACK_BOT_TOKEN = defineSecret("SLACK_BOT_TOKEN");
 
 if (!admin.apps.length) admin.initializeApp();
 const db = admin.firestore();
 
 export const ingestSlack = onCall(
   {
-    secrets: [GEMINI_API_KEY, SLACK_BOT_TOKEN],
+    secrets: [GEMINI_API_KEY],
     cors: true,
     timeoutSeconds: 540,
     memory: "512MiB",
@@ -22,8 +21,8 @@ export const ingestSlack = onCall(
 
     const {
       projectId,
-      channelIds,           // string[] — list of channel IDs to ingest
-      daysBack = 30,        // how many days of history to fetch
+      channelIds,              // string[] — Slack channel IDs to ingest
+      daysBack = 30,
       maxMessagesPerChannel = 200,
     } = data;
 
@@ -32,25 +31,39 @@ export const ingestSlack = onCall(
     }
 
     const geminiKey = GEMINI_API_KEY.value();
-    const slackToken = SLACK_BOT_TOKEN.value();
-
     if (!geminiKey) throw new Error("GEMINI_API_KEY not configured");
-    if (!slackToken) throw new Error("SLACK_BOT_TOKEN not configured");
+
+    // Read the per-user Slack token from Firestore
+    const integrationDoc = await db
+      .collection("users")
+      .doc(auth.uid)
+      .collection("integrations")
+      .doc("slack")
+      .get();
+
+    if (!integrationDoc.exists) {
+      throw new Error("Slack not connected. Please connect Slack first.");
+    }
+
+    const slackToken: string = integrationDoc.data()!.access_token;
+    if (!slackToken) throw new Error("Slack access token missing. Please reconnect Slack.");
 
     const client = new WebClient(slackToken);
 
     // oldest timestamp = now minus daysBack
     const oldest = String(Math.floor(Date.now() / 1000) - daysBack * 86400);
 
-    // Fetch user display names once to resolve IDs
+    // Resolve user IDs to display names once
     const usersMap: Record<string, string> = {};
     try {
       const usersRes = await client.users.list({});
       for (const member of usersRes.members ?? []) {
-        if (member.id) usersMap[member.id] = member.profile?.display_name || member.name || member.id;
+        if (member.id) {
+          usersMap[member.id] = member.profile?.display_name || member.name || member.id;
+        }
       }
     } catch {
-      // Non-fatal — fall back to user IDs
+      // Non-fatal — fall back to raw user IDs
     }
 
     const breakdown: Record<string, number> = { REQUIREMENT: 0, DECISION: 0, CONSTRAINT: 0 };
@@ -58,7 +71,6 @@ export const ingestSlack = onCall(
     const batch = db.batch();
 
     for (const channelId of channelIds as string[]) {
-      // Fetch channel info for a readable name
       let channelName = channelId;
       try {
         const info = await client.conversations.info({ channel: channelId });
@@ -80,7 +92,6 @@ export const ingestSlack = onCall(
 
         const messages = result.messages ?? [];
 
-        // Classify in parallel batches of 10
         const BATCH_SIZE = 10;
         for (let i = 0; i < messages.length; i += BATCH_SIZE) {
           const slice = messages.slice(i, i + BATCH_SIZE);

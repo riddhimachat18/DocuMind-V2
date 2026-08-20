@@ -1,0 +1,136 @@
+thread_id,thread_subject,sentence,annotator1_label,annotator2_label,annotator2_notes
+T09,TW Transactional Requirements,"For the period August 1, 2001 to January 31, 2002, please provide the following information on a daily basis for each of your gas purchase contracts associated with the sales contracts you identified in response to Question 2:
+
+a.	the purchase contract's identification number;
+b.	the pipeline upstream of the point of delivery; and the pipeline downstream of the point of delivery;
+c.	the term of the purchase contract (beginning and ending dates); 
+d.	the daily volumes (on a MMBtu basis) purchased;
+e.	the price paid; 
+           f.         whether the price is fixed or indexed (identify the index),
+g .	identify the entity from whom the responder purchased the gas; and,
+h.	identify the point where responder took title to the gas.",CON,REQ,
+T09,TW Transactional Requirements,"The way this field works is as follows: If the Operational Capacity Volume is updated during the allocation process, the reps. must enter a comment.",REQ,DEC,
+T07,California Energy Project,"In terms of the market 
+finding out, we always say that our assets are always for sale so I don't 
+think we are giving away anything new.",NONE,NONE,
+T07,California Energy Project,"Audience communications map=01*Develop a matrix that details the specific=
+=20
+communications strategy for key stakeholder audiences.",REQ,REQ,
+T12,credit applicatiions in grms,"Bjorn Hagelmann
+01/28/2000 09:25 AM
+Hickerson/HOU/ECT@ECT, Philippe A Bibi/HOU/ECT@ECT, Vince J 
+Kaminski/HOU/ECT@ECT
+cc: Rick Buy/HOU/ECT@ECT, Mike McConnell/HOU/ECT@ECT 
+
+THIS NOTE IS FROM TED MURPHY (not bjorn hagelman)
+
+My understanding is that yet another meeting has been scheduled with the 
+intent of diverting resources from the GRMS project to some other project.",NONE,NONE,
+T07,California Energy Project,"Include names, addresses, phone, fax,, and email. =
+=20
+Put into Excel format.",REQ,REQ,
+T09,TW Transactional Requirements,"We will need to get these systems coded with the new basin, then get the TMS system updated and coded .",REQ,REQ,
+T12,credit applicatiions in grms,"It is not intended to be a
+commercial trading product not is its primary purpose for commercial
+decision-making.",CON,CON,
+T07,California Energy Project,"It will be essential that all spokespeople are delivering the=
+=20
+same message and are well prepared for difficult situations.=20
+
+?",NONE,REQ,
+T09,TW Transactional Requirements,F & G - A comment data field for operational capacity updates was added to TMS around the 13th or 14th of August.,DEC,DEC,
+T15,fea announces the release of @energy 2.0,"Zimin
+
+Vince J Kaminski
+01/31/2001 11:20 AM
+cc: Vince J Kaminski/HOU/ECT@ECT, Stinson Gibner/HOU/ECT@ECT 
+
+Zimin,
+
+Please, take a look at it.",NONE,NONE,
+T09,TW Transactional Requirements,"On a daily basis for the period August 1, 2001 to January 31, 2002, please provide the following information for each contract in which you sold natural gas and the gas is physically delivered at points on the California border or in California: 
+a.	the sales contract's identification number;
+b.	the term of the sales contract (beginning and ending dates);
+c.	the name of the buyer identifying whether the buyer is an energy marketer, local distribution company, or end user; 
+d.	the volumes sold (on a MMBtu basis); 
+e.	the price paid by buyer, and
+f.	whether the price is fixed or indexed (identify the index).",CON,REQ,
+T07,California Energy Project,"They stated that they will
+most likely be unable to complete this review until Thursday or Friday due
+to the amount of documents and to the fact that they still require more
+docs.",CON,NONE,
+T15,fea announces the release of @energy 2.0,"Download and run on
+a local drive.",CON,REQ,
+T09,TW Transactional Requirements,"For each sales contract, identify separately the transportation component and the gas commodity component of the price.",REQ,REQ,
+T07,California Energy Project,Please review and comment ASAP.,NONE,NONE,
+T15,fea announces the release of @energy 2.0,"CALSPREADOPT now allows for the specification of
+two different mean reversion rates. 30-35% speed improvement.
+
+@ENERGY (Swing)
+SWINGOPT and STRIPSWINGOPT now allow for valuation of swing straddle
+contracts with overall load constraints. 65-70% speed improvement.",DEC,DEC,
+T15,fea announces the release of @energy 2.0,"You will be able to run both the new and old SWING
+simultaneously.",REQ,REQ,
+T15,fea announces the release of @energy 2.0,"Your CD's and manuals will be shipped to
+you within 2 weeks.",CON,NONE,
+T07,California Energy Project,"This email is intended to be reviewed by only the individual
+or organization named above.",CON,CON,
+T09,TW Transactional Requirements,My recollection is that we do not let them release Ignacio because it is not part of their primary path.,DEC,DEC,
+T09,TW Transactional Requirements,"Along with the hard copy response, please provide a CD-ROM containing the response to this question.",CON,REQ,
+T09,TW Transactional Requirements,Question 3:  I just changed the alignment on the text cells for the 3 comment records at the bottom from Centered to Left.,DEC,DEC,
+T07,California Energy Project,"Shelley Barber and Randy Young are
+also following up on local counsel issues, but I do not know the status of
+their progress as of this afternoon.
+
+ - Transredes - excerpt.DOC
+ - BBPL - excerpt.DOC
+ - Strategic overview of natural gas distribution  - excerpt.DOC
+ - Riogas  - excerpt.DOC
+ - Gaspart - excerpt.DOC
+ - Brazilian - Power Generation Overview  - excerpt.DOC
+ - Cuiaba II - excerpt.DOC
+ - Elektro - excerpt.DOC
+ - 167111_1.doc",NONE,NONE,
+T12,credit applicatiions in grms,"I do not denigrate the efforts of others, but I believe that 
+they must either submit their detailed requirements to us for our 
+consideration of their worthiness to put in OUR que or develop their own 
+project with their own resources.",CON,CON,
+T09,TW Transactional Requirements,"Please provide this information in Excel version 97 or 2000 or comma separated value (CSV) format.
+
+8.",CON,REQ,
+T12,credit applicatiions in grms,"I do not denigrate the efforts of others, but I believe that they
+must either submit their detailed requirements to us for our consideration of
+their worthiness to put in OUR que or develop their own project with their own
+resources.",CON,CON,
+T07,California Energy Project,"I will cc Robert George on this e-mail in
+case he has any thoughts or someone he knows who can help respond.
+
+3.",NONE,NONE,
+T07,California Energy Project,"Contact lists--Develop comprehensive contact lists of all=20
+audiences/stakeholders.",REQ,REQ,
+T07,California Energy Project,"If we deem 
+appropriate or necessary, when we get closer to the date they can bring in 
+teams from some of the countries where we need assistance.",NONE,NONE,
+T07,California Energy Project,"FYI
+ 
+
+Francisco Pinto Leite@ENRON_DEVELOPMENT
+03/21/2000 05:38 PM
+cc:   Mitchell Taylor/Corp/Enron@ENRON, fsayre@ei.enron.com, Randy
+      Young/ENRON_DEVELOPMENT@ENRON_DEVELOPMENT
+
+Apparently our local counsel in Puerto Rico had a small ""change of heart""
+as to the transfer restrictions for San Juan Gas, Procaribe and Progasco.",NONE,NONE,
+T09,TW Transactional Requirements,"If the sales contract specifies the transportation component of the price, the seller shall report that amount.",REQ,REQ,
+T09,TW Transactional Requirements,Please provide this information in Excel version 97 or 2000 or comma separated value (CSV) format.,CON,REQ,
+T12,credit applicatiions in grms,"It is not intended to be 
+a commercial trading product not is its primary purpose for commercial 
+decision-making.",CON,CON,
+T09,TW Transactional Requirements,"On a daily basis for the period August 1, 2001 to January 31, 2002, please provide the following information for each gas purchase contract: 
+
+a.	the purchase contract's identification number;
+b.	the term of the purchase contract (beginning and ending dates); 
+c.	the volumes (on a MMBtu basis) bought;
+d.	the price paid; 
+e.	whether the price is fixed or indexed (identify the index); and,
+f.	identify the point where (name of local distribution company) took title to the gas.",REQ,REQ,

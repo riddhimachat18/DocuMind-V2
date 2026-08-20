@@ -1,0 +1,408 @@
+brd_id,source_type,source_label,section,brd_sentence,source_snippet_1,source_snippet_2,annotator1_verdict,annotator1_notes,annotator2_verdict,annotator2_notes
+sqRx9RkfySlMlfYixWUW,email,scott-s_msap_info,successMetrics,Each employee receives a home computer through the ClickAtHome program .,"With that in mind, we are excited to let you know that we are introducing t=
+he=20
+ClickAtHome
+program, which will give each employee a computer for use at home.  Where=20
+technology permits, we will also subsidize an Internet connection.  With the=
+=20
+click of a mouse, a home computer plus Internet access will put a world of=
+=20
+Internet knowledge at your family=01,s fingertips.  =20
+
+We have just signed an agreement with Dell Computer Corporation to provide=
+=20
+the computer hardware.  We wanted to let you know about the program now in=
+=20
+case you and your family were considering the purchase or upgrade of a home=
+=20
+computer or Internet connection in the next few months.  The scope of=20
+ClickAtHome includes the following:
+
+?",,SUPPORTS,Snippet directly introduces the ClickAtHome program and states it gives each employee a home computer.,,
+sqRx9RkfySlMlfYixWUW,email,scott-s_msap_info,successMetrics,A comprehensive electricity trading decision support system based on market fundamentals is built .,"Use advanced statistical analysis software, such as S-Plus, to perform 
+exploratory data analysis on topical trading issues, including supply and 
+demand anomalies and price movement. 
+Build a comprehensive electricity trading decision support system based on 
+market fundamentals. 
+
+Settlements
+This group is responsible for settling physical wholesale transactions with 
+the California ISO and the California PX.   The group's primary function is to 
+estimate revenues and expenses based on scheduled volumes, settle with the 
+ISO based on actual volumes, and provide the accounting support to reconcile 
+differences between scheduled and actual volumes.",,SUPPORTS,Snippet contains the exact phrase 'Build a comprehensive electricity trading decision support system based on market fundamentals.',,
+WTlK8oZueIr7dJzUAYQC,email,hayslett-r_projects,nfrReqs,The system should aim to achieve an estimated savings of 20% on travel costs.,"ClickTrip provides employees easy access to all travel and pricing options for their destination (excluding proprietary carriers) and assists employees in making the most cost-effective travel decisions by providing the most current information.   In addition to bringing an estimated savings of 20%, ClickTrip is easy to use and is accessible 24 hours a day from any internet-enabled personal computer.   After-hours telephone support is also available. 
+
+When making travel reservations, please purchase non-refundable coach tickets when flying in the U. S. , for these tickets can cost up to 65% less than refundable tickets and can usually be changed, if necessary, for a $100 fee. 
+
+?",,PARTIALLY,"Snippet mentions the 20% savings figure but frames it as ClickTrip's benefit, not a system requirement/goal. BRD frames it as a system aim/requirement.",,
+migINRc0FZrlbIta1QQ9,email,beck-s_sap,assumptions,The Aug 29-31 offsite meeting will primarily focus on financials and procurement.,"Melissa Becker
+08/01/2000 01:40 PM
+cc: Elise Clark/Corp/Enron@ENRON, Mark Frank/HOU/ECT@ECT 
+
+I am happy to report that, because so many people wanted to bring a ""first 
+lieutenant"", Rick and Cindy have agreed to put the primary focus of the Aug 
+29-31 offsite on financials and procurement, with enough HR representation to 
+cover some of the broad strategic issues that cross multiple functional 
+areas.   
+
+Consequently, Elise and Mike will be able to attend.   More information on 
+logistics to follow within two weeks.   We will block off hotel rooms, etc.  in 
+the meantime.   
+
+As with the last ASE, it's an ""all or nothing"" proposition.   Because of the 
+structure of the event, participants must be there from start to finish (no 
+partial attendance).",,SUPPORTS,Snippet explicitly states the primary focus of the Aug 29-31 offsite was on financials and procurement.,,
+sqRx9RkfySlMlfYixWUW,email,scott-s_msap_info,functionalReqs,"The system shall allow Business Units to peruse qualifications (resumes, career histories).",")
+
+For the Business Units:
+Search for Associate&Analyst talent using the Manager Toolbox
+Peruse qualifications  (resumes, career histories)
+Create and view rotation requests for your group
+Learn about A&A Program events and activities
+Participate in knowledge management events (eThink)
+
+We hope that everyone will utilize this outstanding website because it was 
+designed with both groups in mind.   We want the A&A members to know what is 
+available for them with regard to business unit news and rotation 
+information; and we want the business units to find the best match for their 
+professional needs.   Check out all the features and help evaluate the 
+content.   Let the Associate & Analyst Department know what you think and 
+offer any ideas or suggestions.   Your input will be invaluable.",,SUPPORTS,"Snippet lists 'Peruse qualifications (resumes, career histories)' as an explicit feature for Business Units.",,
+f6QerxfeOUtmrqanfbUg,email,lokay-m_systems,nfrReqs,The system must support the firstname.lastname@enron.com Internet Email address format.,"We will communicate further details, including the cut-off date, in the coming weeks.  Meanwhile, it is imperative that you begin making the necessary arrangements to change over to using the firstname. lastname@enron. com Internet Email address format.  If you have questions regarding this email, send an Email to enron. messaging. administration@enron. com. 
+Thank you for participation, cooperation and support.  
+Enron Messaging Administration
+
+This is a reminder of Enron's Email retention policy.   The Email retention policy provides as follows:
+
+Message Location - Maximum Retention
+Inbox - 30 days
+Sent Mail Folder - 30 days
+Trash/Deleted Items - Rollover from Inbox for one day
+Folders - All Email messages placed in folders will be destroyed after one calendar year.",,SUPPORTS,Snippet directly instructs use of the firstname.lastname@enron.com Internet Email address format.,,
+sqRx9RkfySlMlfYixWUW,email,scott-s_msap_info,successMetrics,"New business models, patterned after successful models in Calgary and Portland, achieve comparable success .","With these objectives in mind, patterned after the successful business mode=
+ls=20
+in Calgary and Portland, effective immediately the following changes are=20
+being implemented:
+a) East Power =01) a single East Power Team incorporating trading, mid-mark=
+et=20
+and origination will be formed under the co-leadership of Kevin Presto and=
+=20
+Janet Dietrich who will report to the Enron Americas - Office of the Chairm=
+an=20
+(EA OOC).   This team will have one income statement, one book and a joint=
+=20
+accountability.  However, a clear delineation of responsibilities inside the=
+se=20
+teams will continue to exist in which the trading organization will manage=
+=20
+the risk, income statement and product development aspects of the=20
+partnership.",,PARTIALLY,Snippet says changes are 'patterned after the successful business models in Calgary and Portland' but doesn't assert that the new models 'achieve comparable success' — that outcome is an inference not in the source.,,
+migINRc0FZrlbIta1QQ9,email,beck-s_sap,assumptions,"Netting processes will be performed within SAP, not Unify, and automatic netting entries will be retained within SAP.","Our understanding of the netting process in SAP indicates that there are no 
+controls (which sounds good at this point) and that we would retain the 
+automatic netting entries when the payable is netted with the receivable 
+within SAP.   However, we emphasize that netting would be done in SAP, not at 
+the time of finaling a payment in Unify. 
+
+To repeat, we are recommending that Unify AR be turned off and we convert to 
+SAP AR.   We will schedule a meeting the week of February 22 to discuss.   
+Please call me at X33179 with any questions or comments.   We WILL make this 
+decision by February 28 because the SAP timeline does not allow any 
+additional time for consideration.",,SUPPORTS,"Snippet explicitly states netting would be done in SAP, not Unify, and that automatic netting entries would be retained within SAP.",,
+sqRx9RkfySlMlfYixWUW,email,scott-s_msap_info,successMetrics,Originators successfully generate new business .,"However, a clear delineation of responsibilities inside the=
+se=20
+teams will continue to exist in which the trading organization will manage=
+=20
+the risk, income statement and product development aspects of the=20
+partnership.  The originators will have the primary responsibility to genera=
+te=20
+origination income, provide coverage, deal flow, lead strategy formulation,=
+=20
+provide information and generate strategic positions.  Overall, the team wil=
+l=20
+be rewarded based upon increasing the value of the book, meeting=20
+coverage/deal flow targets and meeting its strategic/growth goals in the=20
+Eastern, Western, Central and Texas gas markets.   The team will be=20
+responsible for covering the LDC=01,s, muni=01,s/co-ops, industrials, IOU=
+=01,s, IPP=01,s=20
+and the producers.",,PARTIALLY,"Snippet describes originators' responsibilities (generate origination income, deal flow, etc.), but 'successfully generate new business' frames this as an achieved outcome/metric rather than a stated responsibility.",,
+WTlK8oZueIr7dJzUAYQC,email,hayslett-r_projects,nfrReqs,The system must allow access to Enron Email via Outlook Web Access (OWA) through the Internet without requiring users to dial into Enron's network.,"This means that if you can get on to the Internet, you can access your Enron Email with Outlook Web Access (OWA) without having to dial in to Enron's network.  Please note that this is not available to those users still on Lotus Notes but will be available once they are migrated to Outlook.  
+Once on the Internet, type mail. enron. com in your browser address window and supply your Enron network logon credentials as username and password.  For example:
+Username: jdoe4
+Password: ********
+Once you log in, Outlook Web Access opens your Enron Email mailbox.  Outlook Web Access (OWA) allows you to send and receive mail, perform calendar tasks and manage your mail and contacts, as well as access your mailbox folders.  At this time, Public Folders are not accessible via OWA.",,SUPPORTS,Snippet directly states that internet access allows Enron Email via OWA without dialing into Enron's network.,,
+f6QerxfeOUtmrqanfbUg,email,lokay-m_systems,successMetrics,Employees adhere to new mailbox size limits in the new environment by performing data housekeeping.,"Further=
+,=20
+it provides a more robust mail platform.  =20
+
+To prepare for the migration effort, we advise that you take a few minutes =
+to=20
+do some data housekeeping.    As we move to the new environment, there will =
+be=20
+mailbox size limits enforced.   We encourage you to review your Notes folder=
+s=20
+to eliminate any unnecessary files.   Also, you might want to review your da=
+ta=20
+files, in both your work directory and any common directories you use, to=
+=20
+assure you still have a need for them.    As you review these files, you=20
+should assure that you're retaining only business-related files. 
+
+We look forward to this exciting, beneficial effort.   You will be receiving=
+=20
+more communications soon.",,PARTIALLY,"Snippet says there will be mailbox size limits and encourages data housekeeping to prepare, but doesn't state employees actually 'adhere' — that's a desired outcome framed as fact in the BRD.",,
+migINRc0FZrlbIta1QQ9,email,beck-s_sap,successMetrics,Xref1 (coordinator) and Xref2 (physical vs. financial flag) fields will be accurately populated for go-live .,"As far as Xref1 (coordinator) and Xref2 (physical vs.  financial flag) fields 
+go, it appears that we are getting what we have to have in order to go live 
+7/1.   Rena was working on a spec (the OSS that was discussed) that would 
+automatically populate these 2 fields.   However, the test was unsuccessful.   
+These two fields are being opened up for netting, so we can input them 
+manually when netting.   I believe we need to pursue the auto fill post 7/1, 
+but the first priority is having a place to put the data. 
+
+As far as settlement period is concerned, we are probably going to get a 
+hybrid of what we want at this time.   The SAP team does appear to have 
+appropriate resources working on this issue.",,PARTIALLY,"Snippet says they are 'getting what we have to have in order to go live' but notes the auto-populate spec was unsuccessful and fields will be manually input — accuracy is aspirational, not confirmed.",,
+f6QerxfeOUtmrqanfbUg,email,lokay-m_systems,successMetrics,All Notes databases are web-enabled following the Outlook conversion.,"Notes Databases - After the Outlook conversion, you will not have Notes on 
+your desktop; thus, all Notes databases will be web-enabled.   If you are the 
+owner of a Notes database, you will be contacted soon to schedule the 
+conversion. 
+
+Notes Archive Databases - Archiving of mail messages is a violation of the 
+mail retention policy.   No archive database will be supported or converted to 
+Outlook.   You will not have access to the file after the conversion. 
+
+Training - To ensure your successful conversion to Outlook 2000, you will be 
+required to sign up for and attend a hands-on training class.   The class will 
+consist of an overview of Windows 2000 and Outlook.   You will also receive 
+brochures and other documentation as you are migrated to Outlook.",,SUPPORTS,Snippet explicitly states 'after the Outlook conversion... all Notes databases will be web-enabled.',,
+migINRc0FZrlbIta1QQ9,email,beck-s_sap,assumptions,The system will provide increased flexibility for charging employee and contractor time to actual work areas.,"Timekeeping, though it seems mundane on the surface, is a focal point of the 
+SAP integration.   Entry and coding of time populates not just payroll, but 
+projects and cost centers, real time.   We will now have more flexibility to 
+charge employee and contractor time to the areas they actually work (where 
+people work on more than one area at a time).   This will only happen to the 
+extent that the business and cost center owners drive it.   This capability is 
+customizable not just by business unit or company, but by cost center within 
+a company. 
+
+To make this work HOW YOU WANT IT TO on 7/1, each ""organizational unit"" (as I 
+said above, you can drive this in your cost center(s) only or across your BU) 
+needs to be clear on questions such as:
+
+1.",,SUPPORTS,Snippet directly states 'We will now have more flexibility to charge employee and contractor time to the areas they actually work.',,
+f6QerxfeOUtmrqanfbUg,email,lokay-m_systems,successMetrics,"SAP coding requirements are correctly applied to expense reports and vendor invoices using the provided ""GPG SAP Coding Block"" guidance.","QuickRef. xls) that I hope 
+will be useful in the coding of expense reports and miscellaneous vendor 
+invoices that may pass your desk.   I have also attached a copy of the ""GPG 
+SAP Coding Block"" (Coding. doc) which explains the different SAP coding block 
+requirements.   SAP coding must now be used in order to process expense 
+reports and vendor invoices.   If you need additional coding information, 
+please contact one of the following ET&S General Accountants in Houston:
+ 
+      
+
+If I have left anyone off of the distribution list that you think may benefit 
+from these coding aids, please forward this note to them.   Also, if you have 
+any suggestions or comments to add or subtract (or correct) information that 
+may make the coding quick reference sheet easier to use, please let me know.",,SUPPORTS,Snippet describes guidance documents for SAP coding of expense reports and vendor invoices and states SAP coding must now be used.,,
+f6QerxfeOUtmrqanfbUg,email,lokay-m_systems,nfrReqs,The system must accommodate changes to remote connectivity into the Enron network.,"Thanks,
+
+Allison
+x-35568
+
+http://tfc-charts. w2d. com/marketquotes/index. php3? market=1NG
+
+Mark McConnell
+Transwestern Pipeline Company
+713-345-7896   office
+713-822-4862   cell
+713-646-2551   fax
+mark. mcconnell@enron. com
+
+Please be aware that remote connectivity into the  Enron network has changed, IPASS is no longer available.  Remote Connectivity into Enron may be obtained by using the eConnect solution.   Authorization to use eConnect may be requested via the eRequest system (you will find a link to eRequest on http://itcentral. enron. com). 
+
+Email is accessible from any computer with internet connectivity by logging into Outlook Web Access http:\\mail. enron. com with your NT login ID and password.  Accessing OWA does not require an eConnect connection.",,PARTIALLY,Snippet describes a specific change (IPASS replaced by eConnect) but the BRD frames this broadly as a system requirement to 'accommodate changes' — a generalization not directly stated in the source.,,
+WTlK8oZueIr7dJzUAYQC,email,hayslett-r_projects,nfrReqs,The system must strongly encourage employees to purchase non-refundable domestic coach tickets for air travel.,"Employees who fly in the United States should book non-refundable coach tickets, which are typically 65 percent less than refundable tickets and can usually be changed by simply paying a $100 fee.   For this reason, we strongly encourage all employees to purchase non-refundable domestic coach tickets when possible. 
+
+? 	Lodging - GSS has also negotiated preferred rates at a number of hotel chains in many cities worldwide to accommodate each business unit's individual hotel policy.   We recommend that you use Enron's list of preferred hotels to select accommodations that are in line with your business unit's policies.   You can view the list at http://travel. enron. com. 
+
+?",,SUPPORTS,Snippet explicitly says 'we strongly encourage all employees to purchase non-refundable domestic coach tickets.',,
+cfuA5qlKaPXwGelpn3F3,email,richey-c_infrastructure,assumptions,"Two Compaq ProLiant DL360 servers, configured with Dual Pentium III 1Ghz/133, 1GB SDRAM 133MHz (4x256), RAID 1 setting, and two 18.2GB hot pluggable Ultra3 SCSI 15,000 rpm Hard Drives, will be procured and available .","It would help greatly;)
+
+cheers. 
+
+Shoot...  I guess that print config page is not as ""convienient"" as advertised...  :)
+
+We are getting two of these:
+
+Compaq ProLiant DL360
+Dual Pentium III 1Ghz/133
+1GB SDRAM 133MHz (4x256)
+RAID 1 setting
+(2) 18. 2GB hot pluggable Ultra3 SCSI 15,000 rpm Hard Drives
+
+So, that is the basic scoop...  Being that we will only use this for final draft web stuff, I don't forsee ever hitting that 36 GB disk space limit...  
+
+The coolest part is that this is a 5 times better system, but two of these will cost less than we spent on the current system almost a year ago... 
+
+Bob,
+
+sounds good, but the page you sent me doesn't work, maybe i need a cookie or it's only temporary.   what are the 
+basic specs?",,SUPPORTS,Snippet lists exactly two Compaq ProLiant DL360 servers with matching hardware specs.,,
+sqRx9RkfySlMlfYixWUW,email,scott-s_msap_info,successMetrics,"Achieve growth and opportunity expectations for Enron North America for 2001, consistent with prior success .","These are truly outstanding accomplishments and our expectations for growth=
+=20
+and opportunity in Enron North America for 2001 are consistent with that=20
+success.   In order to reach these goals, we felt it necessary to re-align a=
+=20
+number of our organizations.  A number of these changes are completed.",,PARTIALLY,"Snippet states expectations for growth and opportunity are consistent with prior success, but the BRD frames this as an achieved goal rather than an expectation being set.",,
+f6QerxfeOUtmrqanfbUg,email,lokay-m_systems,successMetrics,"Network configuration modifications by Enron Network Services are completed during the scheduled outage (Feb 5, 10:30 PM - 11:00 PM).",", Network Interruptions=20
+Enron Network Services will be modifying the configurations of the main=20
+connection within the Enron network.  This will result in your computers=20
+becoming disconnected from the main network for short periods of time. =20
+
+Feb.  5 Monday Night from 10:30 p. m. -11:00 p. m. , External Network Interrupti=
+ons
+Enron Network Services will be upgrading the security system for=20
+Advantis/EDI.   You may experience outages during this timeframe if you are =
+an=20
+Advantis/EDI user. =20
+
+Feb.  17 Saturday Morning from 8:00 a. m. -3:00 p. m. , Computer Room Power=20
+Systems Maintenance
+Facilities will be performing their annual maintenance on some battery back=
+up=20
+systems.   During this maintenance the power consumption load will be tested=
+.",,PARTIALLY,"Snippet describes the scheduled outage and its purpose (modifying configurations) but the BRD frames completion as a confirmed outcome ('are completed'), whereas the snippet is describing a planned event.",,
+migINRc0FZrlbIta1QQ9,email,beck-s_sap,successMetrics,"All Accounts Receivable (AR) functions will be successfully transitioned and performed within SAP, leading to the permanent decommissioning of Unify AR .","We believe that the 
+business logic for that decision has changed, and are now recommending that 
+Unify AR be permanently turned off and all AR functions be performed in SAP.   
+I have briefly summarized the change in business situation below. 
+
+Two Years Ago	Today
+Netting allowed by legal and credit ONLY if netting contract was already in 
+place. 	Netting encouraged by legal and credit wherever possible, regardless of 
+existence of signed agreement. 
+Netting limited to one counterparty and legal entity at a time. 	Canada nets across 
+counterparties. 
+Netting performed in physical only, financial settlements to maintain 
+separate net statement process. 	ENA considering netting physical and financial 
+together. 
+All account coordinators were to apply their own cash.",,SUPPORTS,Snippet explicitly recommends 'Unify AR be permanently turned off and all AR functions be performed in SAP.',,
+f6QerxfeOUtmrqanfbUg,email,lokay-m_systems,successMetrics,All EOL processing is completed by 5:00 PM prior to the EOL Production Data Bases shutdown for power source addition.,"Please insure all 
+processing is done by 5:00 pm today.   The Building Facilities group is adding 
+additional power sources to the EOL equipment racks.   The EOL team plans to 
+bring down the EOL Production Data Bases during this time period. 
+
+Bob Martinez 
+MN232. 
+Importance: High
+
+ 
+
+ It was created by Mai Nguyen.   The title of the project is EOL Power issue.   
+The change number for the project is MN232.  
+
+Impact:  EOL
+Time:  Fri 2/2/2001 at  5:15:00 PM thru Fri 2/2/2001 at  8:00:00 PM
+Outage:  EOL Power issue
+Disruption:  Total Disruption of Service
+Environments Impacted:  EOL
+Purpose: Power Redundancy for EOL
+Backout: 
+Contact(s):  Mai Nguyen    
+      
+      
+      
+  
+Document Link->
+
+ETS Intranet Consolidation Project Updates (www. ETS. enron.",,SUPPORTS,Snippet directly instructs all processing to be done by 5PM and explains the EOL Production Data Bases will be brought down for power source addition.,,
+f6QerxfeOUtmrqanfbUg,email,lokay-m_systems,assumptions,"An upgrade to the EOL UUNET network connection (from 12Mbps to 27Mbps) will occur, with minimal impact on most EOL users as it is not the primary link.",", 
+Enron Network Services will be upgrading the EOL UUNET network connection 
+(one of Enron's ISP) from 12Mbps to 27Mbps.  Because UUNET is not the primary 
+EOL link, the outage is not expected to impact many of the EOL users.   
+However, if users have their connection configured to UUNET as their 
+preferred ISP, they may have to reconnect and may experience intermittent 
+outages during this maintenance. 
+
+Feb.  3  Saturday From 11:00 a. m.  - 12:00 p. m. ,
+Enron Network Services will be upgrading the EOL Internet network switches.   
+A total outage of EOL is expected.   The outage should last approximately 30 
+minutes. 
+
+Please notify Jean McFarland or Mary Vollmer if you have any questions.",,SUPPORTS,Snippet directly states the UUNET upgrade from 12Mbps to 27Mbps and that it is not expected to impact many EOL users since UUNET is not the primary link.,,
+f6QerxfeOUtmrqanfbUg,email,lokay-m_systems,assumptions,"Human Resource servers will be relocated on February 2nd from 5:00 p.m. to 8:00 p.m., potentially impacting related services.","The following is a brief synopsis of only those changes that cou=
+ld=20
+impact your computing capabilities. 
+
+Feb.  2 Friday night from 5:00-8:00 p. m. , Human Resource Computer Relocation=
+s
+The Corporate Unix team will be moving Human Resource Servers to the Ardmor=
+e=20
+data center floor.   Access may be limited to the HR data bases and Web page=
+s=20
+during this timeframe. 
+=20
+Feb.  3 Saturday Morning from 12:00-1:00 a. m. , Network Interruptions
+Enron Network Services will be modifying network hardware settings on some =
+of=20
+the buildings=01, internal computer connections.  You may experience compute=
+r=20
+connection problems during this timeframe
+
+Feb.  3 Saturday Morning from 1:00-1:15 a. m.",,SUPPORTS,Snippet explicitly describes Human Resource server relocation on Feb 2 from 5-8PM with potential impact on HR databases and web pages.,,
+f6QerxfeOUtmrqanfbUg,email,lokay-m_systems,nfrReqs,The Business Query application must be installed locally on each PC.,"Business Query Users
+Currently Business Query will have to be installed locally on each PC.   Someone will be contacting to you arrange the installation. 
+
+Thank you,
+Lori Saffer
+713-853-0641
+
+The links mentioned below have been moved to another server.  The Dashboard links in the TW Transportation/My TW Transportation have been updated accordingly. 
+
+Thanks,
+Sandy McCary
+Enron Transportation Services - IT
+713 853-5996
+
+Sandy,
+	We are shutting down home. ets. enron. com today, here are the new links you needed. 
+
+TW Analysis and Fuel Measurement Performance (Real Time Chart) have been move from Etshousp01 to Gthou-ww04p.  
+
+The links are:  http://gthou-ww04p/TWMarketing/TW-Analysis/dealanalysis. html   (TW Analysis)
+               http://gthou-ww04p/TWMarketing/rtchart/home.",,SUPPORTS,Snippet directly states 'Business Query will have to be installed locally on each PC.',,
+ltjm9ipbINt57ec2xqqT,transcript,ES2006a,assumptions,The project aims for a profit of 50 million Euros.,"We've got um we're planning to sell these remote controls for let's make that go away , that means we've got five minutes .  Um we're planning to sell the remote controls for twenty five Euros each .  Um and with that we're aiming for a profit of fifty million Euros . 
+C: And that's selling them on the international market , not just in the U_K_ .  Um so to do that our finance people estimate that we need production costs of maximum twelve and a half Euro so that we can reach that profit target . 
+C: So that's something to keep in mind while you're designing . 
+C: Okay . 
+C: Hmm . 
+C: This is let me just skip ahead to see that's the last thing , okay .  We've only got a couple of minutes .",,SUPPORTS,"Snippet states 'we're aiming for a profit of fifty million Euros', directly matching the BRD sentence.",,
+ltjm9ipbINt57ec2xqqT,transcript,ES2006a,successMetrics,Attain a total profit of 50 million Euros.,"We've got um we're planning to sell these remote controls for let's make that go away , that means we've got five minutes .  Um we're planning to sell the remote controls for twenty five Euros each .  Um and with that we're aiming for a profit of fifty million Euros . 
+C: And that's selling them on the international market , not just in the U_K_ .  Um so to do that our finance people estimate that we need production costs of maximum twelve and a half Euro so that we can reach that profit target . 
+C: So that's something to keep in mind while you're designing . 
+C: Okay . 
+C: Hmm . 
+C: This is let me just skip ahead to see that's the last thing , okay .  We've only got a couple of minutes .",,PARTIALLY,"Snippet says 'aiming for' 50M Euros profit (a goal), but BRD states 'Attain' (an achieved outcome). The source only establishes it as a target, not attainment.",,
+XsltA1aoKFMDvQXBSFxa,transcript,ES2002b,functionalReqs,The user interface design must be restricted to avoid excessive complexity.,"Well well a worry that was was expressed in the new requirements was that if we made this too complex it would e it would effect um how long how long it took us to get this to market , so I th suspect it might be a good idea just to restrict our kind of our creative influence on this on the user interface and not worry so much about uh how we transmit it A: Yep .  B: um because I mean it it's tried and tested intra-red , so A: There might B: we A: be B: could A: one B: stay with tha A: other problem with the transmission , um in particular right now , since we're talking about voice recognition .  Um if somebody's gonna h talk to the device , you ideally B: Mm-hmm A: want them to hold it to them B: Oh A: .  I it D: Right B: , yeah D: .  A: you may B: .",,SUPPORTS,Snippet expresses concern that complexity would delay time-to-market and suggests restricting 'creative influence on the user interface' — directly supporting the BRD's requirement.,,
+vWsJUhMbOBV6ZerjNWVr,transcript,IS1000a,assumptions,"Users expect a remote control to possess standard and essential functionalities, such as an on/off button.","B: Um , maybe someone can mention some additional uh prerequisites for Mm-hmm a good .  remote control . 
+C: Of course it should have a on off button .  Mm-hmm .  Yes , well i it should have the the the the expected functionality Mm .  uh of a remote control .  Yeah Yeah .  , s and it depends what application you are using it for Mm .  .  You might need uh We wer we were thinking television .  Uh Mm .  .  We are targ targeting the television set .  So Mm .  , you need to record the channels Yeah .  Mm-hmm .  .  You need to browse the browse the channels in upward Yes downward Mm way .  , yes , .  Th th that's very handy I I always miss it and on Uh some remote controls that And you can go channel up or down ins instead of Mm .  retyping the number , especially Mm .",,SUPPORTS,Snippet explicitly states a remote should have an on/off button and 'the expected functionality of a remote control.',,
+lDCnWQwFdcbp5xsURA4A,transcript,ES2003a,assumptions,The product will target a much lower price bracket .,"A: .  Um b it occurs to me there might be a niche for uh for a remote that aimed towards some of that sort of functionality but using a just conventional push button design .  And therefore putting it into a um well much lower price bracket .  B: Okay , yeah , tha that's true , with the price range we're looking at , going for a touch screen would probably be possibly A: Absolutely B: out of A: prohibitive B: our yeah A: , yeah C: Oh .  A: .  B: .  But you think uh again something to control multiple units in uh a simple fashion .  A: Yeah , I mean I wouldn't like to say you g I mean you get ones that you can switch between multiple units , but something that could um operate between multiple units in a more integrated fashion .",,SUPPORTS,Snippet explicitly mentions aiming for 'a much lower price bracket' using conventional push button design.,,
+lDCnWQwFdcbp5xsURA4A,transcript,ES2003a,functionalReqs,The product shall deliver a core set of basic functionalities .,"B: got a couple of ideas , we can we'll have to work fast , um , alright as you can see we've got thirty minutes until the next meeting , so we'll have to try and decide on some of the basic functionality , um , how the user interface might work , that'll be a key aspect especially if the idea of um some kind of macros facility because you have to program it , you have to have a lot of response back , or at least some kind A: Mm-hmm .  B: .  Um And we're gonna maybe n try and have to figure out C: What the user wants B: what C: uh B: the user C: .  B: wants , yes C: Okay .  B: .  Um , right .  Has anybody got anything they'd like to add at this stage , anything they think that might have been missed so far ?",,PARTIALLY,"Snippet discusses deciding on 'basic functionality' as a task to complete, not a confirmed requirement that the product shall deliver it. The BRD frames it as a settled requirement, the snippet is mid-deliberation.",,
+XsltA1aoKFMDvQXBSFxa,transcript,ES2002b,successMetrics,Successfully deliver a product appealing to the 15-35 age demographic.,"B: um just to recap on Are we all happy about the idea of um aiming the product at um the fifteen to thirty five bracket D: Yeah B: ?  Um D: , that's B: and D: good .  B: also the funct the the actual functions of what it's gonna do .  Do you wanna recap on that , Craig ?  C: Um .  I think we just say that it was gonna be the the most basic stuff possible .  Um on off , up and down channels , up and down volume and uh skip to a channel .  B: Okay C: Ta .  D: And B: , right D: is it going B: .  D: to include any of the uh the more advanced features , or are we gonna eliminate those C: Um D: ?  C: I think we include mute , but apart from that um I think we just we'll go for the simpleness .  D: Okay B: Okay A: Okay B: .  D: .",,PARTIALLY,"Snippet shows the team agreeing to aim at the 15-35 bracket, but BRD frames this as a success outcome ('successfully deliver'). The source establishes it as a goal/decision, not an achievement.",,
+XsltA1aoKFMDvQXBSFxa,transcript,ES2002b,successMetrics,Meet or exceed the specified signal transmission range.,"Um and that power source is important because it ties you down to um how long the device will last B: Uh-huh .  A: .  Um it ties you down perhaps a bit later on in terms of the technologies um how far you can transmit the signal or the complexity of the functions D: Mm-hmm A: that D: .  A: you want .  Like for example , voice recognition , right .  That might be constrained because that you might need to power a microphone , you might need to power other things , so that's one perhaps constraint there .  Um Th Okay , the basic thing is there's a user interface where people punch a button or talk into it or smile to it or blink their eyes , whatever B: Hmm .  A: .",,DOES_NOT_SUPPORT,Snippet discusses the power source constraining transmission range and function complexity — it does not specify a signal range requirement or mention meeting/exceeding any range specification.,,
+vWsJUhMbOBV6ZerjNWVr,transcript,IS1000a,functionalReqs,The remote control must provide the expected core functionalities typical of a remote control.,"B: Um , maybe someone can mention some additional uh prerequisites for Mm-hmm a good .  remote control . 
+C: Of course it should have a on off button .  Mm-hmm .  Yes , well i it should have the the the the expected functionality Mm .  uh of a remote control .  Yeah Yeah .  , s and it depends what application you are using it for Mm .  .  You might need uh We wer we were thinking television .  Uh Mm .  .  We are targ targeting the television set .  So Mm .  , you need to record the channels Yeah .  Mm-hmm .  .  You need to browse the browse the channels in upward Yes downward Mm way .  , yes , .  Th th that's very handy I I always miss it and on Uh some remote controls that And you can go channel up or down ins instead of Mm .  retyping the number , especially Mm .",,SUPPORTS,"Snippet directly states the remote 'should have the expected functionality of a remote control' and lists channel browsing, on/off, etc.",,
+XsltA1aoKFMDvQXBSFxa,transcript,ES2002b,nfrReqs,The complexity of device functions is limited by the power source.,"Um and that power source is important because it ties you down to um how long the device will last B: Uh-huh .  A: .  Um it ties you down perhaps a bit later on in terms of the technologies um how far you can transmit the signal or the complexity of the functions D: Mm-hmm A: that D: .  A: you want .  Like for example , voice recognition , right .  That might be constrained because that you might need to power a microphone , you might need to power other things , so that's one perhaps constraint there .  Um Th Okay , the basic thing is there's a user interface where people punch a button or talk into it or smile to it or blink their eyes , whatever B: Hmm .  A: .",,SUPPORTS,Snippet directly states the power source 'ties you down... to the complexity of the functions you want.',,
+lDCnWQwFdcbp5xsURA4A,transcript,ES2003a,functionalReqs,The user interface shall be implemented to provide intuitive and effective access to the product's functionalities .,"B: got a couple of ideas , we can we'll have to work fast , um , alright as you can see we've got thirty minutes until the next meeting , so we'll have to try and decide on some of the basic functionality , um , how the user interface might work , that'll be a key aspect especially if the idea of um some kind of macros facility because you have to program it , you have to have a lot of response back , or at least some kind A: Mm-hmm .  B: .  Um And we're gonna maybe n try and have to figure out C: What the user wants B: what C: uh B: the user C: .  B: wants , yes C: Okay .  B: .  Um , right .  Has anybody got anything they'd like to add at this stage , anything they think that might have been missed so far ?",,PARTIALLY,"Snippet discusses the user interface as a 'key aspect' to figure out and what the user wants, but does not assert a requirement for it to be 'intuitive and effective' — that characterization is added by the BRD.",,
+ltjm9ipbINt57ec2xqqT,transcript,ES2006a,stakeholderRegister,Key Interests: Acquiring remote controls at the specified price of twenty-five Euros .,"We've got um we're planning to sell these remote controls for let's make that go away , that means we've got five minutes .  Um we're planning to sell the remote controls for twenty five Euros each .  Um and with that we're aiming for a profit of fifty million Euros . 
+C: And that's selling them on the international market , not just in the U_K_ .  Um so to do that our finance people estimate that we need production costs of maximum twelve and a half Euro so that we can reach that profit target . 
+C: So that's something to keep in mind while you're designing . 
+C: Okay . 
+C: Hmm . 
+C: This is let me just skip ahead to see that's the last thing , okay .  We've only got a couple of minutes .",,PARTIALLY,"Snippet describes the selling price (25 Euros each) as a business plan, not as a 'key interest' of acquisition. The BRD reframes the selling price as a procurement/acquisition interest, which is a different framing.",,
+vWsJUhMbOBV6ZerjNWVr,transcript,IS1000a,assumptions,The target audience desires trendy and original products.,"Um
+B: We When you design a new product you of uh you of course want it to be original .  Be uh we want to be distinguished , mm ?  People uh want to uh when they look at the shelf want to think , well that's the product I I need .  So it needs to be trendy .  I mean trendy is what people want , so then I w they will buy our product .  But then , uh , it also should work uh user friendly and uh otherwise people uh uh well it will not be uh be rated very well in consumer uh articles and like that . 
+B: So , the general outline of uh new project will be we first uh go through a functional design phase .  Um
+B: You all get uh um certain task uh in this uh in this phase and uh
+B: then we will meet again and uh discuss this functional design .",,SUPPORTS,Snippet explicitly states the product needs to be 'trendy' and 'original' because that is what people want.,,
+XsltA1aoKFMDvQXBSFxa,transcript,ES2002b,nfrReqs,The signal transmission range is constrained by the selected power source.,"Um and that power source is important because it ties you down to um how long the device will last B: Uh-huh .  A: .  Um it ties you down perhaps a bit later on in terms of the technologies um how far you can transmit the signal or the complexity of the functions D: Mm-hmm A: that D: .  A: you want .  Like for example , voice recognition , right .  That might be constrained because that you might need to power a microphone , you might need to power other things , so that's one perhaps constraint there .  Um Th Okay , the basic thing is there's a user interface where people punch a button or talk into it or smile to it or blink their eyes , whatever B: Hmm .  A: .",,SUPPORTS,Snippet directly states the power source ties you down 'in terms of the technologies... how far you can transmit the signal.',,
+lDCnWQwFdcbp5xsURA4A,transcript,ES2003a,assumptions,Initial decisions regarding basic functionality and user interface design must be finalized within a constrained timeframe due to project schedule limitations .,"B: got a couple of ideas , we can we'll have to work fast , um , alright as you can see we've got thirty minutes until the next meeting , so we'll have to try and decide on some of the basic functionality , um , how the user interface might work , that'll be a key aspect especially if the idea of um some kind of macros facility because you have to program it , you have to have a lot of response back , or at least some kind A: Mm-hmm .  B: .  Um And we're gonna maybe n try and have to figure out C: What the user wants B: what C: uh B: the user C: .  B: wants , yes C: Okay .  B: .  Um , right .  Has anybody got anything they'd like to add at this stage , anything they think that might have been missed so far ?",,PARTIALLY,"Snippet notes 30 minutes to decide on basic functionality and UI, implying time pressure, but the BRD's framing ('must be finalized... due to project schedule limitations') is a formal requirement derived from what is simply a practical constraint in the snippet.",,

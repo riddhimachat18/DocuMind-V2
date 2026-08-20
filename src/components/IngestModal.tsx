@@ -1,6 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "sonner";
-import { ingestGmail, ingestSlack, getGoogleAccessToken } from "../services/ingestService";
+import {
+  ingestGmail,
+  ingestSlack,
+  getGoogleAccessToken,
+  connectSlack,
+  getSlackIntegration,
+  type SlackIntegration,
+} from "../services/ingestService";
 
 interface Props {
   projectId: string;
@@ -19,8 +26,18 @@ export default function IngestModal({ projectId, source, onClose, onSuccess }: P
   const [gmailMax, setGmailMax] = useState(50);
 
   // Slack state
+  const [slackIntegration, setSlackIntegration] = useState<SlackIntegration | null>(null);
+  const [checkingSlack, setCheckingSlack] = useState(source === "slack");
   const [channelInput, setChannelInput] = useState("");
   const [daysBack, setDaysBack] = useState(30);
+
+  // Check existing Slack connection on mount
+  useEffect(() => {
+    if (source !== "slack") return;
+    getSlackIntegration()
+      .then(setSlackIntegration)
+      .finally(() => setCheckingSlack(false));
+  }, [source]);
 
   async function handleGmail() {
     setLoading(true);
@@ -37,7 +54,22 @@ export default function IngestModal({ projectId, source, onClose, onSuccess }: P
     }
   }
 
-  async function handleSlack() {
+  async function handleConnectSlack() {
+    setLoading(true);
+    try {
+      await connectSlack();
+      // Re-fetch integration after successful OAuth
+      const integration = await getSlackIntegration();
+      setSlackIntegration(integration);
+      toast.success(`Connected to ${integration?.team_name ?? "Slack"}`);
+    } catch (e: any) {
+      toast.error(e.message ?? "Slack connection failed");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function handleIngestSlack() {
     const ids = channelInput
       .split(/[\s,]+/)
       .map((s) => s.trim())
@@ -104,15 +136,31 @@ export default function IngestModal({ projectId, source, onClose, onSuccess }: P
                 />
               </div>
             </>
-          ) : (
+          ) : checkingSlack ? (
+            <div className="py-6 text-center text-xs text-muted-foreground">Checking connection…</div>
+          ) : !slackIntegration ? (
+            /* Step 1 — not yet connected */
             <>
               <p className="text-xs text-muted-foreground">
-                Uses your Slack Bot Token (configured server-side). Paste channel IDs separated by
-                commas or spaces. Messages are classified at ingest — NOISE is discarded.
+                Connect your Slack workspace via OAuth. DocuMind will request read-only access to
+                channels and messages. Your token is stored securely per-user in Firestore.
               </p>
+              <div className="border border-border bg-card px-4 py-3 text-xs text-muted-foreground space-y-1">
+                <div>Scopes requested:</div>
+                <div className="font-mono text-foreground">channels:history, channels:read, users:read</div>
+              </div>
+            </>
+          ) : (
+            /* Step 2 — connected, configure ingestion */
+            <>
+              <div className="flex items-center gap-2 text-xs">
+                <span className="text-green-400 font-mono">●</span>
+                <span className="text-foreground">Connected to</span>
+                <span className="font-mono text-foreground">{slackIntegration.team_name}</span>
+              </div>
               <div>
                 <label className="text-xs text-muted-foreground block mb-1.5">
-                  Channel IDs (e.g. C012AB3CD)
+                  Channel IDs (comma or space separated)
                 </label>
                 <input
                   value={channelInput}
@@ -121,6 +169,9 @@ export default function IngestModal({ projectId, source, onClose, onSuccess }: P
                   className="w-full bg-card border border-border text-sm text-foreground px-3 py-2 focus:outline-none focus:border-primary transition-colors"
                   disabled={loading}
                 />
+                <p className="text-xs text-muted-foreground mt-1">
+                  Find channel IDs in Slack: right-click a channel → View channel details → bottom of About tab.
+                </p>
               </div>
               <div>
                 <label className="text-xs text-muted-foreground block mb-1.5">Days of history</label>
@@ -147,13 +198,32 @@ export default function IngestModal({ projectId, source, onClose, onSuccess }: P
           >
             Cancel
           </button>
-          <button
-            onClick={source === "gmail" ? handleGmail : handleSlack}
-            disabled={loading}
-            className="text-sm bg-primary text-primary-foreground px-4 py-2 hover:bg-primary/90 transition-colors disabled:opacity-50"
-          >
-            {loading ? "Ingesting…" : "Start Ingestion"}
-          </button>
+
+          {source === "gmail" ? (
+            <button
+              onClick={handleGmail}
+              disabled={loading}
+              className="text-sm bg-primary text-primary-foreground px-4 py-2 hover:bg-primary/90 transition-colors disabled:opacity-50"
+            >
+              {loading ? "Ingesting…" : "Start Ingestion"}
+            </button>
+          ) : !slackIntegration ? (
+            <button
+              onClick={handleConnectSlack}
+              disabled={loading || checkingSlack}
+              className="text-sm bg-primary text-primary-foreground px-4 py-2 hover:bg-primary/90 transition-colors disabled:opacity-50"
+            >
+              {loading ? "Connecting…" : "Connect Slack"}
+            </button>
+          ) : (
+            <button
+              onClick={handleIngestSlack}
+              disabled={loading}
+              className="text-sm bg-primary text-primary-foreground px-4 py-2 hover:bg-primary/90 transition-colors disabled:opacity-50"
+            >
+              {loading ? "Ingesting…" : "Start Ingestion"}
+            </button>
+          )}
         </div>
       </div>
     </div>

@@ -1,0 +1,1174 @@
+brd_id,project_id,source_type,source_label,section,sentence,citation_count,cited_snippet_ids,has_citation
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,assumptions,"Assumptions
+
+The corporate messaging platform will be Microsoft Outlook 2000, replacing Lotus Notes for all email functions worldwide.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,assumptions,"After the Outlook conversion, desktop access to Notes databases will be removed, requiring all Notes databases to be web-enabled.",1,['9I9UdlPCnt13AxyOSjwN'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,assumptions,"Mailbox size limits will be enforced in the new email environment, requiring users to perform data housekeeping.",1,['Vj54gaWreNMAbB8f057f'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,assumptions,"All Enron employees will transition to and use the firstname.lastname@enron.com Internet Email address format. , 
+Important documents should be stored in network directories, not the email system, and network directories are regularly backed up.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,assumptions,"Email messages older than 30 days, if needing to be retained, must be moved from the 'Sent' folder.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,assumptions,"Network drive letter mappings are established and will be maintained for personal, service, and shared data files.",1,['41NX4so7LlmKH4k3m5iP'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,assumptions,Business Query software requires local installation on each PC.,1,['Fb46VFuSNvnrdjbQGIWX'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,assumptions,The capability to send documents from Envision to customers via email is a current area of investigation.,1,['HrflWqfMpAJy2hgs5K3s'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,assumptions,"Remote connectivity to the Enron network has changed, and users are aware of these changes.",1,['Ditvla2ewq1LkNulmGWn'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,assumptions,All content and applications from the current ETS website (www.ots.enron.com) will be migrated to the new ETS Intranet by the end of the 2nd quarter.,1,['Woq6qnpKUybFmNT4M5KF'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,assumptions,All expense reports and miscellaneous vendor invoices will require SAP coding.,1,['xtNY5ZjjXW6oWlFxJlH2'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,assumptions,All computing resources and work products are Enron property and subject to review and control.,0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,assumptions,Users are responsible for appropriate use.,0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,assumptions,"Telephony system upgrades will occur, causing a complete outage, and all telephony requirements must be submitted by February 7th.",1,['906JrrGu0sdNEjwGbdU9'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,assumptions,"Human Resource servers will be relocated on February 2nd from 5:00 p.m. to 8:00 p.m., potentially impacting related services.",1,['J8uLThkTcLQYy1G3l3GZ'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,assumptions,"Network interruptions will occur on February 5th from 10:30 p.m. to 11:00 p.m. due to network configuration modifications, causing temporary computer disconnection.",1,['BUcY4xfZmdprB0WWtSvL'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,assumptions,"The EOL Production Databases will be unavailable during facility power upgrades, requiring all processing to be completed by 5:00 pm on the day of the upgrade.",1,['Lvdyz19P6y7KdkkgfgyA'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,assumptions,"An upgrade to the EOL UUNET network connection (from 12Mbps to 27Mbps) will occur, with minimal impact on most EOL users as it is not the primary link.",1,['xhfeekT6gg49PBVh3GVT'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,assumptions,User migration activities for applications are scheduled for February 21st at 4:45 PM and require network connectivity.,1,['goWfZ2abDrvHmRDKgmQR'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,functionalReqs,"Functional Requirements
+
+1.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,functionalReqs,"The messaging platform shall be Microsoft Outlook 2000, providing all email functions. 
+2.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,functionalReqs,"All Notes databases shall be web-enabled. 
+3.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,functionalReqs,"The Envision system shall support sending documents to customers via Email. 
+4.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,functionalReqs,The email system shall provide functionality for users to move sent messages from the email system for retention.,0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Stakeholder Register
+
+1.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"All Enron Employees/Users
+   Role/Interest: Primary users of Enron's IT infrastructure and services.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,Key Concerns/Impacts: Will experience a complete telephony outage due to Lucent system upgrade .,0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,Will be disconnected from the main network for short periods due to network configuration changes .,0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Required to change Internet Email address format to firstname.lastname@enron.com , .",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Will migrate from Lotus Notes to Microsoft Outlook 2000 for all email functions , .",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,Advised to perform data housekeeping due to new mailbox size limits .,0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Must run specific migration applications at scheduled times, ensuring network connection .",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Must save important documents to network directories, not email, as a backup measure .",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,Need to use SAP coding for expense reports and vendor invoices .,0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,Responsible for appropriate use of Enron computing resources .,0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,May be impacted by EOL UUNET network connection upgrades .,0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Kpowers is an example user with personal files .
+
+2.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Telephony Services Team
+   Role/Interest: IT department responsible for telephony infrastructure.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: Upgrading the Lucent system to prepare for the new Enron building, which will cause a complete outage .",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Requires written requirements from affected departments by February 7th .
+
+3.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Enron Network Services
+   Role/Interest: IT department responsible for network infrastructure.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: Modifying the configurations of the main connection within the Enron network, resulting in temporary disconnections .",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Upgrading the EOL UUNET network connection from 12Mbps to 27Mbps .
+
+4.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Notes Database Owners
+   Role/Interest: Employees responsible for specific Lotus Notes databases.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: Will be contacted to schedule the conversion of their Notes databases to be web-enabled after the Outlook migration .
+
+5.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Business Query Users
+   Role/Interest: Employees who use the Business Query application.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: Business Query will need to be installed locally on each PC, and arrangements for installation will be made .
+
+6.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Lori Saffer
+   Role/Interest: Contact person for Business Query installations.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: Responsible for arranging Business Query installations .
+
+7.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Mark McConnell (Transwestern Pipeline Company)
+   Role/Interest: An individual providing information related to remote connectivity changes.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: Communicated changes regarding remote connectivity into the Enron network .
+
+8.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Remote Connectivity Users
+   Role/Interest: Employees who connect remotely to the Enron network.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: Affected by changes in remote connectivity into the Enron network .
+
+9.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Savita (X 31787)
+   Role/Interest: Contact person for Envision email functionality.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: Answers questions regarding sending documents to customers from Envision via Email .
+
+10.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Envision Users
+    Role/Interest: Employees who use the Envision system.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: May need to send documents to customers from Envision via Email .
+
+11.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Customers
+    Role/Interest: External parties potentially receiving documents from Enron.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: May receive documents from Envision via Email .
+
+12.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Corporate Unix Team
+    Role/Interest: IT team responsible for Unix servers.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: Moving Human Resource Servers to the Ardmore data center floor .
+
+13.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Human Resource Users
+    Role/Interest: Employees who access Human Resource Servers.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: Access to Human Resource Servers will be impacted during relocation .
+
+14.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Building Facilities Group
+    Role/Interest: Department responsible for building infrastructure.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: Adding additional power sources to EOL equipment racks .
+
+15.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"EOL Team
+    Role/Interest: Team responsible for EOL Production Data Bases.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: Plans to bring down EOL Production Data Bases during power source addition .
+
+16.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"EOL Production Database Users
+    Role/Interest: Employees who rely on EOL Production Data Bases.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: Must complete all processing by 5:00 pm prior to planned database downtime .
+
+17.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Bob Martinez (MN232)
+    Role/Interest: Individual communicating EOL production database downtime.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: Informed users about the planned EOL Production Data Bases downtime .
+
+18.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Intranet Team
+    Role/Interest: Team responsible for the Intranet.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: Will contact Webmasters to discuss the migration of content and applications from the current ETS website to the new ETS Intranet .
+
+19.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"ETS Webmasters
+    Role/Interest: Employees managing content or applications on the current ETS website.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: Will be involved in migrating their content and applications to the new ETS Intranet .
+
+20.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"LaDonna De
+    Role/Interest: Contact person for ETS website migration questions.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: Answers questions regarding the ETS website migration .
+
+21.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Contractors and Agents
+    Role/Interest: Non-employee personnel using Enron computing resources.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: Responsible for using Enron computing resources appropriately .
+
+22.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Korbelik, Nielsen, Peebles
+    Role/Interest: Individuals using the marketing service store.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: Example users for network drive mapping .
+
+23.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Marketing Department
+    Role/Interest: Department accessing F&T data files.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: Example user group for network drive mapping .
+
+24.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"SAS Users
+    Role/Interest: Individuals using SAS files.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Key Concerns/Impacts: Example user group for network drive mapping .
+
+25.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,"Enron Management
+    Role/Interest: Decision-makers and sponsors for major IT initiatives.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,stakeholderRegister,Key Concerns/Impacts: Made the decision to migrate Enron's messaging platform from Lotus Notes to Microsoft Outlook 2000 worldwide .,1,['AwdKVfGKW9eJm3ilzfdo'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,executiveSummary,"Enron is migrating its messaging platform worldwide from Lotus Notes to Microsoft Outlook 2000, which will handle all email functions .",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,executiveSummary,"Employees must adopt the firstname.lastname@enron.com Internet email address format [SOURCE:4, SOURCE:10] and are advised to perform data housekeeping to prepare for new mailbox size limits .",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,executiveSummary,"A specific migration date is set for February 21st at 4:45 PM, requiring users to be connected to the network when running necessary applications .",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,executiveSummary,"Following the Outlook conversion, all Notes databases will be web-enabled, as Notes will no longer be installed on user desktops .",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,executiveSummary,Several infrastructure and system changes are underway.,0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,executiveSummary,"Telephony services will be upgrading the Lucent system for the new Enron building, anticipating a complete system outage, and require written specifications by February 7th .",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,executiveSummary,"Enron Network Services will be modifying main connection configurations, causing short network disconnections on Feb 5 Monday Night from 10:30 p.m. to 11:00 p.m. .",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,executiveSummary,"They will also upgrade the EOL UUNET network connection, with minimal impact expected on most users .",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,executiveSummary,Human Resource Servers are being relocated on Feb 2 Friday night from 5:00 p.m. to 8:00 p.m. .,0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,executiveSummary,"Due to power source additions, EOL Production Data Bases will be brought down, requiring all processing to be completed by 5:00 p.m. today .",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,executiveSummary,Remote connectivity into the Enron network has also changed .,0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,executiveSummary,"Further system updates include Business Query requiring local PC installation , and the Intranet team migrating content and applications from www.ots.enron.com to the new ETS Intranet by the end of the 2nd quarter .",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,executiveSummary,SAP coding is now mandatory for expense reports and miscellaneous vendor invoices .,0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,executiveSummary,"Regarding Envision, there is a query about emailing documents to customers, with a concern raised about customers effectively transacting with themselves .",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,executiveSummary,"Key policies emphasize that important documents should be saved to network directories, not the email system, and sent messages intended for retention beyond 30 days must be moved from the Sent Items folder .",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,executiveSummary,"All computing resources and work products are Enron property, and employees are responsible for their appropriate use .",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,executiveSummary,Standardized drive letter locations have been established for personal and shared files .,0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,successMetrics,"successMetrics
+Requirements for the telephony system upgrade are submitted to Telephony by February 7th.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,successMetrics,All Notes databases are web-enabled following the Outlook conversion.,1,['9I9UdlPCnt13AxyOSjwN'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,successMetrics,"Network configuration modifications by Enron Network Services are completed during the scheduled outage (Feb 5, 10:30 PM - 11:00 PM).",1,['BUcY4xfZmdprB0WWtSvL'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,successMetrics,"Employees successfully transition to using the firstname.lastname@enron.com Internet email address format. [SOURCE:4, 10]
+Business Query is successfully installed locally on all required PCs.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,successMetrics,"Human Resource Servers are successfully relocated to the Ardmore data center floor by the Corporate Unix team during the scheduled outage (Feb 2, 5:00 PM - 8:00 PM).",1,['J8uLThkTcLQYy1G3l3GZ'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,successMetrics,All EOL processing is completed by 5:00 PM prior to the EOL Production Data Bases shutdown for power source addition.,1,['Lvdyz19P6y7KdkkgfgyA'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,successMetrics,Employees adhere to new mailbox size limits in the new environment by performing data housekeeping.,1,['Vj54gaWreNMAbB8f057f'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,successMetrics,All content and applications from the current ETS website (www.ots.enron.com) are successfully migrated to the new ETS Intranet before the end of the 2nd quarter.,1,['Woq6qnpKUybFmNT4M5KF'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,successMetrics,"Migration applications are run by users on or near their scheduled migration date and time (e.g., February 21st at 4:45 PM) while connected to the network.",1,['goWfZ2abDrvHmRDKgmQR'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,successMetrics,Employees save important documents to network directories and manage 'sent' email messages according to retention guidelines.,1,['ixHOoWrYTA30Y8lu0i3p'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,successMetrics,The EOL UUNET network connection is successfully upgraded from 12Mbps to 27Mbps.,1,['xhfeekT6gg49PBVh3GVT'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,successMetrics,"SAP coding requirements are correctly applied to expense reports and vendor invoices using the provided ""GPG SAP Coding Block"" guidance.",1,['xtNY5ZjjXW6oWlFxJlH2'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,successMetrics,"Network drive letter locations for personal files (H:), marketing service store (U:), F&T data files (K:), and SAS files are consistently configured as specified.",1,['41NX4so7LlmKH4k3m5iP'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,successMetrics,"Enron's messaging platform successfully migrates from Lotus Notes to Microsoft Outlook 2000 worldwide, with all email functions accessible via Outlook.",1,['AwdKVfGKW9eJm3ilzfdo'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,nfrReqs,"nfrReqs
+
+The system must provide requirements for telephony services by February 7th due to an impending Lucent system upgrade and expected complete outage.",0,[],False
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,nfrReqs,"All Notes databases must be web-enabled following the Outlook conversion, as Notes will no longer be available on user desktops.",1,['9I9UdlPCnt13AxyOSjwN'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,nfrReqs,The system must be able to tolerate or gracefully recover from short periods of disconnection from the main Enron network due to planned configuration modifications.,1,['BUcY4xfZmdprB0WWtSvL'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,nfrReqs,The system must support the firstname.lastname@enron.com Internet Email address format.,1,['Bml77Y4kGx0UNQviBYSp'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,nfrReqs,The system must accommodate changes to remote connectivity into the Enron network.,1,['Ditvla2ewq1LkNulmGWn'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,nfrReqs,The Business Query application must be installed locally on each PC.,1,['Fb46VFuSNvnrdjbQGIWX'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,nfrReqs,All links previously located on a specific server must be updated to reflect their new server location.,1,['Fb46VFuSNvnrdjbQGIWX'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,nfrReqs,The Envision system must support sending documents to customers via Email.,1,['HrflWqfMpAJy2hgs5K3s'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,nfrReqs,The system must account for planned downtime of Human Resource Servers during their relocation to the Ardmore data center from 5:00-8:00 p.m. on February 2nd.,1,['J8uLThkTcLQYy1G3l3GZ'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,nfrReqs,All processing dependent on EOL Production Databases must be completed by 5:00 p.m. to accommodate planned downtime for power source upgrades.,1,['Lvdyz19P6y7KdkkgfgyA'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,nfrReqs,The system must mandate the use of the firstname.lastname@enron.com Internet Email address format for all Enron employees.,1,['QxbkwPWdCt34ZR7Rxzdo'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,nfrReqs,The system must adhere to enforced mailbox size limits in the new mail environment.,1,['Vj54gaWreNMAbB8f057f'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,nfrReqs,All content and applications currently on the www.ots.enron.com web server must be migrated to the new ETS Intranet before the end of the 2nd quarter.,1,['Woq6qnpKUybFmNT4M5KF'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,nfrReqs,"The system and its usage must comply with Enron's policy regarding the use and control of Enron property, including computing resources, systems, and networks.",1,['ehpXsX58bM0s3lANMX9f'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,nfrReqs,Migration applications must be run as close as possible to the scheduled migration date and time (February 21st at 4:45 PM).,1,['goWfZ2abDrvHmRDKgmQR'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,nfrReqs,Users must be connected to the network before launching migration applications.,1,['goWfZ2abDrvHmRDKgmQR'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,nfrReqs,The system must not be used for storing important documents within the email system; documents must be saved to a network directory.,1,['ixHOoWrYTA30Y8lu0i3p'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,nfrReqs,Sent email messages required for longer than 30 days must be moved from the email system to an external storage location.,1,['ixHOoWrYTA30Y8lu0i3p'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,nfrReqs,The system must be compatible with or able to leverage the upgraded EOL UUNET network connection from 12Mbps to 27Mbps.,1,['xhfeekT6gg49PBVh3GVT'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,nfrReqs,SAP coding must be used for expense reports and miscellaneous vendor invoices.,1,['xtNY5ZjjXW6oWlFxJlH2'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,nfrReqs,"The system must support and correctly reference specified network drive letter mappings for personal files (H:), marketing service store files (U:), and F&T data files (K:).",1,['41NX4so7LlmKH4k3m5iP'],True
+f6QerxfeOUtmrqanfbUg,exp3-email-lokay-m_systems,email,lokay-m_systems,nfrReqs,The system must be compatible with and integrate with Microsoft Outlook 2000 as Enron's primary messaging platform for all email functions.,1,['AwdKVfGKW9eJm3ilzfdo'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,"Assumptions
+
+The SAP Financial Systems will be implemented for the Enron Gas Pipeline Group, Enron North America, and Enron Energy Services companies on July 1, 2000.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,The Power mass draft process will be completed by the user deadline of close of business Wednesday.,1,['bpya4870ejCFkKKKoChJ'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,"The conversion to SAP Accounts Receivable (AR) is expected to simplify the Unify/SAP interface, eliminating the need to split bank deposits, interface cash or netting entries back to SAP, or interface payables information from Unify.",1,['cZ9IQcpSChQ30jd0GkmP'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,Completion of all Service PMAs (PMA related items for ENA and HPLC) will occur by September 18.,1,['dfmzLpsUU4Y7njxEQ41G'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,"Netting processes will be performed within SAP, not Unify, and automatic netting entries will be retained within SAP.",1,['2E71DhkmcV8VG8tsd85j'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,There are no controls in place for the netting process within SAP.,1,['2E71DhkmcV8VG8tsd85j'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,"Unify AR will be permanently deactivated, and all Accounts Receivable functions will be performed exclusively in SAP.",1,['5eN90G4uXjU6I15ahenP'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,Netting is now allowed by legal and credit policies.,1,['5eN90G4uXjU6I15ahenP'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,The Aug 29-31 offsite meeting will primarily focus on financials and procurement.,1,['EXgBYnWPu4Uv4meAlntk'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,SAP's determination regarding user exit disablement (for Brazil and Argentina tax requirements) is pending receipt of tax requirements and/or codes.,1,['M9Av8t3iNTIz0lZDQgZp'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,GCP has agreed to modify the Bank Partner Type.,1,['M9Av8t3iNTIz0lZDQgZp'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,"Data created in SAP will be correctly captured on the income statement, and SAP will be able to link to this data to retrieve settlement information.",1,['xr0LxnFho8crGw3icr8k'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,Converted data will not contain settlement period information in the same manner as newly created SAP data.,1,['xr0LxnFho8crGw3icr8k'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,"Overpayments will be classified as ""on account,"" and a case management system will be available to track related issues.",1,['Pb2otjIFVbNwOTXfHhkV'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,Allowing overapplication of payments in SAP will help account coordinators track overpayments easier than leaving cash on account.,1,['Pb2otjIFVbNwOTXfHhkV'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,"The SAP system and eHROnline will be available for time entry beginning Friday, June 23 at 8:00 AM.",1,['QkzP3Qw8NKekr1iKUwW6'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,"Full SAP functionality for financials will be available on July 5, 2000.",1,['QkzP3Qw8NKekr1iKUwW6'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,New password criteria will be enforced at initial logon.,1,['QkzP3Qw8NKekr1iKUwW6'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,"Time entry and coding in SAP will accurately populate payroll, projects, and cost centers in real-time.",1,['UaB1y36rMXctNiih0n2Q'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,The system will provide increased flexibility for charging employee and contractor time to actual work areas.,1,['UaB1y36rMXctNiih0n2Q'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,The Xref1 (coordinator) and Xref2 (physical vs. financial flag) fields will be populated as required for the 7/1 go-live.,1,['fhL0i2nSKzZpDWjNU2Sd'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,All intercompany trades will be processed by booking a payable in SAP when payments are received in specific currencies (referring to the three currencies mentioned in the source).,1,['mElGYGyXIC0J3zZHSjet'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,Counterparties will provide their company identification when confirming settlements.,1,['mElGYGyXIC0J3zZHSjet'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,assumptions,The policy requiring supply verifications for netout customers to be overridden in Unify (to block them in SAP from treasury until payment) will be consistently followed.,1,['vxMwtn9f4Kd9p93nQFfo'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,functionalReqs,"Functional Requirements
+
+1.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,functionalReqs,"The SAP Financial Systems must be implemented for the Enron Gas Pipeline Group, Enron North America, and Enron Energy Services companies by July 1, 2000. 
+2.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,functionalReqs,"The system must resolve the current slow performance issue with the ""Power mass draft"" process to ensure completion by the user deadline of close of business Wednesday. 
+3.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,functionalReqs,"The system must simplify the Unify/SAP interface by ensuring bank deposits, cash entries, and netting entries no longer require splitting or interfacing between Unify and SAP. 
+4.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,functionalReqs,"The Settlements process must correctly pick up all service PMAs for ENA and HPLC, eliminating the need for manual processing. 
+5.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,functionalReqs,"All netting of payables and receivables must be performed within SAP, retaining automatic netting entries. 
+6.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,functionalReqs,"All Accounts Receivable (AR) functions must be performed exclusively within SAP, with the Unify AR system permanently deactivated. 
+7.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,functionalReqs,"The system must support Brazil and Argentina tax requirements, potentially by disabling custom user exits, and must allow modification of the Bank Partner Type as agreed by GCP. 
+8.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,functionalReqs,"For data created within SAP, the system must allow settlement data to be linked from the income statement side of the entry. 
+9.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,functionalReqs,"The system must allow overpayments to be classified as ""on account"" and support the overapplication of payments to facilitate tracking by account coordinators. 
+10.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,functionalReqs,"The SAP system will be available for time entry beginning Friday, June 23, 2000, at 8:00 AM, and full SAP functionality for financials will be available on July 5, 2000. 
+11.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,functionalReqs,"The system must support time entry functionality, which populates payroll, projects, and cost centers in real-time, offering flexibility to charge employee and contractor time to actual work areas. 
+12.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,functionalReqs,"The system must ensure that the Xref1 (coordinator) and Xref2 (physical vs. financial flag) fields are populated for go-live. 
+13.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,functionalReqs,"The system must process intercompany trades by booking a payable in SAP when payments are received in specified currencies and require the provision of company name for settlement confirmations. 
+14.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,functionalReqs,"The system must accommodate the policy where supply verifications for netout customers, once finaled in Unify, are overridden and blocked in SAP, preventing treasury pickup until payment.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Stakeholder Register
+
+Andrea Yowman
+Role: Project Contact/Support
+Interest/Impact: Provides assistance during the SAP Financial Systems transition period .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Enron Gas Pipeline Group
+Role: Business Unit
+Interest/Impact: Will have SAP Financial Systems implemented .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Enron North America (ENA)
+Role: Business Unit
+Interest/Impact: Will have SAP Financial Systems implemented; experienced issues with the settlements process for PMAs , .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Enron Energy Services
+Role: Business Unit
+Interest/Impact: Will have SAP Financial Systems implemented .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Users (General)
+Role: End-users of financial and other integrated systems
+Interest/Impact: Affected by software errors and slow processes, especially for ""Power mass draft"" ; involved in manual processes for PMAs ; subject to new password criteria for system access .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Unify System Users/Operators
+Role: Users of the legacy Accounts Receivable system
+Interest/Impact: Processes simplified by converting to SAP AR ; Unify AR functions recommended to be turned off in favor of SAP ; involved in supply verifications for netout customers .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"SAP AR Users/Operators
+Role: Users of the new SAP Accounts Receivable system
+Interest/Impact: Will perform all AR functions in SAP ; netting processes will be done in SAP .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Settlements Process Users/Team
+Role: Users involved in the settlements process
+Interest/Impact: Affected by issues with service PMAs not being picked up ; SAP team needs to link to settlement data ; Ana is responsible for confirming settlements .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Melissa Becker
+Role: Communicator/Decision Communicator
+Interest/Impact: Communicated agreement on the focus for an offsite event .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Elise Clark
+Role: Informed Stakeholder
+Interest/Impact: Carbon copy recipient of important communication regarding an offsite event .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Mark Frank
+Role: Informed Stakeholder
+Interest/Impact: Carbon copy recipient of important communication regarding an offsite event .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Rick
+Role: Decision Maker (Offsite Focus)
+Interest/Impact: Agreed on the primary focus of an offsite event on financials and procurement .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Cindy
+Role: Decision Maker (Offsite Focus)
+Interest/Impact: Agreed on the primary focus of an offsite event on financials and procurement .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Financials Team
+Role: Business Unit/Department
+Interest/Impact: Primary focus of an offsite event ; full SAP functionality will be available for financial operations .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Procurement Team
+Role: Business Unit/Department
+Interest/Impact: Primary focus of an offsite event .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"SAP Team/Developers
+Role: Technical Team/System Implementers
+Interest/Impact: Identified and fixed software errors ; waiting for tax requirements for user exits ; believes they can link to settlement data .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Tax Department (Brazil and Argentina)
+Role: Business Unit/Regulatory Compliance
+Interest/Impact: Provides tax requirements and codes affecting SAP user exits to accommodate local regulations .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"GCP (Global Credit & Payments)
+Role: Business Unit/System Integrator
+Interest/Impact: Agreed to modify the Bank Partner Type .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Multiple Informed Stakeholders: Lebrane, Melissa White, Leslie Reeves, Susan Harrison, Brenda F Herod, Bryce Baxter, Lisa Csikos, Rita Wynne, Bob Klein, Evelyn Aucoin, Cynthia Morrow
+Role: Informed Stakeholders/Project Participants
+Interest/Impact: Carbon copy recipients of important project communication/decisions, indicating a need to be aware of project progress or specific decisions .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Account Coordinators
+Role: Operational Staff
+Interest/Impact: Track overpayments and would benefit from a case management system to manage issues .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Time Entry Users
+Role: End-users
+Interest/Impact: Will use SAP and eHROnline for time entry starting June 23 , .
+
+eHROnline Users
+Role: End-users
+Interest/Impact: Will use eHROnline for time entry .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Payroll Team
+Role: Business Unit/Department
+Interest/Impact: Populated by timekeeping data from SAP integration .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Project Managers
+Role: Management Staff
+Interest/Impact: Projects populated by timekeeping data from SAP integration .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Cost Center Owners/Managers
+Role: Management Staff
+Interest/Impact: Cost centers populated by timekeeping data from SAP integration .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Rena
+Role: Individual Contributor/Developer
+Interest/Impact: Was working on a specification for automatic field population (Xref1 and Xref2) .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Ana
+Role: Operational Staff (Settlements)
+Interest/Impact: Responsible for confirming settlements, requiring specific company information .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Intercompany Trade Participants/Users
+Role: Operational Staff
+Interest/Impact: Involved in handling intercompany trades by booking payables in SAP .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Treasury Department
+Role: Business Unit/Department
+Interest/Impact: Affected by policy for supply verifications, which block payments in SAP until finaled in Unify .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"HPLC
+Role: Entity/Group
+Interest/Impact: PMAs were run manually due to settlement process issues .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,stakeholderRegister,"Netout Customers
+Role: External Entity/Customer
+Interest/Impact: Subject to policies regarding supply verifications for payment processing .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,executiveSummary,"The SAP Financial Systems are being implemented for the Enron Gas Pipeline Group, Enron North America, and Enron Energy Services companies, with a key go-live date of July 1, 2000 .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,executiveSummary,"Full SAP functionality for financials will be available on July 5, 2000, while SAP and eHROnline became available for time entry on June 23, 2000 .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,executiveSummary,Support has been provided for navigating this transition period .,0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,executiveSummary,"A significant decision has been made to permanently discontinue Unify Accounts Receivable (AR), with all AR functions to be performed within SAP .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,executiveSummary,"This change in business logic simplifies the Unify/SAP interface by eliminating the need to split bank deposits, interface cash entries back to SAP, or transfer Unify netting entries and payables information [SOURCE:3, SOURCE:6].",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,executiveSummary,"Netting will now be exclusively performed in SAP, retaining automatic netting entries, and the absence of controls in SAP netting is currently deemed acceptable .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,executiveSummary,"Data created in SAP is expected to allow linking settlement data from the income statement, though converted data will not provide settlement periods in the same manner .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,executiveSummary,The August 29-31 offsite will primarily focus on financials and procurement .,0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,executiveSummary,SAP is currently awaiting tax requirements for user exits to accommodate Brazil and Argentina tax requirements .,0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,executiveSummary,"Critical requirements for the implementation include the necessity of Xref1 (coordinator) and Xref2 (physical vs. financial flag) fields for the July 1 go-live, despite an unsuccessful test for automatic population .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,executiveSummary,"Timekeeping is a focal point of SAP integration, ensuring real-time population of payroll, projects, and cost centers, and offering greater flexibility in charging employee and contractor time .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,executiveSummary,"A new policy mandates that all intercompany trades involving certain currencies will require booking a payable in SAP for incoming payments, and confirming settlements will necessitate providing the company number .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,executiveSummary,"Overpayments are to be classified ""on account,"" highlighting the need for a case management system or allowing overapplication to aid tracking .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,executiveSummary,"For netout customers, a policy is in place to override supply verifications in Unify to block them in SAP from Treasury until payment, following a previous recall issue .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,executiveSummary,Several constraints and challenges have been addressed.,0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,executiveSummary,A software error causing a previous problem has been identified and fixed .,0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,executiveSummary,"The issue of all service PMAs for ENA and HPLC not being picked up by the Settlements process has been resolved with a fix, with completion expected by September 18 .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,executiveSummary,"Manual processing was required for HPLC PMAs, and missing ENA PMAs were deemed immaterial .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,executiveSummary,The Power mass draft process is currently running slow but is being completed to meet the user deadline .,0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,successMetrics,"successMetrics
+
+The SAP Financial Systems will be successfully implemented for the Enron Gas Pipeline Group, Enron North America, and Enron Energy Services companies by July 1, 2000 .",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,successMetrics,The Power mass draft process performance will be improved and completed by the user deadline for close of business on Wednesday .,1,['bpya4870ejCFkKKKoChJ'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,successMetrics,"The Unify/SAP interface will be simplified by eliminating the need to split bank deposits into Unify, interface cash entries from Unify back to SAP, interface Unify netting entries to SAP, and interface payables information .",1,['cZ9IQcpSChQ30jd0GkmP'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,successMetrics,"All service PMAs for ENA and HPLC will be accurately picked up by the Settlements process, eliminating manual intervention for HPLC PMAs .",1,['dfmzLpsUU4Y7njxEQ41G'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,successMetrics,Automated netting entries for payables and receivables will be successfully retained and performed within SAP .,1,['2E71DhkmcV8VG8tsd85j'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,successMetrics,"All Accounts Receivable (AR) functions will be successfully transitioned and performed within SAP, leading to the permanent decommissioning of Unify AR .",1,['5eN90G4uXjU6I15ahenP'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,successMetrics,User exits in SAP will be correctly configured or disabled based on Brazil and Argentina tax requirements and codes .,1,['M9Av8t3iNTIz0lZDQgZp'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,successMetrics,GCP will successfully modify the Bank Partner Type as agreed .,1,['M9Av8t3iNTIz0lZDQgZp'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,successMetrics,Data created in SAP will be accurately captured on the income statement side of entries and will be linkable to obtain settlement data .,1,['xr0LxnFho8crGw3icr8k'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,successMetrics,"Overpayments will be correctly classified as ""on account"" and overapplication functionality will assist account coordinators in tracking overpayments .",1,['Pb2otjIFVbNwOTXfHhkV'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,successMetrics,"The SAP system and eHROnline will be available for time entry beginning Friday, June 23 at 8:00 AM .",1,['QkzP3Qw8NKekr1iKUwW6'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,successMetrics,"Full SAP functionality for financials will be available on July 5, 2000 .",1,['QkzP3Qw8NKekr1iKUwW6'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,successMetrics,Users will be able to successfully log in and change their password at initial logon to meet specified criteria .,1,['QkzP3Qw8NKekr1iKUwW6'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,successMetrics,"Time entry and coding will accurately populate payroll, projects, and cost centers in real-time, providing increased flexibility to charge employee and contractor time to the actual work areas .",1,['UaB1y36rMXctNiih0n2Q'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,successMetrics,Xref1 (coordinator) and Xref2 (physical vs. financial flag) fields will be accurately populated for go-live .,1,['fhL0i2nSKzZpDWjNU2Sd'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,successMetrics,"All intercompany trades will be processed correctly in SAP, including the accurate booking of payables for specified currencies .",1,['mElGYGyXIC0J3zZHSjet'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,successMetrics,"Supply verifications for netout customers will be correctly overridden and blocked in SAP until payment, preventing premature treasury pickup .",1,['vxMwtn9f4Kd9p93nQFfo'],True
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,nfrReqs,"The SAP Financial Systems must be available for the Enron Gas Pipeline Group, Enron North America, and Enron Energy Services companies by July 1, 2000. 
+2.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,nfrReqs,"The Power mass draft process must be completed by the user deadline for close of business Wednesday. 
+3.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,nfrReqs,"The conversion to SAP AR must simplify the Unify/SAP interface by eliminating the need to split bank deposits into Unify, interface cash entries from Unify back to SAP, interface Unify netting entries to SAP, and transfer payables information. 
+4.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,nfrReqs,"The Settlements process must reliably pick up all service PMAs, with all identified errors fixed by September 18. 
+5.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,nfrReqs,"All Accounts Receivable (AR) functions must be performed exclusively in SAP, and the Unify AR system must be permanently decommissioned. 
+6.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,nfrReqs,"The SAP system and eHROnline must be available for time entry beginning Friday, June 23 at 8:00 AM. 
+7.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,nfrReqs,"Full SAP financial functionality must be available by July 5, 2000. 
+8.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,nfrReqs,"Users will be required to change their password at initial logon to SAP, and new passwords must meet specified criteria. 
+9.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,nfrReqs,"Entry and coding of time must populate payroll, projects, and cost centers in real time. 
+10.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,nfrReqs,"The system must provide increased flexibility to charge employee and contractor time to the areas they actually work. 
+11.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,nfrReqs,"The Xref1 (coordinator) and Xref2 (physical vs. financial flag) fields must be automatically populated upon go-live. 
+12.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,nfrReqs,"All intercompany trades must be handled within SAP by booking a payable to the paying company. 
+13.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,nfrReqs,"Supply verifications for netout customers must be blocked in SAP, preventing treasury pickup, once they are finaled in Unify and subsequently overridden. 
+14.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,nfrReqs,"The system must support the classification of overpayments as ""on account"" and allow for overapplication to facilitate easier tracking by account coordinators. 
+15.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,nfrReqs,Data created in SAP must be captured on the income statement side of entries to allow for linking to settlement data.,0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,nfrReqs,"For converted data, the settlement period will not be available in the same manner. 
+16.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,nfrReqs,"The SAP netting process must retain automatic netting entries when payables are netted with receivables within SAP. 
+17.",0,[],False
+migINRc0FZrlbIta1QQ9,exp3-email-beck-s_sap,email,beck-s_sap,nfrReqs,"The system must accommodate Brazil and Argentina tax requirements, potentially through custom user exits.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,assumptions,"There will be no changes to the Canadian or Mexican offices; Rob Milnthorp and Max Yzaguirre will continue to manage them and report to the EA OOC. 
+2.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,assumptions,"Technical resources (engineering, development, operations, pipeline) will be consolidated and centralized under Brian Redmond to ensure this skill base is available and utilized productively across all ENA groups. 
+3.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,assumptions,"Organizational realignment is necessary to achieve Enron North America's expectations for growth and opportunity in 2001. 
+4.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,assumptions,"A clear delineation of responsibilities will continue to exist within teams, where the trading organization will manage risk, income statements, and product development, and originators will have primary responsibility for generation. 
+5.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,assumptions,"Employees participating in the ClickAtHome program will receive a basic package consisting of a Dell desktop computer with a high-speed processor, floppy disk drive, mouse, speakers, monitor, modem, CD-ROM drive, and Windows 2000 software. [SOURCE:6, 11]
+6.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,assumptions,"Subsidized Internet connections, including broadband, will be optionally available to ClickAtHome program participants where commercially available. [SOURCE:6, 11]
+7.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,assumptions,"A single East Power Team, incorporating trading, mid-market, and origination, will be formed immediately, patterned after successful business models in Calgary and Portland. 
+8.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,assumptions,"Enron Americas will operate with two divisions: Enron North America and Enron South America, and business will continue under these two operating companies, eliminating the need for further structural changes. 
+9.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,assumptions,"A new group will be formed comprising traders across Enron's wholesale trading and risk management businesses to provide a forum for discussing market topics and exploring other markets. 
+10.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,assumptions,"There will be an increasing strategic focus on the upstream side of the business, encompassing producers, transporters, and storage providers, in addition to market area opportunities. 
+11.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,assumptions,"Teams will utilize all of ENA's product capabilities, including gas commodity, assets, and capital. 
+12.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,assumptions,"The Denver office, currently under Mark Whitt, will be integrated into a relevant team, and a Central Gas Team, co-managed by Hunter Shively and Laura Luce, will be formed, integrating the Chicago office. 
+13.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,assumptions,"The Real Time Trading group, managed by John Forney, is responsible for the physical and financial integrity of prescheduled energy transactions, including re-supplying curtailed schedules and preserving Enron's financial rights. 
+14.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,assumptions,"Advanced statistical analysis software, such as S-Plus, is available and will be used to perform exploratory data analysis on topical trading issues. 
+15.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,assumptions,"A comprehensive electricity trading decision support system, based on market fundamentals, will be built. 
+16.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,assumptions,"Candidates for the Associate & Analyst Program will be sourced from specified universities including Baylor, Oklahoma, Rice, Texas A&M, University of Florida, and University of Texas. 
+17.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,assumptions,"Business units will utilize the Manager Toolbox to search for Associate & Analyst talent, peruse qualifications, create and view rotation requests, learn about A&A Program events, and participate in knowledge management events (eThink).",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,functionalReqs,"functionalReqs
+
+The system shall ensure the physical and financial integrity of prescheduled energy transactions.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,functionalReqs,The system shall support re-supplying curtailed schedules.,1,['CcJCgpQ4XnwlRSJgunV1'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,functionalReqs,The system shall preserve Enron's financial rights with non-performing trading counterparties.,1,['CcJCgpQ4XnwlRSJgunV1'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,functionalReqs,"The system shall utilize advanced statistical analysis software (e.g., S-Plus) to perform exploratory data analysis on trading issues, including supply and demand anomalies and price movement.",1,['FPtaf3h6MiC5lLIjYQcB'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,functionalReqs,The system shall provide a comprehensive electricity trading decision support system based on market fundamentals.,1,['FPtaf3h6MiC5lLIjYQcB'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,functionalReqs,"The system shall manage the mailing of 1999 Form W-2 and Retiree Tax Form 1099-R to the address of record by January 31, 2000.",1,['OV4RUBvHFgU7EV9Az9ln'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,functionalReqs,The system shall enable users to request tax forms in writing if not received by February 16th.,1,['OV4RUBvHFgU7EV9Az9ln'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,functionalReqs,The system shall allow Business Units to search for Associate&Analyst talent using the Manager Toolbox.,1,['PvhIHsRIDlaf4HHvacSb'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,functionalReqs,"The system shall allow Business Units to peruse qualifications (resumes, career histories).",1,['PvhIHsRIDlaf4HHvacSb'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,functionalReqs,The system shall allow Business Units to create and view rotation requests for their group.,1,['PvhIHsRIDlaf4HHvacSb'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,functionalReqs,The system shall provide information about A&A Program events and activities.,1,['PvhIHsRIDlaf4HHvacSb'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,functionalReqs,The system shall facilitate participation in knowledge management events (eThink).,1,['PvhIHsRIDlaf4HHvacSb'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,functionalReqs,"The system shall allow employees to opt-in for a subsidized Internet connection, including broadband where commercially available. [SOURCE:6, 11]
+The system shall support the ClickAtHome program by facilitating the provision of a computer for employee home use.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Stakeholder Register
+
+Stakeholder: Julie Braly
+Role/Interest: Director, Career Development, Associate & Analyst Program; emergency contact and point for candidate feedback.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: Internal Management
+
+Stakeholder: Rob Milnthorp
+Role/Interest: Manager of Canadian offices; reports to EA OOC.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: Internal Management
+
+Stakeholder: Max Yzaguirre
+Role/Interest: Manager of Mexican offices; reports to EA OOC.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: Internal Management
+
+Stakeholder: EA OOC
+Role/Interest: Higher-level management to whom Rob Milnthorp and Max Yzaguirre report.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: Internal Management
+
+Stakeholder: Brian Redmond
+Role/Interest: Responsible for forming a new group to consolidate and centralize technical resources (engineering, development, operations, pipeline) across the organization.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: Internal Management
+
+Stakeholder: Enron North America (ENA)
+Role/Interest: Organization with expectations for growth and opportunity; undergoing re-alignment; utilizes gas commodity, assets, and capital capabilities. [SOURCE:4, 10]
+Category: Internal Business Unit
+
+Stakeholder: Trading organization
+Role/Interest: Manages risk, income statement, and product development aspects of partnerships.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: Internal Functional Group
+
+Stakeholder: Originators
+Role/Interest: Primary responsibility to generate business within partnerships.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: Internal Functional Group
+
+Stakeholder: Employees
+Role/Interest: Recipients of Dell desktop computers and Windows 2000 software for home use via the ClickAtHome program; option for subsidized Internet connection; recipients of 1999 Form W-2. [SOURCE:6, 11, 15]
+Category: Internal End Users
+
+Stakeholder: East Power Team
+Role/Interest: A newly formed single team incorporating trading, mid-market, and origination functions.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: Internal Functional Group
+
+Stakeholder: Enron Americas
+Role/Interest: Operates two divisions: Enron North America and Enron South America; continues to conduct business under existing structures.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: Internal Business Unit
+
+Stakeholder: Enron South America
+Role/Interest: Operating division under Enron Americas; continues to conduct business under existing structures.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: Internal Business Unit
+
+Stakeholder: Traders (across wholesale trading and risk management businesses)
+Role/Interest: Comprise a new group for discussing market topics and exploring other markets.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: Internal Functional Group
+
+Stakeholder: Producers, transporters, storage providers
+Role/Interest: External business partners on the upstream side of the business, which will receive increased focus.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: External Business Partners
+
+Stakeholder: Mark Whitt
+Role/Interest: Manages the Denver office, which will be integrated under a new team.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: Internal Management
+
+Stakeholder: Hunter Shively
+Role/Interest: Co-manager of the Central Gas Team.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: Internal Management
+
+Stakeholder: Laura Luce
+Role/Interest: Co-manager of the Central Gas Team.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: Internal Management
+
+Stakeholder: Chicago office
+Role/Interest: Will be integrated into the Central Gas Team.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: Internal Office/Team
+
+Stakeholder: Texas Gas Team
+Role/Interest: A team that will be managed.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: Internal Functional Group
+
+Stakeholder: John Forney
+Role/Interest: Manages the Real Time Trading group; responsible for the physical and financial integrity of prescheduled energy transactions.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: Internal Management
+
+Stakeholder: Trading counterparties
+Role/Interest: External entities with whom Enron has financial rights in case of non-performing transactions.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: External Business Partners
+
+Stakeholder: Analysts/Developers
+Role/Interest: Users of advanced statistical analysis software (e.g., S-Plus) for data analysis; responsible for building a comprehensive electricity trading decision support system.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: Internal Technical Staff
+
+Stakeholder: Settlements
+Role/Interest: A functional group responsible for trading-related settlements.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: Internal Functional Group
+
+Stakeholder: Candidates (from Baylor, Oklahoma, Rice, Texas A&M, University of Florida, University of Texas)
+Role/Interest: Individuals attending for recruitment; provide resumes and career histories for talent evaluation. [SOURCE:15, 16]
+Category: External Potential Employees
+
+Stakeholder: Retirees
+Role/Interest: Recipients of Tax Form 1099-R.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: External Former Employees
+
+Stakeholder: Business Units
+Role/Interest: Utilize the Manager Toolbox to search for Associate&Analyst talent, peruse qualifications, create/view rotation requests, and participate in knowledge management events.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,"Category: Internal Business Units
+
+Stakeholder: Managers (using Manager Toolbox)
+Role/Interest: Use the Manager Toolbox for talent acquisition (Associate&Analyst talent search), qualification review, and rotation requests for their groups.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,stakeholderRegister,Category: Internal Management/Users,0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,executiveSummary,This document details significant organizational realignments and strategic initiatives implemented to support Enron North America's growth objectives for 2001 [4].,0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,executiveSummary,Enron Americas will operate with two primary divisions: Enron North America and Enron South America [8].,0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,executiveSummary,"Key organizational changes include the immediate formation of a single East Power Team, integrating trading, mid-market, and origination, modeled after successful business approaches in Calgary and Portland [7].",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,executiveSummary,"Concurrently, a Central Gas Team will be formed, co-managed by Hunter Shively and Laura Luce, incorporating the Chicago office, and the Denver office will be integrated into this team [12].",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,executiveSummary,The Texas Gas Team will also be managed as part of these realignments [12].,0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,executiveSummary,"The Canadian and Mexican offices will maintain their current structure under Rob Milnthorp and Max Yzaguirre, who will continue to report to the EA OOC [2].",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,executiveSummary,"A critical strategic move involves consolidating and centralizing technical resources, encompassing engineering, development, operations, and pipeline functions, under Brian Redmond to ensure these skills are available and productively utilized across all Enron North America groups [3].",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,executiveSummary,"Within operational teams, a clear delineation of responsibilities will see the trading organization manage risk, income statements, and product development, while originators hold primary responsibility for generation [5].",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,executiveSummary,"The Real Time Trading group, managed by John Forney, will be responsible for the physical and financial integrity of prescheduled energy transactions [13].",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,executiveSummary,"Additionally, a new group comprised of traders from across wholesale trading and risk management businesses will be established to facilitate discussion and exploration of market topics [9].",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,executiveSummary,"Natural Gas, there will be an increased focus on the upstream business, including producers, transporters, and storage providers, utilizing all of ENA's product capabilities [10].",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,executiveSummary,"In terms of technology and employee programs, the ""ClickAtHome"" initiative is being launched, providing each employee with a basic Dell desktop computer package, including Windows 2000, and the option for a subsidized Internet connection, including broadband where available [6, 11].",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,executiveSummary,"From a technical requirements perspective, advanced statistical analysis software, such as S-Plus, is required for exploratory data analysis on trading issues, and a comprehensive electricity trading decision support system based on market fundamentals needs to be developed [14].",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,executiveSummary,"Furthermore, Business Units are required to utilize the Manager Toolbox to search for Associate & Analyst talent, peruse qualifications, create and view rotation requests, and participate in knowledge management events [16].",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,successMetrics,"successMetrics
+
+Skill base is available to all ENA groups and utilized productively across the organization .",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,successMetrics,"Achieve growth and opportunity expectations for Enron North America for 2001, consistent with prior success .",1,['G21X3GYRm3cP91fFmCHk'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,successMetrics,"The trading organization effectively manages risk, income statement, and product development aspects of partnerships .",1,['OL4bYB5SMCxfK1CaHB2M'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,successMetrics,Originators successfully generate new business .,1,['OL4bYB5SMCxfK1CaHB2M'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,successMetrics,"Employees are offered and utilize subsidized Internet connections, including broadband where commercially available [SOURCE:6, 11].",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,successMetrics,"New business models, patterned after successful models in Calgary and Portland, achieve comparable success .",1,['WZYZ2Pvua3n5TTHxKoRS'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,successMetrics,"Stability in operating divisions is maintained, eliminating the need for changes .",1,['XQ4kfIBgij4KZ8BWtXXD'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,successMetrics,"Traders actively discuss market topics important to their individual markets, learn, and explore other markets in a macro sense .",1,['YBLYOG6CI5BT0b2gZpRM'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,successMetrics,"The team effectively utilizes all of ENA's product capabilities, including gas commodity, assets, and capital .",1,['jRVJmtQ7R5yTIBYkms0d'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,successMetrics,Each employee receives a home computer through the ClickAtHome program .,1,['vmHh3z4ekuoh7IKgZkCC'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,successMetrics,"The Real Time Trading group ensures the physical and financial integrity of prescheduled energy transactions, including re-supplying curtailed schedules and preserving Enron's financial rights with non-performing trading counterparties .",1,['CcJCgpQ4XnwlRSJgunV1'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,successMetrics,"Advanced statistical analysis software, such as S-Plus, is used to perform exploratory data analysis on topical trading issues, including supply and demand anomalies and price movement .",1,['FPtaf3h6MiC5lLIjYQcB'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,successMetrics,A comprehensive electricity trading decision support system based on market fundamentals is built .,1,['FPtaf3h6MiC5lLIjYQcB'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,successMetrics,"The 1999 Form W-2 and Retiree Tax Form 1099-R are mailed to the address of record by January 31, 2000 .",1,['OV4RUBvHFgU7EV9Az9ln'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,successMetrics,"Business Units successfully search for Associate & Analyst talent using the Manager Toolbox, peruse qualifications, create and view rotation requests for their group, learn about A&A Program events and activities, and participate in knowledge management events (eThink) .",1,['PvhIHsRIDlaf4HHvacSb'],True
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,nfrReqs,"Operational Requirements
+1.1.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,nfrReqs,"In case of emergency, contact Julie Braly, Director, Career Development, Associate & Analyst Program, at 713-853-7351 (Office) or 713-306-4996 (Cell Phone). 
+
+2.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,nfrReqs,"Hardware and Software Specifications
+2.1.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,nfrReqs,"The basic employee computer package shall include a Dell desktop computer with a high-speed processor, floppy disk drive, mouse, speakers, monitor, modem, and CD-ROM drive. 
+2.2.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,nfrReqs,"The basic employee computer package shall include Windows 2000 software. 
+2.3.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,nfrReqs,"Each employee shall be provided with a computer for home use. 
+
+3.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,nfrReqs,"Connectivity and Network
+3.1.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,nfrReqs,"Employees will have the option to receive a subsidized Internet connection, including broadband where commercially available. 
+3.2.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,nfrReqs,"The program shall subsidize an Internet connection for employees, where technology permits. 
+
+4.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,nfrReqs,"Analytics and Tools
+4.1.",0,[],False
+sqRx9RkfySlMlfYixWUW,exp3-email-scott-s_msap_info,email,scott-s_msap_info,nfrReqs,"The system shall utilize advanced statistical analysis software, such as S-Plus, to perform exploratory data analysis on topical trading issues, including supply and demand anomalies and price movement.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,assumptions,"Assumptions
+
+It is assumed that prudently incurred costs associated with security and reliability during the national crisis may be recovered through a separate rate recovery mechanism as per FERC's Statement of Policy .",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,assumptions,"The project will adhere to Enron's general policy on careful spending, particularly regarding professional services .",1,['RypD8CQnChzOW17xF1vb'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,assumptions,"ClickAtHome will subsidize only one Internet Service Provider per eligible employee, and employees are responsible for termination fees if switching providers .",1,['SYdIPQZEi3cRGUbd6Rkp'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,assumptions,Employees booking domestic flights will purchase non-refundable coach tickets .,1,['TJWgo06BbijsJlOrwJX7'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,assumptions,"All new professional service expenditure arrangements, and those due for renewal, must be negotiated through or in consultation with GSS to leverage Enron's purchasing power .",1,['anfi3vitmAOCE281iK87'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,assumptions,"Contracts exceeding $5,000 will require pre-approval by the business unit senior executive (or designee) and GSS .",1,['cBgfbhksujlpccn8E5hl'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,assumptions,"The online expense reporting tool, XMS, will be used for expense reporting .",1,['cBgfbhksujlpccn8E5hl'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,assumptions,"Outlook Web Access (OWA) functionality may differ from the office version, with some Outlook 2000 features potentially unavailable .",1,['wDtNxR3Vw8kooLQGRAOY'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,assumptions,OWA is only supported using Internet Explorer 5.x .,1,['wDtNxR3Vw8kooLQGRAOY'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,assumptions,Outlook Web Access (OWA) is only available to users whose mailboxes reside on a Houston mail server .,1,['xO9Yye0YSIxWKEcfF8Bs'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,assumptions,"Recommended limits for the trade policy related to underlying transport and storage business (basis, spreads, fixed price) will be adhered to for relevant trades .",1,['ydEYG7aiDeOx3hTvWYAY'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,assumptions,"ClickTrip will be used for employee travel planning, providing access to travel and pricing options (excluding proprietary carriers) and facilitating cost-effective travel decisions .",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,assumptions,An estimated 20% savings will be realized through ClickTrip .,0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,assumptions,"Enron Email can be accessed via Outlook Web Access (OWA) from the internet without dialing into Enron's network, provided the user has been migrated from Lotus Notes to Outlook .",1,['CPWzgzwbZ9nVHlxXU2Wc'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,functionalReqs,"The system shall provide employees with easy access to all travel and pricing options for their destination, excluding proprietary carriers. 
+2.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,functionalReqs,"The system shall assist employees in making cost-effective travel decisions by providing the most current travel information. 
+3.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,functionalReqs,"The system shall allow users to access their Enron Email with Outlook Web Access (OWA) via the Internet without requiring a dial-in to Enron's network. 
+4.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,functionalReqs,"The system shall facilitate negotiation of all new and renewed professional service expenditure arrangements through, or in consultation with, GSS. 
+5.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,functionalReqs,"The system shall require pre-approval from the business unit senior executive or their designee and GSS for contracts exceeding $5,000. 
+6.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,functionalReqs,"The system shall subsidize only one ClickAtHome Internet Service Provider per eligible employee. 
+7.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,functionalReqs,"The system shall encourage employees flying in the United States to book non-refundable coach tickets for domestic travel. 
+8.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,functionalReqs,The system shall support changes to non-refundable domestic coach tickets for a $100 fee.,0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,"Stakeholder Register
+
+1.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,"Federal Energy Regulatory Commission (FERC)
+    Role: Regulator responsible for issuing policy statements regarding the recovery of prudently incurred costs related to security and reliability during national crises.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,"They approve rate recovery mechanisms. 
+
+2.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,"Policy Committee
+    Role: Approves and recommends corporate policy on discretionary spending, specifically targeting professional services which were over $600 million last year, to ensure careful money management. 
+
+3.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,"Global Sourcing Services (GSS)
+    Role: Negotiates new and renewal professional service expenditure arrangements (including legal, financial, accounting, engineering, and information technology) to leverage Enron's purchasing power.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,Consultation with GSS is mandatory for these arrangements.,0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,"GSS also pre-approves contracts exceeding $5,000. , 
+
+4.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,"Business Unit Senior Executives (or designees)
+    Role: Required to pre-approve contracts exceeding $5,000 within their respective business units. 
+
+5.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,"Enron Employees (General)
+    Interest: Expected to exercise care with company funds.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,"Interest: Utilize XMS, the online expense reporting tool, to expedite and monitor expenses. 
+
+6.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,"Enron Employees (Internet Service Subscribers)
+    Interest: Eligible for a subsidy for only one ClickAtHome Internet Service Provider.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,"If switching providers, they are responsible for any associated termination fees. 
+
+7.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,"Enron Employees (Domestic Business Travelers)
+    Role: Strongly encouraged to book non-refundable coach tickets for domestic flights, which are approximately 65 percent less than refundable tickets, with a $100 change fee.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,"Role: Use ClickTrip for easy access to travel and pricing options (excluding proprietary carriers) to facilitate cost-effective travel decisions, aiming for an estimated 20% savings. 
+
+8.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,"Outlook Web Access (OWA) Users
+    Interest: Access Enron Email via a browser-based interface without requiring a dial-in connection to Enron's network, provided they have internet access.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,"Constraint: May experience differences in functionality compared to Outlook 2000, and some features may not be available.",1,['wDtNxR3Vw8kooLQGRAOY'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,Constraint: OWA is only supported using Internet Explorer 5.x.,1,['wDtNxR3Vw8kooLQGRAOY'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,Constraint: OWA is only available if their mailbox resides on a Houston mail server.,1,['xO9Yye0YSIxWKEcfF8Bs'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,"Constraint: OWA is not available to users currently on Lotus Notes; access will be granted upon migration to Outlook. 
+
+9.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,"Lotus Notes Users
+    Constraint: Currently unable to access OWA, but will gain access once migrated to Outlook. 
+
+10.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,"Resolution Center (x31411) / ETS Solutions Center (x54745)
+    Role: Provide support for employee questions, including those related to OWA. 
+
+11.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,"Executives/Management (e.g., Rod and Dan)
+    Role: Involved in discussions and recommendations concerning infrastructure projects and the establishment of trade policy limits for the underlying transport and storage business, including basis, spreads, and fixed price trades. 
+
+12.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,"ClickAtHome Internet Service Providers (External)
+    Role: Third-party service providers that employees may use; employees are responsible for termination fees if they cancel their service to switch providers. 
+
+13.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,stakeholderRegister,"Professional Service Providers (External)
+    Role: Their expenditure arrangements for services such as legal, financial, accounting, engineering, and information technology must be negotiated through, or in consultation with, GSS.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,executiveSummary,"ExecutiveSummary:
+Companies may file applications to recover prudently incurred costs associated with security and reliability during this national crisis, proposing a separate rate recovery mechanism for these costs .",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,executiveSummary,"The Policy Committee has recommended measures to manage Enron's finances, highlighting professional services as the largest area of discretionary spending at over $600 million last year .",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,executiveSummary,"To leverage purchasing power, all new and renewing professional service expenditure arrangements, including legal, financial, accounting, engineering, and IT services, must be negotiated through or in consultation with GSS .",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,executiveSummary,"Contracts exceeding $5,000 must be pre-approved by the business unit senior executive or their designee and GSS .",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,executiveSummary,"The online expense reporting tool, XMS, facilitates expediting and monitoring expenses .",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,executiveSummary,"Recommended limits for the trade policy related to underlying transport and storage business (basis, spreads, fixed price) have been reviewed and proposed .",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,executiveSummary,"For employee services, ClickTrip has been introduced to provide employees easy access to travel and pricing options (excluding proprietary carriers) and assist in making cost-effective travel decisions, with an estimated savings of 20% .",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,executiveSummary,"For domestic flights, employees are strongly encouraged to purchase non-refundable coach tickets, which are typically 65 percent less than refundable tickets and can be changed for a $100 fee .",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,executiveSummary,"Employees can switch ClickAtHome Internet Service Providers at any time, but are responsible for any associated termination fees, as ClickAtHome will subsidize only one provider per eligible employee .",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,executiveSummary,Outlook Web Access (OWA) enables access to Enron Email via the Internet without needing to dial into Enron's network; this functionality will be available to Lotus Notes users once they migrate to Outlook .,0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,executiveSummary,"However, OWA is a browser-based version with potentially different functionality and fewer features than Outlook 2000, is only supported using Internet Explorer 5.x , and is currently only available for mailboxes residing on a Houston mail server .",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,successMetrics,"Achieve an estimated 20% savings on travel costs through the utilization of ClickTrip .
+2.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,successMetrics,"Enable Outlook Web Access (OWA) users, once migrated to Outlook, to access Enron Email without requiring a dial-in to Enron's network .
+3.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,successMetrics,"Increase the booking of non-refundable domestic coach tickets to realize savings, with typical non-refundable tickets being 65 percent less than refundable ones .
+4.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,successMetrics,"Ensure 100% compliance for all new and renewed professional service expenditure arrangements to be negotiated through or in consultation with GSS to leverage purchasing power .
+5.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,successMetrics,"Ensure 100% compliance for all contracts exceeding $5,000 to be pre-approved by the business unit senior executive or designee and GSS .
+6.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,successMetrics,"Reduce overall discretionary spending, with a specific focus on professional services which represented over $600 million last year .
+7.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,successMetrics,Establish a mechanism to recover prudently incurred costs associated with security and reliability during the national crisis .,0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,nfrReqs,"nfrReqs
+
+The system must support the recovery of prudently incurred costs associated with security and reliability, potentially through a separate rate recovery mechanism as per FERC policy.",0,[],False
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,nfrReqs,"The system must support measures to ensure careful spending, particularly regarding professional services expenditures.",1,['RypD8CQnChzOW17xF1vb'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,nfrReqs,The system must enforce that ClickAtHome will subsidize only one Internet Service Provider per eligible employee.,1,['SYdIPQZEi3cRGUbd6Rkp'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,nfrReqs,The system must make employees aware of their responsibility for termination fees when switching ClickAtHome Internet Service Providers.,1,['SYdIPQZEi3cRGUbd6Rkp'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,nfrReqs,The system must strongly encourage employees to purchase non-refundable domestic coach tickets for air travel.,1,['TJWgo06BbijsJlOrwJX7'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,nfrReqs,"The system should highlight the cost savings associated with non-refundable tickets, typically 65 percent less than refundable tickets.",1,['TJWgo06BbijsJlOrwJX7'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,nfrReqs,The system should inform users about the typical $100 fee for changing non-refundable tickets.,1,['TJWgo06BbijsJlOrwJX7'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,nfrReqs,"The system must ensure that all new professional service expenditure arrangements and those due for renewal are negotiated through, or in consultation with, GSS.",1,['anfi3vitmAOCE281iK87'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,nfrReqs,"The system must enforce that contracts exceeding $5,000 require pre-approval by the business unit senior executive or their designee and GSS.",1,['cBgfbhksujlpccn8E5hl'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,nfrReqs,"The system must integrate with or support online expense reporting functionality, such as XMS, to expedite and monitor expenses.",1,['cBgfbhksujlpccn8E5hl'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,nfrReqs,The system must support Outlook Web Access (OWA) using Internet Explorer 5.x only.,1,['wDtNxR3Vw8kooLQGRAOY'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,nfrReqs,The system must not support Outlook Web Access (OWA) with other web browsers.,1,['wDtNxR3Vw8kooLQGRAOY'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,nfrReqs,Outlook Web Access (OWA) functionality may be slightly different and some features of Outlook 2000 may not be available.,1,['wDtNxR3Vw8kooLQGRAOY'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,nfrReqs,The system must limit Outlook Web Access (OWA) availability to users whose mailboxes reside on a Houston mail server.,1,['xO9Yye0YSIxWKEcfF8Bs'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,nfrReqs,"The system must enforce recommended limits for trade policies related to underlying transport and storage business, including basis, spreads, and fixed price.",1,['ydEYG7aiDeOx3hTvWYAY'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,nfrReqs,"The system must provide employees with easy access to all travel and pricing options for their destination, excluding proprietary carriers.",1,['9ZdgzcsQjV3PAwt4yLnr'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,nfrReqs,The system must assist employees in making cost-effective travel decisions by providing current information.,1,['9ZdgzcsQjV3PAwt4yLnr'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,nfrReqs,The system should aim to achieve an estimated savings of 20% on travel costs.,1,['9ZdgzcsQjV3PAwt4yLnr'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,nfrReqs,The system must allow access to Enron Email via Outlook Web Access (OWA) through the Internet without requiring users to dial into Enron's network.,1,['CPWzgzwbZ9nVHlxXU2Wc'],True
+WTlK8oZueIr7dJzUAYQC,exp3-email-hayslett-r_projects,email,hayslett-r_projects,nfrReqs,The system must only provide Outlook Web Access (OWA) functionality to users once they have migrated from Lotus Notes to Outlook.,1,['CPWzgzwbZ9nVHlxXU2Wc'],True
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,assumptions,"Assumptions
+
+The necessary components or sites have been approved by IT Security & Controls as trusted .",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,assumptions,"TIBCO will be discontinued as the mechanism for pushing EOL price changes to clients in the near future, and the system will instead rely on rapid polling for price changes from a database .",1,['EEbAy7ogldf71r9dKRwi'],True
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,assumptions,"A new production server will be purchased, and the existing system will be repurposed as the development server and file server .",1,['JiaC4Bp1d70l1lJtPEWY'],True
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,assumptions,"Dedicated EOL read-only accounts, CANAFUNDP1 for production and CANAFUNDT1 for continued testing and development, will be available, both using ""TheWeather"" as the password .",1,['SNLXpLHEgIYRYa8kLAzd'],True
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,assumptions,"Two Compaq ProLiant DL360 servers, configured with Dual Pentium III 1Ghz/133, 1GB SDRAM 133MHz (4x256), RAID 1 setting, and two 18.2GB hot pluggable Ultra3 SCSI 15,000 rpm Hard Drives, will be procured and available .",1,['w0T1cmh6WaY7Wn4FQH6O'],True
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,assumptions,"The URL ""http://albertapower.enron."" will be added to the necessary configurations or trusted lists .",1,['7NpptkPDUs366hpcCgQD'],True
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,assumptions,"The tool will initially support Canadian power and gas products and will have access to required power, gas, and currency EOL price feeds .",1,['8P3F2xQv653wouMO0oob'],True
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,functionalReqs,"The system must allow for the addition of ""http://albertapower.enron."" to its configuration. 
+2.",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,functionalReqs,"The tool must support Canadian power and gas products. 
+3.",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,functionalReqs,"The tool must have access to power, gas, and currency EOL price feeds.",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,stakeholderRegister,"StakeholderRegister
+
+Faheem A.",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,stakeholderRegister,"Qavi, Enron Net Works, IT Security & Controls.",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,stakeholderRegister,"Approves technical implementations and security aspects, and responds to information requests [SOURCE:1, 6].",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,stakeholderRegister,"Mark (Hall), Desktop Architecture.",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,stakeholderRegister,"Requests information, asks questions, and receives responses [SOURCE:1, 6, 7].",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,stakeholderRegister,"Cooper, Unspecified Department.",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,stakeholderRegister,"Provides requirements for tools and receives infrastructure updates [SOURCE:3, 7].",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,stakeholderRegister,Infrastructure Planner / IT Operations.,0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,stakeholderRegister,"Responsible for planning, purchasing, and configuring server infrastructure and EOL accounts [SOURCE:3, 4, 5].",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,stakeholderRegister,"IT Security & Controls (Department), Enron Net Works.",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,stakeholderRegister,"Approves security-related changes and ensures compliance [SOURCE:1, 6].",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,stakeholderRegister,Beneficiary of approved system implementations .,0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,stakeholderRegister,"Provides information on existing systems, specifically TIBCO usage .",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,stakeholderRegister,EOL System Administrator / Developer.,0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,stakeholderRegister,"Will utilize EOL access accounts for testing, development, and production .",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,executiveSummary,This document outlines key decisions and requirements for a new tool designed to support Canadian power and gas products .,0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,executiveSummary,"The tool will necessitate access to power, gas, and currency EOL price feeds .",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,executiveSummary,"Significant infrastructure changes include the acquisition of a new production web server, with the current system being repurposed as a development and file server .",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,executiveSummary,"Specifically, two Compaq ProLiant DL360 servers, each configured with Dual Pentium III 1Ghz processors, 1GB SDRAM, RAID 1, and two 18.2GB hot-pluggable Ultra3 SCSI hard drives, are being procured .",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,executiveSummary,The method for pushing EOL price changes will transition from TIBCO to a rapid polling mechanism from a database .,0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,executiveSummary,"For access and security, the URL ""http://albertapower.enron."" is required to be added as a trusted site .",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,executiveSummary,This addition has received approval from IT Security & Controls for implementation for Mr.,0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,executiveSummary,"Furthermore, two EOL Read Only accounts, CANAFUNDP1 for production and CANAFUNDT1 for testing/development, have been provided, both sharing the password ""TheWeather"" .",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,successMetrics,"successMetrics
+
+The new production server is successfully purchased, configured, and deployed, retaining the existing system for development and file serving [SOURCE:3, SOURCE:5].",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,successMetrics,"Access accounts (CANAFUNDP1, CANAFUNDT1) are fully provisioned and functional, allowing for segregated production and development/testing environments with appropriate filters .",1,['SNLXpLHEgIYRYa8kLAzd'],True
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,successMetrics,"The system successfully implements rapid polling for EOL price changes from a database, effectively replacing the TIBCO push method .",1,['EEbAy7ogldf71r9dKRwi'],True
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,successMetrics,"The tool gains reliable access to required Canadian power, gas, and currency EOL price feeds .",1,['8P3F2xQv653wouMO0oob'],True
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,successMetrics,"All new system components and access points adhere to IT security and controls standards and approvals, including the addition of any necessary trusted sites [SOURCE:1, SOURCE:6].",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,nfrReqs,"nfrReqs
+
+The system must operate within an environment approved by IT security & Controls.",0,[],False
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,nfrReqs,The system will transition from using TIBCO for EOL price changes to rapid polling for price changes from a database.,1,['EEbAy7ogldf71r9dKRwi'],True
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,nfrReqs,"A new production server will be purchased, and the existing system will be repurposed as a development and file server.",1,['JiaC4Bp1d70l1lJtPEWY'],True
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,nfrReqs,"Separate accounts (e.g., CANAFUNDP1, CANAFUNDT1) are required for production and testing/development environments.",1,['SNLXpLHEgIYRYa8kLAzd'],True
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,nfrReqs,"The system will be deployed on two Compaq ProLiant DL360 servers, each with Dual Pentium III 1Ghz/133, 1GB SDRAM 133MHz (4x256), RAID 1 setting, and two 18.2GB hot pluggable Ultra3 SCSI 15,000 rpm Hard Drives.",1,['w0T1cmh6WaY7Wn4FQH6O'],True
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,nfrReqs,"The system requires access to the URL ""http://albertapower.enron."".",1,['7NpptkPDUs366hpcCgQD'],True
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,nfrReqs,"The system requires access to power, gas, and currency EOL price feeds.",1,['8P3F2xQv653wouMO0oob'],True
+cfuA5qlKaPXwGelpn3F3,exp3-email-richey-c_infrastructure,email,richey-c_infrastructure,nfrReqs,The system will initially support Canadian power and gas products.,1,['8P3F2xQv653wouMO0oob'],True
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,assumptions,"Assumptions
+
+The chosen power source will adequately support the desired device longevity, signal transmission range, and functional complexity of the product.",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,assumptions,"Restricting the complexity of the user interface and overall product functionality will help achieve a shorter time to market. [SOURCE:2, 5]
+The product will be aimed at the 15-35 age bracket, and this demographic is considered a viable and receptive market for the product.",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,assumptions,"The product's functionality will be kept simple, primarily focusing on controlling a TV.",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,assumptions,"Complex features such as voice recognition are out of scope for the initial release to maintain simplicity and optimize time to market. [SOURCE:4, 5]",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,functionalReqs,"functionalReqs
+
+The device must control the TV.",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,functionalReqs,"The functions of the device must be kept simple. [SOURCE:2, 5]
+The complexity of the functions must be restricted to ensure a timely market entry. [SOURCE:2, 5]
+The complexity of the functions must consider the limitations of the power source, impacting device longevity and signal transmission range.",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,functionalReqs,The user interface design must be restricted to avoid excessive complexity.,1,['ux6BjB1NV5pLVPzYeTeY'],True
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,stakeholderRegister,"stakeholderRegister
+
+1.",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,stakeholderRegister,"Stakeholder Group: Company Leadership / Project Sponsors
+    *   Role: Define strategic direction, budget, and key success criteria.
+    *   Key Concerns/Influence: High influence over project scope and timeline.",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,stakeholderRegister,"Expressed a ""worry"" that project complexity would negatively affect time to market [SOURCE:2, 5].",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,stakeholderRegister,"Has corporate requirements that drive product direction .
+    *   Key Expectations: Deliver a product that meets corporate objectives and market entry timelines [SOURCE:2, 5].",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,stakeholderRegister,"Prioritize simplicity in design to achieve rapid market entry .
+
+2.",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,stakeholderRegister,"Stakeholder Group: Product & Business Team (represented by A, B, D, Craig (C))
+    *   Role: Define product requirements, features, and target audience; manage business analysis activities.
+    *   Key Concerns/Influence: High interest in product definition and market fit.",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,stakeholderRegister,Actively discussing the target audience (15-35 bracket) and core product functions .,0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,stakeholderRegister,"Concerned about managing complexity to meet market timelines [SOURCE:2, 5].
+    *   Key Expectations: Define a clear, simple product scope, such as controlling a TV .",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,stakeholderRegister,Ensure the product targets the agreed demographic .,0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,stakeholderRegister,"Balance creative influence with market constraints to avoid excessive complexity .
+
+3.",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,stakeholderRegister,"Stakeholder Group: Technical Development Team
+    *   Role: Design, develop, and implement the product based on requirements and technical constraints.
+    *   Key Concerns/Influence: High influence on technical feasibility and architectural design.",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,stakeholderRegister,"Engaged in discussions about the implications of the power source on device longevity, signal transmission, and function complexity .",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,stakeholderRegister,"Also discussing the technical impact of potential features like voice recognition on user interface components .
+    *   Key Expectations: Adhere to technical constraints, such as power source limitations affecting device performance .",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,stakeholderRegister,Provide expertise on component requirements and architectural considerations for implementing features .,0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,stakeholderRegister,"Implement a robust solution that balances technical complexity with overall design and performance goals.
+
+4.",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,stakeholderRegister,"Stakeholder Group: Marketing Team
+    *   Role: Defines market strategy, target demographics, and product positioning.
+    *   Key Concerns/Influence: High interest in market acceptance and sales success.",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,stakeholderRegister,"Directly involved in defining the target audience for the product, specifically the 15 to 35 age bracket .
+    *   Key Expectations: A product that effectively targets the identified demographic and supports broader market entry and sales objectives.",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,executiveSummary,"Executive Summary:
+
+This document details the business requirements for the new product, which is designed to control a TV .",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,executiveSummary,The target market for this product has been identified as the 15-35 age bracket .,0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,executiveSummary,"A key constraint throughout development is the need to manage complexity, as excessive complexity would negatively affect the time to market [SOURCE:2, SOURCE:5].",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,executiveSummary,"Consequently, the product will be kept simple, with a focus on restricting creative influence on the user interface design to prevent delays [SOURCE:2, SOURCE:5].",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,executiveSummary,"For example, incorporating voice recognition would introduce additional components and complexity to the user interface .",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,executiveSummary,"The chosen power source is also a significant factor, impacting the device's longevity, signal transmission capabilities, and the complexity of desired functions .",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,successMetrics,"SuccessMetrics:
+The following metrics will define the success of this project and product:
+Achieve the defined time-to-market targets. [SOURCE:2, SOURCE:5]
+Maintain a simple user interface and focus on core TV control functionality, avoiding excessive complexity. [SOURCE:2, SOURCE:4, SOURCE:5]
+Meet or exceed the specified device longevity/battery life.",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,successMetrics,Meet or exceed the specified signal transmission range.,1,['Vl73SduVqdGHLzDvKDEY'],True
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,successMetrics,Successfully deliver a product appealing to the 15-35 age demographic.,1,['FeYBuuxtKpFLsydP2mB1'],True
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,nfrReqs,"nfrReqs
+
+The device's operational longevity is directly impacted by the choice of its power source.",0,[],False
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,nfrReqs,The signal transmission range is constrained by the selected power source.,1,['Vl73SduVqdGHLzDvKDEY'],True
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,nfrReqs,The complexity of device functions is limited by the power source.,1,['Vl73SduVqdGHLzDvKDEY'],True
+XsltA1aoKFMDvQXBSFxa,exp3-transcript-ES2002b,transcript,ES2002b,nfrReqs,"To achieve a timely market release, the product's overall complexity, particularly regarding the user interface, must be restricted. [SOURCE:2, 5]
+The product will be kept simple, primarily focused on controlling a TV, to prevent excessive complexity and ensure prompt market entry.",0,[],False
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,assumptions,"Assumptions
+
+The following assumptions underpin the requirements outlined in this document:
+
+The product will utilize a conventional push-button design .",0,[],False
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,assumptions,The product will target a much lower price bracket .,1,['wPQmitjUlGaHXLqqcDm6'],True
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,assumptions,Initial decisions regarding basic functionality and user interface design must be finalized within a constrained timeframe due to project schedule limitations .,1,['xv5FRMjHPLkx9c9mjyGF'],True
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,functionalReqs,"FunctionalReqs
+
+The product shall incorporate a conventional push-button design for all user input and interaction .",0,[],False
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,functionalReqs,The user interface shall be implemented to provide intuitive and effective access to the product's functionalities .,1,['xv5FRMjHPLkx9c9mjyGF'],True
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,functionalReqs,The product shall deliver a core set of basic functionalities .,1,['xv5FRMjHPLkx9c9mjyGF'],True
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,stakeholderRegister,"StakeholderRegister
+
+This section identifies key individuals and groups with an interest in or influence over the project, along with their primary areas of concern.
+
+1.",0,[],False
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,stakeholderRegister,"Project Manager
+    Primary Concern: Managing project timelines and ensuring rapid decision-making, particularly regarding basic functionality and user interface design within tight schedules .
+
+2.",0,[],False
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,stakeholderRegister,"Product Owner / Business Analyst
+    Primary Concern: Defining the product's niche, determining basic functionality, and influencing the user interface design to align with market demands and price constraints [SOURCE:1,2].",0,[],False
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,stakeholderRegister,"Involved in working fast to decide on basic functionality and user interface aspects .
+
+3.",0,[],False
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,stakeholderRegister,"Engineering / Development Team
+    Primary Concern: Implementing the product's core functionality, including the conventional push-button design and user interface.",0,[],False
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,stakeholderRegister,"Responsible for the technical feasibility and execution of design concepts [SOURCE:1,2].
+
+4.",0,[],False
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,stakeholderRegister,"UI/UX Designer
+    Primary Concern: Designing how the user interface might work, ensuring it aligns with the conventional push-button design requirement and overall usability goals [SOURCE:1,2].
+
+5.",0,[],False
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,stakeholderRegister,"Marketing Department
+    Primary Concern: Identifying and targeting the product's market niche, and influencing the price bracket to maximize market appeal and sales potential .
+
+6.",0,[],False
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,stakeholderRegister,"Finance / Senior Management
+    Primary Concern: Ensuring the product adheres to a ""much lower price bracket"" and managing the overall budget and financial viability of the project .
+
+7.",0,[],False
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,stakeholderRegister,"End-Users / Customers
+    Primary Concern: The target for a product offering conventional push-button design functionality at a ""much lower price bracket"" .",0,[],False
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,stakeholderRegister,Their needs and preferences are critical inputs for functionality and user interface decisions.,0,[],False
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,executiveSummary,"Executive Summary:
+This document outlines the initial scope and key constraints for the development of a new remote control.",0,[],False
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,executiveSummary,"A primary design objective is to implement a conventional push-button design, which will position the product within a much lower price bracket .",0,[],False
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,executiveSummary,"Consequently, a critical constraint is the rapid decision-making required to finalize basic functionality and the user interface design within a thirty-minute timeframe before the next scheduled meeting .",0,[],False
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,executiveSummary,This focused effort is essential to establish foundational elements for the project.,0,[],False
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,successMetrics,"The product must be positioned within a much lower price bracket .
+2.",0,[],False
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,successMetrics,The user interface design will be a key aspect for the product's overall success .,0,[],False
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,nfrReqs,"Cost: The product shall be designed to target a much lower price bracket. 
+2.",0,[],False
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,nfrReqs,Design & Usability: The product shall utilize a conventional push-button design.,0,[],False
+lDCnWQwFdcbp5xsURA4A,exp3-transcript-ES2003a,transcript,ES2003a,nfrReqs,The user interface design is identified as a key aspect requiring thorough consideration.,0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,assumptions,"Assumptions
+
+*   Similar components or products currently available on the market are priced at approximately 20 pounds. 
+*   The product's target market is the general consumer, not a specific business segment, and it must be designed to be accessible and user-friendly for all age groups. 
+*   Users generally prefer simple, pre-programmed functionality for devices (e.g., on/off, volume, basic channel control) and do not expect to perform complex programming or configuration themselves. 
+*   Usability challenges related to the older generation are inherent and may persist even with design modifications, requiring specific considerations in the product's design and user experience.",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,functionalReqs,"Functional Requirements
+
+1.",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,functionalReqs,"The product must be accessible and usable by all age groups. 
+2.",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,functionalReqs,"The product must be user-friendly for everyone. 
+3.",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,functionalReqs,"The product must not be focused on a business market. 
+4.",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,functionalReqs,"The product must have a market range that is international. 
+5.",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,functionalReqs,"The product must provide basic control functionality, including on/off, volume up/down, and channel selection (e.g., channel one, two). 
+6.",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,functionalReqs,"The product should not require complex user programming or tampering. 
+7.",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,functionalReqs,The product must address usability challenges specific to the older generation.,0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,stakeholderRegister,"Stakeholder Register
+
+Stakeholder Name: Users (All Age Groups)
+Role/Group: End-users of the product.",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,stakeholderRegister,"Key Interests/Requirements/Concerns:
+The product must be accessible and usable by all age groups .",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,stakeholderRegister,A key focus is on user-friendliness for everyone .,0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,stakeholderRegister,"Specific concerns exist regarding usability for the older generation, addressing the ""age gap"" .",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,stakeholderRegister,"Users prefer basic functionality, such as on/off, volume up/down, and channel change, without complex programming or tampering .",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,stakeholderRegister,Market prices for similar items are around twenty pounds .,0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,stakeholderRegister,"Stakeholder Name: Product Management / Business Leadership
+Role/Group: Responsible for defining product strategy and market fit.",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,stakeholderRegister,"Key Interests/Requirements/Concerns:
+Ensuring the product has an international market range .",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,stakeholderRegister,The product must be user-friendly for everyone and accessible to all age groups .,0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,stakeholderRegister,"Awareness of existing market prices, which are approximately twenty pounds for similar items .",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,stakeholderRegister,Needs to consider how to tackle usability issues for the older generation .,0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,stakeholderRegister,"Stakeholder Name: Design & Development Team
+Role/Group: Responsible for designing and implementing the product.",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,stakeholderRegister,"Key Interests/Requirements/Concerns:
+To design a product that is accessible and usable by all age groups .",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,stakeholderRegister,To implement user-friendly features suitable for an international market .,0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,stakeholderRegister,"To ensure basic functionality (on/off, volume, channels) is intuitive and does not require complex programming .",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,stakeholderRegister,"To address and overcome usability problems specifically for the older generation, tackling the ""age gap"" .",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,stakeholderRegister,Awareness of market pricing constraints for similar products (around twenty pounds) .,0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,executiveSummary,"Executive Summary
+
+This document details the key requirements and constraints for the proposed product.",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,executiveSummary,"The product is targeted at an international market, with a strong emphasis on being accessible and user-friendly for all age groups, rather than focusing on a specific business market .",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,executiveSummary,A significant design challenge will be to address usability for the older generation .,0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,executiveSummary,"Core functionality must remain basic and intuitive, encompassing essential controls such as on/off, volume, and channel selection, and avoiding complex programming .",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,executiveSummary,"The current market cost for similar devices is approximately twenty pounds, and it is understood that such an item would need to be acquired for development purposes .",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,successMetrics,"Success Metrics
+
+The success of this product will be measured by its ability to meet the following criteria:
+
+1.",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,successMetrics,"Competitive Pricing: The final product cost should be competitive with market alternatives, aiming for a price point around or below the current market average of twenty pounds for similar devices .
+2.",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,successMetrics,"Universal User Accessibility: The product must be demonstrably accessible and usable by all age groups, focusing on user-friendliness for everyone rather than a specific market segment .
+3.",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,successMetrics,"Seamless Basic Functionality: Users should be able to operate fundamental features (e.g., power, volume, channel selection) immediately upon acquisition, without requiring complex programming or setup .
+4.",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,successMetrics,"High User Satisfaction Across Demographics: The product's design must effectively overcome usability challenges for specific demographics, such as the older generation, leading to high satisfaction rates across all intended users [SOURCE:2, SOURCE:4].",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,nfrReqs,"Cost Constraint: The product should be mindful of a target cost around £20, which is consistent with similar products currently available on the market. 
+2.",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,nfrReqs,"Usability and Accessibility: The product must be accessible and usable by all age groups, ensuring a user-friendly experience for everyone. 
+3.",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,nfrReqs,"Simplicity of Operation: The product should focus on providing basic functionalities such as power on/off, volume control, and channel changing, avoiding complex programming or setup for the user. 
+4.",0,[],False
+cdVD9ukAsg7iSFtqpupl,exp3-transcript-ES2004a,transcript,ES2004a,nfrReqs,Intergenerational Usability: The design must address the challenges faced by older generations to ensure the product is easily usable across all age demographics.,0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,assumptions,"Assumptions
+
+The remote controls will be sold for 25 Euros each.",0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,assumptions,The project aims for a profit of 50 million Euros.,1,['5u3z3txCTypl2qyHgpJT'],True
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,functionalReqs,"Functional Requirements
+
+The provided evidence outlines business objectives and financial targets, specifically a planned selling price of twenty-five Euros per remote control and an aim for a profit of fifty million Euros, rather than defining specific functional requirements for the system .",0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,functionalReqs,"As such, no direct functional requirements can be extracted from this statement alone.",0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,functionalReqs,Further business analysis would be required to translate these objectives into system functions.,0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,stakeholderRegister,"stakeholderRegister
+
+Stakeholder Register
+--------------------
+
+Stakeholder Group: Executive Leadership / Shareholders
+Role / Description: Provides strategic direction, approves major business objectives, and monitors overall company performance.",0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,stakeholderRegister,Key Interests: Achieving the target profit of fifty million Euros from the sale of remote controls .,0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,stakeholderRegister,Ensuring the successful sale of remote controls at twenty-five Euros each to contribute to profitability .,0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,stakeholderRegister,"Influence: High
+---
+Stakeholder Group: Finance Department
+Role / Description: Manages financial planning, budgeting, reporting, and analysis for the company.",0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,stakeholderRegister,Key Interests: Tracking and ensuring the achievement of the fifty million Euro profit target .,0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,stakeholderRegister,Managing and reporting on revenue generated from selling remote controls at twenty-five Euros per unit .,0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,stakeholderRegister,"Influence: High
+---
+Stakeholder Group: Product Management / Business Unit Owners
+Role / Description: Responsible for defining product strategy, market positioning, pricing, and the overall success of the remote control product line.",0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,stakeholderRegister,Key Interests: Successful sales of remote controls at the defined price point of twenty-five Euros .,0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,stakeholderRegister,Ensuring the product contributes effectively to the overall fifty million Euro profit goal .,0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,stakeholderRegister,"Influence: High
+---
+Stakeholder Group: Sales and Marketing Department
+Role / Description: Responsible for developing strategies to promote and sell the remote controls to customers, and for managing sales channels.",0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,stakeholderRegister,Key Interests: Successfully selling remote controls for twenty-five Euros each to maximize revenue .,0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,stakeholderRegister,Achieving the sales volumes necessary to contribute to the fifty million Euro profit target .,0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,stakeholderRegister,"Influence: Medium
+---
+Stakeholder Group: Customers
+Role / Description: End-users or businesses who purchase and use the remote controls.",0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,stakeholderRegister,Key Interests: Acquiring remote controls at the specified price of twenty-five Euros .,1,['5u3z3txCTypl2qyHgpJT'],True
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,executiveSummary,This project outlines the plan for selling remote controls .,0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,executiveSummary,Each unit will be sold for twenty-five Euros .,0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,executiveSummary,The primary financial objective is to achieve a profit of fifty million Euros .,0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,successMetrics,"Success Metrics:
+Achieve a selling price of 25 Euros per remote control.",0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,successMetrics,Attain a total profit of 50 million Euros.,1,['5u3z3txCTypl2qyHgpJT'],True
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,nfrReqs,"nfrReqs
+
+NFR-001: Pricing Constraint
+The system shall support and consistently apply a unit selling price of 25 Euros for remote controls.",0,[],False
+ltjm9ipbINt57ec2xqqT,exp3-transcript-ES2006a,transcript,ES2006a,nfrReqs,"NFR-002: Economic Objective Contribution
+The system shall be designed and operated to contribute towards achieving a target profit of fifty million Euros from the sale of remote controls.",0,[],False
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,assumptions,"Assumptions
+
+The target audience expects the product to feel like a twenty-five Euro item.",0,[],False
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,assumptions,The target audience desires trendy and original products.,1,['2dn3tF8qXfgLh2PULW2U'],True
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,assumptions,"Users expect a remote control to possess standard and essential functionalities, such as an on/off button.",1,['mRntgDz0GKGovwXykDlC'],True
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,functionalReqs,"functionalReqs
+
+The remote control must include an on/off button.",0,[],False
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,functionalReqs,The remote control must provide the expected core functionalities typical of a remote control.,1,['mRntgDz0GKGovwXykDlC'],True
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,stakeholderRegister,"StakeholderRegister
+
+Stakeholder: Business Owner/Project Sponsor
+Role: Strategic oversight and financial accountability.",0,[],False
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,stakeholderRegister,"Key Interests/Expectations:
+*   The project's profit aim is about fifty million .
+*   The product should be perceived as a twenty-five Euro remote control .
+*   The project's success is of significant interest to the company .",0,[],False
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,stakeholderRegister,"Stakeholder: Marketing/Product Management
+Role: Defines product strategy, market positioning, and user appeal.",0,[],False
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,stakeholderRegister,"Key Interests/Expectations:
+*   The new product must be original and distinguished .
+*   The product needs to be trendy .",0,[],False
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,stakeholderRegister,"Stakeholder: End-User/Customer
+Role: Primary consumer of the product.",0,[],False
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,stakeholderRegister,"Key Interests/Expectations:
+*   Expects the product to feel like a twenty-five Euro item .
+*   Needs to view the product on a shelf and desire it .
+*   Requires the expected functionality of a remote control, including an on/off button .",0,[],False
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,stakeholderRegister,"Stakeholder: Product Development Team
+Role: Responsible for the design and implementation of the product.",0,[],False
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,stakeholderRegister,"Key Interests/Expectations:
+*   Develop a new product that is original and distinguished .
+*   Ensure the product is trendy .
+*   Implement all expected remote control functionality, such as an on/off button .",0,[],False
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,executiveSummary,This project outlines the development of a new remote control product.,0,[],False
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,executiveSummary,"The goal is to create a product that is original, distinguished, and trendy, meeting customer desires .",0,[],False
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,executiveSummary,Key functionalities will include an on/off button and other expected features of a remote control .,0,[],False
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,executiveSummary,The project is constrained by a target perception of a twenty-five Euro cost per product and aims for a profit of approximately fifty million .,0,[],False
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,successMetrics,"successMetrics
+
+The success of this project will be measured against the following criteria:
+
+1.",0,[],False
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,successMetrics,"Financial Profitability: Achieve a profit aim of approximately fifty million. 
+2.",0,[],False
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,successMetrics,"Perceived Market Value: The product must be perceived by consumers as a twenty-five Euro per unit remote control product. 
+3.",0,[],False
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,successMetrics,"Market Differentiation and Appeal: The product must demonstrate originality, be distinguished from competitors, and be considered trendy by target consumers. 
+4.",0,[],False
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,successMetrics,"Core Functionality: All expected functionality of a remote control, including essential features such as an on/off button, must be implemented and operational.",0,[],False
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,nfrReqs,"The product must convey the impression of being a twenty-five Euro project per remote control product. 
+2.",0,[],False
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,nfrReqs,"The product must be original, distinguished, and trendy. 
+3.",0,[],False
+vWsJUhMbOBV6ZerjNWVr,exp3-transcript-IS1000a,transcript,IS1000a,nfrReqs,The product must incorporate the expected functionality of a remote control.,0,[],False

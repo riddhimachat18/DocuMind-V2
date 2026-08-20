@@ -1,0 +1,203 @@
+brd_id,source_type,source_label,section,brd_sentence,source_snippet_1,source_snippet_2,annotator1_verdict,annotator2_verdict,annotator2_notes
+migINRc0FZrlbIta1QQ9,email,beck-s_sap,assumptions,The Aug 29-31 offsite meeting will primarily focus on financials and procurement.,"Melissa Becker
+08/01/2000 01:40 PM
+cc: Elise Clark/Corp/Enron@ENRON, Mark Frank/HOU/ECT@ECT 
+
+I am happy to report that, because so many people wanted to bring a ""first 
+lieutenant"", Rick and Cindy have agreed to put the primary focus of the Aug 
+29-31 offsite on financials and procurement, with enough HR representation to 
+cover some of the broad strategic issues that cross multiple functional 
+areas.   
+
+Consequently, Elise and Mike will be able to attend.   More information on 
+logistics to follow within two weeks.   We will block off hotel rooms, etc.  in 
+the meantime.   
+
+As with the last ASE, it's an ""all or nothing"" proposition.   Because of the 
+structure of the event, participants must be there from start to finish (no 
+partial attendance).",,SUPPORTS,,
+sqRx9RkfySlMlfYixWUW,email,scott-s_msap_info,successMetrics,A comprehensive electricity trading decision support system based on market fundamentals is built .,"Use advanced statistical analysis software, such as S-Plus, to perform 
+exploratory data analysis on topical trading issues, including supply and 
+demand anomalies and price movement. 
+Build a comprehensive electricity trading decision support system based on 
+market fundamentals. 
+
+Settlements
+This group is responsible for settling physical wholesale transactions with 
+the California ISO and the California PX.   The group's primary function is to 
+estimate revenues and expenses based on scheduled volumes, settle with the 
+ISO based on actual volumes, and provide the accounting support to reconcile 
+differences between scheduled and actual volumes.",,SUPPORTS,,
+ltjm9ipbINt57ec2xqqT,transcript,ES2006a,assumptions,The project aims for a profit of 50 million Euros.,"We've got um we're planning to sell these remote controls for let's make that go away , that means we've got five minutes .  Um we're planning to sell the remote controls for twenty five Euros each .  Um and with that we're aiming for a profit of fifty million Euros . 
+C: And that's selling them on the international market , not just in the U_K_ .  Um so to do that our finance people estimate that we need production costs of maximum twelve and a half Euro so that we can reach that profit target . 
+C: So that's something to keep in mind while you're designing . 
+C: Okay . 
+C: Hmm . 
+C: This is let me just skip ahead to see that's the last thing , okay .  We've only got a couple of minutes .",,SUPPORTS,,
+vWsJUhMbOBV6ZerjNWVr,transcript,IS1000a,functionalReqs,The remote control must provide the expected core functionalities typical of a remote control.,"B: Um , maybe someone can mention some additional uh prerequisites for Mm-hmm a good .  remote control . 
+C: Of course it should have a on off button .  Mm-hmm .  Yes , well i it should have the the the the expected functionality Mm .  uh of a remote control .  Yeah Yeah .  , s and it depends what application you are using it for Mm .  .  You might need uh We wer we were thinking television .  Uh Mm .  .  We are targ targeting the television set .  So Mm .  , you need to record the channels Yeah .  Mm-hmm .  .  You need to browse the browse the channels in upward Yes downward Mm way .  , yes , .  Th th that's very handy I I always miss it and on Uh some remote controls that And you can go channel up or down ins instead of Mm .  retyping the number , especially Mm .",,SUPPORTS,,
+sqRx9RkfySlMlfYixWUW,email,scott-s_msap_info,successMetrics,Each employee receives a home computer through the ClickAtHome program .,"With that in mind, we are excited to let you know that we are introducing t=
+he=20
+ClickAtHome
+program, which will give each employee a computer for use at home.  Where=20
+technology permits, we will also subsidize an Internet connection.  With the=
+=20
+click of a mouse, a home computer plus Internet access will put a world of=
+=20
+Internet knowledge at your family=01,s fingertips.  =20
+
+We have just signed an agreement with Dell Computer Corporation to provide=
+=20
+the computer hardware.  We wanted to let you know about the program now in=
+=20
+case you and your family were considering the purchase or upgrade of a home=
+=20
+computer or Internet connection in the next few months.  The scope of=20
+ClickAtHome includes the following:
+
+?",,SUPPORTS,,
+sqRx9RkfySlMlfYixWUW,email,scott-s_msap_info,successMetrics,"New business models, patterned after successful models in Calgary and Portland, achieve comparable success .","With these objectives in mind, patterned after the successful business mode=
+ls=20
+in Calgary and Portland, effective immediately the following changes are=20
+being implemented:
+a) East Power =01) a single East Power Team incorporating trading, mid-mark=
+et=20
+and origination will be formed under the co-leadership of Kevin Presto and=
+=20
+Janet Dietrich who will report to the Enron Americas - Office of the Chairm=
+an=20
+(EA OOC).   This team will have one income statement, one book and a joint=
+=20
+accountability.  However, a clear delineation of responsibilities inside the=
+se=20
+teams will continue to exist in which the trading organization will manage=
+=20
+the risk, income statement and product development aspects of the=20
+partnership.",,PARTIALLY,,
+XsltA1aoKFMDvQXBSFxa,transcript,ES2002b,functionalReqs,The user interface design must be restricted to avoid excessive complexity.,"Well well a worry that was was expressed in the new requirements was that if we made this too complex it would e it would effect um how long how long it took us to get this to market , so I th suspect it might be a good idea just to restrict our kind of our creative influence on this on the user interface and not worry so much about uh how we transmit it A: Yep .  B: um because I mean it it's tried and tested intra-red , so A: There might B: we A: be B: could A: one B: stay with tha A: other problem with the transmission , um in particular right now , since we're talking about voice recognition .  Um if somebody's gonna h talk to the device , you ideally B: Mm-hmm A: want them to hold it to them B: Oh A: .  I it D: Right B: , yeah D: .  A: you may B: .",,SUPPORTS,,
+lDCnWQwFdcbp5xsURA4A,transcript,ES2003a,functionalReqs,The product shall deliver a core set of basic functionalities .,"B: got a couple of ideas , we can we'll have to work fast , um , alright as you can see we've got thirty minutes until the next meeting , so we'll have to try and decide on some of the basic functionality , um , how the user interface might work , that'll be a key aspect especially if the idea of um some kind of macros facility because you have to program it , you have to have a lot of response back , or at least some kind A: Mm-hmm .  B: .  Um And we're gonna maybe n try and have to figure out C: What the user wants B: what C: uh B: the user C: .  B: wants , yes C: Okay .  B: .  Um , right .  Has anybody got anything they'd like to add at this stage , anything they think that might have been missed so far ?",,PARTIALLY,,
+XsltA1aoKFMDvQXBSFxa,transcript,ES2002b,nfrReqs,The signal transmission range is constrained by the selected power source.,"Um and that power source is important because it ties you down to um how long the device will last B: Uh-huh .  A: .  Um it ties you down perhaps a bit later on in terms of the technologies um how far you can transmit the signal or the complexity of the functions D: Mm-hmm A: that D: .  A: you want .  Like for example , voice recognition , right .  That might be constrained because that you might need to power a microphone , you might need to power other things , so that's one perhaps constraint there .  Um Th Okay , the basic thing is there's a user interface where people punch a button or talk into it or smile to it or blink their eyes , whatever B: Hmm .  A: .",,SUPPORTS,,
+WTlK8oZueIr7dJzUAYQC,email,hayslett-r_projects,nfrReqs,The system should aim to achieve an estimated savings of 20% on travel costs.,"ClickTrip provides employees easy access to all travel and pricing options for their destination (excluding proprietary carriers) and assists employees in making the most cost-effective travel decisions by providing the most current information.   In addition to bringing an estimated savings of 20%, ClickTrip is easy to use and is accessible 24 hours a day from any internet-enabled personal computer.   After-hours telephone support is also available. 
+
+When making travel reservations, please purchase non-refundable coach tickets when flying in the U. S. , for these tickets can cost up to 65% less than refundable tickets and can usually be changed, if necessary, for a $100 fee. 
+
+?",,PARTIALLY,,
+sqRx9RkfySlMlfYixWUW,email,scott-s_msap_info,functionalReqs,"The system shall allow Business Units to peruse qualifications (resumes, career histories).",")
+
+For the Business Units:
+Search for Associate&Analyst talent using the Manager Toolbox
+Peruse qualifications  (resumes, career histories)
+Create and view rotation requests for your group
+Learn about A&A Program events and activities
+Participate in knowledge management events (eThink)
+
+We hope that everyone will utilize this outstanding website because it was 
+designed with both groups in mind.   We want the A&A members to know what is 
+available for them with regard to business unit news and rotation 
+information; and we want the business units to find the best match for their 
+professional needs.   Check out all the features and help evaluate the 
+content.   Let the Associate & Analyst Department know what you think and 
+offer any ideas or suggestions.   Your input will be invaluable.",,SUPPORTS,,
+f6QerxfeOUtmrqanfbUg,email,lokay-m_systems,successMetrics,Employees adhere to new mailbox size limits in the new environment by performing data housekeeping.,"Further=
+,=20
+it provides a more robust mail platform.  =20
+
+To prepare for the migration effort, we advise that you take a few minutes =
+to=20
+do some data housekeeping.    As we move to the new environment, there will =
+be=20
+mailbox size limits enforced.   We encourage you to review your Notes folder=
+s=20
+to eliminate any unnecessary files.   Also, you might want to review your da=
+ta=20
+files, in both your work directory and any common directories you use, to=
+=20
+assure you still have a need for them.    As you review these files, you=20
+should assure that you're retaining only business-related files. 
+
+We look forward to this exciting, beneficial effort.   You will be receiving=
+=20
+more communications soon.",,PARTIALLY,,
+vWsJUhMbOBV6ZerjNWVr,transcript,IS1000a,assumptions,The target audience desires trendy and original products.,"Um
+B: We When you design a new product you of uh you of course want it to be original .  Be uh we want to be distinguished , mm ?  People uh want to uh when they look at the shelf want to think , well that's the product I I need .  So it needs to be trendy .  I mean trendy is what people want , so then I w they will buy our product .  But then , uh , it also should work uh user friendly and uh otherwise people uh uh well it will not be uh be rated very well in consumer uh articles and like that . 
+B: So , the general outline of uh new project will be we first uh go through a functional design phase .  Um
+B: You all get uh um certain task uh in this uh in this phase and uh
+B: then we will meet again and uh discuss this functional design .",,SUPPORTS,,
+XsltA1aoKFMDvQXBSFxa,transcript,ES2002b,successMetrics,Meet or exceed the specified signal transmission range.,"Um and that power source is important because it ties you down to um how long the device will last B: Uh-huh .  A: .  Um it ties you down perhaps a bit later on in terms of the technologies um how far you can transmit the signal or the complexity of the functions D: Mm-hmm A: that D: .  A: you want .  Like for example , voice recognition , right .  That might be constrained because that you might need to power a microphone , you might need to power other things , so that's one perhaps constraint there .  Um Th Okay , the basic thing is there's a user interface where people punch a button or talk into it or smile to it or blink their eyes , whatever B: Hmm .  A: .",,DOES_NOT_SUPPORT,,
+migINRc0FZrlbIta1QQ9,email,beck-s_sap,successMetrics,Xref1 (coordinator) and Xref2 (physical vs. financial flag) fields will be accurately populated for go-live .,"As far as Xref1 (coordinator) and Xref2 (physical vs.  financial flag) fields 
+go, it appears that we are getting what we have to have in order to go live 
+7/1.   Rena was working on a spec (the OSS that was discussed) that would 
+automatically populate these 2 fields.   However, the test was unsuccessful.   
+These two fields are being opened up for netting, so we can input them 
+manually when netting.   I believe we need to pursue the auto fill post 7/1, 
+but the first priority is having a place to put the data. 
+
+As far as settlement period is concerned, we are probably going to get a 
+hybrid of what we want at this time.   The SAP team does appear to have 
+appropriate resources working on this issue.",,PARTIALLY,,
+f6QerxfeOUtmrqanfbUg,email,lokay-m_systems,successMetrics,All EOL processing is completed by 5:00 PM prior to the EOL Production Data Bases shutdown for power source addition.,"Please insure all 
+processing is done by 5:00 pm today.   The Building Facilities group is adding 
+additional power sources to the EOL equipment racks.   The EOL team plans to 
+bring down the EOL Production Data Bases during this time period. 
+
+Bob Martinez 
+MN232. 
+Importance: High
+
+ 
+
+ It was created by Mai Nguyen.   The title of the project is EOL Power issue.   
+The change number for the project is MN232.  
+
+Impact:  EOL
+Time:  Fri 2/2/2001 at  5:15:00 PM thru Fri 2/2/2001 at  8:00:00 PM
+Outage:  EOL Power issue
+Disruption:  Total Disruption of Service
+Environments Impacted:  EOL
+Purpose: Power Redundancy for EOL
+Backout: 
+Contact(s):  Mai Nguyen    
+      
+      
+      
+  
+Document Link->
+
+ETS Intranet Consolidation Project Updates (www. ETS. enron.",,SUPPORTS,,
+sqRx9RkfySlMlfYixWUW,email,scott-s_msap_info,successMetrics,Originators successfully generate new business .,"However, a clear delineation of responsibilities inside the=
+se=20
+teams will continue to exist in which the trading organization will manage=
+=20
+the risk, income statement and product development aspects of the=20
+partnership.  The originators will have the primary responsibility to genera=
+te=20
+origination income, provide coverage, deal flow, lead strategy formulation,=
+=20
+provide information and generate strategic positions.  Overall, the team wil=
+l=20
+be rewarded based upon increasing the value of the book, meeting=20
+coverage/deal flow targets and meeting its strategic/growth goals in the=20
+Eastern, Western, Central and Texas gas markets.   The team will be=20
+responsible for covering the LDC=01,s, muni=01,s/co-ops, industrials, IOU=
+=01,s, IPP=01,s=20
+and the producers.",,PARTIALLY,,
+WTlK8oZueIr7dJzUAYQC,email,hayslett-r_projects,nfrReqs,The system must allow access to Enron Email via Outlook Web Access (OWA) through the Internet without requiring users to dial into Enron's network.,"This means that if you can get on to the Internet, you can access your Enron Email with Outlook Web Access (OWA) without having to dial in to Enron's network.  Please note that this is not available to those users still on Lotus Notes but will be available once they are migrated to Outlook.  
+Once on the Internet, type mail. enron. com in your browser address window and supply your Enron network logon credentials as username and password.  For example:
+Username: jdoe4
+Password: ********
+Once you log in, Outlook Web Access opens your Enron Email mailbox.  Outlook Web Access (OWA) allows you to send and receive mail, perform calendar tasks and manage your mail and contacts, as well as access your mailbox folders.  At this time, Public Folders are not accessible via OWA.",,SUPPORTS,,
+XsltA1aoKFMDvQXBSFxa,transcript,ES2002b,successMetrics,Successfully deliver a product appealing to the 15-35 age demographic.,"B: um just to recap on Are we all happy about the idea of um aiming the product at um the fifteen to thirty five bracket D: Yeah B: ?  Um D: , that's B: and D: good .  B: also the funct the the actual functions of what it's gonna do .  Do you wanna recap on that , Craig ?  C: Um .  I think we just say that it was gonna be the the most basic stuff possible .  Um on off , up and down channels , up and down volume and uh skip to a channel .  B: Okay C: Ta .  D: And B: , right D: is it going B: .  D: to include any of the uh the more advanced features , or are we gonna eliminate those C: Um D: ?  C: I think we include mute , but apart from that um I think we just we'll go for the simpleness .  D: Okay B: Okay A: Okay B: .  D: .",,PARTIALLY,,
+migINRc0FZrlbIta1QQ9,email,beck-s_sap,assumptions,The system will provide increased flexibility for charging employee and contractor time to actual work areas.,"Timekeeping, though it seems mundane on the surface, is a focal point of the 
+SAP integration.   Entry and coding of time populates not just payroll, but 
+projects and cost centers, real time.   We will now have more flexibility to 
+charge employee and contractor time to the areas they actually work (where 
+people work on more than one area at a time).   This will only happen to the 
+extent that the business and cost center owners drive it.   This capability is 
+customizable not just by business unit or company, but by cost center within 
+a company. 
+
+To make this work HOW YOU WANT IT TO on 7/1, each ""organizational unit"" (as I 
+said above, you can drive this in your cost center(s) only or across your BU) 
+needs to be clear on questions such as:
+
+1.",,SUPPORTS,,

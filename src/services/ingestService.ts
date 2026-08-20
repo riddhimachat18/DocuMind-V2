@@ -1,5 +1,8 @@
 import { getFunctions, httpsCallable } from "firebase/functions";
+import { doc, getDoc } from "firebase/firestore";
 import app from "../lib/firebase";
+import { db } from "../lib/firebase";
+import { getAuth } from "firebase/auth";
 
 const functions = getFunctions(app);
 
@@ -12,10 +15,15 @@ export interface IngestResult {
   breakdown: Record<string, number>;
 }
 
-/**
- * Ingest Gmail threads into the project's snippet store.
- * accessToken comes from the Google OAuth2 popup flow.
- */
+export interface SlackIntegration {
+  access_token: string;
+  team_id: string;
+  team_name: string;
+  connected_at: any;
+}
+
+// ── Gmail ─────────────────────────────────────────────────────────────────────
+
 export async function ingestGmail(params: {
   projectId: string;
   accessToken: string;
@@ -28,24 +36,10 @@ export async function ingestGmail(params: {
 }
 
 /**
- * Ingest Slack channel messages into the project's snippet store.
- * channelIds is a list of Slack channel IDs (e.g. ["C012AB3CD"]).
+ * Opens a Google OAuth2 popup (implicit flow, read-only Gmail scope).
+ * Returns the access token once the popup completes.
  */
-export async function ingestSlack(params: {
-  projectId: string;
-  channelIds: string[];
-  daysBack?: number;
-  maxMessagesPerChannel?: number;
-}): Promise<IngestResult> {
-  const res = await ingestSlackFn(params);
-  return res.data as IngestResult;
-}
-
-/**
- * Trigger Google OAuth2 popup and return the access token.
- * Requires VITE_GOOGLE_CLIENT_ID in env.
- */
-export async function getGoogleAccessToken(): Promise<{ accessToken: string; refreshToken?: string }> {
+export async function getGoogleAccessToken(): Promise<{ accessToken: string }> {
   const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
   if (!clientId) throw new Error("VITE_GOOGLE_CLIENT_ID not configured");
 
@@ -78,6 +72,82 @@ export async function getGoogleAccessToken(): Promise<{ accessToken: string; ref
       }
       if (popup.closed) {
         clearInterval(timer);
+        reject(new Error("OAuth popup closed"));
+      }
+    }, 500);
+  });
+}
+
+// ── Slack ─────────────────────────────────────────────────────────────────────
+
+export async function ingestSlack(params: {
+  projectId: string;
+  channelIds: string[];
+  daysBack?: number;
+  maxMessagesPerChannel?: number;
+}): Promise<IngestResult> {
+  const res = await ingestSlackFn(params);
+  return res.data as IngestResult;
+}
+
+/**
+ * Check whether the current user has a connected Slack workspace.
+ */
+export async function getSlackIntegration(): Promise<SlackIntegration | null> {
+  const uid = getAuth(app).currentUser?.uid;
+  if (!uid) return null;
+  const snap = await getDoc(doc(db, "users", uid, "integrations", "slack"));
+  return snap.exists() ? (snap.data() as SlackIntegration) : null;
+}
+
+/**
+ * Opens the Slack OAuth popup. Passes the user's Firebase UID as `state`
+ * so the backend callback can store the token against the right user.
+ *
+ * Resolves when the popup posts a success message back, rejects on error.
+ */
+export async function connectSlack(): Promise<void> {
+  const clientId = import.meta.env.VITE_SLACK_CLIENT_ID;
+  if (!clientId) throw new Error("VITE_SLACK_CLIENT_ID not configured");
+
+  const uid = getAuth(app).currentUser?.uid;
+  if (!uid) throw new Error("Must be signed in to connect Slack");
+
+  const redirectUri = encodeURIComponent(
+    `${import.meta.env.VITE_FUNCTIONS_BASE_URL ?? ""}/slackOAuthCallback`
+  );
+  const scopes = encodeURIComponent(
+    "channels:history,channels:read,users:read"
+  );
+  const authUrl =
+    `https://slack.com/oauth/v2/authorize` +
+    `?client_id=${clientId}` +
+    `&scope=${scopes}` +
+    `&redirect_uri=${redirectUri}` +
+    `&state=${uid}`;
+
+  return new Promise((resolve, reject) => {
+    const popup = window.open(authUrl, "slack-oauth", "width=500,height=700");
+    if (!popup) { reject(new Error("Popup blocked")); return; }
+
+    const onMessage = (event: MessageEvent) => {
+      if (event.data?.type !== "slack-oauth") return;
+      window.removeEventListener("message", onMessage);
+      clearInterval(closedTimer);
+      if (event.data.success) {
+        resolve();
+      } else {
+        reject(new Error(event.data.message ?? "Slack OAuth failed"));
+      }
+    };
+
+    window.addEventListener("message", onMessage);
+
+    // Fallback: detect if user just closed the popup without completing
+    const closedTimer = setInterval(() => {
+      if (popup.closed) {
+        clearInterval(closedTimer);
+        window.removeEventListener("message", onMessage);
         reject(new Error("OAuth popup closed"));
       }
     }, 500);

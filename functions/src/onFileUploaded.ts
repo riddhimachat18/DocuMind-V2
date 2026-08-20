@@ -6,6 +6,7 @@ import { defineSecret } from "firebase-functions/params";
 import { FEW_SHOT_PROMPT } from "./classifyText";
 
 const GEMINI_API_KEY = defineSecret("GEMINI_API_KEY");
+const CHROMA_URL = defineSecret("CHROMA_URL");
 
 if (!admin.apps.length) admin.initializeApp();
 const db = admin.firestore();
@@ -19,7 +20,7 @@ async function embedQuery(text: string, key: string): Promise<number[]> {
 
 export const onFileUploaded = onCall(
   {
-    secrets: [GEMINI_API_KEY],
+    secrets: [GEMINI_API_KEY, CHROMA_URL],
     cors: true,
     timeoutSeconds: 540,
     memory: "512MiB"
@@ -149,7 +150,7 @@ export const onFileUploaded = onCall(
     await batch.commit();
 
     // Store classified snippets in ChromaDB with embeddings
-    const chromaUrlValue = process.env.CHROMA_URL ?? "";
+    const chromaUrlValue = CHROMA_URL.value() ?? "";
     if (chromaUrlValue && snippetIds.length > 0) {
       try {
         const chroma = new ChromaClient({

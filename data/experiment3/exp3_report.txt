@@ -1,0 +1,61 @@
+======================================================================
+EXPERIMENT 3 — Traceability Coverage & Citation Accuracy
+BRDs generated:           10
+  Email BRDs:             5
+  Transcript BRDs:        5
+======================================================================
+
+── 1. Traceability Coverage ───────────────────────────────────────────
+Total BRD sentences:      642
+Cited sentences:          175/642 (27.3%)
+Uncited sentences:        467/642 (72.7%)
+
+  By source modality:
+    email         160/488 (32.8%) cited
+    transcript    15/154 (9.7%) cited
+
+  By BRD section:
+    stakeholderRegister       5/224 (2.2%) cited
+    nfrReqs                   49/95 (51.6%) cited
+    assumptions               59/94 (62.8%) cited
+    executiveSummary          0/91 (0.0%) cited
+    successMetrics            47/75 (62.7%) cited
+    functionalReqs            15/63 (23.8%) cited
+
+── 2. Hallucination Proxy (uncited sentences) ─────────────────────────
+Uncited sentences:        467/642 (72.7%)
+  (Sentences with no citation to a source snippet — upper-bound
+   estimate of unsupported generation.)
+
+  Uncited by section:
+    stakeholderRegister       219/224 (97.8%) uncited
+    executiveSummary          91/91 (100.0%) uncited
+    functionalReqs            48/63 (76.2%) uncited
+    nfrReqs                   46/95 (48.4%) uncited
+    assumptions               35/94 (37.2%) uncited
+    successMetrics            28/75 (37.3%) uncited
+
+── 3. Citation Accuracy (Expert Annotation) ───────────────────────────
+Verified citations:       40
+Annotator:                Single expert annotator (system author)
+Note: Inter-annotator agreement not measured; left for future work.
+
+SUPPORTS:                 25/40 (62.5%)
+PARTIALLY:                14/40 (35.0%)
+DOES_NOT_SUPPORT:         1/40 (2.5%)
+
+Effective accuracy        39/40 (97.5%)
+(SUPPORTS + PARTIALLY)
+
+  By source modality:
+    email         SUPPORTS=17/25 (68.0%)  PARTIALLY=8/25 (32.0%)  DOES_NOT_SUPPORT=0/25 (0.0%)  effective=25/25 (100.0%)
+    transcript    SUPPORTS=8/15 (53.3%)  PARTIALLY=6/15 (40.0%)  DOES_NOT_SUPPORT=1/15 (6.7%)  effective=14/15 (93.3%)
+
+  By BRD section:
+    successMetrics            n=15  SUPPORTS=6  PARTIALLY=8  effective=14/15 (93.3%)
+    nfrReqs                   n=8  SUPPORTS=6  PARTIALLY=2  effective=8/8 (100.0%)
+    assumptions               n=11  SUPPORTS=10  PARTIALLY=1  effective=11/11 (100.0%)
+    functionalReqs            n=5  SUPPORTS=3  PARTIALLY=2  effective=5/5 (100.0%)
+    stakeholderRegister       n=1  SUPPORTS=0  PARTIALLY=1  effective=1/1 (100.0%)
+
+======================================================================

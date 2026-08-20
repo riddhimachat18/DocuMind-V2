@@ -49,6 +49,27 @@ chroma/
 data/emails.csv
 data_initial/
 
+# ── Enron maildir corpus (large, ~1.7GB) ──────────────────────────────────────
+data/maildir/
+
+# ── AMI corpus (large XML files) ──────────────────────────────────────────────
+data/ami_public_manual_1.6.2/
+
+# ── Experiment output data (generated, not source) ────────────────────────────
+data/experiment2/brds_export.json
+data/experiment2/annotation_sheet.csv
+data/experiment2/annotation_sheet_filled.csv
+data/experiment2/recall_results.json
+data/experiment2/candidate_threads.json
+data/experiment3/ami_transcripts.json
+data/experiment3/enron_threads.json
+
+# ── CSV files with full email bodies (too large / sensitive) ──────────────────
+data/Final_dataset_RFIs.csv
+data/PURE_train.csv
+data/PURE_test.csv
+data/PURE_valid.csv
+
 # ── Editor directories ─────────────────────────────────────────────────────────
 .vscode/*
 !.vscode/extensions.json
