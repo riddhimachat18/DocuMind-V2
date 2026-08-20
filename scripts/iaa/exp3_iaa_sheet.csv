@@ -1,0 +1,342 @@
+brd_id,section,sentence,citation_count,source_type,snippet_1,snippet_2,snippet_3,annotator1_verdict,annotator2_verdict,annotator2_notes
+uWizg6dPOrKJoQD7i1iA,functionalReqs,FR-013: The system shall feature a shape designed for thumb placement.,1,transcript,"And this is, this is with the curved that I mean.  Yeah.  Yeah?  A compromise between what?  This, this would be uh single curved uh?  Yeah.  Yeah.  Exactly.  Exactly.  I think the I mean our aim is to make something different right?  To make something new.  I would go for the double curved.  And I I'm I'm thinking uh you know uh a drawing palette, where you have the shape for your thumb.  So it kind of holds nicely, something like that.  Well this is really your decision but Yeah.  As well.  You can make a trigger button or something like that.  Yeah or that that is the confirmation button or something, that you scroll with your thumb, with the arrows, and then confirm.",,,SUPPORTS,SUPPORTS,
+OlbGFN5fSu9hoR2fPs99,functionalReqs,FR-006: The system shall incorporate a regular chip.,1,transcript,"Yes, because the walls they they reflect the infrared light.  So it has an it's easier.  Um I suggest we use the the sensor sample.  Uh the sample sensor and sample speaker.  Um with a with a regular chip.  I think uh it gives us the advantage of Yes, yes.  And uh skip and skip the L_C_D_ part.  I don't think it it's any uh value added thing.  So Okay.  Technology.  Yes.  It's not very flashy and new.  Mm-hmm.  Mm-hmm.  Yes.  Uh I think our customers will go insane.  It's it's too much.  Okay.  Uh the n the next phase will be um the um not the what is the next phase f Flores?  Okay.  So i Okay.  Okay.  Okay, okay.  Yes, they can work.  They cannot work with double-curved.  That's that's problem.  I'll check it for you.  Yes.  Mm-hmm.  Okay.  Okay.  So you will be on the Bahamas.  Uh Okay.",,,SUPPORTS,SUPPORTS,
+sVkrccqwmVUh1FGYR2dr,nfrReqs,NFR-001: [Performance] - The voice recognition system shall perform wonderfully.,1,transcript,"Yeah.  An Yeah.  Yeah.  Yeah but uh um Yeah, yeah sure, yeah, yeah.  Yeah.  Yeah, w well now the v the voice recognition if if it works wonderfully w we could possibly do away with all buttons, but I think this is not really the right moment yet, because people are just so used to buttons and um, yeah it's it's kind of safer, so we we need both, so the voice recognition would be just an extra, it wouldn't really reduce the size of the remote.  Yeah but m but on the other hand, remote control isn't as close to you you probably might just just uh speak into it and and the T_V_ would be already further away, so it might not pick up the other things coming from there.",,,SUPPORTS,SUPPORTS,
+6o0okGXwxd7dVXhsunbN,functionalReqs,FR-006: The system shall display the popup box to all users of EnronOnli.,1,email,"Unfortun
+
+Subject: Re: Popup Text
+sounds good
+
+
+
+
+David Forster@ENRON
+10/12/2000 01:32 PM
+To: Savita Puthigai/NA/Enron@Enron, Andy Zipper/Corp/Enron@Enron, Kal 
+Shah/HOU/ECT@ECT
+cc: John Arnold/HOU/ECT@ECT 
+Subject: Popup Text
+
+
+I would like to put the following text into a popup box which will appear 
+once to all users of EnronOnli
+
+Subject: 
+John:
+Please call Lavorato's secretary, Kim, and schedule a time to talk with John 
+ASAP. 
+Thanks,
+John
+
+Subject: Re: SMUD deal Asian options
+I can do it either way but would much rather just make it the simple average 
+of prices, 5 per week.",,,SUPPORTS,SUPPORTS,
+oMbh62Vrb9QQySSubuu0,functionalReqs,FR-011: The system shall have outstanding issues.,1,email,"Enron Emails - anchordesk_daily@anchordesk. zdlists. com
+
+Subject: Meet the dark side of Windows XP
+
+
+_____________________DAVID COURSEY_____________________
+
+MEET THE DARK SIDE OF WINDOWS XP
+
+    While I really like Microsoft's new operating
+         system, there are still some issues that may
+         make it impossible for you to upgrade.  And
+         other issues may make you want to skip XP 
+
+Subject: XP countdown: More of your top questions answered
+
+
+_____________________DAVID COURSEY_____________________
+
+XP COUNTDOWN: MORE OF YOUR TOP QUESTIONS ANSWERED
+
+    In the last month and a half, I've been inundated
+         with XP-related questions from faithful
+         AnchorDesk readers.  Can you upgrade?  Is XP
+         faster than 9x?",,,SUPPORTS,SUPPORTS,
+7pr9rpwHRmu27bdWS1VE,nfrReqs,NFR-007: [Performance] - The system shall provide quick responses to user inquiries and actions.,1,email,"Allen@enron. com
+cc:  
+Subject: Nondeliverable mail
+
+
+------Transcript of session follows -------
+scsatkfa@caprock. net
+The
+
+Subject: 
+Cary,
+
+Here is the picture of the house I have in mind.   I was going for a simple 
+farmhouse style to  place on 5 acres near Wimberley.   
+
+A few points that might not be obvious from the plans are:
+
+There will be a double porch across the back just like the front
+No dormers (Metal roof)
+1/2 bath und
+
+Subject: 
+Reagan,
+
+Thank you for the quick response on the bid for the residence.   Below is a 
+list of questions on the specs:
+
+1.   Is the framing Lumber #2 yellow pine?   Wouldn't fir or spruce warp less 
+and cost about the same? 
+
+2.   What type of floor joist would be used?",,,DOES_NOT_SUPPORT,DOES_NOT_SUPPORT,
+JUEWUgZeI5Qe1eiSyJPu,successMetrics,SM-003: Engagement in Storage Business Opportunities: Active collaboration.,1,email,"Our prior direction 
+was to have Derrick Deakins as our key point of communicatio
+
+Subject: Compaq / EBS Relationship
+David and Bob,
+
+We look forward to working with you to strengthen the Compaq and EBS 
+relationship.    EBS has identified potential server business opportunities 
+(storage, streaming media) where our two organizations can work together.",,,PARTIALLY,PARTIALLY,
+uWizg6dPOrKJoQD7i1iA,functionalReqs,FR-008: The system shall include DVD functionality.,1,transcript,"There we go, there we go.  Oh, if you press if you press function and that again there's there's usually three modes, one where it's only here, one where it's only there, and one where it's both.  Okay, so one more time.  Should yeah just wait for a moment, adjusting.  Okay.  Mm-hmm.  Mm-hmm.  Mm-hmm.  Mm-hmm.  Yeah.  If I mean that was the the directive that came through from management, but if we had a a decent case for that we really think it's important to include video and D_V_D_, I could get back to them and see.  It's w it's just whether it's worth arguing about.  Mm-hmm.  Yeah.  Mm-hmm.  Okay.  Are there any questions for clarification of Maarika before we go on to the next one?  Mm-hmm.  Mm.  Mm.  Mm-hmm.  Sure, we can discuss that maybe after the next one.  Do you want to yeah.",,,PARTIALLY,DOES_NOT_SUPPORT,
+6o0okGXwxd7dVXhsunbN,functionalReqs,FR-003: The system shall display user-specified text within a popup box.,1,email,"Unfortun
+
+Subject: Re: Popup Text
+sounds good
+
+
+
+
+David Forster@ENRON
+10/12/2000 01:32 PM
+To: Savita Puthigai/NA/Enron@Enron, Andy Zipper/Corp/Enron@Enron, Kal 
+Shah/HOU/ECT@ECT
+cc: John Arnold/HOU/ECT@ECT 
+Subject: Popup Text
+
+
+I would like to put the following text into a popup box which will appear 
+once to all users of EnronOnli
+
+Subject: 
+John:
+Please call Lavorato's secretary, Kim, and schedule a time to talk with John 
+ASAP. 
+Thanks,
+John
+
+Subject: Re: SMUD deal Asian options
+I can do it either way but would much rather just make it the simple average 
+of prices, 5 per week.",,,SUPPORTS,SUPPORTS,
+oMbh62Vrb9QQySSubuu0,functionalReqs,FR-012: The system shall pose questions to users related to its operation or features.,1,email,"Enron Emails - anchordesk_daily@anchordesk. zdlists. com
+
+Subject: Meet the dark side of Windows XP
+
+
+_____________________DAVID COURSEY_____________________
+
+MEET THE DARK SIDE OF WINDOWS XP
+
+    While I really like Microsoft's new operating
+         system, there are still some issues that may
+         make it impossible for you to upgrade.  And
+         other issues may make you want to skip XP 
+
+Subject: XP countdown: More of your top questions answered
+
+
+_____________________DAVID COURSEY_____________________
+
+XP COUNTDOWN: MORE OF YOUR TOP QUESTIONS ANSWERED
+
+    In the last month and a half, I've been inundated
+         with XP-related questions from faithful
+         AnchorDesk readers.  Can you upgrade?  Is XP
+         faster than 9x?",,,DOES_NOT_SUPPORT,DOES_NOT_SUPPORT,
+7pr9rpwHRmu27bdWS1VE,functionalReqs,FR-008: The system shall provide the base salaries for specified individuals.,1,email,"One point that is unclear is they claim that the $15
+
+Subject: 
+Lucy,
+
+Here is the rentroll. 
+
+My only questions are about #18, #25, and #37 missed rent.   Any special 
+reasons? 
+
+It looks like there are five vacancies #2,12,20a,35,40.   If you want to run 
+an ad in the paper with a $50 discount that is fine. 
+I will write you a letter of recommendation.   When do you
+
+Subject: Re: Confidential Employee Information/Lenhart
+I also need to know the base salaries of Jay Reitmeyer and Monique Sanchez.   
+They are doing the same job as Matt. 
+
+Subject: Behind the Stage Two
+---------------------- Forwarded by Phillip K Allen/HOU/ECT on 03/15/2001 
+02:22 PM ---------------------------
+
+
+""Arthur O'Donnell"" <aod@newsdata. com> on 03/15/2001 11:35:55 AM
+Please respond to aod@newsdata.",,,SUPPORTS,DOES_NOT_SUPPORT,
+RS34yfaDYFDtainKP4jw,nfrReqs,NFR-003: [Scalability] - The system shall support the scalability of STORAGE SERVICES.,1,email,"Please feel free to contact Tracy 
+Ramsey directly at #(713)-646-8311 with any further questions regarding 
+Enron's buy side relationship  with Continental.    Ramsey is th
+
+Subject: Hewlett Packard/Enron Conference call regarding STORAGE SERVICES 12/7 at 10 AM CST CANCELLED
+Conference call participants:
+
+At Ravi Thuraisingham's request due to an unanticipated business trip, the 
+conference call regarding storage initiatives set for 12/7 at 10 AM CST has 
+been cancelled.   As soon as Ravi proposes an alternative time, we will 
+reschedule the conference call. 
+
+Sarah-Joy H
+
+Subject: Re: broadband solutions architect _hurray! 
+Jennifer:
+
+Hope the London trip is going well!   Thanks for the suggestion below which 
+was perfect.   Mr.",,,PARTIALLY,PARTIALLY,
+OlbGFN5fSu9hoR2fPs99,nfrReqs,NFR-007: [Usability] - The system shall offer a design that is distinctly different from current remote controls.,1,transcript,"What they found is that people don't like how current remote controls are, so you know, definitely you should be looking at something quite different.  Um seventy five percent of users find most remote controls ugly.  Uh the other twenty five percent have no fashion sense.  Uh eighty percent of users would spend more to get um you know, a nice looking remote control.  Um current remote controls, they don't match the user behaviour well, as you'll see on the next slide.  Um I dunno what zapping is, but Oh, right.  But you have that little thing that comes up at the bottom and tells you what's on.",,,SUPPORTS,SUPPORTS,
+cwdFaJr0bdYhEGiOTbqk,functionalReqs,FR-017: The system shall track a target value of 1283 for the end of October.,1,email,"I will be at home in the afternoon.  713-463-8626. 
+
+If you need to email me use pallen70@hotmail. com. 
+
+I will be in the office on Friday. 
+
+Phillip
+
+Subject: FW:
+
+
+ -----Original Message-----
+From: 	Heizenrader, Tim  
+Sent:	Wednesday, October 17, 2001 8:08 AM
+To:	Allen, Phillip K. 
+Cc:	Nelson, Kourtney
+Subject:	RE: 
+
+
+Phillip:
+
+The target for end of October is 1283.  We're not sure what's driving the day to day variation.  Direct effects of recent precipitation
+
+Subject: RE: Check this out -
+I like the cedar t-111 version better.   Why don't you tell this shop teacher not to be to comfortable and that you will be taking his job in two years. 
+
+ -----Original Message-----
+From: 	Richter, Jeff  
+Sent:	Tuesday, October 23, 2001 7:45 AM
+To:	Allen, Phillip K.",,,SUPPORTS,DOES_NOT_SUPPORT,
+RS34yfaDYFDtainKP4jw,nfrReqs,NFR-004: [Security] - The system shall secure data stored within STORAGE SERVICES.,1,email,"Please feel free to contact Tracy 
+Ramsey directly at #(713)-646-8311 with any further questions regarding 
+Enron's buy side relationship  with Continental.    Ramsey is th
+
+Subject: Hewlett Packard/Enron Conference call regarding STORAGE SERVICES 12/7 at 10 AM CST CANCELLED
+Conference call participants:
+
+At Ravi Thuraisingham's request due to an unanticipated business trip, the 
+conference call regarding storage initiatives set for 12/7 at 10 AM CST has 
+been cancelled.   As soon as Ravi proposes an alternative time, we will 
+reschedule the conference call. 
+
+Sarah-Joy H
+
+Subject: Re: broadband solutions architect _hurray! 
+Jennifer:
+
+Hope the London trip is going well!   Thanks for the suggestion below which 
+was perfect.   Mr.",,,DOES_NOT_SUPPORT,DOES_NOT_SUPPORT,
+6o0okGXwxd7dVXhsunbN,functionalReqs,FR-002: The system shall allow an authorized user to define the text content for a popup box.,1,email,"Unfortun
+
+Subject: Re: Popup Text
+sounds good
+
+
+
+
+David Forster@ENRON
+10/12/2000 01:32 PM
+To: Savita Puthigai/NA/Enron@Enron, Andy Zipper/Corp/Enron@Enron, Kal 
+Shah/HOU/ECT@ECT
+cc: John Arnold/HOU/ECT@ECT 
+Subject: Popup Text
+
+
+I would like to put the following text into a popup box which will appear 
+once to all users of EnronOnli
+
+Subject: 
+John:
+Please call Lavorato's secretary, Kim, and schedule a time to talk with John 
+ASAP. 
+Thanks,
+John
+
+Subject: Re: SMUD deal Asian options
+I can do it either way but would much rather just make it the simple average 
+of prices, 5 per week.",,,SUPPORTS,SUPPORTS,
+RS34yfaDYFDtainKP4jw,functionalReqs,"FR-013: The system shall record participant presence for specific calls, such as the Wireless call.",1,email,"Per our conversation yesterday, you had noted that John Pattillo would be 
+getting back to you with his decision as to how he would approach FEDEX with 
+an Enron counteroffer.    Any news on this?   
+
+Also, thanks for leaving voicemail/e-mail messages to keep me in the loop 
+rega
+
+Subject: FW: FW: Fedex and other cross sells UPDATE
+Jennifer:
+
+If you are referring to the Wireless call, I was on the call and actively 
+participated with Peter G.   I had the agenda discussion items and  guided the 
+conversation.  The call was brief and enabled HP and Peter G.  to discuss 
+wireless initiatives briefly.  Then Peter G.  literally read fro
+
+Subject: Continental/Enron meeting, December 11th, 2-3 PM
+Mr.",,,PARTIALLY,DOES_NOT_SUPPORT,
+RS34yfaDYFDtainKP4jw,functionalReqs,FR-011: The system shall record incoming e-mail messages.,1,email,"Per our conversation yesterday, you had noted that John Pattillo would be 
+getting back to you with his decision as to how he would approach FEDEX with 
+an Enron counteroffer.    Any news on this?   
+
+Also, thanks for leaving voicemail/e-mail messages to keep me in the loop 
+rega
+
+Subject: FW: FW: Fedex and other cross sells UPDATE
+Jennifer:
+
+If you are referring to the Wireless call, I was on the call and actively 
+participated with Peter G.   I had the agenda discussion items and  guided the 
+conversation.  The call was brief and enabled HP and Peter G.  to discuss 
+wireless initiatives briefly.  Then Peter G.  literally read fro
+
+Subject: Continental/Enron meeting, December 11th, 2-3 PM
+Mr.",,,DOES_NOT_SUPPORT,DOES_NOT_SUPPORT,
+7pr9rpwHRmu27bdWS1VE,functionalReqs,FR-009: The system shall display pictures of house designs.,1,email,"Allen@enron. com
+cc:  
+Subject: Nondeliverable mail
+
+
+------Transcript of session follows -------
+scsatkfa@caprock. net
+The
+
+Subject: 
+Cary,
+
+Here is the picture of the house I have in mind.   I was going for a simple 
+farmhouse style to  place on 5 acres near Wimberley.   
+
+A few points that might not be obvious from the plans are:
+
+There will be a double porch across the back just like the front
+No dormers (Metal roof)
+1/2 bath und
+
+Subject: 
+Reagan,
+
+Thank you for the quick response on the bid for the residence.   Below is a 
+list of questions on the specs:
+
+1.   Is the framing Lumber #2 yellow pine?   Wouldn't fir or spruce warp less 
+and cost about the same? 
+
+2.   What type of floor joist would be used?",,,SUPPORTS,SUPPORTS,
+sVkrccqwmVUh1FGYR2dr,functionalReqs,FR-014: The system shall disable colour LEDs upon a button press.,1,transcript,"If you press a button and you can disable the the colour LEDs for for people that don't like it.  Yeah.  Yeah.  Yeah.  Very cheap uh cheap look.  Yeah but if you if you make it more curved we we can make more and more options for buttons.  If you have uh it have it in your hand, you you you are not only um yeah you don't need one dimension but you can use other dimensions for pressing the the buttons.  Yeah.  Something to shoot at your television Yeah.  That's yeah.  Okay.  Yeah.  That's the the more advanced options were uh for the for the menu.  But you you want okay.  You just want to hide them all?  The oh.  Yeah yeah yeah.  That's but it's it's not it's not very uh very strong uh yeah if you drop it one time.  Okay.  But when you are left-handed, that's that's a problem.",,,SUPPORTS,SUPPORTS,

@@ -1,0 +1,62 @@
+[
+  {
+    "projectId": "exp3-prod-email-enron_phillip.allen_0",
+    "brdId": "7pr9rpwHRmu27bdWS1VE",
+    "source_type": "email"
+  },
+  {
+    "projectId": "exp3-prod-email-enron_john.arnold_1",
+    "brdId": "6o0okGXwxd7dVXhsunbN",
+    "source_type": "email"
+  },
+  {
+    "projectId": "exp3-prod-email-enron_k..allen_2",
+    "brdId": "cwdFaJr0bdYhEGiOTbqk",
+    "source_type": "email"
+  },
+  {
+    "projectId": "exp3-prod-email-enron_sarah-joy.hunter_4",
+    "brdId": "RS34yfaDYFDtainKP4jw",
+    "source_type": "email"
+  },
+  {
+    "projectId": "exp3-prod-email-enron_no.address_5",
+    "brdId": "C6oJMk95v0KXFNQaXcX4",
+    "source_type": "email"
+  },
+  {
+    "projectId": "exp3-prod-email-enron_anchordesk_daily_6",
+    "brdId": "oMbh62Vrb9QQySSubuu0",
+    "source_type": "email"
+  },
+  {
+    "projectId": "exp3-prod-email-enron_kim.godfrey_7",
+    "brdId": "JUEWUgZeI5Qe1eiSyJPu",
+    "source_type": "email"
+  },
+  {
+    "projectId": "exp3-prod-email-enron_colleen.koenig_9",
+    "brdId": "ZlSaOfhOUkXkaUX88GQs",
+    "source_type": "email"
+  },
+  {
+    "projectId": "exp3-prod-transcript-AMI_Speaker_A_0",
+    "brdId": "OlbGFN5fSu9hoR2fPs99",
+    "source_type": "transcript"
+  },
+  {
+    "projectId": "exp3-prod-transcript-AMI_Speaker_B_1",
+    "brdId": "sVkrccqwmVUh1FGYR2dr",
+    "source_type": "transcript"
+  },
+  {
+    "projectId": "exp3-prod-transcript-AMI_Speaker_C_2",
+    "brdId": "HT1CCSdC2hchZ9loiAlv",
+    "source_type": "transcript"
+  },
+  {
+    "projectId": "exp3-prod-transcript-AMI_Speaker_D_3",
+    "brdId": "uWizg6dPOrKJoQD7i1iA",
+    "source_type": "transcript"
+  }
+]

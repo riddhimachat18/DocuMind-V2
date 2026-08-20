@@ -4,21 +4,11 @@ import * as admin from "firebase-admin";
 import { defineSecret } from "firebase-functions/params";
 import { invalidateCache } from "./retrieval.js";
 import { embedText } from "./embedSnippet.js";
-import { ChromaClient } from "chromadb";
-import { defineSecret } from "firebase-functions/params";
-import { FEW_SHOT_PROMPT } from "./classifyText";
 
 const GEMINI_API_KEY = defineSecret("GEMINI_API_KEY");
 
 if (!admin.apps.length) admin.initializeApp();
 const db = admin.firestore();
-
-async function embedQuery(text: string, key: string): Promise<number[]> {
-  const genAI = new GoogleGenerativeAI(key);
-  const model = genAI.getGenerativeModel({ model: "gemini-embedding-001" });
-  const result = await model.embedContent(text);
-  return result.embedding.values;
-}
 
 export const onFileUploaded = onCall(
   {

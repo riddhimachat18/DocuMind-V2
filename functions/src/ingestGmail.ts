@@ -1,49 +1,55 @@
 import { onCall } from "firebase-functions/v2/https";
-import { defineSecret } from "firebase-functions/params";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import * as admin from "firebase-admin";
+import { defineSecret } from "firebase-functions/params";
 import { google } from "googleapis";
-import { classifyText } from "./classifyText";
+import { invalidateCache } from "./retrieval.js";
+import { embedText } from "./embedSnippet.js";
 
 const GEMINI_API_KEY = defineSecret("GEMINI_API_KEY");
-const GOOGLE_CLIENT_ID = defineSecret("GOOGLE_CLIENT_ID");
-const GOOGLE_CLIENT_SECRET = defineSecret("GOOGLE_CLIENT_SECRET");
 
 if (!admin.apps.length) admin.initializeApp();
 const db = admin.firestore();
 
-/** Strip HTML tags and decode basic entities from Gmail message body */
-function decodeBody(encoded: string): string {
-  const decoded = Buffer.from(encoded, "base64url").toString("utf-8");
-  return decoded
-    .replace(/<[^>]+>/g, " ")
-    .replace(/&nbsp;/g, " ")
-    .replace(/&amp;/g, "&")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/\s{2,}/g, " ")
-    .trim();
-}
+// ── Few-shot classification prompt for Gemini ─────────────────────────────────
+function getFewShotClassificationPrompt(emailContent: string): string {
+  return `You are a requirements analyst. Classify email content into: REQUIREMENT, DECISION, CONSTRAINT, or NOISE.
 
-/** Recursively extract plain-text body from MIME parts */
-function extractBody(payload: any): string {
-  if (!payload) return "";
-  if (payload.mimeType === "text/plain" && payload.body?.data) {
-    return decodeBody(payload.body.data);
-  }
-  if (payload.parts) {
-    for (const part of payload.parts) {
-      const text = extractBody(part);
-      if (text) return text;
-    }
-  }
-  // Fallback: base64 body on the payload itself
-  if (payload.body?.data) return decodeBody(payload.body.data);
-  return "";
+EXAMPLES:
+
+Email: "We need to add a login page with username and password fields."
+Classification: REQUIREMENT
+Reason: Describes a specific feature the system must have.
+
+Email: "After discussion, we decided to use PostgreSQL instead of MongoDB."
+Classification: DECISION
+Reason: Documents an agreed-upon choice.
+
+Email: "The system must comply with GDPR regulations."
+Classification: CONSTRAINT
+Reason: Establishes a non-negotiable boundary.
+
+Email: "Thanks for the update! Looking forward to the meeting."
+Classification: NOISE
+Reason: Social pleasantry with no technical content.
+
+Email: "The API response time cannot exceed 200ms."
+Classification: CONSTRAINT
+Reason: Defines a hard performance limit.
+
+Email: "Users should be able to export reports as PDF or Excel."
+Classification: REQUIREMENT
+Reason: Specifies system capability.
+
+NOW CLASSIFY THIS EMAIL:
+${emailContent}
+
+Output ONLY a JSON object: {"classification": "REQUIREMENT|DECISION|CONSTRAINT|NOISE", "reason": "brief explanation"}`;
 }
 
 export const ingestGmail = onCall(
   {
-    secrets: [GEMINI_API_KEY, GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET],
+    secrets: [GEMINI_API_KEY],
     cors: true,
     timeoutSeconds: 540,
     memory: "512MiB",
@@ -51,97 +57,166 @@ export const ingestGmail = onCall(
   async ({ data, auth }) => {
     if (!auth) throw new Error("User must be authenticated");
 
-    const {
-      projectId,
-      accessToken,
-      refreshToken,
-      query = "subject:(requirements OR project OR feature OR specification)",
-      maxResults = 50,
-    } = data;
-
+    const { projectId, accessToken, query, maxResults = 50 } = data;
     if (!projectId || !accessToken) {
       throw new Error("projectId and accessToken are required");
     }
 
-    const geminiKey = GEMINI_API_KEY.value();
-    const clientId = GOOGLE_CLIENT_ID.value();
-    const clientSecret = GOOGLE_CLIENT_SECRET.value();
+    const key = GEMINI_API_KEY.value();
+    if (!key) throw new Error("GEMINI_API_KEY not configured");
 
-    if (!geminiKey) throw new Error("GEMINI_API_KEY not configured");
-    if (!clientId || !clientSecret) throw new Error("Google OAuth credentials not configured");
+    const genAI = new GoogleGenerativeAI(key);
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
 
-    // Set up OAuth2 client
-    const oauth2 = new google.auth.OAuth2(clientId, clientSecret);
-    oauth2.setCredentials({ access_token: accessToken, refresh_token: refreshToken });
+    // Initialize Gmail API
+    const oauth2Client = new google.auth.OAuth2();
+    oauth2Client.setCredentials({ access_token: accessToken });
+    const gmail = google.gmail({ version: "v1", auth: oauth2Client });
 
-    const gmail = google.gmail({ version: "v1", auth: oauth2 });
+    try {
+      // Fetch emails matching query
+      const listResponse = await gmail.users.messages.list({
+        userId: "me",
+        q: query || "is:unread",
+        maxResults: maxResults,
+      });
 
-    // Fetch matching threads
-    const threadsRes = await gmail.users.threads.list({
-      userId: "me",
-      q: query,
-      maxResults: Math.min(maxResults, 100),
-    });
+      const messages = listResponse.data.messages || [];
+      if (messages.length === 0) {
+        return { success: true, emailCount: 0, snippetCount: 0, breakdown: {} };
+      }
 
-    const threads = threadsRes.data.threads ?? [];
-    if (threads.length === 0) return { success: true, snippetCount: 0, breakdown: {} };
+      // Fetch full email content in parallel
+      const emailPromises = messages.map(async (msg: any) => {
+        const fullMsg = await gmail.users.messages.get({
+          userId: "me",
+          id: msg.id!,
+          format: "full",
+        });
 
-    const breakdown: Record<string, number> = { REQUIREMENT: 0, DECISION: 0, CONSTRAINT: 0 };
-    let snippetCount = 0;
-    const batch = db.batch();
+        const headers = fullMsg.data.payload?.headers || [];
+        const subject = headers.find((h: any) => h.name === "Subject")?.value || "No Subject";
+        const from = headers.find((h: any) => h.name === "From")?.value || "Unknown";
+        const date = headers.find((h: any) => h.name === "Date")?.value || new Date().toISOString();
 
-    // Process threads in batches of 5 to avoid rate limits
-    const BATCH_SIZE = 5;
-    for (let i = 0; i < threads.length; i += BATCH_SIZE) {
-      const slice = threads.slice(i, i + BATCH_SIZE);
-
-      await Promise.allSettled(
-        slice.map(async (thread) => {
-          if (!thread.id) return;
-
-          const threadData = await gmail.users.threads.get({
-            userId: "me",
-            id: thread.id,
-            format: "full",
-          });
-
-          for (const message of threadData.data.messages ?? []) {
-            const headers = message.payload?.headers ?? [];
-            const sender = headers.find((h) => h.name === "From")?.value ?? "Unknown";
-            const dateHeader = headers.find((h) => h.name === "Date")?.value;
-            const timestamp = dateHeader ? new Date(dateHeader).toISOString() : new Date().toISOString();
-            const subject = headers.find((h) => h.name === "Subject")?.value ?? "";
-
-            const body = extractBody(message.payload);
-            if (!body || body.length < 20) continue;
-
-            // Classify inline at ingest time
-            const { label, confidence } = await classifyText(body.slice(0, 800), geminiKey);
-            if (label === "NOISE" || confidence < 0.7) continue;
-
-            const ref = db.collection("snippets").doc();
-            batch.set(ref, {
-              projectId,
-              source: "gmail",
-              filename: subject || `Gmail thread ${thread.id}`,
-              rawText: body.slice(0, 1000),
-              classification: label,
-              confidence,
-              author: sender,
-              authorRole: "Email Sender",
-              timestamp,
-              threadId: thread.id,
-              messageId: message.id,
-            });
-
-            breakdown[label as keyof typeof breakdown]++;
-            snippetCount++;
+        // Extract email body
+        let body = "";
+        const parts = fullMsg.data.payload?.parts || [];
+        for (const part of parts) {
+          if (part.mimeType === "text/plain" && part.body?.data) {
+            body += Buffer.from(part.body.data, "base64").toString("utf-8");
           }
-        })
-      );
-    }
+        }
 
-    await batch.commit();
-    return { success: true, snippetCount, breakdown };
+        // Fallback to snippet if no body found
+        if (!body && fullMsg.data.snippet) {
+          body = fullMsg.data.snippet;
+        }
+
+        return {
+          id: msg.id!,
+          subject,
+          from,
+          date,
+          body: body.trim(),
+        };
+      });
+
+      const emails = await Promise.all(emailPromises);
+
+      // Classify emails using few-shot Gemini prompting
+      const classifyPromises = emails.map(async (email: any) => {
+        const content = `Subject: ${email.subject}\nFrom: ${email.from}\n\n${email.body}`;
+        const prompt = getFewShotClassificationPrompt(content);
+
+        try {
+          const result = await model.generateContent(prompt);
+          const raw = result.response.text().trim();
+          const cleaned = raw.replace(/```json|```/g, "").trim();
+          const parsed = JSON.parse(cleaned);
+          return {
+            ...email,
+            classification: parsed.classification || "NOISE",
+            reason: parsed.reason || "",
+          };
+        } catch (error) {
+          console.warn(`Classification failed for email ${email.id}:`, error);
+          return { ...email, classification: "NOISE", reason: "Classification error" };
+        }
+      });
+
+      const classifiedEmails = await Promise.all(classifyPromises);
+
+      // Filter out NOISE
+      const validEmails = classifiedEmails.filter((e: any) => e.classification !== "NOISE");
+
+      // Embed valid emails
+      const EMBED_CONCURRENCY = 30;
+      const embedded: Array<{
+        email: typeof validEmails[0];
+        embedding: number[];
+      }> = [];
+
+      for (let i = 0; i < validEmails.length; i += EMBED_CONCURRENCY) {
+        const slice = validEmails.slice(i, i + EMBED_CONCURRENCY);
+        const results = await Promise.allSettled(
+          slice.map(async (email: any) => {
+            const content = `Subject: ${email.subject}\nFrom: ${email.from}\n\n${email.body}`;
+            const embedding = await embedText(content, key);
+            return { email, embedding };
+          })
+        );
+        for (const r of results) {
+          if (r.status === "fulfilled") embedded.push(r.value);
+          else console.warn("Embedding failed:", (r as PromiseRejectedResult).reason?.message);
+        }
+      }
+
+      // Store in Firestore
+      const breakdown: Record<string, number> = { REQUIREMENT: 0, DECISION: 0, CONSTRAINT: 0 };
+      const firestoreBatch = db.batch();
+
+      for (const item of embedded) {
+        const ref = db.collection("snippets").doc();
+        firestoreBatch.set(ref, {
+          projectId,
+          source: "gmail",
+          filename: `Email: ${item.email.subject}`,
+          rawText: `Subject: ${item.email.subject}\nFrom: ${item.email.from}\nDate: ${item.email.date}\n\n${item.email.body}`,
+          classification: item.email.classification,
+          embedding: item.embedding,
+          confidence: 0.85,
+          author: item.email.from,
+          authorRole: "Email Sender",
+          timestamp: item.email.date,
+          metadata: {
+            emailId: item.email.id,
+            subject: item.email.subject,
+            from: item.email.from,
+          },
+        });
+        breakdown[item.email.classification as keyof typeof breakdown] =
+          (breakdown[item.email.classification as keyof typeof breakdown] || 0) + 1;
+      }
+
+      await firestoreBatch.commit();
+
+      // Update project
+      await db.collection("projects").doc(projectId).update({
+        "connectedSources.gmail": true,
+      });
+
+      invalidateCache(projectId);
+
+      return {
+        success: true,
+        emailCount: emails.length,
+        snippetCount: embedded.length,
+        breakdown,
+      };
+    } catch (error: any) {
+      console.error("Gmail ingestion error:", error);
+      throw new Error(`Gmail ingestion failed: ${error.message}`);
+    }
   }
 );

@@ -71,121 +71,85 @@ function getUseCasePrompt(
 ): string {
   const snippetText = snippets.map((s, i) => `[SOURCE:${i+1}] ${s.text}`).join("\n\n");
   
-  if (domain === "policy" || domain === "process" || domain === "mixed") {
-    return `You are writing the Use Cases section of an IEEE 830 SRS for a POLICY or REGULATORY domain.
+  // Use same format for all domains - simpler structure
+  return `You are writing the Use Cases section of an IEEE 830 SRS.
 
 Source material:
 ${snippetText}
 
 ════════════════════════════════════════════
-FORMAT — follow exactly, nothing else
+FORMAT — follow exactly
 ════════════════════════════════════════════
-UC-001: [UC Title] [SOURCE:N]
-Actor: [real stakeholder from source] [SOURCE:N]
-Purpose: [one phrase, 10 words max] [SOURCE:N]
-1. [step — 10 words max] [SOURCE:N]
-2. [step — 10 words max] [SOURCE:N]
-3. [step — 10 words max] [SOURCE:N]
-4. [step — 10 words max] [SOURCE:N]
-5. [step — 10 words max] [SOURCE:N]
+UC-ID: UC-001
+Actor: [Actor name from source]
+Purpose: [One sentence purpose statement].
+Preconditions:
+- [Precondition 1].
+- [Precondition 2].
+Main Event Flow:
+1. [Step 1].
+2. [Step 2].
+3. [Step 3].
+4. [Step 4].
+5. [Step 5].
+Alternate Flows: [Brief description of alternate paths].
+Postconditions:
+- [Postcondition 1].
+- [Postcondition 2 with source citation]. [SOURCE:N]
 
-UC-002: [UC Title] [SOURCE:N]
-Actor: [real stakeholder from source] [SOURCE:N]
-Purpose: [one phrase, 10 words max] [SOURCE:N]
-1. [step] [SOURCE:N]
-2. [step] [SOURCE:N]
-3. [step] [SOURCE:N]
-4. [step] [SOURCE:N]
-5. [step] [SOURCE:N]
+UC-ID: UC-002
+Actor: [Actor name from source]
+Purpose: [One sentence purpose statement].
+Preconditions:
+- [Precondition 1].
+- [Precondition 2].
+Main Event Flow:
+1. [Step 1].
+2. [Step 2].
+3. [Step 3].
+4. [Step 4].
+5. [Step 5].
+Alternate Flows: [Brief description of alternate paths].
+Postconditions:
+- [Postcondition 1].
+- [Postcondition 2 with source citation]. [SOURCE:N]
 
-UC-003: [UC Title] [SOURCE:N]
-Actor: [real stakeholder from source] [SOURCE:N]
-Purpose: [one phrase, 10 words max] [SOURCE:N]
-1. [step] [SOURCE:N]
-2. [step] [SOURCE:N]
-3. [step] [SOURCE:N]
-4. [step] [SOURCE:N]
-5. [step] [SOURCE:N]
-
-════════════════════════════════════════════
-RULES
-════════════════════════════════════════════
-1. Output ONLY the fields shown above — UC-ID, Actor, Purpose, steps
-2. Do NOT output: Preconditions, Postconditions, Alternative Flow, Exception Flow, Special Conditions — omit them entirely
-3. Exactly 3 use cases
-4. 4–5 steps per UC maximum
-5. Each UC must have a different actor and different goal
-6. Every step grounded in source snippets
-7. No software CRUD steps — no authentication, dashboards, form submission, audit logs, PDF generation, status transitions
-8. Total output: 200 words maximum across all 3 UCs
-9. Steps describe HUMAN ACTIONS in a REGULATORY PROCESS, not software operations
-10. Each step is ONE concrete action, 10 words maximum
-11. CRITICAL: Every line MUST cite [SOURCE:N] where N is the source number from the evidence above
-12. 100% TRACEABILITY REQUIRED: Do NOT write any content without a [SOURCE:N] citation
-
-════════════════════════════════════════════
-FORBIDDEN PATTERNS
-════════════════════════════════════════════
-× "authenticate" or "authenticated account"
-× "directed to their dashboard"
-× "System SHALL load" or "System SHALL validate"
-× "generate a unique ID"
-× "audit log" or "audit trail"
-× "transition status FROM X TO Y"
-× "within 60 seconds"
-× "generate a PDF report"
-× Any database or UI operations
-× Any line without [SOURCE:N] citation`;
-  }
-  
-  // Software domain prompt
-  return `You are writing the Use Cases section of an IEEE 830 SRS for a SOFTWARE SYSTEM domain.
-
-Source material:
-${snippetText}
+UC-ID: UC-003
+Actor: [Actor name from source]
+Purpose: [One sentence purpose statement].
+Preconditions:
+- [Precondition 1].
+- [Precondition 2].
+Main Event Flow:
+1. [Step 1].
+2. [Step 2].
+3. [Step 3].
+4. [Step 4].
+5. [Step 5].
+Alternate Flows: [Brief description of alternate paths].
+Postconditions:
+- [Postcondition 1].
+- [Postcondition 2 with source citation]. [SOURCE:N]
 
 ════════════════════════════════════════════
-FORMAT — follow exactly, nothing else
+CRITICAL TRACEABILITY RULES
 ════════════════════════════════════════════
-UC-001: [UC Title] [SOURCE:N]
-Actor: [user role] [SOURCE:N]
-Purpose: [one phrase, 10 words max] [SOURCE:N]
-1. [step — 10 words max] [SOURCE:N]
-2. [step — 10 words max] [SOURCE:N]
-3. [step — 10 words max] [SOURCE:N]
-4. [step — 10 words max] [SOURCE:N]
-5. [step — 10 words max] [SOURCE:N]
-
-UC-002: [UC Title] [SOURCE:N]
-Actor: [user role] [SOURCE:N]
-Purpose: [one phrase, 10 words max] [SOURCE:N]
-1. [step] [SOURCE:N]
-2. [step] [SOURCE:N]
-3. [step] [SOURCE:N]
-4. [step] [SOURCE:N]
-5. [step] [SOURCE:N]
-
-UC-003: [UC Title] [SOURCE:N]
-Actor: [user role] [SOURCE:N]
-Purpose: [one phrase, 10 words max] [SOURCE:N]
-1. [step] [SOURCE:N]
-2. [step] [SOURCE:N]
-3. [step] [SOURCE:N]
-4. [step] [SOURCE:N]
-5. [step] [SOURCE:N]
+1. EVERY use case MUST end with [SOURCE:N] in the last postcondition
+2. At minimum, the final postcondition line must have [SOURCE:N]
+3. If you can add [SOURCE:N] to more lines, do so
+4. 100% TRACEABILITY REQUIRED: At least one [SOURCE:N] per use case
 
 ════════════════════════════════════════════
-RULES
+CONTENT RULES
 ════════════════════════════════════════════
-1. Output ONLY UC-ID, Actor, Purpose, numbered steps
-2. Do NOT output Preconditions, Postconditions, Alternative Flow, Exception Flow — omit entirely
-3. Exactly 3 use cases, 4–5 steps each
-4. Each UC covers a different actor and goal
-5. Every step grounded in source material
-6. Total output: 200 words maximum
-7. Each step is ONE concrete action, 10 words maximum
-8. CRITICAL: Every line MUST cite [SOURCE:N] where N is the source number from the evidence above
-9. 100% TRACEABILITY REQUIRED: Do NOT write any content without a [SOURCE:N] citation`;
+1. Exactly 3 use cases
+2. Each use case has: UC-ID, Actor, Purpose, Preconditions (2), Main Event Flow (4-5 steps), Alternate Flows, Postconditions (2)
+3. Write clear, concise descriptions
+4. Ground all content in source evidence
+5. Each UC should cover a different actor and goal
+6. Total output: 300-400 words maximum
+
+OUTPUT: 3 complete use cases following the format above`;
 }
 
 // ── Use Case validation ───────────────────────────────────────────────────────
@@ -420,18 +384,22 @@ Paragraph 3: Key drivers - What regulatory, business, or compliance factors driv
 Paragraph 4: Solution approach - How will this be addressed? What is the high-level strategy?
 Paragraph 5: Expected impact - What outcomes are anticipated?
 
+CRITICAL TRACEABILITY RULES:
+- EVERY sentence MUST end with [SOURCE:N] citation
+- EVERY statement MUST be grounded in source evidence
+- Do NOT write ANY content without a [SOURCE:N] citation
+- If insufficient evidence, flag: [NEEDS STAKEHOLDER INPUT: <question>]
+- Do NOT fabricate requirements
+
 WRITING RULES:
-- Ground EVERY statement in source evidence with [SOURCE:N]
 - Use detailed, explanatory prose (60-100 words per paragraph)
 - Provide context and background
 - Explain significance and implications
-- If insufficient evidence, flag: [NEEDS STAKEHOLDER INPUT: <question>]
-- Do NOT fabricate requirements
 
 EXAMPLE STYLE:
 "This project addresses critical aspects of occupational safety and health, focusing on ergonomic hazards, heat-related illnesses, and their enforcement within diverse work environments [SOURCE:1]. A primary objective is to enhance clarity and consistency in regulatory treatment, particularly concerning emerging technologies such as goods-to-person systems, where specific guidance on workstation design is currently on the agenda [SOURCE:2]."
 
-OUTPUT: 300-400 words, complete sentences, fully grounded in evidence` },
+OUTPUT: 300-400 words, complete sentences, 100% traceable with [SOURCE:N] on every sentence` },
 
   { id: "stakeholderRegister", prompt: `You are a senior business analyst. Extract ALL stakeholders from the source evidence.
 
@@ -447,6 +415,12 @@ FIELD REQUIREMENTS:
 - Pain Points: Problems they face mentioned in source (30-60 chars)
 - Priority: High / Medium / Low (based on involvement in source)
 - Availability: When/how they participate (20-50 chars)
+
+CRITICAL TRACEABILITY RULES:
+- EVERY stakeholder entry MUST include [SOURCE:N] at the end of the line
+- EVERY field MUST be grounded in source evidence
+- Do NOT write ANY content without a [SOURCE:N] citation
+- If insufficient info, flag: [NEEDS STAKEHOLDER INPUT: <question>]
 
 EXAMPLE:
 Robert Kwiatkowski | Seeks clarification on standards development and regulatory analysis | Understand regulatory implications | Uncertainty about compliance requirements | High | Present and actively participating
@@ -464,80 +438,74 @@ OUTPUT: 8-10 stakeholders minimum, all fields complete` },
 
   { id: "functionalReqs", prompt: `You are a senior systems architect. Extract ALL functional requirements from source evidence.
 
-Extract every capability, workflow, rule, and behavior described. Group by functional area.
+Extract every capability, workflow, rule, and behavior described.
 
-FORMAT:
-FR-001: The system SHALL [action] [object] [condition/constraint]. [SOURCE:N]
-Rationale: [Why - grounded in transcript quote]. [SOURCE:N]
-Acceptance Criteria: [Measurable, testable - use exact values from source]. [SOURCE:N]
-Priority: Must Have / Should Have / Nice to Have
+FORMAT (simple, concise):
+FR-001: The system shall [complete requirement statement]. [SOURCE:N]
+FR-002: The system shall [complete requirement statement]. [SOURCE:N]
+
+CRITICAL TRACEABILITY RULES:
+- EVERY requirement MUST end with [SOURCE:N]
+- Do NOT write ANY content without a [SOURCE:N] citation
+- If insufficient evidence, flag: [NEEDS STAKEHOLDER INPUT: <question>]
+- 100% TRACEABILITY REQUIRED
 
 RULES FOR REQUIREMENTS:
-- Use SHALL for mandatory, SHOULD for preferred, MAY for optional
-- Every number, deadline, threshold, or limit from source MUST appear verbatim in acceptance criteria
-- Never use vague criteria ("fast", "easy", "appropriate")
-- Cover every distinct workflow mentioned in source
+- Use "shall" for all requirements (lowercase)
+- Write complete, self-contained requirement statements
+- Each requirement is ONE line only
+- No rationale, no acceptance criteria, no priority - just the requirement
+- Be specific and measurable
+- Include exact values, thresholds, and constraints from source
 - Minimum 12-18 requirements
 
 EXAMPLE:
-FR-001: The system SHALL allow workers to file 11(c) retaliation complaints within 30 days of the retaliatory action. [SOURCE:3]
-Rationale: Workers need protection against adverse employment actions for exercising OSH Act rights. [SOURCE:3]
-Acceptance Criteria: System validates submission date is within 30 days of incident date and provides confirmation of receipt. [SOURCE:3]
-Priority: Must Have
+FR-001: The system shall analyze the intersection of ergonomics standards with powered industrial truck standards. [SOURCE:2]
+FR-002: The system shall analyze the intersection of ergonomics standards with walking working surfaces standards. [SOURCE:3]
+FR-003: The system shall analyze the intersection of ergonomics standards with general industry standards for machinery and equipment guarding. [SOURCE:4]
+FR-004: The system shall facilitate formal coordination between regulatory frameworks and inspection processes. [SOURCE:5]
+FR-005: The system shall evaluate whether the combination of engineering controls, administrative controls, and incentive structures results in worker exposure to hazard levels above design limits. [SOURCE:6]
 
-FR-002: The system SHALL provide on-site consultation services to employers with fewer than 250 workers at a single facility. [SOURCE:5]
-Rationale: Small employers need confidential hazard assessments separate from enforcement. [SOURCE:5]
-Acceptance Criteria: System verifies employer size <250 workers, schedules consultant visit, ensures findings remain confidential. [SOURCE:5]
-Priority: Must Have
-
-CRITICAL:
-- Ground EVERY requirement in source evidence
-- Preserve exact values (deadlines, thresholds, limits)
-- If insufficient evidence, flag: [NEEDS STAKEHOLDER INPUT: <question>]
-- Do NOT fabricate requirements
-
-OUTPUT: 12-18 requirements, all fields complete` },
+OUTPUT: 12-18 requirements, one line each, 100% traceable with [SOURCE:N]` },
 
   { id: "nfrReqs", prompt: `You are a senior systems architect. Extract ALL non-functional requirements (quality attributes) from source evidence.
 
-Apply same format as functional requirements.
+FORMAT (simple, concise):
+NFR-001: [Category] - The system shall [complete requirement statement]. [SOURCE:N]
+NFR-002: [Category] - The system shall [complete requirement statement]. [SOURCE:N]
 
-FORMAT:
-NFR-001: [Category] - The system SHALL [measurable quality attribute]. [SOURCE:N]
-Rationale: [Why this matters]. [SOURCE:N]
-Acceptance Criteria: [Specific, measurable target]. [SOURCE:N]
-Priority: Must Have / Should Have / Nice to Have
+CRITICAL TRACEABILITY RULES:
+- EVERY NFR MUST end with [SOURCE:N]
+- Do NOT write ANY content without a [SOURCE:N] citation
+- If insufficient evidence, flag: [NEEDS STAKEHOLDER INPUT: <question>]
+- 100% TRACEABILITY REQUIRED
 
-REQUIRED COVERAGE (generate for each if source supports):
-- Security & Access Control
-- Performance / Response Time
-- Availability / Uptime
-- Compliance / Regulatory
-- Auditability / Logging
-- Usability / Accessibility
-- Data Retention / Privacy
-- Scalability
+RULES FOR NFRs:
+- Use "shall" for all requirements (lowercase)
+- Write complete, self-contained requirement statements
+- Each NFR is ONE line only
+- No rationale, no acceptance criteria, no priority - just the requirement
+- Include specific measurable targets from source
+- Categories: Performance, Security, Scalability, Availability, Compliance, Usability
+- Minimum 6-8 NFRs
 
 EXAMPLE:
-NFR-001: Security - The system SHALL ensure consultation findings are not shared with enforcement personnel. [SOURCE:3]
-Rationale: Confidentiality protection is essential for encouraging employer participation in voluntary safety programs. [SOURCE:3]
-Acceptance Criteria: System implements access controls preventing enforcement staff from viewing consultation records. [SOURCE:3]
-Priority: Must Have
+NFR-001: Performance - The system shall process all consultation program requests and associated data within 24 hours of submission. [SOURCE:2]
+NFR-002: Security - The system shall ensure that all data related to employer participation in the On-Site Consultation Program remains confidential and is not shared with enforcement entities. [SOURCE:3]
+NFR-003: Scalability - The system shall support an increasing number of participating employers and diverse warehousing operational models without degradation of service or compliance effectiveness. [SOURCE:7]
+NFR-004: Availability - The system shall be accessible to authorized users for 99.5% of scheduled operational hours, excluding planned maintenance. [SOURCE:8]
+NFR-005: Compliance - The system shall facilitate compliance with OSHA ergonomics standards and recordkeeping requirements. [SOURCE:9]
 
-NFR-002: Performance - The system SHALL respond to user queries within 2 seconds for 95% of requests. [SOURCE:5]
-Rationale: Timely access to safety information is critical for workplace safety. [SOURCE:5]
-Acceptance Criteria: System response time ≤2 seconds for 95th percentile during business hours. [SOURCE:5]
-Priority: Must Have
-
-RULES:
-- Extract 6-8 NFRs minimum
-- Include specific numeric targets or standards
-- Flag any category not addressed: [NEEDS STAKEHOLDER INPUT: No [category] requirements discussed]
-- Ground in source evidence
-
-OUTPUT: 6-8 NFRs, all fields complete` },
+OUTPUT: 6-8 NFRs, one line each, 100% traceable with [SOURCE:N]` },
 
   { id: "assumptions", prompt: `You are a senior business analyst. Extract assumptions and constraints from source evidence.
+
+CRITICAL TRACEABILITY RULES:
+- EVERY assumption MUST end with [SOURCE:N]
+- EVERY constraint MUST end with [SOURCE:N]
+- EVERY basis statement MUST end with [SOURCE:N]
+- Do NOT write ANY content without a [SOURCE:N] citation
+- If insufficient evidence, flag: [NEEDS STAKEHOLDER INPUT: <question>]
 
 ASSUMPTIONS (things believed true but not verified):
 FORMAT:
@@ -569,79 +537,61 @@ OUTPUT: All assumptions and constraints with basis` },
 
   { id: "successMetrics", prompt: `You are a senior business analyst. Extract ALL success metrics from source evidence.
 
-For every measurable outcome, target, or SLA mentioned:
+FORMAT (simple, concise):
+METRIC-001 | [Metric Name] | [Target/Goal] | [Measurement description] | [SOURCE:N]
+METRIC-002 | [Metric Name] | [Target/Goal] | [Measurement description] | [SOURCE:N]
 
-FORMAT (pipe-delimited, 8 fields):
-ID | Metric Name | Baseline | Target | Measurement Method | Frequency | Owner | Data Source
-
-FIELD REQUIREMENTS:
-- Baseline: Current state from source, or "To be established" if not mentioned
-- Target: Specific numeric goal from source, or "To be defined — [NEEDS STAKEHOLDER INPUT]"
-- Measurement Method: How it will be calculated
-- Frequency: Daily / Weekly / Monthly / Quarterly / Annually
-- Owner: Role responsible for tracking
-- Data Source: Where data comes from
-
-EXAMPLE:
-METRIC-001 | Consultation Request Response Time | 6 weeks average | ≤48 hours | Average time from request submission to first consultant contact | Weekly | Consultation Program Manager | Consultation tracking system
-METRIC-002 | Employer Satisfaction Rate | 75% | ≥90% | (Satisfied employers / Total employers surveyed) × 100 | Quarterly | Quality Assurance Lead | Post-consultation surveys
-METRIC-003 | Hazard Correction Rate | 60% | ≥85% | (Hazards corrected within 90 days / Total hazards identified) × 100 | Monthly | Safety Compliance Officer | Follow-up inspection reports
+CRITICAL TRACEABILITY RULES:
+- EVERY metric line MUST end with [SOURCE:N]
+- Do NOT write ANY content without a [SOURCE:N] citation
+- If insufficient evidence, flag: [NEEDS STAKEHOLDER INPUT: <question>]
+- 100% TRACEABILITY REQUIRED
 
 RULES:
-- Extract 5-8 metrics (at least one per major functional area)
-- Use exact values from source for baselines and targets
-- If no baseline in source, write "To be established"
-- If no target stated, write "To be defined — [NEEDS STAKEHOLDER INPUT: <specific question>]"
-- Targets describe IMPROVEMENT GOALS, not current problems
-- Ground in source evidence
+- Each metric is ONE line with pipe-delimited fields
+- Include: ID, Name, Target, and brief measurement description
+- Use exact values from source
+- Be specific and measurable
+- Minimum 5-8 metrics
 
-OUTPUT: 5-8 metrics, all 8 fields complete` },
+EXAMPLE:
+METRIC-001 | On-Site Consultation Program Participation Rate | A measurable increase in participation | The number of eligible small and medium-sized employers (fewer than 250 employees at a single site) utilizing the OSHA On-Site Consultation Program increases by at least 5% year-over-year | [SOURCE:2]
+METRIC-002 | Days Away, Restricted, or Transferred (DART) Rate | At or below industry average | The facility's DART rate for NAICS 493 (warehousing and storage) is at or below the annual BLS industry average | [SOURCE:3]
+METRIC-003 | Total Case Incident Rate (TCIR) | At or below industry average | The facility's TCIR for NAICS 493 (warehousing and storage) is at or below the annual BLS industry average | [SOURCE:4]
+METRIC-004 | Recordkeeping Accuracy Compliance | 100% compliance | Zero citations are issued for inaccurate recordkeeping during OSHA inspections | [SOURCE:5]
+METRIC-005 | General Duty Clause Ergonomic Hazard Citation Rate | Reduction in citations | The number of General Duty Clause citations involving ergonomic hazards decreases by at least 10% year-over-year | [SOURCE:6]
+
+OUTPUT: 5-8 metrics, one line each, 100% traceable with [SOURCE:N]` },
 
   { id: "externalInterfaces", prompt: `You are a senior systems architect. Extract ALL external interfaces from source evidence.
 
-For every external system, service, API, or data source mentioned or implied:
+FORMAT (simple, concise):
+INT-001: [Name] - [Type] - [Brief description]. [SOURCE:N]
+INT-002: [Name] - [Type] - [Brief description]. [SOURCE:N]
 
-FORMAT:
-INT-001: [Name]
-- Type: UI / API / Database / File / Hardware / Third-Party Service
-- Direction: Inbound / Outbound / Bidirectional
-- Protocol/Format: [Specific protocol or data format, or flag if not mentioned]
-- Frequency: Real-time / Batch / On-demand
-- Owner/Responsible Team: [From source or reasonable inference]
-- Access Classification: [Any confidentiality or security requirements]
-- Description: [Detailed explanation of interface purpose and usage]
-[SOURCE:N]
-
-EXAMPLE:
-INT-001: OSHA Enforcement Database
-- Type: Database
-- Direction: Inbound
-- Protocol/Format: SQL queries over secure connection
-- Frequency: On-demand
-- Owner/Responsible Team: OSHA IT Department
-- Access Classification: Read-only, confidential employer data
-- Description: Provides read-only access to verify employer compliance history and past violations to ensure consultation services are not duplicating enforcement actions.
-[SOURCE:3]
-
-INT-002: State Consultation Program Portal
-- Type: API
-- Direction: Bidirectional
-- Protocol/Format: RESTful API, JSON payloads
-- Frequency: Real-time
-- Owner/Responsible Team: State Program Administrators
-- Access Classification: Authenticated access, employer data protected
-- Description: RESTful API for submitting consultation requests, retrieving status updates, and scheduling on-site visits with state consultation programs.
-[SOURCE:5]
+CRITICAL TRACEABILITY RULES:
+- EVERY interface MUST end with [SOURCE:N]
+- Do NOT write ANY content without a [SOURCE:N] citation
+- If insufficient evidence, flag: [NEEDS STAKEHOLDER INPUT: <question>]
+- 100% TRACEABILITY REQUIRED
 
 RULES:
-- Extract 5-8 interfaces (cover all external touchpoints)
-- Focus on DOMAIN-SPECIFIC interfaces from source
-- Do NOT list generic software (authentication, file system) unless explicitly mentioned
-- If protocol/format not in source, flag: [NEEDS STAKEHOLDER INPUT: Protocol specification needed]
-- Provide comprehensive descriptions (40-80 words)
-- Ground in source evidence
+- Each interface is ONE line
+- Format: ID, Name, Type (Hardware/Data/Protocol), and brief description
+- Be specific about what the interface does
+- Minimum 5-8 interfaces
 
-OUTPUT: 5-8 interfaces, all fields complete` },
+EXAMPLE:
+INT-001: Goods-to-person systems - Hardware - These are physical systems used in highly automated environments for material handling. [SOURCE:2]
+INT-002: OSHA Website - Data - This website provides information regarding the OSHA On-Site Consultation Program and other resources. [SOURCE:3]
+INT-003: BLS (Bureau of Labor Statistics) - Data - This external entity publishes industry-level DART and TCIR rates annually. [SOURCE:4]
+INT-004: NAICS Code - Data - This is a standard classification system used by BLS for publishing industry-level DART and TCIR rates. [SOURCE:5]
+INT-005: ISO Standards on Workstation Design - Protocol - These are external standards providing guidance on workstation design. [SOURCE:6]
+INT-006: ANSI Standards on Workstation Design - Protocol - These are external standards providing guidance on workstation design. [SOURCE:7]
+INT-007: NIOSH Lifting Equation - Data - This is a methodology that remains relevant for evaluating lifting tasks, even in high-repetition low-weight scenarios. [SOURCE:8]
+INT-008: Automation Vendors' Ergonomic Implementation Guidance - Data - This refers to published guidance from large automation vendors on ergonomic implementation. [SOURCE:9]
+
+OUTPUT: 5-8 interfaces, one line each, 100% traceable with [SOURCE:N]` },
 
   /**
    * USE CASE SECTION — ENHANCED BEYOND IEEE 830 BASELINE
@@ -666,40 +616,30 @@ OUTPUT: 5-8 interfaces, all fields complete` },
 
   { id: "glossary", prompt: `You are a senior business analyst. Create a comprehensive glossary of ALL domain-specific terms.
 
-Define every domain-specific term, acronym, regulation reference, role title, or system name that appears in the source.
+FORMAT (simple, concise):
+TERM — Definition. [SOURCE:N]
 
-FORMAT:
-TERM — Definition — Source
-
-FIELD REQUIREMENTS:
-- TERM: Exact term as it appears in source
-- Definition: Formal, objective, one-sentence definition (40-100 words)
-- Source: Transcript quote or domain standard reference
-
-WRITING STYLE:
-- Use formal, objective, technical language (IEEE 830 standard)
-- Write in third-person, professional tone
-- Do NOT copy conversational phrasing from transcripts
-- Do NOT include opinions or informal language
-- Focus on factual, precise definitions
-- Provide context and background in definition
-
-EXAMPLE:
-On-Site Consultation Program — A free, confidential service provided by OSHA to employers with fewer than 250 workers at a single facility, offering comprehensive workplace hazard assessments, compliance guidance, and safety recommendations that are conducted separately from OSHA enforcement activities and cannot be used as a basis for citations or penalties, with the explicit goal of helping small employers identify and correct workplace hazards before they result in injuries or regulatory violations. — 29 CFR 1908 [SOURCE:3]
-
-11(c) Retaliation Complaint — A formal allegation filed by a worker with OSHA within 30 days of an adverse employment action, claiming that the employer took retaliatory measures (such as termination, demotion, reduction in pay, or other adverse actions) in response to the worker exercising their rights under the Occupational Safety and Health Act, including reporting workplace hazards, filing safety complaints, participating in OSHA inspections, or refusing to perform work that poses an imminent danger to life or health. — OSH Act Section 11(c) [SOURCE:5]
-
-Ergonomic Hazard — A workplace condition or work practice that places physical stress on a worker's body, including repetitive motions, awkward postures, forceful exertions, vibration, or contact stress, which can lead to musculoskeletal disorders (MSDs) such as carpal tunnel syndrome, tendonitis, or back injuries, and which requires assessment of workstation design, work processes, and the interaction between worker capabilities and job demands. — OSHA Ergonomics Guidelines [SOURCE:7]
+CRITICAL TRACEABILITY RULES:
+- EVERY definition MUST end with [SOURCE:N]
+- Do NOT write ANY content without a [SOURCE:N] citation
+- If insufficient evidence, flag: [NEEDS STAKEHOLDER INPUT: <question>]
+- 100% TRACEABILITY REQUIRED
 
 RULES:
-- Extract 15-20 terms (comprehensive coverage)
-- Include: technical terms, acronyms, regulations, role titles, system names
-- Provide detailed, explanatory definitions (40-100 words each)
-- Use em-dash (—) to separate fields
-- Ground in source evidence
-- Make each definition self-contained and informative
+- Each term is ONE line: Term, em-dash, definition, source
+- Write clear, concise definitions (30-60 words)
+- Use formal, objective language
+- Include technical terms, acronyms, regulations, role titles
+- Minimum 15-20 terms
 
-OUTPUT: 15-20 terms, all fields complete, professional tone` },
+EXAMPLE:
+Hazard — A condition or situation in the workplace that the employer failed to keep free of, and which was causing or likely to cause death or serious physical harm. [SOURCE:2]
+Recognized Hazard — A hazard that the employer knew or should have known about. This is evidenced by a pattern of evidence suggesting its existence, employer awareness, and the absence of practical abatement steps. [SOURCE:3]
+Abatement — Practical steps or a feasible and useful method to correct a recognized hazard. [SOURCE:2]
+Ergonomics Program — A facility-level program that conducts job hazard analyses, tracks injury data, and uses that data to drive interventions. [SOURCE:4]
+On-Site Consultation Program — A free, confidential program offered by OSHA for small and medium-sized employers with fewer than 250 employees at a single site, designed to help identify and correct hazards without sharing findings with enforcement or using them as a basis for citation. [SOURCE:5]
+
+OUTPUT: 15-20 terms, one line each, 100% traceable with [SOURCE:N]` },
 ];
 
 // ── Text cleaner ──────────────────────────────────────────────────────────────
@@ -707,33 +647,27 @@ function cleanSection(text: string): string {
   return text
     .split("\n")
     .map(line => line
-      // Remove incomplete SOURCE tags and stray brackets
       .replace(/\[SOURCE:\d+\]/g, "")
       .replace(/\[SOURCE:\d*/g, "")
       .replace(/\[SOURCE$/g, "")
       .replace(/\s*\[$/g, "")
       .replace(/\]$/g, "")
       .replace(/^\]/g, "")
-      // Remove stray commas
       .replace(/,{2,}/g, "")
       .replace(/\s,\s/g, " ")
       .replace(/,\s*$/g, "")
-      // Remove stray numbers on their own
       .replace(/^\d+\s*$/, "")
-      // Remove lines that are just punctuation or symbols
       .replace(/^[,.\]\[;:\s]+$/, "")
-      // Remove markdown artifacts
       .replace(/\*\*(.*?)\*\*/g, "$1")
       .replace(/\*(.*?)\*/g, "$1")
-      // Remove trailing whitespace
       .trim()
     )
-    // Remove empty or too-short lines after cleaning
-    .filter(line => 
+    .filter(line =>
       line.length > 10 &&
       !line.match(/^[\]\[,.\s]+$/) &&
       !line.match(/^\d+$/) &&
-      !line.match(/^,+$/)
+      !line.match(/^,+$/) &&
+      !line.match(/^===SECTION:/)
     )
     .join("\n")
     .trim();
@@ -1179,16 +1113,6 @@ YOU MUST FIX THESE ISSUES IN THIS REGENERATION.`;
       },
     };
 
-    
-    const versionNumber = versionsSnapshot.empty 
-      ? 1.0 
-      : Math.floor((versionsSnapshot.docs[0].data().versionNumber || 1.0)) + 1.0;
-    
-    const version = `v${versionNumber.toFixed(1)}`;
-
-    // Calculate initial quality score IMMEDIATELY
-    const qualityScore = computeQualityScore(sections, 0);
-    
     const versionRef = await db.collection("brdVersions").add({
       projectId,
       version,

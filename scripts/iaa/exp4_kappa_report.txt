@@ -1,0 +1,114 @@
+======================================================================
+EXPERIMENT 4 — INTER-ANNOTATOR AGREEMENT (IAA) REPORT
+======================================================================
+
+DATASET
+-------
+Total pairs annotated:      55
+Agreements:                 46 (83.6%)
+Disagreements:              9 (16.4%)
+
+COHEN'S KAPPA
+-------------
+κ = 0.705
+
+Interpretation:
+  κ < 0.00   : No agreement
+  0.00-0.20  : Slight agreement
+  0.21-0.40  : Fair agreement
+  0.41-0.60  : Moderate agreement
+  0.61-0.80  : Substantial agreement
+  0.81-1.00  : Almost perfect agreement
+
+✓ Substantial agreement - good reliability
+
+======================================================================
+CONFUSION MATRIX
+======================================================================
+
+Rows = Annotator 1, Columns = Annotator 2
+
+                  CONTRADICTIO  IMPLICIT      NO_CONFLICT   OVERLAP       
+--------------------------------------------------------------------------
+CONTRADICTION     2             0             4             1             
+IMPLICIT          0             0             1             0             
+NO_CONFLICT       0             0             14            0             
+OVERLAP           0             0             3             30            
+
+======================================================================
+LABEL DISTRIBUTION
+======================================================================
+
+Label            Annotator1    Annotator2
+---------------------------------------------
+CONTRADICTION    7             2
+IMPLICIT         1             0
+NO_CONFLICT      14            22
+OVERLAP          33            31
+
+======================================================================
+DISAGREEMENTS (9 pairs)
+======================================================================
+
+Pair: P012
+  Annotator1: CONTRADICTION
+  Annotator2: NO_CONFLICT
+  Req A: [FILENUMBER13] will  generate prefi xes like '13', '14'...) .
+  Req B: [FILENUMBER###13] will generate prefixes like '013', '014'...).
+
+Pair: P033
+  Annotator1: OVERLAP
+  Annotator2: NO_CONFLICT
+  Req A: Requirements: context specific data  • A VCD system MUST provide functionality t...
+  Req B: • The VCD system MUST provide a functionality that enables National VCD Service ...
+
+Pair: P041
+  Annotator1: CONTRADICTION
+  Annotator2: NO_CONFLICT
+  Req A: gtk_list_append_items()  function should be used to perform the ope ration.
+  Req B: gtk_list_insert_items()  function should be used to perform the ope ration.
+
+Pair: P042
+  Annotator1: IMPLICIT
+  Annotator2: NO_CONFLICT
+  Req A: F-501 The Clarus  system shall  minimize the time for data dissemination.
+  Req B: ID Requirement  Source Allocation Comment Criticality X-605 The Clarus  program ...
+
+Pair: P043
+  Annotator1: CONTRADICTION
+  Annotator2: OVERLAP
+  Req A: (M)  Electrical  4.5.21 For determining battery requirements, the transmit/recei...
+  Req B: (M)  Page 52  PSA167D006-15       Call type Transmit Receive   Point-to-point ca...
+
+Pair: P047
+  Annotator1: CONTRADICTION
+  Annotator2: NO_CONFLICT
+  Req A: − Split every “n” pages : the input file will be split every “ n” pages.
+  Req B: − Split even pages : the input file will be split at every even page.
+
+Pair: P048
+  Annotator1: CONTRADICTION
+  Annotator2: NO_CONFLICT
+  Req A: − Split odd pages : the input file will be split at every odd page.
+  Req B: − Split at this size : the input file will be split in files of the given size (...
+
+Pair: P050
+  Annotator1: OVERLAP
+  Annotator2: NO_CONFLICT
+  Req A: If the au tomation thinks that for the current  situation a different pres entat...
+  Req B: Special interest will be given to the af orementioned issue that the adaptation ...
+
+Pair: P053
+  Annotator1: OVERLAP
+  Annotator2: NO_CONFLICT
+  Req A: ID Requirement  Source Allocation -  CAUI Comment Criticality F-100 The Clarus  ...
+  Req B: F-200 The Clarus  system shall be able to  detect data submission errors.
+
+
+======================================================================
+RECOMMENDATION FOR PAPER
+======================================================================
+
+Report Cohen's κ = 0.705 as validation of the gold standard.
+Sample: 55 requirement pairs stratified across conflict types.
+Agreement rate: 83.6%

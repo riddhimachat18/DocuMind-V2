@@ -1,0 +1,69 @@
+======================================================================
+PER-DOMAIN CONFLICT DETECTION ANALYSIS
+======================================================================
+
+MOTIVATION
+----------
+Reviewer concern: "External validity across different requirement domains"
+
+This analysis breaks down conflict detection performance by document domain
+to assess generalization across transportation, embedded systems, web, and
+infrastructure requirements.
+
+METHODOLOGY
+-----------
+Total documents: 15
+Total pairs: 409
+True conflicts: 45
+
+Domains:
+  Embedded Systems: 49 pairs, 9 conflicts
+  Infrastructure: 18 pairs, 5 conflicts
+  Inventory/Management: 5 pairs, 4 conflicts
+  Transportation: 237 pairs, 16 conflicts
+  Web/E-commerce: 9 pairs, 3 conflicts
+
+RESULTS BY DOMAIN
+-----------------
+
+Domain                  Precision  Recall     F1      Pairs  Conflicts
+Embedded Systems        0.692      1.000    0.818     49      9
+Infrastructure          0.667      0.800    0.727     18      5
+Inventory/Management    1.000      1.000    1.000      5      4
+Transportation          0.400      0.875    0.549    237     16
+Web/E-commerce          0.500      1.000    0.667      9      3
+Overall                 0.494      0.911    0.641    409     45
+
+ANALYSIS
+--------
+Best performing domain:  Inventory/Management (F1=1.000)
+Worst performing domain: Transportation (F1=0.549)
+Performance variance:    0.170 (std dev)
+
+⚠ Performance varies significantly across domains
+  Consider domain-specific tuning or additional training data.
+
+Domain-Specific Insights:
+  ✓ Embedded Systems: Above-average performance
+  ✓ Infrastructure: Above-average performance
+  ✓ Inventory/Management: Above-average performance
+  ⚠ Transportation: Below-average performance
+
+======================================================================
+RECOMMENDATION FOR PAPER
+======================================================================
+Include domain breakdown table showing:
+- Performance across transportation, embedded, web, infrastructure domains
+- Demonstrates external validity (or identifies domain-specific challenges)
+- Shows system generalizes beyond single domain
+
+If variance is low:
+  "Performance is consistent across domains (σ=0.170),
+   demonstrating generalization to diverse requirement types."
+
+If variance is high:
+  "Performance varies by domain, with Inventory/Management achieving
+   F1=1.000 and Transportation achieving
+   F1=0.549. This suggests opportunities for
+   domain-specific optimization."
+======================================================================
